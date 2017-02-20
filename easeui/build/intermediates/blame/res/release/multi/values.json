@@ -1,0 +1,4521 @@
+[
+    {
+        "outputFile": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 46,
+                    "endOffset": 97
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 102,
+                    "endColumn": 54,
+                    "endOffset": 152
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 157,
+                    "endColumn": 58,
+                    "endOffset": 211
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 216,
+                    "endColumn": 51,
+                    "endOffset": 263
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 268,
+                    "endColumn": 52,
+                    "endOffset": 316
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 321,
+                    "endColumn": 49,
+                    "endOffset": 366
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 371,
+                    "endColumn": 50,
+                    "endOffset": 417
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 422,
+                    "endColumn": 49,
+                    "endOffset": 467
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 472,
+                    "endColumn": 50,
+                    "endOffset": 518
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 523,
+                    "endColumn": 57,
+                    "endOffset": 576
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 581,
+                    "endColumn": 50,
+                    "endOffset": 627
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 632,
+                    "endColumn": 51,
+                    "endOffset": 679
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 684,
+                    "endColumn": 50,
+                    "endOffset": 730
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 735,
+                    "endColumn": 51,
+                    "endOffset": 782
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 787,
+                    "endColumn": 51,
+                    "endOffset": 834
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 839,
+                    "endColumn": 52,
+                    "endOffset": 887
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 892,
+                    "endColumn": 57,
+                    "endOffset": 945
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 950,
+                    "endColumn": 53,
+                    "endOffset": 999
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1004,
+                    "endColumn": 54,
+                    "endOffset": 1054
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1059,
+                    "endColumn": 50,
+                    "endOffset": 1105
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1110,
+                    "endColumn": 51,
+                    "endOffset": 1157
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1162,
+                    "endColumn": 43,
+                    "endOffset": 1201
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1206,
+                    "endColumn": 61,
+                    "endOffset": 1263
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1268,
+                    "endColumn": 63,
+                    "endOffset": 1327
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1332,
+                    "endColumn": 56,
+                    "endOffset": 1384
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 1389,
+                    "endColumn": 53,
+                    "endOffset": 1438
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1443,
+                    "endColumn": 46,
+                    "endOffset": 1485
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1490,
+                    "endColumn": 52,
+                    "endOffset": 1538
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 1543,
+                    "endColumn": 55,
+                    "endOffset": 1594
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 1599,
+                    "endColumn": 50,
+                    "endOffset": 1645
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1650,
+                    "endColumn": 48,
+                    "endOffset": 1694
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 48,
+                        "endOffset": 100
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 1699,
+                    "endColumn": 45,
+                    "endOffset": 1740
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 1745,
+                    "endColumn": 46,
+                    "endOffset": 1787
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1792,
+                    "endColumn": 54,
+                    "endOffset": 1842
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 1847,
+                    "endColumn": 54,
+                    "endOffset": 1897
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 1902,
+                    "endColumn": 52,
+                    "endOffset": 1950
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 1955,
+                    "endColumn": 52,
+                    "endOffset": 2003
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2008,
+                    "endColumn": 53,
+                    "endOffset": 2057
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 2062,
+                    "endColumn": 50,
+                    "endOffset": 2108
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 2113,
+                    "endColumn": 56,
+                    "endOffset": 2165
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2170,
+                    "endColumn": 61,
+                    "endOffset": 2227
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 2232,
+                    "endColumn": 40,
+                    "endOffset": 2268
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 2273,
+                    "endColumn": 51,
+                    "endOffset": 2320
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 2325,
+                    "endColumn": 59,
+                    "endOffset": 2380
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "startOffset": 4750,
+                    "endColumn": 57,
+                    "endOffset": 4803
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 4808,
+                    "endColumn": 55,
+                    "endOffset": 4859
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 63,
+                    "startColumn": 4,
+                    "startOffset": 4864,
+                    "endColumn": 55,
+                    "endOffset": 4915
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 4920,
+                    "endColumn": 56,
+                    "endOffset": 4972
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "startOffset": 4977,
+                    "endColumn": 59,
+                    "endOffset": 5032
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "startOffset": 5037,
+                    "endColumn": 52,
+                    "endOffset": 5085
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 67,
+                    "startColumn": 4,
+                    "startOffset": 5090,
+                    "endColumn": 50,
+                    "endOffset": 5136
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 68,
+                    "startColumn": 4,
+                    "startOffset": 5141,
+                    "endColumn": 48,
+                    "endOffset": 5185
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 69,
+                    "startColumn": 4,
+                    "startOffset": 5190,
+                    "endColumn": 45,
+                    "endOffset": 5231
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 70,
+                    "startColumn": 4,
+                    "startOffset": 5236,
+                    "endColumn": 48,
+                    "endOffset": 5280
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 71,
+                    "startColumn": 4,
+                    "startOffset": 5285,
+                    "endColumn": 45,
+                    "endOffset": 5326
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 72,
+                    "startColumn": 4,
+                    "startOffset": 5331,
+                    "endColumn": 52,
+                    "endOffset": 5379
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 73,
+                    "startColumn": 4,
+                    "startOffset": 5384,
+                    "endColumn": 53,
+                    "endOffset": 5433
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 74,
+                    "startColumn": 4,
+                    "startOffset": 5438,
+                    "endColumn": 50,
+                    "endOffset": 5484
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 75,
+                    "startColumn": 4,
+                    "startOffset": 5489,
+                    "endColumn": 48,
+                    "endOffset": 5533
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 76,
+                    "startColumn": 4,
+                    "startOffset": 5538,
+                    "endColumn": 48,
+                    "endOffset": 5582
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 77,
+                    "startColumn": 4,
+                    "startOffset": 5587,
+                    "endColumn": 42,
+                    "endOffset": 5625
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 78,
+                    "startColumn": 4,
+                    "startOffset": 5630,
+                    "endColumn": 77,
+                    "endOffset": 5703
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 79,
+                    "startColumn": 4,
+                    "startOffset": 5708,
+                    "endColumn": 66,
+                    "endOffset": 5770
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 80,
+                    "startColumn": 4,
+                    "startOffset": 5775,
+                    "endColumn": 74,
+                    "endOffset": 5845
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 81,
+                    "startColumn": 4,
+                    "startOffset": 5850,
+                    "endColumn": 63,
+                    "endOffset": 5909
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 82,
+                    "startColumn": 4,
+                    "startOffset": 5914,
+                    "endColumn": 97,
+                    "endOffset": 6007
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 83,
+                    "startColumn": 4,
+                    "startOffset": 6012,
+                    "endColumn": 78,
+                    "endOffset": 6086
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 84,
+                    "startColumn": 4,
+                    "startOffset": 6091,
+                    "endColumn": 73,
+                    "endOffset": 6160
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 85,
+                    "startColumn": 4,
+                    "startOffset": 6165,
+                    "endColumn": 52,
+                    "endOffset": 6213
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 86,
+                    "startColumn": 4,
+                    "startOffset": 6218,
+                    "endColumn": 76,
+                    "endOffset": 6290
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 87,
+                    "startColumn": 4,
+                    "startOffset": 6295,
+                    "endColumn": 54,
+                    "endOffset": 6345
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 88,
+                    "startColumn": 4,
+                    "startOffset": 6350,
+                    "endColumn": 71,
+                    "endOffset": 6417
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 89,
+                    "startColumn": 4,
+                    "startOffset": 6422,
+                    "endColumn": 48,
+                    "endOffset": 6466
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 90,
+                    "startColumn": 4,
+                    "startOffset": 6471,
+                    "endColumn": 77,
+                    "endOffset": 6544
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 91,
+                    "startColumn": 4,
+                    "startOffset": 6549,
+                    "endColumn": 67,
+                    "endOffset": 6612
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 92,
+                    "startColumn": 4,
+                    "startOffset": 6617,
+                    "endColumn": 94,
+                    "endOffset": 6707
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 93,
+                    "startColumn": 4,
+                    "startOffset": 6712,
+                    "endColumn": 65,
+                    "endOffset": 6773
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 94,
+                    "startColumn": 4,
+                    "startOffset": 6778,
+                    "endColumn": 59,
+                    "endOffset": 6833
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 95,
+                    "startColumn": 4,
+                    "startOffset": 6838,
+                    "endColumn": 58,
+                    "endOffset": 6892
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 96,
+                    "startColumn": 4,
+                    "startOffset": 6897,
+                    "endColumn": 65,
+                    "endOffset": 6958
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 97,
+                    "startColumn": 4,
+                    "startOffset": 6963,
+                    "endColumn": 63,
+                    "endOffset": 7022
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 98,
+                    "startColumn": 4,
+                    "startOffset": 7027,
+                    "endColumn": 83,
+                    "endOffset": 7106
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 99,
+                    "startColumn": 4,
+                    "startOffset": 7111,
+                    "endColumn": 75,
+                    "endOffset": 7182
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 100,
+                    "startColumn": 4,
+                    "startOffset": 7187,
+                    "endColumn": 76,
+                    "endOffset": 7259
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 101,
+                    "startColumn": 4,
+                    "startOffset": 7264,
+                    "endColumn": 68,
+                    "endOffset": 7328
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 102,
+                    "startColumn": 4,
+                    "startOffset": 7333,
+                    "endColumn": 62,
+                    "endOffset": 7391
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 103,
+                    "startColumn": 4,
+                    "startOffset": 7396,
+                    "endColumn": 81,
+                    "endOffset": 7473
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 104,
+                    "startColumn": 4,
+                    "startOffset": 7478,
+                    "endColumn": 75,
+                    "endOffset": 7549
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 105,
+                    "startColumn": 4,
+                    "startOffset": 7554,
+                    "endColumn": 76,
+                    "endOffset": 7626
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 106,
+                    "startColumn": 4,
+                    "startOffset": 7631,
+                    "endColumn": 97,
+                    "endOffset": 7724
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 107,
+                    "startColumn": 4,
+                    "startOffset": 7729,
+                    "endColumn": 82,
+                    "endOffset": 7807
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 108,
+                    "startColumn": 4,
+                    "startOffset": 7812,
+                    "endColumn": 67,
+                    "endOffset": 7875
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 109,
+                    "startColumn": 4,
+                    "startOffset": 7880,
+                    "endColumn": 49,
+                    "endOffset": 7925
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 110,
+                    "startColumn": 4,
+                    "startOffset": 7930,
+                    "endColumn": 72,
+                    "endOffset": 7998
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 111,
+                    "startColumn": 4,
+                    "startOffset": 8003,
+                    "endColumn": 60,
+                    "endOffset": 8059
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 112,
+                    "startColumn": 4,
+                    "startOffset": 8064,
+                    "endColumn": 81,
+                    "endOffset": 8141
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 113,
+                    "startColumn": 4,
+                    "startOffset": 8146,
+                    "endColumn": 57,
+                    "endOffset": 8199
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 114,
+                    "startColumn": 4,
+                    "startOffset": 8204,
+                    "endColumn": 49,
+                    "endOffset": 8249
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 115,
+                    "startColumn": 4,
+                    "startOffset": 8254,
+                    "endColumn": 50,
+                    "endOffset": 8300
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 116,
+                    "startColumn": 4,
+                    "startOffset": 8305,
+                    "endColumn": 83,
+                    "endOffset": 8384
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 117,
+                    "startColumn": 4,
+                    "startOffset": 8389,
+                    "endColumn": 56,
+                    "endOffset": 8441
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 118,
+                    "startColumn": 4,
+                    "startOffset": 8446,
+                    "endColumn": 50,
+                    "endOffset": 8492
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 119,
+                    "startColumn": 4,
+                    "startOffset": 8497,
+                    "endColumn": 62,
+                    "endOffset": 8555
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 120,
+                    "startColumn": 4,
+                    "startOffset": 8560,
+                    "endColumn": 53,
+                    "endOffset": 8609
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 121,
+                    "startColumn": 4,
+                    "startOffset": 8614,
+                    "endColumn": 69,
+                    "endOffset": 8679
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 122,
+                    "startColumn": 4,
+                    "startOffset": 8684,
+                    "endColumn": 46,
+                    "endOffset": 8726
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 123,
+                    "startColumn": 4,
+                    "startOffset": 8731,
+                    "endColumn": 90,
+                    "endOffset": 8817
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 124,
+                    "startColumn": 4,
+                    "startOffset": 8822,
+                    "endColumn": 100,
+                    "endOffset": 8918
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 125,
+                    "startColumn": 4,
+                    "startOffset": 8923,
+                    "endColumn": 49,
+                    "endOffset": 8968
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 126,
+                    "startColumn": 4,
+                    "startOffset": 8973,
+                    "endColumn": 73,
+                    "endOffset": 9042
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 127,
+                    "startColumn": 4,
+                    "startOffset": 9047,
+                    "endColumn": 84,
+                    "endOffset": 9127
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 128,
+                    "startColumn": 4,
+                    "startOffset": 9132,
+                    "endColumn": 70,
+                    "endOffset": 9198
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 129,
+                    "startColumn": 4,
+                    "startOffset": 9203,
+                    "endColumn": 59,
+                    "endOffset": 9258
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 130,
+                    "startColumn": 4,
+                    "startOffset": 9263,
+                    "endColumn": 72,
+                    "endOffset": 9331
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 131,
+                    "startColumn": 4,
+                    "startOffset": 9336,
+                    "endColumn": 55,
+                    "endOffset": 9387
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 132,
+                    "startColumn": 4,
+                    "startOffset": 9392,
+                    "endColumn": 62,
+                    "endOffset": 9450
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 133,
+                    "startColumn": 4,
+                    "startOffset": 9455,
+                    "endColumn": 70,
+                    "endOffset": 9521
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 134,
+                    "startColumn": 4,
+                    "startOffset": 9526,
+                    "endColumn": 83,
+                    "endOffset": 9605
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 135,
+                    "startColumn": 4,
+                    "startOffset": 9610,
+                    "endColumn": 54,
+                    "endOffset": 9660
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 136,
+                    "startColumn": 4,
+                    "startOffset": 9665,
+                    "endColumn": 67,
+                    "endOffset": 9728
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 137,
+                    "startColumn": 4,
+                    "startOffset": 9733,
+                    "endColumn": 81,
+                    "endOffset": 9810
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 138,
+                    "startColumn": 4,
+                    "startOffset": 9815,
+                    "endColumn": 93,
+                    "endOffset": 9904
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 139,
+                    "startColumn": 4,
+                    "startOffset": 9909,
+                    "endColumn": 83,
+                    "endOffset": 9988
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 140,
+                    "startColumn": 4,
+                    "startOffset": 9993,
+                    "endColumn": 83,
+                    "endOffset": 10072
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 141,
+                    "startColumn": 4,
+                    "startOffset": 10077,
+                    "endColumn": 79,
+                    "endOffset": 10152
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 142,
+                    "startColumn": 4,
+                    "startOffset": 10157,
+                    "endColumn": 55,
+                    "endOffset": 10208
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 143,
+                    "startColumn": 4,
+                    "startOffset": 10213,
+                    "endColumn": 43,
+                    "endOffset": 10252
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 144,
+                    "startColumn": 4,
+                    "startOffset": 10257,
+                    "endColumn": 56,
+                    "endOffset": 10309
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 145,
+                    "startColumn": 4,
+                    "startOffset": 10314,
+                    "endColumn": 78,
+                    "endOffset": 10388
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 146,
+                    "startColumn": 4,
+                    "startOffset": 10393,
+                    "endColumn": 82,
+                    "endOffset": 10471
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 147,
+                    "startColumn": 4,
+                    "startOffset": 10476,
+                    "endColumn": 78,
+                    "endOffset": 10550
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 148,
+                    "startColumn": 4,
+                    "startOffset": 10555,
+                    "endColumn": 75,
+                    "endOffset": 10626
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 149,
+                    "startColumn": 4,
+                    "startOffset": 10631,
+                    "endColumn": 85,
+                    "endOffset": 10712
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 150,
+                    "startColumn": 4,
+                    "startOffset": 10717,
+                    "endColumn": 43,
+                    "endOffset": 10756
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 151,
+                    "startColumn": 4,
+                    "startOffset": 10761,
+                    "endColumn": 75,
+                    "endOffset": 10832
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 152,
+                    "startColumn": 4,
+                    "startOffset": 10837,
+                    "endColumn": 75,
+                    "endOffset": 10908
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 153,
+                    "startColumn": 4,
+                    "startOffset": 10913,
+                    "endColumn": 65,
+                    "endOffset": 10974
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 154,
+                    "startColumn": 4,
+                    "startOffset": 10979,
+                    "endColumn": 80,
+                    "endOffset": 11055
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 155,
+                    "startColumn": 4,
+                    "startOffset": 11060,
+                    "endColumn": 83,
+                    "endOffset": 11139
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 156,
+                    "startColumn": 4,
+                    "startOffset": 11144,
+                    "endColumn": 57,
+                    "endOffset": 11197
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 157,
+                    "startColumn": 4,
+                    "startOffset": 11202,
+                    "endColumn": 65,
+                    "endOffset": 11263
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 158,
+                    "startColumn": 4,
+                    "startOffset": 11268,
+                    "endColumn": 84,
+                    "endOffset": 11348
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 159,
+                    "startColumn": 4,
+                    "startOffset": 11353,
+                    "endColumn": 89,
+                    "endOffset": 11438
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 160,
+                    "startColumn": 4,
+                    "startOffset": 11443,
+                    "endColumn": 66,
+                    "endOffset": 11505
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 161,
+                    "startColumn": 4,
+                    "startOffset": 11510,
+                    "endColumn": 85,
+                    "endOffset": 11591
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 162,
+                    "startColumn": 4,
+                    "startOffset": 11596,
+                    "endColumn": 95,
+                    "endOffset": 11687
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 163,
+                    "startColumn": 4,
+                    "startOffset": 11692,
+                    "endColumn": 63,
+                    "endOffset": 11751
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 164,
+                    "startColumn": 4,
+                    "startOffset": 11756,
+                    "endColumn": 76,
+                    "endOffset": 11828
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 165,
+                    "startColumn": 4,
+                    "startOffset": 11833,
+                    "endColumn": 74,
+                    "endOffset": 11903
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 166,
+                    "startColumn": 4,
+                    "startOffset": 11908,
+                    "endColumn": 78,
+                    "endOffset": 11982
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 167,
+                    "startColumn": 4,
+                    "startOffset": 11987,
+                    "endColumn": 99,
+                    "endOffset": 12082
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 168,
+                    "startColumn": 4,
+                    "startOffset": 12087,
+                    "endColumn": 82,
+                    "endOffset": 12165
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 169,
+                    "startColumn": 4,
+                    "startOffset": 12170,
+                    "endColumn": 86,
+                    "endOffset": 12252
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 170,
+                    "startColumn": 4,
+                    "startOffset": 12257,
+                    "endColumn": 75,
+                    "endOffset": 12328
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 171,
+                    "startColumn": 4,
+                    "startOffset": 12333,
+                    "endColumn": 102,
+                    "endOffset": 12431
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 172,
+                    "startColumn": 4,
+                    "startOffset": 12436,
+                    "endColumn": 82,
+                    "endOffset": 12514
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 173,
+                    "startColumn": 4,
+                    "startOffset": 12519,
+                    "endColumn": 91,
+                    "endOffset": 12606
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 174,
+                    "startColumn": 4,
+                    "startOffset": 12611,
+                    "endColumn": 65,
+                    "endOffset": 12672
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 175,
+                    "startColumn": 4,
+                    "startOffset": 12677,
+                    "endColumn": 93,
+                    "endOffset": 12766
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 176,
+                    "startColumn": 4,
+                    "startOffset": 12771,
+                    "endColumn": 59,
+                    "endOffset": 12826
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 177,
+                    "startColumn": 4,
+                    "startOffset": 12831,
+                    "endColumn": 89,
+                    "endOffset": 12916
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 178,
+                    "startColumn": 4,
+                    "startOffset": 12921,
+                    "endColumn": 60,
+                    "endOffset": 12977
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 179,
+                    "startColumn": 4,
+                    "startOffset": 12982,
+                    "endColumn": 69,
+                    "endOffset": 13047
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 180,
+                    "startColumn": 4,
+                    "startOffset": 13052,
+                    "endColumn": 80,
+                    "endOffset": 13128
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 181,
+                    "startColumn": 4,
+                    "startOffset": 13133,
+                    "endColumn": 75,
+                    "endOffset": 13204
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 182,
+                    "startColumn": 4,
+                    "startOffset": 13209,
+                    "endColumn": 54,
+                    "endOffset": 13259
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 183,
+                    "startColumn": 4,
+                    "startOffset": 13264,
+                    "endColumn": 56,
+                    "endOffset": 13316
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 184,
+                    "startColumn": 4,
+                    "startOffset": 13321,
+                    "endColumn": 74,
+                    "endOffset": 13391
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 185,
+                    "startColumn": 4,
+                    "startOffset": 13396,
+                    "endColumn": 65,
+                    "endOffset": 13457
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 186,
+                    "startColumn": 4,
+                    "startOffset": 13462,
+                    "endColumn": 50,
+                    "endOffset": 13508
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 187,
+                    "startColumn": 4,
+                    "startOffset": 13513,
+                    "endColumn": 66,
+                    "endOffset": 13575
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 188,
+                    "startColumn": 4,
+                    "startOffset": 13580,
+                    "endColumn": 53,
+                    "endOffset": 13629
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 189,
+                    "startColumn": 4,
+                    "startOffset": 13634,
+                    "endColumn": 39,
+                    "endOffset": 13669
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 190,
+                    "startColumn": 4,
+                    "startOffset": 13674,
+                    "endColumn": 51,
+                    "endOffset": 13721
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 191,
+                    "startColumn": 4,
+                    "startOffset": 13726,
+                    "endColumn": 41,
+                    "endOffset": 13763
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 192,
+                    "startColumn": 4,
+                    "startOffset": 13768,
+                    "endColumn": 69,
+                    "endOffset": 13833
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 193,
+                    "startColumn": 4,
+                    "startOffset": 13838,
+                    "endColumn": 44,
+                    "endOffset": 13878
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 194,
+                    "startColumn": 4,
+                    "startOffset": 13883,
+                    "endColumn": 52,
+                    "endOffset": 13931
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 195,
+                    "startColumn": 4,
+                    "startOffset": 13936,
+                    "endColumn": 48,
+                    "endOffset": 13980
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 196,
+                    "startColumn": 4,
+                    "startOffset": 13985,
+                    "endColumn": 49,
+                    "endOffset": 14030
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 197,
+                    "startColumn": 4,
+                    "startOffset": 14035,
+                    "endColumn": 51,
+                    "endOffset": 14082
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 198,
+                    "startColumn": 4,
+                    "startOffset": 14087,
+                    "endColumn": 46,
+                    "endOffset": 14129
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 199,
+                    "startColumn": 4,
+                    "startOffset": 14134,
+                    "endColumn": 56,
+                    "endOffset": 14186
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 200,
+                    "startColumn": 4,
+                    "startOffset": 14191,
+                    "endColumn": 56,
+                    "endOffset": 14243
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 201,
+                    "startColumn": 4,
+                    "startOffset": 14248,
+                    "endColumn": 37,
+                    "endOffset": 14281
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 202,
+                    "startColumn": 4,
+                    "startOffset": 14286,
+                    "endColumn": 51,
+                    "endOffset": 14333
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 203,
+                    "startColumn": 4,
+                    "startOffset": 14338,
+                    "endColumn": 45,
+                    "endOffset": 14379
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 204,
+                    "startColumn": 4,
+                    "startOffset": 14384,
+                    "endColumn": 49,
+                    "endOffset": 14429
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 205,
+                    "startColumn": 4,
+                    "startOffset": 14434,
+                    "endColumn": 48,
+                    "endOffset": 14478
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 206,
+                    "startColumn": 4,
+                    "startOffset": 14483,
+                    "endColumn": 49,
+                    "endOffset": 14528
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 207,
+                    "startColumn": 4,
+                    "startOffset": 14533,
+                    "endColumn": 42,
+                    "endOffset": 14571
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 208,
+                    "startColumn": 4,
+                    "startOffset": 14576,
+                    "endColumn": 48,
+                    "endOffset": 14620
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 209,
+                    "startColumn": 4,
+                    "startOffset": 14625,
+                    "endColumn": 48,
+                    "endOffset": 14669
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 210,
+                    "startColumn": 4,
+                    "startOffset": 14674,
+                    "endColumn": 58,
+                    "endOffset": 14728
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 211,
+                    "startColumn": 4,
+                    "startOffset": 14733,
+                    "endColumn": 44,
+                    "endOffset": 14773
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 212,
+                    "startColumn": 4,
+                    "startOffset": 14778,
+                    "endColumn": 46,
+                    "endOffset": 14820
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 213,
+                    "startColumn": 4,
+                    "startOffset": 14825,
+                    "endColumn": 44,
+                    "endOffset": 14865
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 214,
+                    "startColumn": 4,
+                    "startOffset": 14870,
+                    "endColumn": 59,
+                    "endOffset": 14925
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 215,
+                    "startColumn": 4,
+                    "startOffset": 14930,
+                    "endColumn": 55,
+                    "endOffset": 14981
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 216,
+                    "startColumn": 4,
+                    "startOffset": 14986,
+                    "endColumn": 91,
+                    "endOffset": 15073
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 217,
+                    "startColumn": 4,
+                    "startOffset": 15078,
+                    "endColumn": 41,
+                    "endOffset": 15115
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 218,
+                    "startColumn": 4,
+                    "startOffset": 15120,
+                    "endColumn": 68,
+                    "endOffset": 15184
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 219,
+                    "startColumn": 4,
+                    "startOffset": 15189,
+                    "endColumn": 140,
+                    "endOffset": 15325
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 220,
+                    "startColumn": 4,
+                    "startOffset": 15330,
+                    "endColumn": 47,
+                    "endOffset": 15373
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 221,
+                    "startColumn": 4,
+                    "startOffset": 15378,
+                    "endColumn": 81,
+                    "endOffset": 15455
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 222,
+                    "startColumn": 4,
+                    "startOffset": 15460,
+                    "endColumn": 49,
+                    "endOffset": 15505
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 223,
+                    "startColumn": 4,
+                    "startOffset": 15510,
+                    "endColumn": 68,
+                    "endOffset": 15574
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 224,
+                    "startColumn": 4,
+                    "startOffset": 15579,
+                    "endColumn": 70,
+                    "endOffset": 15645
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 225,
+                    "startColumn": 4,
+                    "startOffset": 15650,
+                    "endColumn": 61,
+                    "endOffset": 15707
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 226,
+                    "startColumn": 4,
+                    "startOffset": 15712,
+                    "endColumn": 75,
+                    "endOffset": 15783
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 227,
+                    "startColumn": 4,
+                    "startOffset": 15788,
+                    "endColumn": 61,
+                    "endOffset": 15845
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 228,
+                    "startColumn": 4,
+                    "startOffset": 15850,
+                    "endColumn": 84,
+                    "endOffset": 15930
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 229,
+                    "startColumn": 4,
+                    "startOffset": 15935,
+                    "endColumn": 60,
+                    "endOffset": 15991
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 230,
+                    "startColumn": 4,
+                    "startOffset": 15996,
+                    "endColumn": 90,
+                    "endOffset": 16082
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 231,
+                    "startColumn": 4,
+                    "startOffset": 16087,
+                    "endColumn": 93,
+                    "endOffset": 16176
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 232,
+                    "startColumn": 4,
+                    "startOffset": 16181,
+                    "endColumn": 37,
+                    "endOffset": 16214
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 233,
+                    "startColumn": 4,
+                    "startOffset": 16219,
+                    "endColumn": 53,
+                    "endOffset": 16268
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 234,
+                    "startColumn": 4,
+                    "startOffset": 16273,
+                    "endColumn": 41,
+                    "endOffset": 16310
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 235,
+                    "startColumn": 4,
+                    "startOffset": 16315,
+                    "endColumn": 67,
+                    "endOffset": 16378
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 236,
+                    "startColumn": 4,
+                    "startOffset": 16383,
+                    "endColumn": 89,
+                    "endOffset": 16468
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 237,
+                    "startColumn": 4,
+                    "startOffset": 16473,
+                    "endColumn": 57,
+                    "endOffset": 16526
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 238,
+                    "startColumn": 4,
+                    "startOffset": 16531,
+                    "endColumn": 53,
+                    "endOffset": 16580
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 239,
+                    "startColumn": 4,
+                    "startOffset": 16585,
+                    "endColumn": 53,
+                    "endOffset": 16634
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 240,
+                    "startColumn": 4,
+                    "startOffset": 16639,
+                    "endColumn": 47,
+                    "endOffset": 16682
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 241,
+                    "startColumn": 4,
+                    "startOffset": 16687,
+                    "endColumn": 45,
+                    "endOffset": 16728
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 242,
+                    "startColumn": 4,
+                    "startOffset": 16733,
+                    "endColumn": 57,
+                    "endOffset": 16786
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 243,
+                    "startColumn": 4,
+                    "startOffset": 16791,
+                    "endColumn": 46,
+                    "endOffset": 16833
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 244,
+                    "startColumn": 4,
+                    "startOffset": 16838,
+                    "endColumn": 55,
+                    "endOffset": 16889
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 245,
+                    "startColumn": 4,
+                    "startOffset": 16894,
+                    "endColumn": 92,
+                    "endOffset": 16982
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 246,
+                    "startColumn": 4,
+                    "startOffset": 16987,
+                    "endColumn": 44,
+                    "endOffset": 17027
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 247,
+                    "startColumn": 4,
+                    "startOffset": 17032,
+                    "endColumn": 60,
+                    "endOffset": 17088
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 248,
+                    "startColumn": 4,
+                    "startOffset": 17093,
+                    "endColumn": 56,
+                    "endOffset": 17145
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 249,
+                    "startColumn": 4,
+                    "startOffset": 17150,
+                    "endColumn": 36,
+                    "endOffset": 17182
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 250,
+                    "startColumn": 4,
+                    "startOffset": 17187,
+                    "endColumn": 62,
+                    "endOffset": 17245
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 251,
+                    "startColumn": 4,
+                    "startOffset": 17250,
+                    "endColumn": 58,
+                    "endOffset": 17304
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 252,
+                    "startColumn": 4,
+                    "startOffset": 17309,
+                    "endColumn": 56,
+                    "endOffset": 17361
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 253,
+                    "startColumn": 4,
+                    "startOffset": 17366,
+                    "endColumn": 47,
+                    "endOffset": 17409
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 254,
+                    "startColumn": 4,
+                    "startOffset": 17414,
+                    "endColumn": 82,
+                    "endOffset": 17492
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 255,
+                    "startColumn": 4,
+                    "startOffset": 17497,
+                    "endColumn": 67,
+                    "endOffset": 17560
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 256,
+                    "startColumn": 4,
+                    "startOffset": 17565,
+                    "endColumn": 101,
+                    "endOffset": 17662
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 257,
+                    "startColumn": 4,
+                    "startOffset": 17667,
+                    "endColumn": 89,
+                    "endOffset": 17752
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 258,
+                    "startColumn": 4,
+                    "startOffset": 17757,
+                    "endColumn": 43,
+                    "endOffset": 17796
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 259,
+                    "startColumn": 4,
+                    "startOffset": 17801,
+                    "endColumn": 107,
+                    "endOffset": 17904
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 260,
+                    "startColumn": 4,
+                    "startOffset": 17909,
+                    "endColumn": 51,
+                    "endOffset": 17956
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 261,
+                    "startColumn": 4,
+                    "startOffset": 17961,
+                    "endColumn": 108,
+                    "endOffset": 18065
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 262,
+                    "startColumn": 4,
+                    "startOffset": 18070,
+                    "endColumn": 124,
+                    "endOffset": 18190
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 263,
+                    "startColumn": 4,
+                    "startOffset": 18195,
+                    "endColumn": 39,
+                    "endOffset": 18230
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 264,
+                    "startColumn": 4,
+                    "startOffset": 18235,
+                    "endColumn": 43,
+                    "endOffset": 18274
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 265,
+                    "startColumn": 4,
+                    "startOffset": 18279,
+                    "endColumn": 115,
+                    "endOffset": 18390
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 266,
+                    "startColumn": 4,
+                    "startOffset": 18395,
+                    "endColumn": 67,
+                    "endOffset": 18458
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 267,
+                    "startColumn": 4,
+                    "startOffset": 18463,
+                    "endColumn": 49,
+                    "endOffset": 18508
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 268,
+                    "startColumn": 4,
+                    "startOffset": 18513,
+                    "endColumn": 45,
+                    "endOffset": 18554
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 269,
+                    "startColumn": 4,
+                    "startOffset": 18559,
+                    "endColumn": 65,
+                    "endOffset": 18620
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 270,
+                    "startColumn": 4,
+                    "startOffset": 18625,
+                    "endColumn": 49,
+                    "endOffset": 18670
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 271,
+                    "startColumn": 4,
+                    "startOffset": 18675,
+                    "endColumn": 70,
+                    "endOffset": 18741
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 272,
+                    "startColumn": 4,
+                    "startOffset": 18746,
+                    "endColumn": 118,
+                    "endOffset": 18860
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 273,
+                    "startColumn": 4,
+                    "startOffset": 18865,
+                    "endColumn": 61,
+                    "endOffset": 18922
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 274,
+                    "startColumn": 4,
+                    "startOffset": 18927,
+                    "endColumn": 43,
+                    "endOffset": 18966
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 275,
+                    "startColumn": 4,
+                    "startOffset": 18971,
+                    "endColumn": 51,
+                    "endOffset": 19018
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 276,
+                    "startColumn": 4,
+                    "startOffset": 19023,
+                    "endColumn": 104,
+                    "endOffset": 19123
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 277,
+                    "startColumn": 4,
+                    "startOffset": 19128,
+                    "endColumn": 81,
+                    "endOffset": 19205
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 278,
+                    "startColumn": 4,
+                    "startOffset": 19210,
+                    "endColumn": 63,
+                    "endOffset": 19269
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 279,
+                    "startColumn": 4,
+                    "startOffset": 19274,
+                    "endColumn": 64,
+                    "endOffset": 19334
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 280,
+                    "startColumn": 4,
+                    "startOffset": 19339,
+                    "endColumn": 87,
+                    "endOffset": 19422
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 281,
+                    "startColumn": 4,
+                    "startOffset": 19427,
+                    "endColumn": 79,
+                    "endOffset": 19502
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 282,
+                    "startColumn": 4,
+                    "startOffset": 19507,
+                    "endColumn": 64,
+                    "endOffset": 19567
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 283,
+                    "startColumn": 4,
+                    "startOffset": 19572,
+                    "endColumn": 63,
+                    "endOffset": 19631
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 284,
+                    "startColumn": 4,
+                    "startOffset": 19636,
+                    "endColumn": 74,
+                    "endOffset": 19706
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 285,
+                    "startColumn": 4,
+                    "startOffset": 19711,
+                    "endColumn": 69,
+                    "endOffset": 19776
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 286,
+                    "startColumn": 4,
+                    "startOffset": 19781,
+                    "endColumn": 57,
+                    "endOffset": 19834
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 287,
+                    "startColumn": 4,
+                    "startOffset": 19839,
+                    "endColumn": 57,
+                    "endOffset": 19892
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 288,
+                    "startColumn": 4,
+                    "startOffset": 19897,
+                    "endColumn": 39,
+                    "endOffset": 19932
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 289,
+                    "startColumn": 4,
+                    "startOffset": 19937,
+                    "endColumn": 101,
+                    "endOffset": 20034
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 290,
+                    "startColumn": 4,
+                    "startOffset": 20039,
+                    "endColumn": 41,
+                    "endOffset": 20076
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 291,
+                    "startColumn": 4,
+                    "startOffset": 20081,
+                    "endColumn": 120,
+                    "endOffset": 20197
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 292,
+                    "startColumn": 4,
+                    "startOffset": 20202,
+                    "endColumn": 67,
+                    "endOffset": 20265
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 293,
+                    "startColumn": 4,
+                    "startOffset": 20270,
+                    "endColumn": 73,
+                    "endOffset": 20339
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 294,
+                    "startColumn": 4,
+                    "startOffset": 20344,
+                    "endColumn": 37,
+                    "endOffset": 20377
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 295,
+                    "startColumn": 4,
+                    "startOffset": 20382,
+                    "endColumn": 97,
+                    "endOffset": 20475
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 296,
+                    "startColumn": 4,
+                    "startOffset": 20480,
+                    "endColumn": 80,
+                    "endOffset": 20556
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 297,
+                    "startColumn": 4,
+                    "startOffset": 20561,
+                    "endColumn": 113,
+                    "endOffset": 20670
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 298,
+                    "startColumn": 4,
+                    "startOffset": 20675,
+                    "endColumn": 52,
+                    "endOffset": 20723
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 299,
+                    "startColumn": 4,
+                    "startOffset": 20728,
+                    "endColumn": 61,
+                    "endOffset": 20785
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 300,
+                    "startColumn": 4,
+                    "startOffset": 20790,
+                    "endColumn": 45,
+                    "endOffset": 20831
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 301,
+                    "startColumn": 4,
+                    "startOffset": 20836,
+                    "endColumn": 191,
+                    "endOffset": 21023
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 302,
+                    "startColumn": 4,
+                    "startOffset": 21028,
+                    "endColumn": 61,
+                    "endOffset": 21085
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 303,
+                    "startColumn": 4,
+                    "startOffset": 21090,
+                    "endColumn": 61,
+                    "endOffset": 21147
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 304,
+                    "startColumn": 4,
+                    "startOffset": 21152,
+                    "endColumn": 95,
+                    "endOffset": 21243
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 305,
+                    "startColumn": 4,
+                    "startOffset": 21248,
+                    "endColumn": 66,
+                    "endOffset": 21310
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 306,
+                    "startColumn": 4,
+                    "startOffset": 21315,
+                    "endColumn": 58,
+                    "endOffset": 21369
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 307,
+                    "startColumn": 4,
+                    "startOffset": 21374,
+                    "endColumn": 59,
+                    "endOffset": 21429
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 308,
+                    "startColumn": 4,
+                    "startOffset": 21434,
+                    "endColumn": 68,
+                    "endOffset": 21498
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 309,
+                    "startColumn": 4,
+                    "startOffset": 21503,
+                    "endColumn": 33,
+                    "endOffset": 21532
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 310,
+                    "startColumn": 4,
+                    "startOffset": 21537,
+                    "endColumn": 45,
+                    "endOffset": 21578
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 311,
+                    "startColumn": 4,
+                    "startOffset": 21583,
+                    "endColumn": 41,
+                    "endOffset": 21620
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 312,
+                    "startColumn": 4,
+                    "startOffset": 21625,
+                    "endColumn": 45,
+                    "endOffset": 21666
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 313,
+                    "startColumn": 4,
+                    "startOffset": 21671,
+                    "endColumn": 114,
+                    "endOffset": 21781
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 314,
+                    "startColumn": 4,
+                    "startOffset": 21786,
+                    "endColumn": 149,
+                    "endOffset": 21931
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 315,
+                    "startColumn": 4,
+                    "startOffset": 21936,
+                    "endColumn": 41,
+                    "endOffset": 21973
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 316,
+                    "startColumn": 4,
+                    "startOffset": 21978,
+                    "endColumn": 59,
+                    "endOffset": 22033
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 317,
+                    "startColumn": 4,
+                    "startOffset": 22038,
+                    "endColumn": 81,
+                    "endOffset": 22115
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 318,
+                    "startColumn": 4,
+                    "startOffset": 22120,
+                    "endColumn": 82,
+                    "endOffset": 22198
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 319,
+                    "startColumn": 4,
+                    "startOffset": 22203,
+                    "endColumn": 56,
+                    "endOffset": 22255
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 320,
+                    "startColumn": 4,
+                    "startOffset": 22260,
+                    "endColumn": 71,
+                    "endOffset": 22327
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 321,
+                    "startColumn": 4,
+                    "startOffset": 22332,
+                    "endColumn": 45,
+                    "endOffset": 22373
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 322,
+                    "startColumn": 4,
+                    "startOffset": 22378,
+                    "endColumn": 44,
+                    "endOffset": 22418
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 323,
+                    "startColumn": 4,
+                    "startOffset": 22423,
+                    "endColumn": 78,
+                    "endOffset": 22497
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 324,
+                    "startColumn": 4,
+                    "startOffset": 22502,
+                    "endColumn": 122,
+                    "endOffset": 22620
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 325,
+                    "startColumn": 4,
+                    "startOffset": 22625,
+                    "endColumn": 41,
+                    "endOffset": 22662
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 326,
+                    "startColumn": 4,
+                    "startOffset": 22667,
+                    "endColumn": 49,
+                    "endOffset": 22712
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 327,
+                    "startColumn": 4,
+                    "startOffset": 22717,
+                    "endColumn": 37,
+                    "endOffset": 22750
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 328,
+                    "startColumn": 4,
+                    "startOffset": 22755,
+                    "endColumn": 63,
+                    "endOffset": 22814
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 329,
+                    "startColumn": 4,
+                    "startOffset": 22819,
+                    "endColumn": 96,
+                    "endOffset": 22911
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 330,
+                    "startColumn": 4,
+                    "startOffset": 22916,
+                    "endColumn": 41,
+                    "endOffset": 22953
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 331,
+                    "startColumn": 4,
+                    "startOffset": 22958,
+                    "endColumn": 48,
+                    "endOffset": 23002
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 332,
+                    "startColumn": 4,
+                    "startOffset": 23007,
+                    "endColumn": 45,
+                    "endOffset": 23048
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 333,
+                    "startColumn": 4,
+                    "startOffset": 23053,
+                    "endColumn": 66,
+                    "endOffset": 23115
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 334,
+                    "startColumn": 4,
+                    "startOffset": 23120,
+                    "endColumn": 47,
+                    "endOffset": 23163
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 335,
+                    "startColumn": 4,
+                    "startOffset": 23168,
+                    "endColumn": 62,
+                    "endOffset": 23226
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 336,
+                    "startColumn": 4,
+                    "startOffset": 23231,
+                    "endColumn": 49,
+                    "endOffset": 23276
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 337,
+                    "startColumn": 4,
+                    "startOffset": 23281,
+                    "endColumn": 103,
+                    "endOffset": 23380
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 338,
+                    "startColumn": 4,
+                    "startOffset": 23385,
+                    "endColumn": 92,
+                    "endOffset": 23473
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 339,
+                    "startColumn": 4,
+                    "startOffset": 23478,
+                    "endColumn": 99,
+                    "endOffset": 23573
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 340,
+                    "startColumn": 4,
+                    "startOffset": 23578,
+                    "endColumn": 48,
+                    "endOffset": 23622
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 341,
+                    "startColumn": 4,
+                    "startOffset": 23627,
+                    "endColumn": 40,
+                    "endOffset": 23663
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 342,
+                    "startColumn": 4,
+                    "startOffset": 23668,
+                    "endColumn": 44,
+                    "endOffset": 23708
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 343,
+                    "startColumn": 4,
+                    "startOffset": 23713,
+                    "endColumn": 61,
+                    "endOffset": 23770
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 344,
+                    "startColumn": 4,
+                    "startOffset": 23775,
+                    "endColumn": 39,
+                    "endOffset": 23810
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 345,
+                    "startColumn": 4,
+                    "startOffset": 23815,
+                    "endColumn": 66,
+                    "endOffset": 23877
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 346,
+                    "startColumn": 4,
+                    "startOffset": 23882,
+                    "endColumn": 106,
+                    "endOffset": 23984
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 347,
+                    "startColumn": 4,
+                    "startOffset": 23989,
+                    "endColumn": 45,
+                    "endOffset": 24030
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 348,
+                    "startColumn": 4,
+                    "startOffset": 24035,
+                    "endColumn": 56,
+                    "endOffset": 24087
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 349,
+                    "startColumn": 4,
+                    "startOffset": 24092,
+                    "endColumn": 82,
+                    "endOffset": 24170
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 350,
+                    "startColumn": 4,
+                    "startOffset": 24175,
+                    "endColumn": 119,
+                    "endOffset": 24290
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 351,
+                    "startColumn": 4,
+                    "startOffset": 24295,
+                    "endColumn": 59,
+                    "endOffset": 24350
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 352,
+                    "startColumn": 4,
+                    "startOffset": 24355,
+                    "endColumn": 71,
+                    "endOffset": 24422
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 353,
+                    "startColumn": 4,
+                    "startOffset": 24427,
+                    "endColumn": 56,
+                    "endOffset": 24479
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 354,
+                    "startColumn": 4,
+                    "startOffset": 24484,
+                    "endColumn": 71,
+                    "endOffset": 24551
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 355,
+                    "startColumn": 4,
+                    "startOffset": 24556,
+                    "endColumn": 77,
+                    "endOffset": 24629
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 356,
+                    "startColumn": 4,
+                    "startOffset": 24634,
+                    "endColumn": 69,
+                    "endOffset": 24699
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 357,
+                    "startColumn": 4,
+                    "startOffset": 24704,
+                    "endColumn": 75,
+                    "endOffset": 24775
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 358,
+                    "startColumn": 4,
+                    "startOffset": 24780,
+                    "endColumn": 77,
+                    "endOffset": 24853
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 359,
+                    "startColumn": 4,
+                    "startOffset": 24858,
+                    "endColumn": 94,
+                    "endOffset": 24948
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 360,
+                    "startColumn": 4,
+                    "startOffset": 24953,
+                    "endColumn": 51,
+                    "endOffset": 25000
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 361,
+                    "startColumn": 4,
+                    "startOffset": 25005,
+                    "endColumn": 47,
+                    "endOffset": 25048
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 362,
+                    "startColumn": 4,
+                    "startOffset": 25053,
+                    "endColumn": 41,
+                    "endOffset": 25090
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 363,
+                    "startColumn": 4,
+                    "startOffset": 25095,
+                    "endColumn": 51,
+                    "endOffset": 25142
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 364,
+                    "startColumn": 4,
+                    "startOffset": 25147,
+                    "endColumn": 39,
+                    "endOffset": 25182
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 365,
+                    "startColumn": 4,
+                    "startOffset": 25187,
+                    "endColumn": 51,
+                    "endOffset": 25234
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 366,
+                    "startColumn": 4,
+                    "startOffset": 25239,
+                    "endColumn": 48,
+                    "endOffset": 25283
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 367,
+                    "startColumn": 4,
+                    "startOffset": 25288,
+                    "endColumn": 61,
+                    "endOffset": 25345
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 368,
+                    "startColumn": 4,
+                    "startOffset": 25350,
+                    "endColumn": 51,
+                    "endOffset": 25397
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 369,
+                    "startColumn": 4,
+                    "startOffset": 25402,
+                    "endColumn": 81,
+                    "endOffset": 25479
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 370,
+                    "startColumn": 4,
+                    "startOffset": 25484,
+                    "endLine": 373,
+                    "endColumn": 12,
+                    "endOffset": 25712
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 374,
+                    "startColumn": 4,
+                    "startOffset": 25717,
+                    "endLine": 378,
+                    "endColumn": 12,
+                    "endOffset": 26024
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 379,
+                    "startColumn": 4,
+                    "startOffset": 26029,
+                    "endLine": 384,
+                    "endColumn": 12,
+                    "endOffset": 26461
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 385,
+                    "startColumn": 4,
+                    "startOffset": 26466,
+                    "endLine": 388,
+                    "endColumn": 12,
+                    "endOffset": 26678
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 389,
+                    "startColumn": 4,
+                    "startOffset": 26683,
+                    "endLine": 392,
+                    "endColumn": 12,
+                    "endOffset": 26902
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 393,
+                    "startColumn": 4,
+                    "startOffset": 26907,
+                    "endLine": 396,
+                    "endColumn": 12,
+                    "endOffset": 27129
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 397,
+                    "startColumn": 4,
+                    "startOffset": 27134,
+                    "endLine": 399,
+                    "endColumn": 12,
+                    "endOffset": 27290
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 400,
+                    "startColumn": 4,
+                    "startOffset": 27295,
+                    "endLine": 402,
+                    "endColumn": 12,
+                    "endOffset": 27441
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 403,
+                    "startColumn": 4,
+                    "startOffset": 27446,
+                    "endColumn": 57,
+                    "endOffset": 27499
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 404,
+                    "startColumn": 4,
+                    "startOffset": 27504,
+                    "endLine": 417,
+                    "endColumn": 12,
+                    "endOffset": 28054
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 418,
+                    "startColumn": 4,
+                    "startOffset": 28059,
+                    "endLine": 423,
+                    "endColumn": 12,
+                    "endOffset": 28389
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 424,
+                    "startColumn": 4,
+                    "startOffset": 28394,
+                    "endLine": 433,
+                    "endColumn": 12,
+                    "endOffset": 28957
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 434,
+                    "startColumn": 4,
+                    "startOffset": 28962,
+                    "endLine": 448,
+                    "endColumn": 12,
+                    "endOffset": 29538
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 449,
+                    "startColumn": 4,
+                    "startOffset": 29543,
+                    "endLine": 463,
+                    "endColumn": 12,
+                    "endOffset": 30115
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 464,
+                    "startColumn": 4,
+                    "startOffset": 30120,
+                    "endLine": 472,
+                    "endColumn": 12,
+                    "endOffset": 30633
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 473,
+                    "startColumn": 4,
+                    "startOffset": 30638,
+                    "endLine": 480,
+                    "endColumn": 12,
+                    "endOffset": 31007
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 481,
+                    "startColumn": 4,
+                    "startOffset": 31012,
+                    "endLine": 490,
+                    "endColumn": 12,
+                    "endOffset": 31519
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 491,
+                    "startColumn": 4,
+                    "startOffset": 31524,
+                    "endLine": 495,
+                    "endColumn": 12,
+                    "endOffset": 31727
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 496,
+                    "startColumn": 4,
+                    "startOffset": 31732,
+                    "endLine": 500,
+                    "endColumn": 12,
+                    "endOffset": 31945
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 501,
+                    "startColumn": 4,
+                    "startOffset": 31950,
+                    "endLine": 503,
+                    "endColumn": 12,
+                    "endOffset": 32102
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 504,
+                    "startColumn": 4,
+                    "startOffset": 32107,
+                    "endColumn": 66,
+                    "endOffset": 32169
+                },
+                "from": {
+                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\values\\ease_styles.xml"
+                }
+            }
+        ]
+    }
+]
