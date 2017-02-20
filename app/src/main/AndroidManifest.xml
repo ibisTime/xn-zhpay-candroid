@@ -5,6 +5,7 @@
     android:versionName="1.0.0"
     >
 
+
     <!-- JPush -->
     <permission
         android:name="com.zhenghui.zhqb.zhenghuiqianbaomember.permission.JPUSH_MESSAGE"
