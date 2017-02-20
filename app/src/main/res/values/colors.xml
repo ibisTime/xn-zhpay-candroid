@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="disLight">#fafafa</color>
+    <color name="highLight">#ffffff</color>
+    <color name="bgcolor">#f0f0f0</color>
+
+    <color name="lineColor">#eeeeee</color>
+    <color name="lineColor_gray">#dedede</color>
+    <color name="intervalColor">#f0f0f0</color>
+
+    <color name="fontColor_gray">#484848</color>
+    <color name="fontColor_hint">#aaaaaa</color>
+    <color name="fontColor_orange">#FE4332</color>
+    <color name="fontColor_support">#999999</color>
+    <color name="fontColor_white">#ffffff</color>
+
+
+    <color name="gray8c">#8c8c8c</color>
+    <color name="gray_deep">#5c5c5c</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="gray4d">#4D4D4D</color>
+    <color name="gray">#B4B4B4</color>
+    <color name="orange">#FE4332</color>
+    <color name="grayf0">#F0F0F0</color>
+    <color name="grayfa">#FAFAFA</color>
+    <color name="grayf8">#66f8f8f8</color>
+    <color name="gray7f">#7fffffff</color>
+    <color name="graycc">#cccccc</color>
+    <color name="divider">#E5E5E5</color>
+
+    <color name="primary">#FF03A9F4</color>
+    <color name="primary_dark">#FF0288D1</color>
+    <color name="status_bar_color">@color/primary_dark</color>
+
+</resources>

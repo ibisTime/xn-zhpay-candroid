@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="13sp"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp" />
+
+
+        <TextView
+            android:id="@+id/txt_number"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="90dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/fontColor_support"
+            android:textSize="13sp"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp" />
+
+        <TextView
+            android:id="@+id/txt_check"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:text="查看号码"
+            android:textColor="@color/fontColor_orange"
+            android:textSize="13sp"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

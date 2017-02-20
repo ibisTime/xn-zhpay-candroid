@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@mipmap/bank_cart_bg_nongye"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <ImageView
+            android:background="@mipmap/bank_cart_logo_nongye"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:id="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:text="农业银行"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_marginStart="15dp"
+             />
+
+        <TextView
+            android:id="@+id/txt_type"
+            android:layout_marginTop="1dp"
+            android:text="储蓄卡"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_name"
+            android:layout_alignStart="@+id/txt_name" />
+
+        <TextView
+            android:text="**** **** **** 4728"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/txt_type"
+            android:layout_alignStart="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>

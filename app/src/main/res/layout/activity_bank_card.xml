@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/intervalColor"
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.BankCardActivity">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/layout_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:background="@mipmap/back_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_bankCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/fontColor_gray"
+            android:text="我的银行卡"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:id="@+id/txt_add"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/fontColor_gray"
+            android:text="添加"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <ListView
+        android:id="@+id/list_bankCart"
+        android:dividerHeight="0dp"
+        android:divider="@color/intervalColor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:background="@mipmap/bank_cart_bg_nongye"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <ImageView
+            android:id="@+id/img_bankCart2"
+            android:background="@mipmap/bank_cart_logo_nongye"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+             />
+
+        <TextView
+            android:id="@+id/txt_name2"
+            android:text="农业银行"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_bankCart2"
+            android:layout_toEndOf="@+id/img_bankCart2"
+            android:layout_marginStart="15dp"
+            />
+
+        <TextView
+            android:id="@+id/txt_type2"
+            android:layout_marginTop="1dp"
+            android:text="储蓄卡"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_name2"
+            android:layout_alignStart="@+id/txt_name2" />
+
+        <TextView
+            android:text="**** **** **** 4728"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/txt_type2"
+            android:layout_alignStart="@+id/txt_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:background="@mipmap/bank_cart_bg_zhongguo"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <ImageView
+            android:id="@+id/img_bankCart3"
+            android:background="@mipmap/bank_cart_logo_zhongguo"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+             />
+
+        <TextView
+            android:id="@+id/txt_name3"
+            android:text="中国银行"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_bankCart3"
+            android:layout_toEndOf="@+id/img_bankCart3"
+            android:layout_marginStart="15dp"
+            />
+
+        <TextView
+            android:id="@+id/txt_type3"
+            android:layout_marginTop="1dp"
+            android:text="储蓄卡"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_name3"
+            android:layout_alignStart="@+id/txt_name3" />
+
+        <TextView
+            android:text="**** **** **** 4728"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/txt_type3"
+            android:layout_alignStart="@+id/txt_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:background="@mipmap/attention"
+            android:layout_width="12dp"
+            android:layout_height="12dp" />
+
+        <TextView
+            android:text="店铺签约并签约银行卡"
+            android:layout_marginLeft="7dp"
+            android:textSize="11sp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_trans_fen_run"
+    android:background="@color/intervalColor"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TransFenRunActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#FFFFFF" >
+
+        <LinearLayout
+            android:id="@+id/layout_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:background="@mipmap/back_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="红包转分润"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <LinearLayout
+        android:background="@mipmap/wallet_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="115dp">
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:textSize="13sp"
+            android:textColor="#ccffffff"
+            android:text="可转余额"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txt_balance"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:textSize="35sp"
+            android:textColor="#ffffff"
+            android:text="1000.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/intervalColor"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/txt_type"
+            android:gravity="center_vertical"
+            android:text="转分润金额"
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/edt_amount"
+            android:textColor="@color/fontColor_gray"
+            android:textColorHint="@color/fontColor_hint"
+            android:textSize="14sp"
+            android:hint="请输入转入金额"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:textColor="@color/white"
+        android:text="确定"
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/corners_orange"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+</LinearLayout>

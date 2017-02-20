@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout_shake"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="#FFFFFF" >
+
+
+                <TextView
+                    android:textColor="@color/fontColor_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="摇一摇"
+                    android:textSize="17sp" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:background="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp">
+
+                    <ImageView
+                        android:src="@mipmap/logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="正汇钱包"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/fontColor_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_up"
+                        android:background="@mipmap/shake_up"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="220dp"
+                        android:layout_height="110dp" />
+
+                    <ImageView
+                        android:id="@+id/img_down"
+                        android:background="@mipmap/shake_down"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="220dp"
+                        android:layout_height="110dp" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_no"
+            android:visibility="gone"
+            android:gravity="center_horizontal"
+            android:background="#99000000"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginTop="100dp"
+                android:src="@mipmap/broken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="^_^  好运用完了"
+                android:textSize="18sp"
+                android:textColor="@color/orange"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="很遗憾，你今天的摇一摇次数"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="超限，请明天再来哦"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="9dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

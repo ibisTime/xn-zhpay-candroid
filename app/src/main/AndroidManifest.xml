@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhenghui.zhqb.zhenghuiqianbaomember"
+    android:versionCode="1"
+    android:versionName="1.0.0"
+    >
+
+    <!-- JPush -->
+    <permission
+        android:name="com.zhenghui.zhqb.zhenghuiqianbaomember.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- JPush -->
+    <uses-permission android:name="com.zhenghui.zhqb.zhenghuiqianbaomember.permission.JPUSH_MESSAGE" />
+
+    <!-- Required -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNA0L_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:name=".Application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- JPush SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+
+                <category android:name="com.zhenghui.zhqb.zhenghuiqianbaomember" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.zhenghui.zhqb.zhenghuiqianbaomember" />
+            </intent-filter>
+        </activity>
+
+        <!-- Required SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false"></service>
+
+        <!-- Required SDK核心功能 -->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+
+        <!-- User defined. 用户自定义的广播接收器 -->
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true">
+            <intent-filter>
+
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.zhenghui.zhqb.zhenghuiqianbaomember" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required. For publish channel feature -->
+        <!-- JPUSH_CHANNEL 是为了方便开发者统计APK分发渠道。 -->
+        <!-- 例如: -->
+        <!-- 发到 Google Play 的APK可以设置为 google-play; -->
+        <!-- 发到其他市场的 APK 可以设置为 xxx-market。 -->
+        <!-- 目前这个渠道统计功能的报表还未开放。 -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <!-- Required. AppKey copied from Portal -->
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="b1f02271d1f6708671c4b002" />
+
+        <!-- 设置高德地图的AppKey -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="077d27d2e60771594194f41ea904aa74" />
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!-- 设置环信应用的AppKey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="tianleios#zh-dev" />
+        <!-- 声明SDK所需的service SDK核心功能 -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 微信支付回调界面 -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- 支付宝支付界面 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity android:name=".Activity.StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.MyBaseActivity" />
+        <activity android:name=".Activity.ModifyPhoneActivity" />
+        <activity android:name=".Activity.ModifyPasswordActivity" />
+        <activity android:name=".Activity.ModifyAliasActivity" />
+        <activity
+            android:name=".Activity.DuoBaoListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name=".Activity.GoodDetailsActivity" />
+        <activity android:name=".Activity.ChatActivity" />
+        <activity android:name=".Activity.ShoppingCartActivity" />
+        <activity android:name=".Activity.PersonalActivity" />
+        <activity android:name=".Activity.CommitOrderActivity" />
+        <activity android:name=".Activity.AddressSelectActivity" />
+        <activity android:name=".Activity.AddAddressActivity" />
+        <activity android:name=".Activity.ShopPayActivity" />
+        <activity android:name=".Activity.OrderListActivity" />
+        <activity android:name=".Activity.OrderDetailsActivity" />
+        <activity android:name=".Activity.BankCardActivity" />
+        <activity android:name=".Activity.AccountActivity" />
+        <activity android:name=".Activity.AuthenticateActivity" />
+        <activity android:name=".Activity.WalletActivity" />
+        <activity android:name=".Activity.DiscountActivity" />
+        <activity android:name=".Activity.StockActivity" />
+        <activity android:name=".Activity.ShopListActivity" />
+        <activity android:name=".Activity.ShopDetailsActivity" />
+        <activity android:name=".Activity.TreeActivity" />
+        <activity android:name=".Activity.WebActivity" />
+        <activity android:name=".Activity.MapActivity" />
+        <activity android:name=".Activity.MapNaviActivity" />
+        <activity android:name=".Activity.DuoBaoActivity" />
+        <activity android:name=".Activity.ScheduleActivity" />
+        <activity android:name=".Activity.MyShopActivity" />
+        <activity android:name=".Activity.MyShopDetailsActivity" />
+        <activity android:name=".Activity.MyDuoBaoActivity" />
+        <activity android:name=".Activity.BankCardListActivity" />
+        <activity android:name=".Activity.BindBankCardActivity" />
+        <activity android:name=".Activity.SystemMessageActivity" />
+        <activity android:name=".Activity.SearchActivity" />
+        <activity android:name=".Activity.WithdrawalsActivity" />
+        <activity android:name=".Activity.TransFenRunActivity" />
+        <activity android:name=".Activity.DiscountDetailActivity" />
+        <activity android:name=".Activity.DiscountStoreActivity" />
+        <activity android:name=".Activity.BillActivity" />
+        <activity android:name=".Activity.ShopPaysActivity" />
+        <activity android:name=".Activity.StockPayActivity" />
+        <activity android:name=".Activity.TreePayActivity" />
+
+        <service
+            android:name=".services.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".Activity.ShakeListActivity" />
+        <activity android:name=".Activity.ShakeDetailActivity" />
+        <activity android:name=".Activity.ShakeResultActivity" />
+        <activity android:name=".Activity.GoodPayActivity" />
+        <activity android:name=".Activity.AboutActivity" />
+        <activity
+            android:name=".Activity.CityPickerActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".Activity.DuoBaoPayActivity" />
+        <activity
+            android:name=".Activity.MyDuoBaoNumActivity"
+            android:label="@string/title_activity_my_duo_bao_num" />
+        <activity
+            android:name=".Activity.MyDuoBaoDetailActivity"
+            android:label="@string/title_activity_my_duo_bao_detail" />
+        <activity android:name=".Activity.DuoBaoWinActivity" />
+        <activity
+            android:name=".Activity.GoodSearchActivity"
+            android:label="@string/title_activity_good_search" />
+        <activity android:name=".Activity.ModifyTradeActivity" />
+
+        <receiver android:name=".receiver.LogoutReceiver">
+            <intent-filter>
+                <action android:name="com.zhenghui.zhqb.zhenghuiqianbaomember.receiver.LogoutReceiver" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
+        <activity android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity" />
+        <activity android:name="com.hyphenate.easeui.ui.EaseShowNormalFileActivity" />
+        <activity android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity" />
+        <activity android:name="com.hyphenate.easeui.ui.EaseBaseActivity" />
+        <activity android:name=".Activity.MapRouteOverlayActivity"></activity>
+    </application>
+
+</manifest>

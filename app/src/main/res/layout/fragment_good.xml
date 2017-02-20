@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#F0F0F0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#FFFFFF" >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="尖货"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:id="@+id/layout_search"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/search"
+                android:layout_width="17dp"
+                android:layout_height="17dp" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <LinearLayout
+        android:background="@color/disLight"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layout_duoshou"
+            android:background="@color/white"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/txt_bigType1"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textColor="@color/fontColor_gray"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp">
+
+                <View
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/lineColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"/>
+
+                <View
+                    android:id="@+id/line_duoshou"
+                    android:background="@color/orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:background="@color/lineColor"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/layout_oneyuan"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/txt_bigType2"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp">
+
+                <View
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/lineColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"/>
+
+                <View
+                    android:id="@+id/line_oneyuan"
+                    android:visibility="invisible"
+                    android:background="@color/orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"/>
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:background="@color/lineColor"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/layout_0yuan"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/txt_bigType3"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp">
+
+                <View
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/lineColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"/>
+
+                <View
+                    android:id="@+id/line_0yuan"
+                    android:visibility="gone"
+                    android:background="@color/orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:scrollbars="none"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/txt_type1"
+            android:gravity="center"
+            android:textColor="@color/fontColor_orange"
+            android:textSize="13sp"
+            android:text="小类1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txt_type2"
+            android:gravity="center"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="13sp"
+            android:text="小类2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txt_type3"
+            android:gravity="center"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="13sp"
+            android:text="小类3"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txt_type4"
+            android:gravity="center"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="13sp"
+            android:text="小类4"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/intervalColor"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/list_good"
+                android:dividerHeight="0.5dp"
+                android:divider="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+
+        </com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_shopCart"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="right|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:background="@mipmap/shopcart_big"
+                android:layout_width="37dp"
+                android:layout_height="37dp" />
+
+            <TextView
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:visibility="gone"
+                android:id="@+id/txt_number"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:background="@drawable/circle_shopcart_big"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+        </FrameLayout>
+        
+        
+    </FrameLayout>
+    
+    
+
+</LinearLayout>
