@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hyphenate.chat.EMClient;
@@ -72,22 +73,31 @@ public class ChatToFriendAdapter extends BaseAdapter {
 
         if (list.get(position).getRefeereLevel() == -1) {
             holder.txtType.setText("P1");
+            holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_red));
         } else if (list.get(position).getRefeereLevel() == -2) {
             holder.txtType.setText("P2");
+            holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_orange));
         } else if (list.get(position).getRefeereLevel() == 1) {
             holder.txtType.setText("C1");
+            holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_green));
         } else if (list.get(position).getRefeereLevel() == 2) {
             holder.txtType.setText("C2");
+            holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_blue));
         }
 
-        holder.txtName.setText(list.get(position).getNickname());
-        ImageUtil.photo(list.get(position).getUserExt().getPhoto(),holder.imgPhoto,context);
 
-        if(list.get(position).getUserId() != null){
+        if(null != list.get(position).getNickname()){
+            holder.txtName.setText(list.get(position).getNickname());
+        }else{
+            holder.txtName.setText("未知");
+        }
+        ImageUtil.photo(list.get(position).getUserExt().getPhoto(), holder.imgPhoto, context);
+
+        if (list.get(position).getUserId() != null) {
 
             EMConversation conversation = EMClient.getInstance().chatManager().getConversation(list.get(position).getUserId());
 
-            if(conversation != null){
+            if (conversation != null) {
                 //获取此会话的所有消息
                 List<EMMessage> messages = conversation.getAllMessages();
                 //SDK初始化加载的聊天记录为20条，到顶时需要去DB里获取更多
@@ -99,9 +109,9 @@ public class ChatToFriendAdapter extends BaseAdapter {
                     holder.txtTime.setText("来访时间:" + time);
                 }
 
-                if(conversation.getUnreadMsgCount() > 0){
+                if (conversation.getUnreadMsgCount() > 0) {
                     holder.txtPoint.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     holder.txtPoint.setVisibility(View.GONE);
                 }
             }
@@ -121,6 +131,8 @@ public class ChatToFriendAdapter extends BaseAdapter {
         TextView txtType;
         @InjectView(R.id.txt_time)
         TextView txtTime;
+        @InjectView(R.id.layout_bg)
+        LinearLayout layoutBg;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

@@ -17,18 +17,15 @@ public class BannerImageLoader extends ImageLoader {
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
 
-//        //Glide 加载图片简单用法
-//        Glide.with(context).load(path).into(imageView);
-
         if (path.toString().indexOf("http") != -1) {
-            Glide.with(context).load(path.toString())
+            Glide.with(context)
+                    .load(path.toString())
                     .into(imageView);
         } else {
             Glide.with(context)
                     .load(IMAGE + path.toString() )
                     .into(imageView);
-
-
         }
+
     }
 }

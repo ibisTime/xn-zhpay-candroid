@@ -29,7 +29,9 @@ public class MyBaseActivity extends FragmentActivity {
 
     public static String SERVICE_ID= "androidkefu";
 
-    private SharedPreferences userInfoSp;
+    SharedPreferences userInfoSp;
+    SharedPreferences appConfigSp;
+    SharedPreferences wxShareSp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class MyBaseActivity extends FragmentActivity {
         setContentView(R.layout.activity_my_base);
 
         userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
+        wxShareSp = getSharedPreferences("wxShare", Context.MODE_PRIVATE);
 
         // 竖屏显示
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

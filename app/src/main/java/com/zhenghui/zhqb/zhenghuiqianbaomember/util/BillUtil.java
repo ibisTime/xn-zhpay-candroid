@@ -10,6 +10,8 @@ public class BillUtil {
     /**
      * AJ_CZ("11", "充值"),
      * AJ_QX("-11", "取现"),
+     * AJ_QX("-12", "取现冻结"),
+     * AJ_QX("12", "取现解冻"),
      * AJ_LB("19", "蓝补"),
      * AJ_HC("-19", "红冲"),
      * AJ_GW("-30", "购物"),
@@ -22,7 +24,7 @@ public class BillUtil {
      * AJ_GMHZBFC("37", "购买汇赚宝分成"),
      * AJ_YYJL("38", "汇赚宝摇一摇奖励"),
      * AJ_YYFC("39", "摇一摇分成"),
-     * AJ_DUOBAO("-40", "一元夺宝"),
+     * AJ_DUOBAO("-40", "参与小目标"),
      * AJ_DBFLOW("41", "夺宝流标"),
      * AJ_QRSH("42", "确认收货，商户收钱"),
      * AJ_HB2FR("50", "红包兑分润"),
@@ -30,6 +32,11 @@ public class BillUtil {
      * AJ_HBYJ2GXJL("54", "红包业绩兑贡献奖励"),
      * AJ_FR2RMB("56","分润兑人民币"),
      * AJ_GXJL2RMB("58", "贡献奖励兑人民币");
+     * AJ_GXJL2RMB("60", "发送得红包");
+     * AJ_GXJL2RMB("61", "领取红包");
+     * AJ_GXJL2RMB("62", "小目标中奖");
+     * AJ_GXJL2RMB("-64", "参与小目标");
+     * AJ_GXJL2RMB("65", "小目标中奖");
      * @param bizType
      * @return
      */
@@ -40,6 +47,10 @@ public class BillUtil {
             return "充值";
         } else if(bizType.equals("-11")){
             return "取现";
+        }else if(bizType.equals("-12")){
+            return "取现冻结";
+        }else if(bizType.equals("12")){
+            return "取现解冻";
         } else if(bizType.equals("19")){
             return "蓝补";
         } else if(bizType.equals("-19")){
@@ -69,7 +80,7 @@ public class BillUtil {
         } else if(bizType.equals("39")){
             return "摇一摇分成";
         } else if(bizType.equals("-40")){
-            return "一元夺宝";
+            return "参与小目标";
         } else if(bizType.equals("41")){
             return "夺宝流标";
         } else if(bizType.equals("42")) {
@@ -84,6 +95,14 @@ public class BillUtil {
             return "分润兑人民币";
         } else if(bizType.equals("58")){
             return "贡献奖励兑人民币";
+        } else if(bizType.equals("60")){
+            return "发送得红包";
+        } else if(bizType.equals("61")){
+            return "领取红包";
+        } else if(bizType.equals("-64")){
+            return "参与小目标";
+        }else if(bizType.equals("65")){
+            return "小目标中奖";
         }
         return "";
     }

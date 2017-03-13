@@ -1,10 +1,14 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
-import android.content.Context;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +23,8 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import java.net.URLEncoder;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -35,10 +39,6 @@ public class AuthenticateActivity extends MyBaseActivity {
     EditText edtName;
     @InjectView(R.id.edt_identity)
     EditText edtIdentity;
-    @InjectView(R.id.edt_cardId)
-    EditText edtCardId;
-    @InjectView(R.id.edt_phone)
-    EditText edtPhone;
     @InjectView(R.id.edt_code)
     EditText edtCode;
     @InjectView(R.id.btn_send)
@@ -48,29 +48,8 @@ public class AuthenticateActivity extends MyBaseActivity {
     @InjectView(R.id.btn_confirm)
     Button btnConfirm;
 
-    private SharedPreferences userInfoSp;
-    private SharedPreferences appConfigSp;
-
-    // 验证码是否已发送 未发送false 已发送true
-    private boolean isCodeSended = false;
-
-    private int i = 60;
-    private Timer timer;
-    private TimerTask task;
-
-    private Handler handler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            btnSend.setText(i + "秒后重发");
-            if (msg.arg1 == 0) {
-                stopTime();
-            } else {
-                startTime();
-            }
-            super.handleMessage(msg);
-        }
-    };
+    private String code = "";
+    private double price = 0.00;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +59,33 @@ public class AuthenticateActivity extends MyBaseActivity {
         MyApplication.getInstance().addActivity(this);
 
         inits();
+    }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.e("LQ", "scheme:" + intent.getScheme());
+        Uri uri = intent.getData();
+        if (uri != null) {
+            Log.e("LQ", "scheme: " + uri.getScheme());
+            Log.e("LQ", "host: " + uri.getHost());
+            Log.e("LQ", "port: " + uri.getPort());
+            Log.e("LQ", "path: " + uri.getPath());
+            Log.e("LQ", "queryString: " + uri.getQuery());
+            Log.e("LQ", "queryParameter: " + uri.getQueryParameter("biz_content"));
+
+            if(null != uri.getQueryParameter("biz_content")){
+                try {
+                    JSONObject object = new JSONObject(uri.getQueryParameter("biz_content"));
+                    check(object.getString("biz_no"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+        }
     }
 
     @Override
@@ -90,8 +95,8 @@ public class AuthenticateActivity extends MyBaseActivity {
     }
 
     private void inits() {
-        userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-        appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
+        code = getIntent().getStringExtra("code");
+        price = getIntent().getDoubleExtra("price",0.00);
     }
 
     @OnClick({R.id.layout_back, R.id.btn_confirm, R.id.btn_send})
@@ -101,18 +106,6 @@ public class AuthenticateActivity extends MyBaseActivity {
                 finish();
                 break;
 
-            case R.id.btn_send:
-                if(edtPhone.getText().length() == 11){
-                    if(isCodeSended){
-                        Toast.makeText(AuthenticateActivity.this, "验证码每60秒发送发送一次", Toast.LENGTH_SHORT).show();
-                    }else{
-                        sendCode();
-                    }
-                }else{
-                    Toast.makeText(AuthenticateActivity.this, "请输入正确的手机号码", Toast.LENGTH_SHORT).show();
-                }
-                break;
-
             case R.id.btn_confirm:
                 if (edtName.getText().toString().equals("")) {
                     Toast.makeText(this, "请填写真实姓名", Toast.LENGTH_SHORT).show();
@@ -120,26 +113,31 @@ public class AuthenticateActivity extends MyBaseActivity {
                 }
                 if (edtIdentity.getText().toString().length() == 15 || edtIdentity.getText().toString().length() == 18) {
 
-                }else{
+                } else {
                     Toast.makeText(this, "请填写正确的身份证号码", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtCardId.getText().toString().length() < 16 || edtCardId.getText().toString().length() > 19) {
-                    Toast.makeText(this, "请填写正确的银行卡号", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (edtPhone.getText().toString().length() != 11) {
-                    Toast.makeText(this, "请填写正确的手机号码", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+//                if (edtCardId.getText().toString().length() < 16 || edtCardId.getText().toString().length() > 19) {
+//                    Toast.makeText(this, "请填写正确的银行卡号", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                if (edtPhone.getText().toString().length() != 11) {
+//                    Toast.makeText(this, "请填写正确的手机号码", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
 //                if (edtTrade.getText().toString().length() < 6) {
 //                    Toast.makeText(this, "请设置6位交易密码", Toast.LENGTH_SHORT).show();
 //                }
                 authenticate();
+//                authentication();
                 break;
         }
     }
 
+
+    /**
+     * 实名认证
+     */
     private void authenticate() {
 
         JSONObject object = new JSONObject();
@@ -148,28 +146,30 @@ public class AuthenticateActivity extends MyBaseActivity {
             object.put("realName", edtName.getText().toString().trim());
             object.put("idKind", "1");
             object.put("idNo", edtIdentity.getText().toString().trim());
-            object.put("cardNo", edtCardId.getText().toString().trim());
-            object.put("bindMobile", edtPhone.getText().toString().trim());
-            object.put("token", userInfoSp.getString("token", null));
-
-//            object.put("tradePwd", edtTrade.getText().toString().trim());
-//            object.put("tradePwdStrength", "1");
-//            object.put("smsCaptcha", edtCode.getText().toString().trim());
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-        new Xutil().post("805190", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("805191", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
-                SharedPreferences.Editor editor = userInfoSp.edit();
-                editor.putString("realName",edtName.getText().toString().trim());
-                editor.commit();
 
-                finish();
-                Toast.makeText(AuthenticateActivity.this, "认证成功", Toast.LENGTH_SHORT).show();
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+
+                    if(jsonObject.getBoolean("isSuccess")){
+                        Toast.makeText(AuthenticateActivity.this, "您已通过实名认证", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }else{
+                        doVerify(jsonObject.getString("url"));
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
 
             @Override
@@ -183,61 +183,113 @@ public class AuthenticateActivity extends MyBaseActivity {
             }
         });
 
-    }
-
-    private void sendCode(){
-        JSONObject object = new JSONObject();
-        try {
-            object.put("mobile",edtPhone.getText().toString().trim());
-            object.put("bizType","805048");
-            object.put("kind","f1");
-            object.put("systemCode",appConfigSp.getString("systemCode",null));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        new Xutil().post("805046",object.toString(), new Xutil.XUtils3CallBackPost() {
-            @Override
-            public void onSuccess(String result) {
-                isCodeSended = true;
-                Toast.makeText(AuthenticateActivity.this, "短信已发送，请注意查收", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onTip(String tip) {
-                Toast.makeText(AuthenticateActivity.this, tip, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(String error, boolean isOnCallback) {
-                Toast.makeText(AuthenticateActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     /**
-     *  验证码发送倒计时
+     * 实名认证结果查询
      */
-    private void startTime() {
-        timer = new Timer();
-        task = new TimerTask() {
+    private void check(String bizNo) {
+        JSONObject object = new JSONObject();
+        try {
+            object.put("userId", userInfoSp.getString("userId", null));
+            object.put("bizNo", bizNo);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        new Xutil().post("805192", object.toString(), new Xutil.XUtils3CallBackPost() {
+
             @Override
-            public void run() {
-                i--;
-                Message message = handler.obtainMessage();
-                message.arg1 = i;
-                handler.sendMessage(message);
+            public void onSuccess(String result) {
+                System.out.println("result="+result);
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+
+                    if(jsonObject.getBoolean("isSuccess")){
+                        SharedPreferences.Editor editor = userInfoSp.edit();
+                        editor.putString("realName", edtName.getText().toString().trim());
+                        editor.commit();
+
+                        Toast.makeText(AuthenticateActivity.this, "认证成功", Toast.LENGTH_SHORT).show();
+                        if(code != null){
+                            startActivity(new Intent(AuthenticateActivity.this, TreePayActivity.class)
+                                    .putExtra("price",price)
+                                    .putExtra("code",code));
+                        }else{
+                            finish();
+                        }
+                    }else{
+                        Toast.makeText(AuthenticateActivity.this, "认证失败", Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
-        };
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(AuthenticateActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
 
-        timer.schedule(task, 1000);
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(AuthenticateActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
     }
 
-    private void stopTime() {
-        isCodeSended = false;
-        i = 60;
-        btnSend.setText("重新发送");
-        timer.cancel();
+
+    /**
+     * 启动支付宝进行认证
+     *
+     * @param url 开放平台返回的URL
+     */
+    private void doVerify(String url) {
+        if (hasApplication()) {
+            Intent action = new Intent(Intent.ACTION_VIEW);
+            StringBuilder builder = new StringBuilder();
+            builder.append("alipays://platformapi/startapp?appId=20000067&url=");
+            builder.append(URLEncoder.encode(url));
+            action.setData(Uri.parse(builder.toString()));
+            startActivity(action);
+        } else {
+            //处理没有安装支付宝的情况
+            new AlertDialog.Builder(this)
+                    .setMessage("是否下载并安装支付宝完成认证?")
+                    .setPositiveButton("好的", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent action = new Intent(Intent.ACTION_VIEW);
+                            action.setData(Uri.parse("https://m.alipay.com"));
+                            startActivity(action);
+                        }
+                    }).setNegativeButton("算了", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            }).show();
+        }
     }
+
+    /**
+     * 判断是否安装了支付宝
+     *
+     * @return true 为已经安装
+     */
+    private boolean hasApplication() {
+        PackageManager manager = getPackageManager();
+        Intent action = new Intent(Intent.ACTION_VIEW);
+        action.setData(Uri.parse("alipays://"));
+        List<ResolveInfo> list = manager.queryIntentActivities(action, PackageManager.GET_RESOLVED_FILTER);
+        return list != null && list.size() > 0;
+    }
+
 }

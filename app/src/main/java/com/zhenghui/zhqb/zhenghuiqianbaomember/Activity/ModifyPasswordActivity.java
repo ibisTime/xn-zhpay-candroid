@@ -84,7 +84,9 @@ public class ModifyPasswordActivity extends MyBaseActivity {
     }
 
     private void inits() {
-        edtPhone.setText(getIntent().getStringExtra("phone"));
+        if(getIntent().getStringExtra("phone") != null){
+            edtPhone.setText(getIntent().getStringExtra("phone"));
+        }
         preferences = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
     }
 

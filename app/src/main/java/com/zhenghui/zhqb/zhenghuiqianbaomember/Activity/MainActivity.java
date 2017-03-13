@@ -9,6 +9,7 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -28,13 +29,14 @@ import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.controller.EaseUI;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ChatFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.GoodFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.MyFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.GiveFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.MyFragment2;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ShakeFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ShopFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.TargetFragment;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.FriendModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.services.JewelRecordService;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.MyService;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LoginUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -42,30 +44,36 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class MainActivity extends MyBaseActivity implements MyFragment.myFragmentInteraction, EMMessageListener {
+public class MainActivity extends MyBaseActivity implements EMMessageListener {
+
 
     @InjectView(R.id.id_content)
     FrameLayout idContent;
-    @InjectView(R.id.img_shop)
-    ImageView imgShop;
-    @InjectView(R.id.txt_shop)
-    TextView txtShop;
-    @InjectView(R.id.layout_shop)
-    LinearLayout layoutShop;
-    @InjectView(R.id.img_goood)
-    ImageView imgGoood;
-    @InjectView(R.id.txt_good)
-    TextView txtGood;
-    @InjectView(R.id.layout_good)
-    LinearLayout layoutGood;
+    @InjectView(R.id.img_target)
+    ImageView imgTarget;
+    @InjectView(R.id.txt_target)
+    TextView txtTarget;
+    @InjectView(R.id.layout_target)
+    LinearLayout layoutTarget;
+    @InjectView(R.id.img_give)
+    ImageView imgGive;
+    @InjectView(R.id.txt_give)
+    TextView txtGive;
+    @InjectView(R.id.layout_give)
+    LinearLayout layoutGive;
     @InjectView(R.id.img_shake)
     ImageView imgShake;
     @InjectView(R.id.txt_shake)
@@ -74,6 +82,8 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
     LinearLayout layoutShake;
     @InjectView(R.id.img_chat)
     ImageView imgChat;
+    @InjectView(R.id.txt_point)
+    TextView txtPoint;
     @InjectView(R.id.txt_chat)
     TextView txtChat;
     @InjectView(R.id.layout_chat)
@@ -84,12 +94,10 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
     TextView txtMy;
     @InjectView(R.id.layout_my)
     LinearLayout layoutMy;
-    @InjectView(R.id.txt_point)
-    TextView txtPoint;
 
     // 内容fragment
-    private Fragment shopFragment;
-    private Fragment goodFragment;
+    private Fragment targetFragment;
+    private Fragment giveFragment;
     private Fragment shakeFragment;
     private ChatFragment chatFragment;
     private Fragment myFragment;
@@ -103,7 +111,7 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
     private boolean logoutFlag = false;
     private boolean anotherDeviceFlag = true;
 
-    private Handler handler = new Handler(){
+    private Handler handler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {
@@ -112,20 +120,23 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
             switch (msg.what) {
                 case 1:
 
-                    SharedPreferences.Editor editor = userInfoSp.edit();
-                    editor.putString("userId", null);
-                    editor.putString("token", null);
-                    editor.commit();
+                    if (anotherDeviceFlag) {
+                        SharedPreferences.Editor editor = userInfoSp.edit();
+                        editor.putString("userId", null);
+                        editor.putString("token", null);
+                        editor.commit();
 
-                    stopService(new Intent(MainActivity.this, MyService.class));
+                        stopService(new Intent(MainActivity.this, MyService.class));
 
-                    // 实例化Intent
-                    Intent intent = new Intent();
-                    // 设置Intent的action属性
-                    intent.setAction("com.zhenghui.zhqb.zhenghuiqianbaomember.receiver.LogoutReceiver");
-                    // 发出广播
-                    sendBroadcast(intent);
-                    System.out.println("sendBroadcast");
+                        // 实例化Intent
+                        Intent intent = new Intent();
+                        // 设置Intent的action属性
+                        intent.setAction("com.zhenghui.zhqb.zhenghuiqianbaomember.receiver.LogoutReceiver");
+                        // 发出广播
+                        sendBroadcast(intent);
+                        System.out.println("sendBroadcast");
+                    }
+
                     break;
             }
         }
@@ -151,6 +162,8 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
     protected void onDestroy() {
         super.onDestroy();
         MyApplication.getInstance().removeActivity(this);
+        stopService(new Intent(MainActivity.this, MyService.class));
+        stopService(new Intent(MainActivity.this, JewelRecordService.class));
     }
 
     private void inits() {
@@ -176,25 +189,25 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
         // 设置内容区域
         switch (i) {
             case 0:
-                if (shopFragment == null) {
-                    shopFragment = new ShopFragment();
-                    transaction.add(R.id.id_content, shopFragment);
+                if (targetFragment == null) {
+                    targetFragment = new TargetFragment();
+                    transaction.add(R.id.id_content, targetFragment);
                 } else {
-                    transaction.show(shopFragment);
+                    transaction.show(targetFragment);
                 }
-                txtShop.setTextColor(getResources().getColor(R.color.fontColor_orange));
-                imgShop.setImageResource(R.mipmap.shop_orange);
+                txtTarget.setTextColor(getResources().getColor(R.color.fontColor_orange));
+                imgTarget.setImageResource(R.mipmap.target_orange);
                 break;
             case 1:
-                if (goodFragment == null) {
-                    goodFragment = new GoodFragment();
-                    transaction.add(R.id.id_content, goodFragment);
+                if (giveFragment == null) {
+                    giveFragment = new GiveFragment();
+                    transaction.add(R.id.id_content, giveFragment);
                 } else {
-                    transaction.show(goodFragment);
+                    transaction.show(giveFragment);
 
                 }
-                txtGood.setTextColor(getResources().getColor(R.color.fontColor_orange));
-                imgGoood.setImageResource(R.mipmap.goods_orange);
+                txtGive.setTextColor(getResources().getColor(R.color.fontColor_orange));
+                imgGive.setImageResource(R.mipmap.give_orange);
                 break;
             case 2:
                 if (shakeFragment == null) {
@@ -221,7 +234,7 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
 
             case 4:
                 if (myFragment == null) {
-                    myFragment = new MyFragment();
+                    myFragment = new MyFragment2();
                     transaction.add(R.id.id_content, myFragment);
                 } else {
                     transaction.show(myFragment);
@@ -238,11 +251,11 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
     }
 
     private void hideFragment(FragmentTransaction transaction) {
-        if (shopFragment != null) {
-            transaction.hide(shopFragment);
+        if (targetFragment != null) {
+            transaction.hide(targetFragment);
         }
-        if (goodFragment != null) {
-            transaction.hide(goodFragment);
+        if (giveFragment != null) {
+            transaction.hide(giveFragment);
         }
         if (shakeFragment != null) {
             transaction.hide(shakeFragment);
@@ -255,10 +268,10 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
         }
     }
 
-    @OnClick({R.id.layout_shop, R.id.layout_good, R.id.layout_shake, R.id.layout_chat, R.id.layout_my})
+    @OnClick({R.id.layout_target, R.id.layout_give, R.id.layout_shake, R.id.layout_chat, R.id.layout_my})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.layout_shop:
+            case R.id.layout_target:
                 isShake = false;
 
                 resetImgs();
@@ -266,12 +279,16 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
                 shakeFragment.onPause();
                 break;
 
-            case R.id.layout_good:
-                isShake = false;
+            case R.id.layout_give:
+                if (userInfoSp.getString("userId", null) != null) {
+                    isShake = false;
 
-                resetImgs();
-                setSelect(1);
-                shakeFragment.onPause();
+                    resetImgs();
+                    setSelect(1);
+                    shakeFragment.onPause();
+                } else {
+                    LoginUtil.toLogin(MainActivity.this);
+                }
                 break;
 
             case R.id.layout_shake:
@@ -320,26 +337,23 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
     /**
      * 切换图片至暗色
      */
-    private void resetImgs() {
-        txtShop.setTextColor(getResources().getColor(R.color.gray4d));
-        txtGood.setTextColor(getResources().getColor(R.color.gray4d));
+    public void resetImgs() {
+        txtTarget.setTextColor(getResources().getColor(R.color.gray4d));
+        txtGive.setTextColor(getResources().getColor(R.color.gray4d));
         txtShake.setTextColor(getResources().getColor(R.color.gray4d));
         txtChat.setTextColor(getResources().getColor(R.color.gray4d));
         txtMy.setTextColor(getResources().getColor(R.color.gray4d));
 
-        imgShop.setImageResource(R.mipmap.shop_gray);
-        imgGoood.setImageResource(R.mipmap.good_gray);
+        imgTarget.setImageResource(R.mipmap.target_gray);
+        imgGive.setImageResource(R.mipmap.give_gray);
         imgShake.setImageResource(R.mipmap.shake_gray);
         imgChat.setImageResource(R.mipmap.chat_gray);
         imgMy.setImageResource(R.mipmap.my_gray);
     }
 
+
     private PersonalModel model;
 
-    @Override
-    public void getUserInfo(PersonalModel model) {
-        this.model = model;
-    }
 
     public void getFriend() {
 
@@ -386,10 +400,10 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
 
         for (FriendModel model : lists) {
             EMConversation conversation = EMClient.getInstance().chatManager().getConversation(model.getUserId());
-            if(conversation != null){
+            if (conversation != null) {
                 if (conversation.getUnreadMsgCount() > 0) {
                     txtPoint.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     txtPoint.setVisibility(View.GONE);
                 }
             }
@@ -407,14 +421,14 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
     @Override
     protected void onResume() {
         super.onResume();
-        if(userInfoSp.getString("userId",null) != null){
+        if (userInfoSp.getString("userId", null) != null) {
             addMessageListener();
             getFriend();
         }
 
     }
 
-    private void addMessageListener(){
+    private void addMessageListener() {
         EaseUI.getInstance().pushActivity(this);
         EMClient.getInstance().chatManager().addMessageListener(this);
     }
@@ -423,7 +437,7 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
     public void onMessageReceived(List<EMMessage> list) {
 
         getFriend();
-        if(chatFragment.getUserVisibleHint()){
+        if (chatFragment.getUserVisibleHint()) {
             chatFragment.serviceUnReade();
         }
         for (EMMessage message : list) {
@@ -457,19 +471,20 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
         @Override
         public void onConnected() {
         }
+
         @Override
         public void onDisconnected(final int error) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
 
-                    System.out.println("error="+error);
+                    System.out.println("EMConnectionListener error=" + error);
 
-                    if(error == EMError.USER_REMOVED){
+                    if (error == EMError.USER_REMOVED) {
                         // 显示帐号已经被移除
                         Toast.makeText(MainActivity.this, "帐号已被移除", Toast.LENGTH_SHORT).show();
-                    }else if (error == EMError.USER_LOGIN_ANOTHER_DEVICE) {
-                        if(anotherDeviceFlag){
+                    } else if (error == EMError.USER_LOGIN_ANOTHER_DEVICE) {
+                        if (anotherDeviceFlag) {
                             anotherDeviceFlag = false;
                             // 显示帐号在其他设备登录
                             logout();
@@ -502,9 +517,12 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
             @Override
             public void onSuccess() {
                 // TODO Auto-generated method stub
-                Message msg = new Message();
-                msg.what = 1;
-                handler.sendMessage(msg);
+                if (anotherDeviceFlag) {
+                    Message msg = new Message();
+                    msg.what = 1;
+                    handler.sendMessage(msg);
+                }
+
             }
 
             @Override
@@ -516,10 +534,100 @@ public class MainActivity extends MyBaseActivity implements MyFragment.myFragmen
             public void onError(int code, String message) {
                 // TODO Auto-generated method stub
                 System.out.println("logout()------>onError()");
-                System.out.println("code="+code);
-                System.out.println("message="+message);
+                System.out.println("code=" + code);
+                System.out.println("message=" + message);
             }
         });
     }
 
+    /**
+     * 菜单、返回键响应
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if(keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            exitBy2Click(); //调用双击退出函数
+        }
+        return false;
+    }
+
+    /**
+     * 双击退出函数
+     */
+    private static Boolean isExit = false;
+
+    private void exitBy2Click() {
+        Timer tExit = null;
+        if (isExit == false) {
+            isExit = true; // 准备退出
+            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+            tExit = new Timer();
+            tExit.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    isExit = false; // 取消退出
+                }
+            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
+
+        } else {
+            if(userInfoSp.getString("userId",null) != null){
+                logOut();
+            }else{
+                finish();
+                System.exit(0);
+            }
+
+        }
+    }
+
+    /**
+     * 退出登录
+     */
+    private void logOut() {
+
+        RequestParams params = new RequestParams(Xutil.URL + Xutil.LOGOUT);
+        params.addBodyParameter("token", userInfoSp.getString("token", null));
+
+        x.http().post(params, new Callback.CacheCallback<String>() {
+            @Override
+            public boolean onCache(String result) {
+                return false;
+            }
+
+            @Override
+            public void onSuccess(String result) {
+
+                System.out.println("result="+result);
+
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    if(jsonObject.getJSONObject("data").getBoolean("isSuccess")){
+                        finish();
+                        System.exit(0);
+                    }else{
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+            }
+
+            @Override
+            public void onFinished() {
+            }
+        });
+    }
 }

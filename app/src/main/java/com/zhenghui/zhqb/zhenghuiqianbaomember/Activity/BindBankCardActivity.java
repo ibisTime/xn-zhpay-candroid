@@ -34,8 +34,10 @@ public class BindBankCardActivity extends MyBaseActivity {
 
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;
-    @InjectView(R.id.edt_name)
-    EditText edtName;
+    @InjectView(R.id.txt_title)
+    TextView txtTitle;
+    @InjectView(R.id.txt_name)
+    TextView txtName;
     @InjectView(R.id.edt_phone)
     EditText edtPhone;
     @InjectView(R.id.txt_bankName)
@@ -46,8 +48,6 @@ public class BindBankCardActivity extends MyBaseActivity {
     EditText edtCardId;
     @InjectView(R.id.txt_confirm)
     TextView txtConfirm;
-    @InjectView(R.id.txt_title)
-    TextView txtTitle;
 
     private String[] bank;
     private String[] bankCode;
@@ -90,6 +90,8 @@ public class BindBankCardActivity extends MyBaseActivity {
         if (isModifi) {
             txtTitle.setText("修改银行卡");
             getData();
+        }else{
+            txtName.setText(userInfoSp.getString("realName",""));
         }
 
 
@@ -104,9 +106,9 @@ public class BindBankCardActivity extends MyBaseActivity {
 
             case R.id.txt_confirm:
                 if (check()) {
-                    if(isModifi){
+                    if (isModifi) {
                         modifiBankCard();
-                    }else{
+                    } else {
                         bindBankCard();
                     }
                 }
@@ -207,7 +209,7 @@ public class BindBankCardActivity extends MyBaseActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(result);
 
-                    edtName.setText(jsonObject.getString("realName"));
+                    txtName.setText(jsonObject.getString("realName"));
                     edtPhone.setText(jsonObject.getString("bindMobile"));
                     edtSubbranch.setText(jsonObject.getString("subbranch"));
                     edtCardId.setText(jsonObject.getString("bankcardNumber"));
@@ -236,7 +238,7 @@ public class BindBankCardActivity extends MyBaseActivity {
     private void bindBankCard() {
         JSONObject object = new JSONObject();
         try {
-            object.put("realName", edtName.getText().toString().trim());
+            object.put("realName", txtName.getText().toString().trim());
             object.put("bankcardNumber", edtCardId.getText().toString().trim());
             object.put("bankName", txtBankName.getText().toString().trim());
             object.put("bankCode", bc);
@@ -273,7 +275,7 @@ public class BindBankCardActivity extends MyBaseActivity {
     private void modifiBankCard() {
         JSONObject object = new JSONObject();
         try {
-            object.put("realName", edtName.getText().toString().trim());
+            object.put("realName", txtName.getText().toString().trim());
             object.put("bankcardNumber", edtCardId.getText().toString().trim());
             object.put("bankName", txtBankName.getText().toString().trim());
             object.put("bankCode", bc);
@@ -308,7 +310,7 @@ public class BindBankCardActivity extends MyBaseActivity {
     }
 
     private boolean check() {
-        if (edtName.getText().toString().equals("")) {
+        if (txtName.getText().toString().equals("")) {
             Toast.makeText(this, "请填写您的姓名", Toast.LENGTH_SHORT).show();
             return false;
         }

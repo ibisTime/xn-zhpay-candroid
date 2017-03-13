@@ -67,7 +67,7 @@ public class BillAdapter extends BaseAdapter {
     private void setView(int position) {
 
         holder.txtTitle.setText(BillUtil.getBillType(list.get(position).getBizType()));
-        holder.txtPrice.setText("¥"+ MoneyUtil.moneyFormatDouble(list.get(position).getTransAmount()));
+        holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(position).getTransAmount()));
         holder.txtInfo.setText(list.get(position).getBizNote());
 
         SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

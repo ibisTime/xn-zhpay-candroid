@@ -81,8 +81,8 @@ public class TransFenRunActivity extends MyBaseActivity {
             txtTitle.setText("红包业绩转分润");
             txtType.setText("转分润金额");
         } else {
-            txtTitle.setText("红包业绩转贡献奖励");
-            txtType.setText("转贡献奖励金额");
+            txtTitle.setText("红包业绩转贡献值");
+            txtType.setText("转贡献值金额");
         }
 
         txtBalance.setText(MoneyUtil.moneyFormatDouble(balance));
@@ -141,7 +141,7 @@ public class TransFenRunActivity extends MyBaseActivity {
             object.put("token", userInfoSp.getString("token", null));
             object.put("userId", userInfoSp.getString("userId", null));
             object.put("systemCode", appConfigSp.getString("systemCode", null));
-            object.put("transAmount", (int) (Double.parseDouble(edtAmount.getText().toString().trim()) * 1000));
+            object.put("transAmount", "-"+(int) (Double.parseDouble(edtAmount.getText().toString().trim()) * 1000));
             object.put("bizType", type + "");
 
         } catch (JSONException e) {

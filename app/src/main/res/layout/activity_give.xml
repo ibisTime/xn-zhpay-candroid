@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#FFFFFF" >
+
+        <LinearLayout
+            android:id="@+id/layout_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:background="@mipmap/back_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="定向红包"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/txt_history"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:text="历史记录"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <View
+        android:background="@color/intervalColor"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout_buy"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:background="@mipmap/give"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/txt_buy"
+                android:layout_marginBottom="37dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="195dp"
+                android:layout_height="32dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_my"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/swipe_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:id="@+id/list_give"
+                    android:divider="@color/intervalColor"
+                    android:dividerHeight="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </ListView>
+
+            </com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

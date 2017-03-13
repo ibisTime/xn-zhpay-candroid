@@ -110,73 +110,73 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
+    <!--<LinearLayout-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@color/white"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp">-->
 
-        <TextView
-            android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:text="银行卡号"
-            android:textSize="15sp"
-            android:textColor="@color/fontColor_gray"
-            android:layout_width="153dp"
-            android:layout_height="match_parent" />
+        <!--<TextView-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingLeft="15dp"-->
+            <!--android:text="银行卡号"-->
+            <!--android:textSize="15sp"-->
+            <!--android:textColor="@color/fontColor_gray"-->
+            <!--android:layout_width="153dp"-->
+            <!--android:layout_height="match_parent" />-->
 
-        <EditText
-            android:id="@+id/edt_cardId"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical"
-            android:textSize="14sp"
-            android:textColor="#333333"
-            android:inputType="number"
-            android:background="@null"
-            android:maxLines="19"
-            android:textColorHint="@color/fontColor_hint"
-            android:hint="请输入银行卡号"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!--<EditText-->
+            <!--android:id="@+id/edt_cardId"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textColor="#333333"-->
+            <!--android:inputType="number"-->
+            <!--android:background="@null"-->
+            <!--android:maxLines="19"-->
+            <!--android:textColorHint="@color/fontColor_hint"-->
+            <!--android:hint="请输入银行卡号"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
-    <View
-        android:background="#F0F0F0"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+    <!--<View-->
+        <!--android:background="#F0F0F0"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"/>-->
 
-    <LinearLayout
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
+    <!--<LinearLayout-->
+        <!--android:background="@color/white"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp">-->
 
-        <TextView
-            android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:text="银行卡预留手机号"
-            android:textSize="15sp"
-            android:textColor="@color/fontColor_gray"
-            android:layout_width="153dp"
-            android:layout_height="match_parent" />
+        <!--<TextView-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingLeft="15dp"-->
+            <!--android:text="银行卡预留手机号"-->
+            <!--android:textSize="15sp"-->
+            <!--android:textColor="@color/fontColor_gray"-->
+            <!--android:layout_width="153dp"-->
+            <!--android:layout_height="match_parent" />-->
 
-        <EditText
-            android:id="@+id/edt_phone"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical"
-            android:textSize="14sp"
-            android:maxLength="11"
-            android:inputType="number"
-            android:background="@null"
-            android:textColor="#333333"
-            android:textColorHint="@color/fontColor_hint"
-            android:hint="请输入手机号码"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!--<EditText-->
+            <!--android:id="@+id/edt_phone"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:textSize="14sp"-->
+            <!--android:maxLength="11"-->
+            <!--android:inputType="number"-->
+            <!--android:background="@null"-->
+            <!--android:textColor="#333333"-->
+            <!--android:textColorHint="@color/fontColor_hint"-->
+            <!--android:hint="请输入手机号码"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
     <View
         android:background="#F0F0F0"

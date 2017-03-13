@@ -5,6 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.multidex.MultiDex;
+import android.util.Log;
 
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.controller.EaseUI;
@@ -40,6 +41,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d("LQ", "onCreate");
         applicationContext = this;
         instance = this;
         initAppConfig();
@@ -50,6 +52,15 @@ public class MyApplication extends Application {
         initEaseUI();
         initEMChat_kefu();
 
+    }
+
+
+
+    @Override
+    public void onTerminate() {
+        // 程序终止的时候执行
+
+        super.onTerminate();
     }
 
     @Override
@@ -133,18 +144,18 @@ public class MyApplication extends Application {
         activityList.remove(activity);
     }
 
-    // 遍历所有Activity并finish
-        /*
-         * 在每一个Activity中的onCreate方法里添加该Activity到MyApplication对象实例容器中
-         *
-         * MyApplication.getInstance().addActivity(this);
-         *
-         * 在需要结束所有Activity的时候调用exit方法
-         *
-         * MyApplication.getInstance().exit();
-         */
-    public void exit() {
 
+    /**
+     * 在每一个Activity中的onCreate方法里添加该Activity到MyApplication对象实例容器中
+     *
+     * MyApplication.getInstance().addActivity(this);
+     *
+     * 在需要结束所有Activity的时候调用exit方法
+     *
+     * MyApplication.getInstance().exit();
+     */
+    public void exit() {
+        // 遍历所有Activity并finish
         for (Activity activity : activityList) {
             if(null != activity){
                 activity.finish();
@@ -152,5 +163,36 @@ public class MyApplication extends Application {
         }
 
     }
+
+
+//    private void login(){
+//        JSONObject object = new JSONObject();
+//        try {
+//            object.put("loginName",edtPhone.getText().toString().trim());
+//            object.put("loginPwd",edtPassword.getText().toString().trim());
+//            object.put("kind","f1");
+//            object.put("companyCode","");
+//            object.put("systemCode",appConfigSp.getString("systemCode", null));
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        new Xutil().post("805043",object.toString(), new Xutil.XUtils3CallBackPost() {
+//            @Override
+//            public void onSuccess(String result) {
+//
+//            }
+//
+//            @Override
+//            public void onTip(String tip) {
+//                Toast.makeText(applicationContext, tip, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onError(String error, boolean isOnCallback) {
+//                Toast.makeText(applicationContext, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
 }

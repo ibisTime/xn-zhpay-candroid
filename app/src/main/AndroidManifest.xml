@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhenghui.zhqb.zhenghuiqianbaomember"
-    android:versionCode="1"
-    android:versionName="1.0.0"
-    >
-
+    android:versionCode="2"
+    android:versionName="2.0.0">
 
     <!-- JPush -->
     <permission
@@ -44,7 +42,7 @@
     <application
         android:name=".Application.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/icon"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -103,7 +101,7 @@
         <service
             android:name="cn.jpush.android.service.DownloadService"
             android:enabled="true"
-            android:exported="false"></service>
+            android:exported="false" />
 
         <!-- Required SDK核心功能 -->
         <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
@@ -181,6 +179,7 @@
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- 微信支付回调界面 -->
@@ -207,6 +206,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- 需要添加下面的intent-filter配置 -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW"/> -->
+            <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+            <!-- <category android:name="android.intent.category.BROWSABLE"/> -->
+            <!-- <data android:scheme="leiqian"> -->
+
+
+            <!-- </data> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".Activity.LoginActivity" />
         <activity
@@ -217,48 +227,33 @@
         <activity android:name=".Activity.ModifyPhoneActivity" />
         <activity android:name=".Activity.ModifyPasswordActivity" />
         <activity android:name=".Activity.ModifyAliasActivity" />
-        <activity
-            android:name=".Activity.DuoBaoListActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity android:name=".Activity.GoodDetailsActivity" />
         <activity android:name=".Activity.ChatActivity" />
-        <activity android:name=".Activity.ShoppingCartActivity" />
-        <activity android:name=".Activity.PersonalActivity" />
-        <activity android:name=".Activity.CommitOrderActivity" />
-        <activity android:name=".Activity.AddressSelectActivity" />
-        <activity android:name=".Activity.AddAddressActivity" />
-        <activity android:name=".Activity.ShopPayActivity" />
-        <activity android:name=".Activity.OrderListActivity" />
-        <activity android:name=".Activity.OrderDetailsActivity" />
         <activity android:name=".Activity.BankCardActivity" />
-        <activity android:name=".Activity.AccountActivity" />
-        <activity android:name=".Activity.AuthenticateActivity" />
-        <activity android:name=".Activity.WalletActivity" />
-        <activity android:name=".Activity.DiscountActivity" />
-        <activity android:name=".Activity.StockActivity" />
-        <activity android:name=".Activity.ShopListActivity" />
-        <activity android:name=".Activity.ShopDetailsActivity" />
+        <activity android:name=".Activity.SettingActivity" />
+        <activity
+            android:name=".Activity.AuthenticateActivity"
+            android:launchMode="singleTask">
+
+            <!-- 需要添加下面的intent-filter配置 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="certi.back"
+                    android:scheme="zhqb" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activity.TreeActivity" />
         <activity android:name=".Activity.WebActivity" />
-        <activity android:name=".Activity.MapActivity" />
-        <activity android:name=".Activity.MapNaviActivity" />
-        <activity android:name=".Activity.DuoBaoActivity" />
-        <activity android:name=".Activity.ScheduleActivity" />
-        <activity android:name=".Activity.MyShopActivity" />
-        <activity android:name=".Activity.MyShopDetailsActivity" />
-        <activity android:name=".Activity.MyDuoBaoActivity" />
         <activity android:name=".Activity.BankCardListActivity" />
         <activity android:name=".Activity.BindBankCardActivity" />
         <activity android:name=".Activity.SystemMessageActivity" />
-        <activity android:name=".Activity.SearchActivity" />
         <activity android:name=".Activity.WithdrawalsActivity" />
         <activity android:name=".Activity.TransFenRunActivity" />
-        <activity android:name=".Activity.DiscountDetailActivity" />
-        <activity android:name=".Activity.DiscountStoreActivity" />
         <activity android:name=".Activity.BillActivity" />
-        <activity android:name=".Activity.ShopPaysActivity" />
-        <activity android:name=".Activity.StockPayActivity" />
         <activity android:name=".Activity.TreePayActivity" />
 
         <service
@@ -266,25 +261,18 @@
             android:enabled="true"
             android:exported="true" />
 
+        <service
+            android:name=".services.JewelRecordService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name=".Activity.ShakeListActivity" />
         <activity android:name=".Activity.ShakeDetailActivity" />
         <activity android:name=".Activity.ShakeResultActivity" />
-        <activity android:name=".Activity.GoodPayActivity" />
-        <activity android:name=".Activity.AboutActivity" />
-        <activity
-            android:name=".Activity.CityPickerActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity android:name=".Activity.DuoBaoPayActivity" />
+        <activity android:name=".Activity.RichTextActivity" />
         <activity
             android:name=".Activity.MyDuoBaoNumActivity"
             android:label="@string/title_activity_my_duo_bao_num" />
-        <activity
-            android:name=".Activity.MyDuoBaoDetailActivity"
-            android:label="@string/title_activity_my_duo_bao_detail" />
-        <activity android:name=".Activity.DuoBaoWinActivity" />
-        <activity
-            android:name=".Activity.GoodSearchActivity"
-            android:label="@string/title_activity_good_search" />
         <activity android:name=".Activity.ModifyTradeActivity" />
 
         <receiver android:name=".receiver.LogoutReceiver">
@@ -298,7 +286,14 @@
         <activity android:name="com.hyphenate.easeui.ui.EaseShowNormalFileActivity" />
         <activity android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity" />
         <activity android:name="com.hyphenate.easeui.ui.EaseBaseActivity" />
-        <activity android:name=".Activity.MapRouteOverlayActivity"></activity>
+        <activity android:name=".Activity.JewelActivity" />
+        <activity android:name=".Activity.JewelRecordActivity" />
+        <activity android:name=".Activity.GiveActivity" />
+        <activity android:name=".Activity.JewelHistoryActivity" />
+        <activity android:name=".Activity.JewelPayActivity" />
+        <activity android:name=".Activity.MyJewelHistoryActivity" />
+        <activity android:name=".Activity.TreeBillActivity" />
+        <activity android:name=".Activity.GiveHistoryActivity"></activity>
     </application>
 
 </manifest>

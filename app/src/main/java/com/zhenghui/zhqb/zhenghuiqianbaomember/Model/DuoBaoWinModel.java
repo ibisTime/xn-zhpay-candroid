@@ -14,6 +14,7 @@ public class DuoBaoWinModel {
      * userId : U2017011400020700192
      * jewelCode : IW201701140645018608
      * createDatetime : Jan 14, 2017 11:07:12 PM
+     * investDatetime
      * times : 8
      * payAmount1 : 0
      * payAmount2 : 0
@@ -21,6 +22,7 @@ public class DuoBaoWinModel {
      * status : 4
      * receiver : 雷黔
      * reMobile : 18984955240
+     * mobile
      * reAddress : 浙江省杭州市余杭区梦想小镇
      * remark : 已中奖，中奖号码10000010
      * systemCode : CD-CZH000001
@@ -34,6 +36,7 @@ public class DuoBaoWinModel {
     private String userId;
     private String jewelCode;
     private String createDatetime;
+    private String investDatetime;
     private int times;
     private int payAmount1;
     private int payAmount2;
@@ -41,6 +44,7 @@ public class DuoBaoWinModel {
     private String status;
     private String receiver;
     private String reMobile;
+    private String mobile;
     private String reAddress;
     private String remark;
     private String systemCode;
@@ -80,6 +84,14 @@ public class DuoBaoWinModel {
      */
 
     private List<JewelRecordNumberListBean> jewelRecordNumberList;
+
+    public String getInvestDatetime() {
+        return investDatetime;
+    }
+
+    public void setInvestDatetime(String investDatetime) {
+        this.investDatetime = investDatetime;
+    }
 
     public String getCode() {
         return code;
@@ -161,6 +173,14 @@ public class DuoBaoWinModel {
         this.receiver = receiver;
     }
 
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
     public String getReMobile() {
         return reMobile;
     }
@@ -234,6 +254,7 @@ public class DuoBaoWinModel {
         private int price1;
         private int price2;
         private int price3;
+        private double amount;
         private int totalNum;
         private int investNum;
         private String startDatetime;
@@ -248,6 +269,14 @@ public class DuoBaoWinModel {
         private String updater;
         private String updateDatetime;
         private String remark;
+
+        public double getAmount() {
+            return amount;
+        }
+
+        public void setAmount(double amount) {
+            this.amount = amount;
+        }
 
         public String getCode() {
             return code;

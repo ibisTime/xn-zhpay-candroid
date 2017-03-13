@@ -50,6 +50,12 @@ public class StartActivity extends Activity {
         ButterKnife.inject(this);
         MyApplication.getInstance().addActivity(this);
 
+        try{
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         // 竖屏显示
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 

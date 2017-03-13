@@ -69,6 +69,8 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
     LinearLayout layoutShake;
     @InjectView(R.id.layout_no)
     LinearLayout layoutNo;
+    @InjectView(R.id.img_bg)
+    ImageView imgBg;
 
     private String latitude = "";
     private String longitude = "";
@@ -168,7 +170,7 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
                     } else {
                         //定位失败
                         Log.i("ShakeFragment", "Locate---->FAILED");
-                        Log.i("ShakeFragment", "aMapLocation.getErrorCode()---->"+aMapLocation.getErrorCode());
+                        Log.i("ShakeFragment", "aMapLocation.getErrorCode()---->" + aMapLocation.getErrorCode());
 
                         Toast.makeText(getActivity(), "定位失败", Toast.LENGTH_SHORT).show();
 
@@ -253,10 +255,10 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
 
         int type = event.sensor.getType();
 
-        if(activity.isShake){
-            if(RootUtil.isDeviceRooted()){
+        if (activity.isShake) {
+            if (RootUtil.isDeviceRooted()) {
                 Toast.makeText(activity, "您的设备已root,不能参加摇一摇", Toast.LENGTH_SHORT).show();
-            }else{
+            } else {
 
                 if (type == Sensor.TYPE_ACCELEROMETER) {
                     //获取三个方向值
@@ -282,7 +284,7 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
                                     Thread.sleep(500);
                                     mHandler.obtainMessage(END_SHAKE).sendToTarget();
 
-                                    if(userInfoSp.getString("userId",null) == null){
+                                    if (userInfoSp.getString("userId", null) == null) {
                                         isShake = false;
                                         LoginUtil.toLogin(getActivity());
 
@@ -329,7 +331,8 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
                 case START_SHAKE:
                     //This method requires the caller to hold the permission VIBRATE.
                     fragment.mVibrator.vibrate(300);
-                    fragment.startAnimation(false);
+//                    fragment.startAnimation(false);
+                    fragment.imgBg.setBackgroundResource(R.mipmap.shake_after);
                     //发出提示音
                     break;
                 case AGAIN_SHAKE:
@@ -338,7 +341,8 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
                 case END_SHAKE:
                     //整体效果结束, 将震动设置为false
                     fragment.isShake = false;
-                    fragment.startAnimation(true);
+//                    fragment.startAnimation(true);
+                    fragment.imgBg.setBackgroundResource(R.mipmap.shake_before);
                     break;
             }
         }

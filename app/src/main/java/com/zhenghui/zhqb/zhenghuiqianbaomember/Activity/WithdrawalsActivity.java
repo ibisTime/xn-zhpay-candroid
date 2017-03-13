@@ -243,7 +243,7 @@ public class WithdrawalsActivity extends MyBaseActivity {
             object.put("systemCode", appConfigSp.getString("systemCode", null));
             object.put("token", userInfoSp.getString("token", null));
             object.put("bankcardNumber", bankcardCode);
-            object.put("transAmount", (int) (Double.parseDouble(edtPrice.getText().toString().trim()) * 1000));
+            object.put("transAmount", "-"+(int) (Double.parseDouble(edtPrice.getText().toString().trim()) * 1000));
             object.put("accountNumber", accountNumber);
             object.put("tradePwd", edtRepassword.getText().toString());
         } catch (JSONException e) {

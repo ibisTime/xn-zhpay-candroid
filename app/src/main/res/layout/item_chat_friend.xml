@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/layout_bg"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -19,6 +21,8 @@
                 android:layout_marginLeft="15dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/white"
                 android:src="@mipmap/photo_default"
                 />
 
@@ -50,12 +54,13 @@
 
                 <TextView
                     android:id="@+id/txt_name"
-                    android:text="大胡子"
+                    android:textColor="@color/fontColor_white"
                     android:textSize="15sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/txt_type"
                     android:gravity="center"
                     android:textSize="10sp"
@@ -74,7 +79,7 @@
                 android:id="@+id/txt_time"
                 android:textSize="11sp"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/fontColor_support"
+                android:textColor="#99ffffff"
                 android:text="还未来访"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

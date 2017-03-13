@@ -1,5 +1,12 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.util;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.LoginActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xutils.common.Callback;
@@ -13,13 +20,26 @@ import org.xutils.x;
 
 public class Xutil {
 
-//    public static String URL = "http://121.43.101.148:5601/forward-service/api";
+    // 研发环境
+//    public static String URL = "http://121.43.101.148";
+//    public static String SHARE_URL = "http://121.43.101.148";
+//    public static String SHARE_PORT = ":5603";
 
     // 正汇正式环境
-    public static String URL = "http://139.224.200.54:5601/forward-service/api";
+    public static String URL = "http://139.224.200.54";
+    public static String SHARE_URL = "http://osszhqb.hichengdai.com";
+    public static String SHARE_PORT = "/share";
+
+    public static String PORT = ":5601/forward-service/api";
+    public static String LOGOUT = ":5601/forward-service/user/logOut";
+
+    SharedPreferences userInfoSp;
 
     public void post(final String code, String json, final XUtils3CallBackPost backPost){
-        RequestParams params = new RequestParams(URL);
+
+        userInfoSp = MyApplication.applicationContext.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+
+        RequestParams params = new RequestParams(URL + PORT);
         params.addBodyParameter("code", code);
         params.addBodyParameter("json", json);
 
@@ -49,9 +69,22 @@ public class Xutil {
                     }else if(object.getString("errorCode").equals("3")){
 
                         System.out.println("code="+code+",onTip="+result);
-                            backPost.onTip(object.getString("errorInfo"));
+                        backPost.onTip(object.getString("errorInfo"));
 
-                    }else{
+                    } else if(object.getString("errorCode").equals("4")){
+
+                        SharedPreferences.Editor editor = userInfoSp.edit();
+                        editor.putString("userId", null);
+                        editor.commit();
+
+                        MyApplication.applicationContext.startActivity(new Intent(MyApplication.applicationContext, LoginActivity.class));
+
+                        System.out.println("code="+code+",onTip="+result);
+                        backPost.onTip("登录验证已失效，请重新登录");
+
+                    }
+                    else {
+
                         System.out.println("code="+code+"请求失败，errorCode="+object.getString("errorCode")+",errorInfo:"+object.getString("errorInfo"));
                     }
                 } catch (JSONException e) {
@@ -67,12 +100,12 @@ public class Xutil {
                     int responseCode = httpEx.getCode();
                     String responseMsg = httpEx.getMessage();
                     String errorResult = httpEx.getResult();
-
+                    backPost.onError(ex.getMessage(),isOnCallback);
                     System.out.println("code="+code+".onError=网络错误");
                 }
                 System.out.println("code="+code+", onError="+ex.getMessage());
-//                backPost.onError(ex.getMessage(),isOnCallback);
-                backPost.onTip("code="+code+", onError="+ex.getMessage());
+
+//                backPost.onTip("code="+code+", onError="+ex.getMessage());
             }
 
             @Override
@@ -86,7 +119,7 @@ public class Xutil {
     }
 
     public void get(final String code,String url, final XUtils3CallBackGet backGet){
-        RequestParams params = new RequestParams(URL + url);
+        RequestParams params = new RequestParams(URL + PORT + url);
         x.http().get(params, new Callback.CacheCallback<String>() {
             @Override
             public boolean onCache(String result) {
@@ -138,6 +171,59 @@ public class Xutil {
         });
     }
 
+    public void getLocation(String ip, final XUtils3CallBackGet backGet){
+
+        RequestParams params = new RequestParams("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip="+ip);
+        x.http().get(params, new Callback.CacheCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println("result="+result);
+
+                try {
+                    JSONObject object = new JSONObject(result);
+
+                    if(null != object.getString("city")){
+
+                        backGet.onSuccess(StringUtil.decodeUnicode(object.getString("city")));
+
+                    }else{
+
+                        backGet.onTip("");
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                System.out.println("x.http().get().onError="+ex.getMessage());
+                if (ex instanceof HttpException){// 网络错误
+
+                }
+                backGet.onError(ex.getMessage(),isOnCallback);
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+
+            @Override
+            public boolean onCache(String result) {
+                return false;
+            }
+        });
+    }
+
 
     public interface XUtils3CallBackPost {
 
@@ -156,4 +242,6 @@ public class Xutil {
 
         void onError(String error, boolean isOnCallback);
     }
+
+
 }

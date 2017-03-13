@@ -1,11 +1,14 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -14,6 +17,7 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.BillAdapter;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.BillModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
@@ -41,6 +45,14 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
     ListView listBill;
     @InjectView(R.id.swipe_container)
     RefreshLayout swipeContainer;
+    @InjectView(R.id.txt_balance)
+    TextView txtBalance;
+    @InjectView(R.id.txt_beGx)
+    TextView txtBeGx;
+    @InjectView(R.id.txt_btn)
+    TextView txtBtn;
+    @InjectView(R.id.txt_title)
+    TextView txtTitle;
 
     private List<BillModel> list;
     private BillAdapter adapter;
@@ -48,6 +60,9 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
     private SharedPreferences userInfoSp;
     private SharedPreferences appConfigSp;
 
+    private double accountAmount;
+
+    private String accountName;
     private String accountNumber;
 
     private int page = 1;
@@ -61,9 +76,11 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
         MyApplication.getInstance().addActivity(this);
 
         inits();
+        initButton();
         initListView();
         initRefreshLayout();
         getData();
+
     }
 
     @Override
@@ -76,11 +93,59 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
         list = new ArrayList<>();
         adapter = new BillAdapter(this, list);
 
+        accountAmount = getIntent().getDoubleExtra("accountAmount", 0.00);
+
+        accountName = getIntent().getStringExtra("accountName");
         accountNumber = getIntent().getStringExtra("accountNumber");
 
         userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
 
+    }
+
+    private void initButton() {
+        txtBalance.setText(MoneyUtil.moneyFormatDouble(accountAmount));
+
+        switch (accountName) {
+            case "gxb":
+                txtBeGx.setVisibility(View.GONE);
+                txtBtn.setText("消费");
+                txtBtn.setVisibility(View.GONE);
+                txtTitle.setText("贡献值流水");
+                break;
+
+            case "frb":
+                txtBeGx.setVisibility(View.GONE);
+                txtBtn.setText("提现");
+                txtTitle.setText("分润流水");
+                break;
+
+            case "hbyj":
+                txtBeGx.setVisibility(View.VISIBLE);
+                txtBtn.setText("转分润");
+                txtTitle.setText("红包业绩流水");
+                break;
+
+            case "hbb":
+                txtBeGx.setVisibility(View.GONE);
+                txtBtn.setText("转分润");
+                txtTitle.setText("红包流水");
+                break;
+
+            case "qbb":
+                txtBeGx.setVisibility(View.GONE);
+                txtBtn.setText("消费");
+                txtBtn.setVisibility(View.GONE);
+                txtTitle.setText("钱包币流水");
+                break;
+
+            case "gwb":
+                txtBeGx.setVisibility(View.GONE);
+                txtBtn.setText("消费");
+                txtBtn.setVisibility(View.GONE);
+                txtTitle.setText("购物币流水");
+                break;
+        }
     }
 
     private void initListView() {
@@ -95,11 +160,6 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
         swipeContainer.setOnRefreshListener(this);
         swipeContainer.setOnLoadListener(this);
-    }
-
-    @OnClick(R.id.layout_back)
-    public void onClick() {
-        finish();
     }
 
     private void getData() {
@@ -124,6 +184,10 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
                     Gson gson = new Gson();
                     List<BillModel> lists = gson.fromJson(jsonObject.getJSONArray("list").toString(), new TypeToken<ArrayList<BillModel>>() {
                     }.getType());
+
+                    if(page == 1){
+                        list.clear();
+                    }
 
                     list.addAll(lists);
                     adapter.notifyDataSetChanged();
@@ -175,4 +239,66 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
         }, 1500);
     }
 
+    @OnClick({R.id.txt_beGx, R.id.txt_btn, R.id.layout_back})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.layout_back:
+                finish();
+                break;
+
+            case R.id.txt_beGx:
+
+                startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
+                        .putExtra("type", "54")
+                        .putExtra("balance", accountAmount));
+
+                break;
+
+            case R.id.txt_btn:
+                if(txtBtn.getText().equals("消费")){
+
+                    // 跳到小目标
+
+                }else if(txtBtn.getText().equals("转分润")){
+
+                    switch (accountName){
+                        case "hbyj":
+                            startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
+                                    .putExtra("type", "52")
+                                    .putExtra("balance", accountAmount));
+                            break;
+
+                        case "hbb":
+                            startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
+                                    .putExtra("type", "50")
+                                    .putExtra("balance", accountAmount));
+                            break;
+                    }
+
+                }else if(txtBtn.getText().equals("提现")){
+
+                    if(userInfoSp.getString("identityFlag", null).equals("1")){ //identityFlag 实名认证标示 1有 0 无
+
+                        if(userInfoSp.getString("tradepwdFlag", null).equals("1")){ // tradepwdFlag 交易密码标示 1有 0 无
+
+                            startActivity(new Intent(BillActivity.this, WithdrawalsActivity.class)
+                                    .putExtra("balance", accountAmount)
+                                    .putExtra("accountNumber", accountNumber));
+
+                        } else {
+
+                            Toast.makeText(this, "请先设置交易密码", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(BillActivity.this, ModifyTradeActivity.class).putExtra("isModify",false));
+
+                        }
+
+                    }else{
+                        Toast.makeText(this, "请先实名认证", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(BillActivity.this, AuthenticateActivity.class));
+                    }
+
+                }
+                break;
+        }
+    }
 }

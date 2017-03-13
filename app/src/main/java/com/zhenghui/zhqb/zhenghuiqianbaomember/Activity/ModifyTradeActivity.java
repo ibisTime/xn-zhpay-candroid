@@ -212,6 +212,10 @@ public class ModifyTradeActivity extends MyBaseActivity {
                     Toast.makeText(ModifyTradeActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(ModifyTradeActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences.Editor editor = userInfoSp.edit();
+                    editor.putString("tradepwdFlag","1");
+                    editor.commit();
                 }
 
                 finish();

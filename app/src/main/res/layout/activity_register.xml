@@ -84,6 +84,7 @@
                         android:hint="请输入手机号码"
                         android:background="@null"
                         android:inputType="phone"
+                        android:maxLength="11"
                         android:textColor="@color/white"
                         android:textCursorDrawable="@null"
                         android:textColorHint="@color/white"
@@ -226,6 +227,7 @@
                             android:textCursorDrawable="@null"
                             android:textColorHint="@color/white"
                             android:layout_weight="1"
+                            android:maxLength="11"
                             android:layout_width="0dp"
                             android:gravity="center_vertical"
                             android:layout_height="match_parent" />
@@ -346,6 +348,7 @@
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
+                    android:id="@+id/layout_treaty"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -362,7 +365,6 @@
                     <TextView
                         android:textSize="12sp"
                         android:textColor="@color/white"
-                        android:id="@+id/txt_treaty"
                         android:text="《钱包用户协议》"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />

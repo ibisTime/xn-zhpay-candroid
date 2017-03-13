@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@drawable/corners_dialog"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:text="改红包还未被领取"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txt_content1"
+            android:visibility="gone"
+            android:text="领取人：18984955240"
+            android:textSize="16sp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txt_content2"
+            android:visibility="gone"
+            android:text="领取时间：2017-2-2 11:37:55"
+            android:textSize="16sp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txt_content3"
+            android:text="改红包还未被领取,快通知小伙伴吧改红包还未被领取,快通知小伙伴吧"
+            android:textSize="16sp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/txt_ok"
+                android:gravity="right"
+                android:text="知道了"
+                android:textSize="14sp"
+                android:textColor="@color/fontColor_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

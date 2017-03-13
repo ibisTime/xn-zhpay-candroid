@@ -183,6 +183,7 @@ public class ModifyPhoneActivity extends MyBaseActivity {
             @Override
             public void onSuccess(String result) {
                 Toast.makeText(ModifyPhoneActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
+                finish();
             }
 
             @Override

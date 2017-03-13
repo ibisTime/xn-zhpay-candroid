@@ -10,17 +10,24 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.WalletModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -62,7 +69,7 @@ public class TreePayActivity extends MyBaseActivity {
         MyApplication.getInstance().addActivity(this);
 
         inits();
-
+        getBalance();
     }
 
     @Override
@@ -207,6 +214,91 @@ public class TreePayActivity extends MyBaseActivity {
                     e.printStackTrace();
                 }
                 finish();
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(TreePayActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(TreePayActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void getMoney() {
+        JSONObject object = new JSONObject();
+        try {
+            object.put("token", userInfoSp.getString("token", null));
+            object.put("userId", userInfoSp.getString("userId", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post("802503", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONArray jsonArray = new JSONArray(result);
+
+                    Gson gson = new Gson();
+                    List<WalletModel> lists = gson.fromJson(jsonArray.toString(), new TypeToken<ArrayList<WalletModel>>() {
+                    }.getType());
+
+                    for (WalletModel model : lists) {
+                        switch (model.getCurrency()) {
+                            case "FRB": // 分润
+                                txtBalace.setText("分润("+ MoneyUtil.moneyFormatDouble(model.getAmount())+")");
+                                break;
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(TreePayActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(TreePayActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void getBalance(){
+        JSONObject object = new JSONObject();
+        try {
+            object.put("token", userInfoSp.getString("token", null));
+            object.put("userId", userInfoSp.getString("userId", null));
+            object.put("currency", "FRB");
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post("808803", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    txtBalace.setText("分润:"+ MoneyUtil.moneyFormatDouble(jsonObject.getDouble("xnbAmount"))
+                            +"("+jsonObject.getString("rate")+"分润=1人民币)");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
             @Override

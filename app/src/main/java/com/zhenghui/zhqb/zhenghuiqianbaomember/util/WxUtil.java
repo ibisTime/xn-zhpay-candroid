@@ -61,10 +61,10 @@ public class WxUtil {
     }
 
     /**
-     *  检测是否有微信与是否支持微信支付
+     *  分享到朋友圈
      * @param
      */
-    public static void share(Context context, String url, String title, String description) {
+    public static void shareToPYQ(Context context, String url, String title, String description) {
 
         api = registToWx(context);
 
@@ -76,7 +76,7 @@ public class WxUtil {
         msg.description = description;
 
         try {
-            Bitmap bmp1 = BitmapFactory.decodeResource(context.getResources(), R.mipmap.wexin);
+            Bitmap bmp1 = BitmapFactory.decodeResource(context.getResources(), R.mipmap.icon);
             Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp1, 100, 100, true);
             msg.thumbData = Bitmap2Bytes(thumbBmp);
         } catch (Exception e) {
@@ -86,6 +86,35 @@ public class WxUtil {
 //        req.transaction = buildTransaction("图文链接");
         req.message = msg;
         req.scene = SendMessageToWX.Req.WXSceneTimeline;
+        api.sendReq(req);
+    }
+
+    /**
+     *  分享微信聊天界面
+     * @param
+     */
+    public static void shareToWX(Context context, String url, String title, String description) {
+
+        api = registToWx(context);
+
+        WXWebpageObject webpage = new WXWebpageObject();
+        webpage.webpageUrl = url;
+
+        WXMediaMessage msg = new WXMediaMessage(webpage);
+        msg.title = title;
+        msg.description = description;
+
+        try {
+            Bitmap bmp1 = BitmapFactory.decodeResource(context.getResources(), R.mipmap.icon);
+            Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp1, 100, 100, true);
+            msg.thumbData = Bitmap2Bytes(thumbBmp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        SendMessageToWX.Req req = new SendMessageToWX.Req();
+//        req.transaction = buildTransaction("图文链接");
+        req.message = msg;
+        req.scene = SendMessageToWX.Req.WXSceneSession;
         api.sendReq(req);
     }
 

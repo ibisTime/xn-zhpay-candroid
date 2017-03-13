@@ -7,7 +7,7 @@
         android:background="@color/white"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="105dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="vertical"
@@ -55,11 +55,11 @@
 
             <TextView
                 android:id="@+id/txt_info"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 android:textSize="14sp"
-                android:text="info"
-                android:singleLine="true"
+                android:text="sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
                 android:textColor="@color/fontColor_support"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

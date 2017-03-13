@@ -27,7 +27,6 @@ import com.hyphenate.easeui.EaseConstant;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ChatActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MainActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ChatToFriendAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ChatToMerchantAdapter;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.FriendModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShopModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
@@ -76,7 +75,6 @@ public class ChatFragment extends Fragment implements AdapterView.OnItemClickLis
     private List<ShopModel> merchantList;
 
     private ChatToFriendAdapter friendAdapter;
-    private ChatToMerchantAdapter merchantAdapter;
 
     private SharedPreferences userInfoSp;
     private SharedPreferences appConfigSp;
@@ -146,7 +144,6 @@ public class ChatFragment extends Fragment implements AdapterView.OnItemClickLis
         merchantList = new ArrayList<>();
 
         friendAdapter = new ChatToFriendAdapter(getActivity(), friendList);
-        merchantAdapter = new ChatToMerchantAdapter(getActivity(), merchantList);
 
         userInfoSp = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         appConfigSp = getActivity().getSharedPreferences("appConfig", Context.MODE_PRIVATE);
@@ -212,7 +209,12 @@ public class ChatFragment extends Fragment implements AdapterView.OnItemClickLis
         intent.putExtra("myPhoto", userInfoSp.getString("photo",""));
         intent.putExtra("otherPhoto", friendList.get(i).getUserExt().getPhoto());
         intent.putExtra(EaseConstant.EXTRA_CHAT_TYPE, EaseConstant.CHATTYPE_SINGLE);
-        intent.putExtra("nickName", friendList.get(i).getNickname());
+        if(null != friendList.get(i).getNickname()){
+            intent.putExtra("nickName", friendList.get(i).getNickname());
+        }else{
+            intent.putExtra("nickName", "未知");
+        }
+
         startActivityForResult(intent, 0);
 
 

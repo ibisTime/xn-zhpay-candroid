@@ -87,7 +87,7 @@ public class MyService extends Service {
 
         };
 
-        timer.schedule(task, 10000);
+        timer.schedule(task, 60000);
     }
 
     private void initLocation() {

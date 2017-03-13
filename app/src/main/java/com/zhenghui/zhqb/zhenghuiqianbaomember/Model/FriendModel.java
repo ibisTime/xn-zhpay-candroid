@@ -32,7 +32,7 @@ public class FriendModel {
 
     private String userId;
     private String loginName;
-    private String nickname;
+    private String nickname = "未知";
     private String loginPwdStrength;
     private String kind;
     private String level;

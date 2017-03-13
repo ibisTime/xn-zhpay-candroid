@@ -120,10 +120,10 @@
 
     </LinearLayout>
 
-    <View
-        android:background="@color/intervalColor"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
+    <!--<View-->
+        <!--android:background="@color/intervalColor"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="10dp"/>-->
 
 
 
@@ -134,9 +134,9 @@
         android:layout_height="match_parent">
         <ListView
             android:id="@+id/list"
-            android:background="@color/white"
-            android:dividerHeight="0.5dp"
-            android:divider="@color/lineColor"
+            android:background="@color/intervalColor"
+            android:dividerHeight="10dp"
+            android:divider="@color/intervalColor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></ListView>
 

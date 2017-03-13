@@ -54,134 +54,374 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"/>
 
-    <RelativeLayout
-        android:background="@color/white"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="90dp">
-
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_photo"
-            android:scaleType="centerCrop"
-            android:layout_marginLeft="15dp"
-            android:layout_centerVertical="true"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@mipmap/tree_small"
-            />
-
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/layout_text"
-            android:layout_toEndOf="@+id/img_photo"
-            android:layout_marginTop="23dp"
-            android:layout_marginLeft="22dp"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="股东:"
-                android:textSize="15sp"
-                android:textColor="@color/fontColor_support"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:text="状态:"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/fontColor_support"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_toEndOf="@+id/layout_text"
-            android:layout_marginTop="23dp"
-            android:layout_marginLeft="4dp"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayout">
-
-            <TextView
-                android:id="@+id/txt_name"
-                android:text="张三"
-                android:textSize="15sp"
-                android:textColor="@color/fontColor_gray"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/txt_state"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/fontColor_gray"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/layout_activate"
-            android:visibility="gone"
-            android:layout_alignBottom="@+id/linearLayout"
-            android:layout_toEndOf="@+id/linearLayout"
-            android:orientation="horizontal"
-            android:gravity="right|center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="去激活"
-                android:textSize="15sp"
-                android:textColor="@color/fontColor_orange"
-                android:layout_marginRight="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-
-                android:layout_marginRight="15dp"
-                android:src="@mipmap/more_right"
-                android:layout_width="8dp"
-                android:layout_height="14dp" />
-
-        </LinearLayout>
-
-
-
-
-    </RelativeLayout>
-
-
-    <View
-        android:background="@color/lineColor"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"/>
-
-    <LinearLayout
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="98dp"
             android:layout_height="match_parent">
 
-            <TextView
-                android:paddingLeft="15dp"
-                android:gravity="center_vertical"
-                android:textSize="15sp"
-                android:textColor="@color/fontColor_support"
-                android:text="隶属辖区"
+            <RelativeLayout
+                android:background="@color/white"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="90dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_photo"
+                    android:scaleType="centerCrop"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@mipmap/tree_small"
+                    />
+
+
+                <LinearLayout
+                    android:id="@+id/layout_text"
+                    android:layout_toEndOf="@+id/img_photo"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginLeft="22dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="股东:"
+                        android:textSize="15sp"
+                        android:textColor="@color/fontColor_support"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="状态:"
+                        android:textSize="15sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/fontColor_support"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_toEndOf="@+id/layout_text"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginLeft="4dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout">
+
+                    <TextView
+                        android:id="@+id/txt_name"
+                        android:text="张三"
+                        android:textSize="15sp"
+                        android:textColor="@color/fontColor_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/txt_state"
+                        android:textSize="15sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/fontColor_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_activate"
+                    android:visibility="gone"
+                    android:layout_alignBottom="@+id/linearLayout"
+                    android:layout_toEndOf="@+id/linearLayout"
+                    android:orientation="horizontal"
+                    android:gravity="right|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="去激活"
+                        android:textSize="15sp"
+                        android:textColor="@color/fontColor_orange"
+                        android:layout_marginRight="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_marginRight="15dp"
+                        android:src="@mipmap/more_right"
+                        android:layout_width="8dp"
+                        android:layout_height="14dp" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+
+
+            <View
+                android:background="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="98dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:paddingLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:textSize="15sp"
+                        android:textColor="@color/fontColor_support"
+                        android:text="隶属辖区"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <View
+                        android:background="@color/lineColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_popedom"
+                        android:gravity="center_vertical"
+                        android:textSize="15sp"
+                        android:textColor="@color/fontColor_orange"
+                        android:text="隶属辖区"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <View
+                        android:background="@color/lineColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_support"
+                    android:text="历史被摇次数"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp" />
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:id="@+id/txt_shakeNum_history"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_orange"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_support"
+                    android:text="今日被摇次数"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp" />
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:id="@+id/txt_shakeNum_today"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_shake"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_support"
+                    android:text="红包业绩"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:id="@+id/txt_hbyj"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_orange"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp" />
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:src="@mipmap/more_right_small" />
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_support"
+                    android:text="历史定向红包"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:id="@+id/txt_giveNum_history"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_orange"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_support"
+                    android:text="今日定向红包"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:id="@+id/txt_giveNum_today"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_give"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_support"
+                    android:text="红包业绩"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:id="@+id/txt_gxz"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_orange"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp" />
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:src="@mipmap/more_right_small" />
+
+            </LinearLayout>
 
             <View
                 android:background="@color/lineColor"
@@ -189,56 +429,21 @@
                 android:layout_height="0.5dp"/>
 
             <TextView
-                android:paddingLeft="15dp"
-                android:gravity="center_vertical"
-                android:textSize="15sp"
-                android:textColor="@color/fontColor_support"
-                android:text="被摇次数"
+                android:id="@+id/txt_give"
+                android:gravity="center"
+                android:text="发定向红包"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/corners_orange"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
-            <View
-                android:background="@color/lineColor"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
+                android:layout_height="45dp" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/txt_popedom"
-                android:gravity="center_vertical"
-                android:textSize="15sp"
-                android:textColor="@color/fontColor_gray"
-                android:text="隶属辖区"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
-            <View
-                android:background="@color/lineColor"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
-
-            <TextView
-                android:id="@+id/txt_number"
-                android:gravity="center_vertical"
-                android:textSize="15sp"
-                android:textColor="@color/fontColor_gray"
-                android:text="5次"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
-            <View
-                android:background="@color/lineColor"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

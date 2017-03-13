@@ -2,7 +2,7 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.util;
 
 public class ConstantsUtil {
 	// APP_ID 替换为你的应用从官方网站申请到的合法appId
-    public static final String APP_ID_WX = "wx3eb3d4d796093674";
+    public static final String APP_ID_WX = "wx9324d86fb16e8af0";
 
 	// 微信商户号
 	public static final String MCH_ID = "1300851701";

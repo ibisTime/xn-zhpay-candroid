@@ -28,7 +28,7 @@ public class ImageUtil {
      *            上下文
      */
     public static void glide(String url, ImageView sellersmallimg, Context context) {
-        if (url == null) {
+        if (url == null || url.indexOf("www")!=-1) {
             return;
         }
         if (url.indexOf("http") != -1) {

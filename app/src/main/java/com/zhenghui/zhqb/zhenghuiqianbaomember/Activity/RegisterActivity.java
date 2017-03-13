@@ -58,8 +58,8 @@ public class RegisterActivity extends MyBaseActivity {
     EditText edtPassword;
     @InjectView(R.id.btn_register)
     Button btnRegister;
-    @InjectView(R.id.txt_treaty)
-    TextView txtTreaty;
+    @InjectView(R.id.layout_treaty)
+    LinearLayout layoutTreaty;
     @InjectView(R.id.txt_address)
     TextView txtAddress;
     @InjectView(R.id.img_scan)
@@ -154,7 +154,7 @@ public class RegisterActivity extends MyBaseActivity {
         mLocationClient.startLocation();
     }
 
-    @OnClick({R.id.layout_back, R.id.btn_send, R.id.btn_register, R.id.txt_address, R.id.img_scan})
+    @OnClick({R.id.layout_back, R.id.btn_send, R.id.btn_register, R.id.txt_address, R.id.img_scan, R.id.layout_treaty})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -206,6 +206,10 @@ public class RegisterActivity extends MyBaseActivity {
             case R.id.img_scan:
                 Intent intent = new Intent(RegisterActivity.this, CaptureActivity.class);
                 startActivityForResult(intent, 100);
+                break;
+
+            case R.id.layout_treaty:
+                startActivity(new Intent(RegisterActivity.this, RichTextActivity.class).putExtra("cKey","reg_protocol"));
                 break;
         }
     }
@@ -262,6 +266,11 @@ public class RegisterActivity extends MyBaseActivity {
         new Xutil().post("805041", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
+
+                SharedPreferences.Editor editor = userInfoSp.edit();
+                editor.putString("mobile", edtPhone.getText().toString().trim());
+                editor.commit();
+
                 Toast.makeText(RegisterActivity.this, "注册成功,为您自动登录", Toast.LENGTH_SHORT).show();
                 login();
             }
