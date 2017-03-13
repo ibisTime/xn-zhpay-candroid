@@ -1,2 +1,2 @@
 # xn-zhpay-candroid
-This is zhPay-C firstVersion V1.0.0
+This is zhPay-C Version 2.0.0
