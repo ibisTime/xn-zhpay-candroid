@@ -8,39 +8,37 @@ public class EvaluateModel {
 
 
     /**
-     * id : 15
-     * type : 2
-     * evaluateType : A
-     * interacter : U2017011704412811088
-     * interactDatetime : Feb 9, 2017 6:19:13 PM
-     * jewelCode : CP201701170138164781
-     * orderCode : DD201701170305366543604
-     * systemCode : CD-CZH000001
-     * interacterUser : {"userId":"U2017011704412811088","nickname":"╮(￣▽￣)╭","photo":"ANDROID_1484670115205_1080_1920.jpg"}
+     * code : HD201704051233004431
+     * type : 1
+     * actionUser : U2017032820273497120
+     * actionDatetime : Apr 5, 2017 12:33:00 PM
+     * storeCode : SJ201703311944099424
+     * systemCode : CD-CCG000007
+     * user : {"userId":"U2017032820273497120","loginName":"18868824532","nickname":"73497120","mobile":"18868824534","identityFlag":"0"}
      */
 
-    private int id;
+    private String code;
     private String type;
-    private String evaluateType;
-    private String interacter;
-    private String interactDatetime;
-    private String jewelCode;
-    private String orderCode;
+    private String actionUser;
+    private String actionDatetime;
+    private String storeCode;
     private String systemCode;
     /**
-     * userId : U2017011704412811088
-     * nickname : ╮(￣▽￣)╭
-     * photo : ANDROID_1484670115205_1080_1920.jpg
+     * userId : U2017032820273497120
+     * loginName : 18868824532
+     * nickname : 73497120
+     * mobile : 18868824534
+     * identityFlag : 0
      */
 
-    private InteracterUserBean interacterUser;
+    private UserBean user;
 
-    public int getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getType() {
@@ -51,44 +49,28 @@ public class EvaluateModel {
         this.type = type;
     }
 
-    public String getEvaluateType() {
-        return evaluateType;
+    public String getActionUser() {
+        return actionUser;
     }
 
-    public void setEvaluateType(String evaluateType) {
-        this.evaluateType = evaluateType;
+    public void setActionUser(String actionUser) {
+        this.actionUser = actionUser;
     }
 
-    public String getInteracter() {
-        return interacter;
+    public String getActionDatetime() {
+        return actionDatetime;
     }
 
-    public void setInteracter(String interacter) {
-        this.interacter = interacter;
+    public void setActionDatetime(String actionDatetime) {
+        this.actionDatetime = actionDatetime;
     }
 
-    public String getInteractDatetime() {
-        return interactDatetime;
+    public String getStoreCode() {
+        return storeCode;
     }
 
-    public void setInteractDatetime(String interactDatetime) {
-        this.interactDatetime = interactDatetime;
-    }
-
-    public String getJewelCode() {
-        return jewelCode;
-    }
-
-    public void setJewelCode(String jewelCode) {
-        this.jewelCode = jewelCode;
-    }
-
-    public String getOrderCode() {
-        return orderCode;
-    }
-
-    public void setOrderCode(String orderCode) {
-        this.orderCode = orderCode;
+    public void setStoreCode(String storeCode) {
+        this.storeCode = storeCode;
     }
 
     public String getSystemCode() {
@@ -99,41 +81,12 @@ public class EvaluateModel {
         this.systemCode = systemCode;
     }
 
-    public InteracterUserBean getInteracterUser() {
-        return interacterUser;
+    public UserBean getUser() {
+        return user;
     }
 
-    public void setInteracterUser(InteracterUserBean interacterUser) {
-        this.interacterUser = interacterUser;
+    public void setUser(UserBean user) {
+        this.user = user;
     }
 
-    public static class InteracterUserBean {
-        private String userId;
-        private String nickname;
-        private String photo;
-
-        public String getUserId() {
-            return userId;
-        }
-
-        public void setUserId(String userId) {
-            this.userId = userId;
-        }
-
-        public String getNickname() {
-            return nickname;
-        }
-
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
-        }
-
-        public String getPhoto() {
-            return photo;
-        }
-
-        public void setPhoto(String photo) {
-            this.photo = photo;
-        }
-    }
 }

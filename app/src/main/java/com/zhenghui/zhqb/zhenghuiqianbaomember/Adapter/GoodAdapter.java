@@ -35,9 +35,6 @@ public class GoodAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-
-        System.out.println("list.size()="+list.size());
-
         return list.size();
     }
 
@@ -68,7 +65,7 @@ public class GoodAdapter extends BaseAdapter {
 
     private void setView(int position) {
         holder.txtGoodame.setText(list.get(position).getName());
-        holder.txtInfo.setText(list.get(position).getAdvTitle());
+        holder.txtInfo.setText(list.get(position).getSlogan());
 
         ImageUtil.glide(list.get(position).getAdvPic(),holder.imgGoodPic,context);
 

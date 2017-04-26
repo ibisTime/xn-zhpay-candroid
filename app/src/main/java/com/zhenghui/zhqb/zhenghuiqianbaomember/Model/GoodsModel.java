@@ -1,6 +1,7 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by dell1 on 2016/12/15.
@@ -10,56 +11,60 @@ public class GoodsModel implements Serializable {
 
 
     /**
-     * code : CP201612141529322276
-     * category : 1
-     * type : 1
-     * name : 胶囊咖啡机update
-     * advTitle : 广告语
-     * advPic : 广告图
-     * pic1 : pic1
-     * pic2 :
-     * pic3 :
-     * pic4 :
-     * description : 图文详情
-     * costPrice : 100.0
-     * quantity : 99.0
-     * status : 2
-     * updater : U000000000000001
-     * updateDatetime : Dec 14, 2016 4:12:41 PM
-     * remark : 10
-     * price1 : 20.0
-     * price2 : 10.0
-     * price3 : 10.0
+     * code : CP201704052113595563
+     * category : FL201700000000000001
+     * type : FL201700000000000003
+     * name : 商品001
+     * slogan : *广告语:*广告语:*广告语:*广告语:*广告语:*广告语:
+     * advPic : OSS_1491398022176_318_176.png
+     * pic : OSS_1491398033529_750_8876.jpg
+     * description : *商品详述:*商品详述:*商品详述:*商品详述:*商品详述:*商品详述:*商品详述:
+     * originalPrice : 0
+     * price1 : 100
+     * price2 : 2000
+     * price3 : 3000
      * location : 1
-     * orderNo : 1.0
-     * companyCode : CD-CZH000001
+     * orderNo : 1
+     * status : 3
+     * updater : admin
+     * updateDatetime : Apr 5, 2017 9:16:06 PM
+     * boughtCount : 0
+     * companyCode : U2017040520504605437
      * systemCode : CD-CZH000001
+     * productSpecs : [{"code":"PS201704052114303313","productCode":"CP201704052113595563","dkey":"颜色","dvalue":"红色","orderNo":1,"companyCode":"U2017040520504605437","systemCode":"CD-CZH000001"},{"code":"PS201704052114423194","productCode":"CP201704052113595563","dkey":"尺寸","dvalue":"35码","orderNo":2,"companyCode":"U2017040520504605437","systemCode":"CD-CZH000001"}]
      */
 
     private String code;
     private String category;
     private String type;
     private String name;
-    private String advTitle;
+    private String slogan;
     private String advPic;
-    private String pic1;
-    private String pic2;
-    private String pic3;
-    private String pic4;
+    private String pic;
     private String description;
-    private double costPrice;
-    private double quantity;
+    private int originalPrice;
+    private double price1;
+    private int price2;
+    private int price3;
+    private String location;
+    private int orderNo;
     private String status;
     private String updater;
     private String updateDatetime;
-    private String remark;
-    private double price1 = 0;
-    private Integer price2 = 0;
-    private Integer price3 = 0;
-    private String location;
-    private double orderNo;
+    private int boughtCount;
     private String companyCode;
     private String systemCode;
+    /**
+     * code : PS201704052114303313
+     * productCode : CP201704052113595563
+     * dkey : 颜色
+     * dvalue : 红色
+     * orderNo : 1
+     * companyCode : U2017040520504605437
+     * systemCode : CD-CZH000001
+     */
+
+    private List<ProductSpecsBean> productSpecs;
 
     public String getCode() {
         return code;
@@ -93,12 +98,12 @@ public class GoodsModel implements Serializable {
         this.name = name;
     }
 
-    public String getAdvTitle() {
-        return advTitle;
+    public String getSlogan() {
+        return slogan;
     }
 
-    public void setAdvTitle(String advTitle) {
-        this.advTitle = advTitle;
+    public void setSlogan(String slogan) {
+        this.slogan = slogan;
     }
 
     public String getAdvPic() {
@@ -109,36 +114,12 @@ public class GoodsModel implements Serializable {
         this.advPic = advPic;
     }
 
-    public String getPic1() {
-        return pic1;
+    public String getPic() {
+        return pic;
     }
 
-    public void setPic1(String pic1) {
-        this.pic1 = pic1;
-    }
-
-    public String getPic2() {
-        return pic2;
-    }
-
-    public void setPic2(String pic2) {
-        this.pic2 = pic2;
-    }
-
-    public String getPic3() {
-        return pic3;
-    }
-
-    public void setPic3(String pic3) {
-        this.pic3 = pic3;
-    }
-
-    public String getPic4() {
-        return pic4;
-    }
-
-    public void setPic4(String pic4) {
-        this.pic4 = pic4;
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 
     public String getDescription() {
@@ -149,20 +130,52 @@ public class GoodsModel implements Serializable {
         this.description = description;
     }
 
-    public double getCostPrice() {
-        return costPrice;
+    public int getOriginalPrice() {
+        return originalPrice;
     }
 
-    public void setCostPrice(double costPrice) {
-        this.costPrice = costPrice;
+    public void setOriginalPrice(int originalPrice) {
+        this.originalPrice = originalPrice;
     }
 
-    public double getQuantity() {
-        return quantity;
+    public double getPrice1() {
+        return price1;
     }
 
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
+    public void setPrice1(double price1) {
+        this.price1 = price1;
+    }
+
+    public int getPrice2() {
+        return price2;
+    }
+
+    public void setPrice2(int price2) {
+        this.price2 = price2;
+    }
+
+    public int getPrice3() {
+        return price3;
+    }
+
+    public void setPrice3(int price3) {
+        this.price3 = price3;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(int orderNo) {
+        this.orderNo = orderNo;
     }
 
     public String getStatus() {
@@ -189,52 +202,12 @@ public class GoodsModel implements Serializable {
         this.updateDatetime = updateDatetime;
     }
 
-    public String getRemark() {
-        return remark;
+    public int getBoughtCount() {
+        return boughtCount;
     }
 
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public double getPrice1() {
-        return price1;
-    }
-
-    public void setPrice1(double price1) {
-        this.price1 = price1;
-    }
-
-    public Integer getPrice2() {
-        return price2;
-    }
-
-    public void setPrice2(Integer price2) {
-        this.price2 = price2;
-    }
-
-    public Integer getPrice3() {
-        return price3;
-    }
-
-    public void setPrice3(Integer price3) {
-        this.price3 = price3;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public double getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(double orderNo) {
-        this.orderNo = orderNo;
+    public void setBoughtCount(int boughtCount) {
+        this.boughtCount = boughtCount;
     }
 
     public String getCompanyCode() {
@@ -251,5 +224,79 @@ public class GoodsModel implements Serializable {
 
     public void setSystemCode(String systemCode) {
         this.systemCode = systemCode;
+    }
+
+    public List<ProductSpecsBean> getProductSpecs() {
+        return productSpecs;
+    }
+
+    public void setProductSpecs(List<ProductSpecsBean> productSpecs) {
+        this.productSpecs = productSpecs;
+    }
+
+    public static class ProductSpecsBean implements Serializable {
+        private String code;
+        private String productCode;
+        private String dkey;
+        private String dvalue;
+        private int orderNo;
+        private String companyCode;
+        private String systemCode;
+
+        public String getCode() {
+            return code;
+        }
+
+        public void setCode(String code) {
+            this.code = code;
+        }
+
+        public String getProductCode() {
+            return productCode;
+        }
+
+        public void setProductCode(String productCode) {
+            this.productCode = productCode;
+        }
+
+        public String getDkey() {
+            return dkey;
+        }
+
+        public void setDkey(String dkey) {
+            this.dkey = dkey;
+        }
+
+        public String getDvalue() {
+            return dvalue;
+        }
+
+        public void setDvalue(String dvalue) {
+            this.dvalue = dvalue;
+        }
+
+        public int getOrderNo() {
+            return orderNo;
+        }
+
+        public void setOrderNo(int orderNo) {
+            this.orderNo = orderNo;
+        }
+
+        public String getCompanyCode() {
+            return companyCode;
+        }
+
+        public void setCompanyCode(String companyCode) {
+            this.companyCode = companyCode;
+        }
+
+        public String getSystemCode() {
+            return systemCode;
+        }
+
+        public void setSystemCode(String systemCode) {
+            this.systemCode = systemCode;
+        }
     }
 }

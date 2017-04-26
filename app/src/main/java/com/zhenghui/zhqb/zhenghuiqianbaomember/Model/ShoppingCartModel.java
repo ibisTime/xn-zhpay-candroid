@@ -1,7 +1,5 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
 
-import java.util.List;
-
 /**
  * Created by dell1 on 2016/12/15.
  */
@@ -10,89 +8,108 @@ public class ShoppingCartModel {
 
 
     /**
-     * pageNO : 1.0
-     * start : 0.0
-     * pageSize : 10.0
-     * totalCount : 2.0
-     * totalPage : 1.0
-     * list : [{"code":"GW201612151941205179","userId":"U2016121519373971225","productCode":"CP201612141643503168","quantity":1,"advPic":"广告图","productName":"胶囊咖啡机2"},{"code":"GW201612151938060638","userId":"U2016121519373971225","productCode":"CP201612141529322276","quantity":2,"advPic":"广告图","productName":"胶囊咖啡机update","price1":20,"price2":10,"price3":10}]
+     * code : GW201703291941494563
+     * userId : U2017032913574410381
+     * productCode : CP201703291727333540
+     * quantity : 1
+     * companyCode : CD-CZH000001
+     * systemCode : CD-CZH000001
+     * product : {"code":"CP201703291727333540","name":"we bare bears","advPic":"ANDROID_1490779593774_612_344.jpg","price1":10000,"price2":10000,"price3":10000,"companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
      */
 
-    private double pageNO;
-    private double start;
-    private double pageSize;
-    private double totalCount;
-    private double totalPage;
+    private String code;
+    private String userId;
+    private String productCode;
+    private int quantity;
+    private String companyCode;
+    private String systemCode;
     /**
-     * code : GW201612151941205179
-     * userId : U2016121519373971225
-     * productCode : CP201612141643503168
-     * quantity : 1.0
-     * advPic : 广告图
-     * productName : 胶囊咖啡机2
+     * code : CP201703291727333540
+     * name : we bare bears
+     * advPic : ANDROID_1490779593774_612_344.jpg
+     * price1 : 10000
+     * price2 : 10000
+     * price3 : 10000
+     * companyCode : CD-CZH000001
+     * systemCode : CD-CZH000001
      */
 
-    private List<ListBean> list;
+    private ProductBean product;
 
-    public double getPageNO() {
-        return pageNO;
+    public String getCode() {
+        return code;
     }
 
-    public void setPageNO(double pageNO) {
-        this.pageNO = pageNO;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public double getStart() {
-        return start;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setStart(double start) {
-        this.start = start;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public double getPageSize() {
-        return pageSize;
+    public String getProductCode() {
+        return productCode;
     }
 
-    public void setPageSize(double pageSize) {
-        this.pageSize = pageSize;
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
     }
 
-    public double getTotalCount() {
-        return totalCount;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setTotalCount(double totalCount) {
-        this.totalCount = totalCount;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public double getTotalPage() {
-        return totalPage;
+    public String getCompanyCode() {
+        return companyCode;
     }
 
-    public void setTotalPage(double totalPage) {
-        this.totalPage = totalPage;
+    public void setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
     }
 
-    public List<ListBean> getList() {
-        return list;
+    public String getSystemCode() {
+        return systemCode;
     }
 
-    public void setList(List<ListBean> list) {
-        this.list = list;
+    public void setSystemCode(String systemCode) {
+        this.systemCode = systemCode;
     }
 
-    public static class ListBean {
+    public ProductBean getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductBean product) {
+        this.product = product;
+    }
+
+    public static class ProductBean {
         private String code;
-        private String userId;
-        private String productCode;
-        private double quantity;
+        private String name;
         private String advPic;
-        private String productName;
         private double price1;
         private Integer price2;
         private Integer price3;
+        private String companyCode;
+        private String systemCode;
         private boolean isChoose = false;
+
+        public boolean isChoose() {
+            return isChoose;
+        }
+
+        public void setChoose(boolean choose) {
+            isChoose = choose;
+        }
 
         public String getCode() {
             return code;
@@ -102,28 +119,12 @@ public class ShoppingCartModel {
             this.code = code;
         }
 
-        public String getUserId() {
-            return userId;
+        public String getName() {
+            return name;
         }
 
-        public void setUserId(String userId) {
-            this.userId = userId;
-        }
-
-        public String getProductCode() {
-            return productCode;
-        }
-
-        public void setProductCode(String productCode) {
-            this.productCode = productCode;
-        }
-
-        public double getQuantity() {
-            return quantity;
-        }
-
-        public void setQuantity(double quantity) {
-            this.quantity = quantity;
+        public void setName(String name) {
+            this.name = name;
         }
 
         public String getAdvPic() {
@@ -132,14 +133,6 @@ public class ShoppingCartModel {
 
         public void setAdvPic(String advPic) {
             this.advPic = advPic;
-        }
-
-        public String getProductName() {
-            return productName;
-        }
-
-        public void setProductName(String productName) {
-            this.productName = productName;
         }
 
         public double getPrice1() {
@@ -166,12 +159,20 @@ public class ShoppingCartModel {
             this.price3 = price3;
         }
 
-        public boolean isChoose() {
-            return isChoose;
+        public String getCompanyCode() {
+            return companyCode;
         }
 
-        public void setChoose(boolean choose) {
-            isChoose = choose;
+        public void setCompanyCode(String companyCode) {
+            this.companyCode = companyCode;
+        }
+
+        public String getSystemCode() {
+            return systemCode;
+        }
+
+        public void setSystemCode(String systemCode) {
+            this.systemCode = systemCode;
         }
     }
 }

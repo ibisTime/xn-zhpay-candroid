@@ -36,7 +36,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShakeListActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShakeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LoginUtil;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RootUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
 import org.json.JSONArray;
@@ -76,6 +75,7 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
     private String longitude = "";
 
     private SharedPreferences userInfoSp;
+    private SharedPreferences appConfigSp;
     private AMapLocationClient mLocationClient;
 
     private List<ShakeModel> list;
@@ -96,6 +96,8 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
 
     private MainActivity activity;
 
+    private boolean isHidden = true;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -107,6 +109,21 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
         return view;
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        isHidden = hidden;
+        if(hidden){
+            if (mSensorManager != null) {
+                mSensorManager.unregisterListener(this);
+            }
+
+        }else{
+//            if (RootUtil.isDeviceRooted()) {
+//                Toast.makeText(activity, "您的设备已root,不能参加摇一摇", Toast.LENGTH_SHORT).show();
+//            }
+        }
+    }
 
     @Override
     public void onResume() {
@@ -146,6 +163,7 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
 
         list = new ArrayList<>();
         userInfoSp = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        appConfigSp = getActivity().getSharedPreferences("appConfig", Context.MODE_PRIVATE);
 
         //获取Vibrator震动服务
         mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
@@ -187,21 +205,23 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
         String DEVICE_ID = tm.getDeviceId();
 
         if (DEVICE_ID == null) {
-            DEVICE_ID = "error_noDeviceId";
+            DEVICE_ID = "android_error_noDeviceId";
         }
 
         JSONObject object = new JSONObject();
         try {
-            object.put("token", userInfoSp.getString("token", null));
-            object.put("userId", userInfoSp.getString("userId", null));
             object.put("deviceNo", DEVICE_ID);
             object.put("latitude", latitude);
             object.put("longitude", longitude);
+            object.put("token", userInfoSp.getString("token", null));
+            object.put("userId", userInfoSp.getString("userId", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808457", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615117", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 if (result.equals("indexOutOf")) {
@@ -256,10 +276,7 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
         int type = event.sensor.getType();
 
         if (activity.isShake) {
-            if (RootUtil.isDeviceRooted()) {
-                Toast.makeText(activity, "您的设备已root,不能参加摇一摇", Toast.LENGTH_SHORT).show();
-            } else {
-
+//            if (!RootUtil.isDeviceRooted()) {
                 if (type == Sensor.TYPE_ACCELEROMETER) {
                     //获取三个方向值
                     float[] values = event.values;
@@ -306,7 +323,7 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
                     }
                 }
 
-            }
+//            }
 
         }
 
@@ -314,7 +331,6 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-
     }
 
     private static class MyHandler extends Handler {

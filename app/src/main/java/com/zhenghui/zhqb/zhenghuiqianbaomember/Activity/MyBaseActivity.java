@@ -63,6 +63,7 @@ public class MyBaseActivity extends FragmentActivity {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.CAMERA,
+            Manifest.permission.CALL_PHONE
 //            Manifest.permission.RECORD_AUDIO
     };
 

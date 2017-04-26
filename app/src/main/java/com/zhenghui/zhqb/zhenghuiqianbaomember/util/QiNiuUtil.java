@@ -72,9 +72,8 @@ public class QiNiuUtil {
                             }
                         }
                     }, null);
+
         }
-
-
 
     }
 
@@ -165,14 +164,13 @@ public class QiNiuUtil {
 
         try {
             ExifInterface exifInterface = new ExifInterface(data);
-
-            //拍摄日期
+            // 拍摄日期
             String FDateTime = exifInterface.getAttribute(ExifInterface.TAG_DATETIME);
             // 设备品牌
             String deviceName = exifInterface.getAttribute(ExifInterface.TAG_MAKE);
             // 设备型号
             String deviceModel = exifInterface.getAttribute(ExifInterface.TAG_MODEL);
-
+            // 拍摄角度
             int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
             switch (orientation) {
                 case ExifInterface.ORIENTATION_ROTATE_90:
@@ -186,8 +184,6 @@ public class QiNiuUtil {
                 default:
                     imageWidth = exifInterface.getAttribute(ExifInterface.TAG_IMAGE_WIDTH);
                     imageHeight = exifInterface.getAttribute(ExifInterface.TAG_IMAGE_LENGTH);
-
-
                     break;
 
             }

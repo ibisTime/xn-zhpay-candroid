@@ -67,7 +67,6 @@ public class JewelHistoryActivity extends MyBaseActivity implements SwipeRefresh
 
     }
 
-
     private void initRefreshLayout() {
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
@@ -101,12 +100,13 @@ public class JewelHistoryActivity extends MyBaseActivity implements SwipeRefresh
             object.put("orderDir", "");
             object.put("orderColumn", "");
             object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808310", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615015", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -191,13 +191,12 @@ public class JewelHistoryActivity extends MyBaseActivity implements SwipeRefresh
 
         startActivity(new Intent(JewelHistoryActivity.this, MyDuoBaoNumActivity.class)
                 .putExtra("winNumber", list.get(i).getWinNumber())
-                .putExtra("winer", list.get(i).getWinUser())
+                .putExtra("winer", list.get(i).getUser().getNickname())
                 .putExtra("winTime", list.get(i).getWinDatetime())
                 .putExtra("model", list.get(i))
                 .putExtra("color", color)
                 .putExtra("code", list.get(i).getCode()));
 
     }
-
 
 }

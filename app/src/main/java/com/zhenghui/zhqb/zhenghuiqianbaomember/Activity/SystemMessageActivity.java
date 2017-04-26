@@ -104,6 +104,7 @@ public class SystemMessageActivity extends MyBaseActivity implements SwipeRefres
             object.put("toSystemCode", appConfigSp.getString("systemCode",null));
             object.put("toKind", "1");
             object.put("toMobile", "");
+            object.put("status", "1");
             object.put("smsType", "");
             object.put("start", page);
             object.put("limit", pageSize);

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.JewelRecordModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 
 import java.util.List;
 
@@ -67,14 +68,14 @@ public class JewelRecordAdapter extends BaseAdapter {
         if(list.get(i).getStatus().equals("2")){
             holder.txtStatus.setText("中奖");
             holder.txtContent.setText(Html.fromHtml("中得<html><font color=\"#fe4332\">"+
-                    (list.get(i).getJewel().getAmount()/1000)+
-                    "</font></html>"+getCurrency(list.get(i).getJewel().getCurrency())));
+                    MoneyUtil.moneyFormatDouble(list.get(0).getJewel().getToAmount())+
+                    "</font></html>"+getCurrency(list.get(i).getJewel().getToCurrency())));
         }else{
             holder.txtStatus.setText("参与");
             holder.txtContent.setText(Html.fromHtml("参与<html><font color=\"#fe4332\">"+
                     list.get(i).getTimes()+ "</font></html>次夺宝"));
         }
-        holder.txtPhone.setText(list.get(i).getMobile().substring(0,3)+"****"+list.get(i).getMobile().substring(7,list.get(i).getMobile().length()));
+        holder.txtPhone.setText(list.get(i).getUser().getMobile().substring(0,3)+"****"+list.get(i).getUser().getMobile().substring(7,list.get(i).getUser().getMobile().length()));
     }
 
     private String getCurrency(String currency){

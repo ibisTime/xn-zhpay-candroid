@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.MyJewelHistoreModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TargetModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 
@@ -24,12 +24,12 @@ import butterknife.InjectView;
 
 public class MyJewelHistoryAdapter extends BaseAdapter {
 
-    private List<MyJewelHistoreModel> list;
+    private List<TargetModel> list;
     private Context context;
 
     private ViewHolder holder;
 
-    public MyJewelHistoryAdapter(Context context, List<MyJewelHistoreModel> list) {
+    public MyJewelHistoryAdapter(Context context, List<TargetModel> list) {
         this.list = list;
         this.context = context;
     }
@@ -66,11 +66,11 @@ public class MyJewelHistoryAdapter extends BaseAdapter {
 
     private void setView(int i) {
 
-        holder.txtName.setText((list.get(i).getJewel().getAmount()/1000)+getCurrency(list.get(i).getJewel().getCurrency()));
-        holder.txtTime.setText("第"+list.get(i).getJewel().getPeriods()+"期");
-        holder.txtSum.setText(list.get(i).getJewel().getTotalNum()+"");
-        holder.txtResidue.setText((list.get(i).getJewel().getTotalNum()-list.get(i).getJewel().getInvestNum())+"");
-        holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(i).getJewel().getPrice()));
+        holder.txtName.setText((list.get(i).getToAmount()/1000)+getCurrency(list.get(i).getToCurrency()));
+        holder.txtTime.setText("第"+list.get(i).getPeriods()+"期");
+        holder.txtSum.setText(list.get(i).getTotalNum()+"");
+        holder.txtResidue.setText((list.get(i).getTotalNum()-list.get(i).getInvestNum())+"");
+        holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(i).getFromAmount())+getCurrency(list.get(i).getFromCurrency()));
 
         if(i > 2){
             if(i%3 == 0){
@@ -96,8 +96,8 @@ public class MyJewelHistoryAdapter extends BaseAdapter {
             }
         }
 
-        holder.barSchedule.setMax((int) (list.get(i).getJewel().getTotalNum()));
-        holder.barSchedule.setProgress(list.get(i).getJewel().getInvestNum());
+        holder.barSchedule.setMax((int) (list.get(i).getTotalNum()));
+        holder.barSchedule.setProgress(list.get(i).getInvestNum());
 
     }
 
@@ -127,6 +127,10 @@ public class MyJewelHistoryAdapter extends BaseAdapter {
 
             case "HBYJ":
                 type = "红包业绩";
+                break;
+
+            case "CNY":
+                type = "人民币";
                 break;
         }
 

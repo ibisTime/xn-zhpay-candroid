@@ -54,20 +54,20 @@ public class OrderModel {
     private String applyUser;
     private String applyNote;
     private String applyDatetime;
-    private int amount1;
-    private int amount2;
-    private int amount3;
-    private int payAmount1;
-    private int payAmount2;
-    private int payAmount3;
+    private double amount1;
+    private double amount2;
+    private double amount3;
+    private double payAmount1;
+    private double payAmount2;
+    private double payAmount3;
     private int yunfei;
     private String payDatetime;
     private String status;
     private String updater;
     private String updateDatetime;
     private String remark;
-    private String logisticsCode;
-    private String logisticsCompany;
+    private String logisticsCode = "";
+    private String logisticsCompany = "";
     private String deliverer;
     private String deliveryDatetime;
     private String pdf;
@@ -170,51 +170,51 @@ public class OrderModel {
         this.applyDatetime = applyDatetime;
     }
 
-    public int getAmount1() {
+    public double getAmount1() {
         return amount1;
     }
 
-    public void setAmount1(int amount1) {
+    public void setAmount1(double amount1) {
         this.amount1 = amount1;
     }
 
-    public int getAmount2() {
+    public double getAmount2() {
         return amount2;
     }
 
-    public void setAmount2(int amount2) {
+    public void setAmount2(double amount2) {
         this.amount2 = amount2;
     }
 
-    public int getAmount3() {
+    public double getAmount3() {
         return amount3;
     }
 
-    public void setAmount3(int amount3) {
+    public void setAmount3(double amount3) {
         this.amount3 = amount3;
     }
 
-    public int getPayAmount1() {
+    public double getPayAmount1() {
         return payAmount1;
     }
 
-    public void setPayAmount1(int payAmount1) {
+    public void setPayAmount1(double payAmount1) {
         this.payAmount1 = payAmount1;
     }
 
-    public int getPayAmount2() {
+    public double getPayAmount2() {
         return payAmount2;
     }
 
-    public void setPayAmount2(int payAmount2) {
+    public void setPayAmount2(double payAmount2) {
         this.payAmount2 = payAmount2;
     }
 
-    public int getPayAmount3() {
+    public double getPayAmount3() {
         return payAmount3;
     }
 
-    public void setPayAmount3(int payAmount3) {
+    public void setPayAmount3(double payAmount3) {
         this.payAmount3 = payAmount3;
     }
 
@@ -354,9 +354,16 @@ public class OrderModel {
         private int price1;
         private int price2;
         private int price3;
-        private String productName;
-        private String advPic;
-        private String isComment;
+        private String isComment = "0";
+        private ProductBean product;
+
+        public ProductBean getProduct() {
+            return product;
+        }
+
+        public void setProduct(ProductBean product) {
+            this.product = product;
+        }
 
         public String getCode() {
             return code;
@@ -414,12 +421,27 @@ public class OrderModel {
             this.price3 = price3;
         }
 
-        public String getProductName() {
-            return productName;
+
+
+        public String getIsComment() {
+            return isComment;
         }
 
-        public void setProductName(String productName) {
-            this.productName = productName;
+        public void setIsComment(String isComment) {
+            this.isComment = isComment;
+        }
+    }
+
+    public static class ProductBean {
+        private String name;
+        private String advPic;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String productName) {
+            this.name = productName;
         }
 
         public String getAdvPic() {
@@ -428,14 +450,6 @@ public class OrderModel {
 
         public void setAdvPic(String advPic) {
             this.advPic = advPic;
-        }
-
-        public String getIsComment() {
-            return isComment;
-        }
-
-        public void setIsComment(String isComment) {
-            this.isComment = isComment;
         }
     }
 }

@@ -35,6 +35,8 @@ public class WebActivity extends MyBaseActivity {
         ButterKnife.inject(this);
         MyApplication.getInstance().addActivity(this);
 
+
+
         inits();
         initWebView();
     }

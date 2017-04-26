@@ -10,18 +10,14 @@ public class DiscountModel implements Serializable {
 
 
     /**
-     * code : UT201701171644446304
-     * userId : U2017011704412811088
-     * ticketCode : ZKQ201701171616540220
-     * createDatetime : Jan 17, 2017 4:44:44 PM
+     * code : UT201704041609383483
+     * userId : U2017032913574410381
+     * ticketCode : ZKQ201704041602292069
+     * createDatetime : Apr 4, 2017 4:09:38 PM
      * status : 0
      * systemCode : CD-CZH000001
-     * ticketName : ios测试
-     * ticketType : 1
-     * ticketKey1 : 100000
-     * ticketKey2 : 50000
-     * storeTicket : {"code":"ZKQ201701171616540220","name":"ios测试","type":"1","key1":100000,"key2":50000,"description":"听一下咯摸摸摸摸哦哦弄KKK啦啊摸摸摸莫总摸摸摸莫总我摸摸摸呕吐他咯哦full哦哦哦咯Mook咯哦哦咯摩托弄one摩托","price":50000,"currency":"QBB","validateStart":"Jan 17, 2017 12:00:00 AM","validateEnd":"Jan 21, 2017 11:59:59 PM","createDatetime":"Jan 17, 2017 4:16:54 PM","status":"1","storeCode":"SJ201701170429427443","systemCode":"CD-CZH000001"}
-     * store : {"code":"SJ201701170429427443","name":"ios店铺","type":"3","legalPersonName":"田磊","userReferee":"U2017010713451027748","rate1":0.99,"rate2":0.95,"slogan":"隐隐约约","adPic":"IOS_1484486218974364_1280_950.jpg","pic":"IOS_1484486219145374_1280_950.jpg||IOS_1484486219181269_950_1280.jpg","description":"恍恍惚惚恍恍惚惚哈哈哈这点上班路公交车专用道","province":"浙江省","city":"湖州市","area":"长兴县","address":"余杭哪里","longitude":"120.00069604342106","latitude":"30.28754643010961","bookMobile":"13868074590","status":"2","approver":"admin","approveDatetime":"Jan 17, 2017 6:57:01 AM","updateDatetime":"Jan 17, 2017 6:59:36 AM","remark":"bu tong guo","owner":"U201701170427197658","totalJfNum":0,"totalDzNum":0,"systemCode":"CD-CZH000001"}
+     * storeTicket : {"code":"ZKQ201704041602292069","name":"满减","type":"1","key1":200000,"key2":20000,"description":"让我给你姓名一言一行您look哦咯破ing民工why","price":20000,"currency":"QBB","validateStart":"Apr 4, 2017 12:00:00 AM","validateEnd":"Apr 6, 2017 12:00:00 AM","createDatetime":"Apr 4, 2017 4:02:29 PM","status":"1","storeCode":"SJ201704041559165775","companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
+     * store : {"code":"SJ201704041559165775","name":"公益行商家","level":"2","type":"FL201703301952165460","slogan":"过敏共鸣哦嘻嘻嘻XP一起我","advPic":"ANDROID_1491292374197_459_816.jpg","pic":"ANDROID_1491292758800_144_192.jpg","description":"您whyXP心你好也行名字一名嘻嘻YY你移民嘻嘻嘻嘻嘻嘻晚自习嘻嘻嘻嘻嘻嘻","province":"浙江省","city":"杭州市","area":"余杭区","address":"梦想战神","longitude":"119.998089","latitude":"30.38812","bookMobile":"18177777777","smsMobile":"18177777777","uiLocation":"1","uiOrder":"1","legalPersonName":"工艺","userReferee":"U2017040415165912175","rate1":0.01,"rate2":0.1,"rate3":0,"isDefault":"0","status":"2","updater":"admin","updateDatetime":"Apr 4, 2017 4:00:08 PM","owner":"U2017040415521614218","totalRmbNum":0,"totalJfNum":0,"totalDzNum":0,"totalScNum":0,"companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
      */
 
     private String code;
@@ -30,55 +26,59 @@ public class DiscountModel implements Serializable {
     private String createDatetime;
     private String status;
     private String systemCode;
-    private String ticketName;
-    private String ticketType;
-    private int ticketKey1;
-    private int ticketKey2;
     /**
-     * code : ZKQ201701171616540220
-     * name : ios测试
+     * code : ZKQ201704041602292069
+     * name : 满减
      * type : 1
-     * key1 : 100000
-     * key2 : 50000
-     * description : 听一下咯摸摸摸摸哦哦弄KKK啦啊摸摸摸莫总摸摸摸莫总我摸摸摸呕吐他咯哦full哦哦哦咯Mook咯哦哦咯摩托弄one摩托
-     * price : 50000
+     * key1 : 200000
+     * key2 : 20000
+     * description : 让我给你姓名一言一行您look哦咯破ing民工why
+     * price : 20000
      * currency : QBB
-     * validateStart : Jan 17, 2017 12:00:00 AM
-     * validateEnd : Jan 21, 2017 11:59:59 PM
-     * createDatetime : Jan 17, 2017 4:16:54 PM
+     * validateStart : Apr 4, 2017 12:00:00 AM
+     * validateEnd : Apr 6, 2017 12:00:00 AM
+     * createDatetime : Apr 4, 2017 4:02:29 PM
      * status : 1
-     * storeCode : SJ201701170429427443
+     * storeCode : SJ201704041559165775
+     * companyCode : CD-CZH000001
      * systemCode : CD-CZH000001
      */
 
     private StoreTicketBean storeTicket;
     /**
-     * code : SJ201701170429427443
-     * name : ios店铺
-     * type : 3
-     * legalPersonName : 田磊
-     * userReferee : U2017010713451027748
-     * rate1 : 0.99
-     * rate2 : 0.95
-     * slogan : 隐隐约约
-     * adPic : IOS_1484486218974364_1280_950.jpg
-     * pic : IOS_1484486219145374_1280_950.jpg||IOS_1484486219181269_950_1280.jpg
-     * description : 恍恍惚惚恍恍惚惚哈哈哈这点上班路公交车专用道
+     * code : SJ201704041559165775
+     * name : 公益行商家
+     * level : 2
+     * type : FL201703301952165460
+     * slogan : 过敏共鸣哦嘻嘻嘻XP一起我
+     * advPic : ANDROID_1491292374197_459_816.jpg
+     * pic : ANDROID_1491292758800_144_192.jpg
+     * description : 您whyXP心你好也行名字一名嘻嘻YY你移民嘻嘻嘻嘻嘻嘻晚自习嘻嘻嘻嘻嘻嘻
      * province : 浙江省
-     * city : 湖州市
-     * area : 长兴县
-     * address : 余杭哪里
-     * longitude : 120.00069604342106
-     * latitude : 30.28754643010961
-     * bookMobile : 13868074590
+     * city : 杭州市
+     * area : 余杭区
+     * address : 梦想战神
+     * longitude : 119.998089
+     * latitude : 30.38812
+     * bookMobile : 18177777777
+     * smsMobile : 18177777777
+     * uiLocation : 1
+     * uiOrder : 1
+     * legalPersonName : 工艺
+     * userReferee : U2017040415165912175
+     * rate1 : 0.01
+     * rate2 : 0.1
+     * rate3 : 0
+     * isDefault : 0
      * status : 2
-     * approver : admin
-     * approveDatetime : Jan 17, 2017 6:57:01 AM
-     * updateDatetime : Jan 17, 2017 6:59:36 AM
-     * remark : bu tong guo
-     * owner : U201701170427197658
+     * updater : admin
+     * updateDatetime : Apr 4, 2017 4:00:08 PM
+     * owner : U2017040415521614218
+     * totalRmbNum : 0
      * totalJfNum : 0
      * totalDzNum : 0
+     * totalScNum : 0
+     * companyCode : CD-CZH000001
      * systemCode : CD-CZH000001
      */
 
@@ -132,38 +132,6 @@ public class DiscountModel implements Serializable {
         this.systemCode = systemCode;
     }
 
-    public String getTicketName() {
-        return ticketName;
-    }
-
-    public void setTicketName(String ticketName) {
-        this.ticketName = ticketName;
-    }
-
-    public String getTicketType() {
-        return ticketType;
-    }
-
-    public void setTicketType(String ticketType) {
-        this.ticketType = ticketType;
-    }
-
-    public int getTicketKey1() {
-        return ticketKey1;
-    }
-
-    public void setTicketKey1(int ticketKey1) {
-        this.ticketKey1 = ticketKey1;
-    }
-
-    public int getTicketKey2() {
-        return ticketKey2;
-    }
-
-    public void setTicketKey2(int ticketKey2) {
-        this.ticketKey2 = ticketKey2;
-    }
-
     public StoreTicketBean getStoreTicket() {
         return storeTicket;
     }
@@ -180,20 +148,21 @@ public class DiscountModel implements Serializable {
         this.store = store;
     }
 
-    public static class StoreTicketBean implements Serializable {
+    public static class StoreTicketBean {
         private String code;
         private String name;
         private String type;
-        private int key1;
-        private int key2;
+        private double key1;
+        private double key2;
         private String description;
-        private int price;
+        private double price;
         private String currency;
         private String validateStart;
         private String validateEnd;
         private String createDatetime;
         private String status;
         private String storeCode;
+        private String companyCode;
         private String systemCode;
 
         public String getCode() {
@@ -220,19 +189,19 @@ public class DiscountModel implements Serializable {
             this.type = type;
         }
 
-        public int getKey1() {
+        public double getKey1() {
             return key1;
         }
 
-        public void setKey1(int key1) {
+        public void setKey1(double key1) {
             this.key1 = key1;
         }
 
-        public int getKey2() {
+        public double getKey2() {
             return key2;
         }
 
-        public void setKey2(int key2) {
+        public void setKey2(double key2) {
             this.key2 = key2;
         }
 
@@ -244,11 +213,11 @@ public class DiscountModel implements Serializable {
             this.description = description;
         }
 
-        public int getPrice() {
+        public double getPrice() {
             return price;
         }
 
-        public void setPrice(int price) {
+        public void setPrice(double price) {
             this.price = price;
         }
 
@@ -300,6 +269,14 @@ public class DiscountModel implements Serializable {
             this.storeCode = storeCode;
         }
 
+        public String getCompanyCode() {
+            return companyCode;
+        }
+
+        public void setCompanyCode(String companyCode) {
+            this.companyCode = companyCode;
+        }
+
         public String getSystemCode() {
             return systemCode;
         }
@@ -309,16 +286,13 @@ public class DiscountModel implements Serializable {
         }
     }
 
-    public static class StoreBean implements Serializable {
+    public static class StoreBean {
         private String code;
         private String name;
+        private String level;
         private String type;
-        private String legalPersonName;
-        private String userReferee;
-        private double rate1;
-        private double rate2;
         private String slogan;
-        private String adPic;
+        private String advPic;
         private String pic;
         private String description;
         private String province;
@@ -328,14 +302,24 @@ public class DiscountModel implements Serializable {
         private String longitude;
         private String latitude;
         private String bookMobile;
+        private String smsMobile;
+        private String uiLocation;
+        private String uiOrder;
+        private String legalPersonName;
+        private String userReferee;
+        private double rate1;
+        private double rate2;
+        private double rate3;
+        private String isDefault;
         private String status;
-        private String approver;
-        private String approveDatetime;
+        private String updater;
         private String updateDatetime;
-        private String remark;
         private String owner;
+        private int totalRmbNum;
         private int totalJfNum;
         private int totalDzNum;
+        private int totalScNum;
+        private String companyCode;
         private String systemCode;
 
         public String getCode() {
@@ -354,44 +338,20 @@ public class DiscountModel implements Serializable {
             this.name = name;
         }
 
+        public String getLevel() {
+            return level;
+        }
+
+        public void setLevel(String level) {
+            this.level = level;
+        }
+
         public String getType() {
             return type;
         }
 
         public void setType(String type) {
             this.type = type;
-        }
-
-        public String getLegalPersonName() {
-            return legalPersonName;
-        }
-
-        public void setLegalPersonName(String legalPersonName) {
-            this.legalPersonName = legalPersonName;
-        }
-
-        public String getUserReferee() {
-            return userReferee;
-        }
-
-        public void setUserReferee(String userReferee) {
-            this.userReferee = userReferee;
-        }
-
-        public double getRate1() {
-            return rate1;
-        }
-
-        public void setRate1(double rate1) {
-            this.rate1 = rate1;
-        }
-
-        public double getRate2() {
-            return rate2;
-        }
-
-        public void setRate2(double rate2) {
-            this.rate2 = rate2;
         }
 
         public String getSlogan() {
@@ -402,12 +362,12 @@ public class DiscountModel implements Serializable {
             this.slogan = slogan;
         }
 
-        public String getAdPic() {
-            return adPic;
+        public String getAdvPic() {
+            return advPic;
         }
 
-        public void setAdPic(String adPic) {
-            this.adPic = adPic;
+        public void setAdvPic(String advPic) {
+            this.advPic = advPic;
         }
 
         public String getPic() {
@@ -482,6 +442,78 @@ public class DiscountModel implements Serializable {
             this.bookMobile = bookMobile;
         }
 
+        public String getSmsMobile() {
+            return smsMobile;
+        }
+
+        public void setSmsMobile(String smsMobile) {
+            this.smsMobile = smsMobile;
+        }
+
+        public String getUiLocation() {
+            return uiLocation;
+        }
+
+        public void setUiLocation(String uiLocation) {
+            this.uiLocation = uiLocation;
+        }
+
+        public String getUiOrder() {
+            return uiOrder;
+        }
+
+        public void setUiOrder(String uiOrder) {
+            this.uiOrder = uiOrder;
+        }
+
+        public String getLegalPersonName() {
+            return legalPersonName;
+        }
+
+        public void setLegalPersonName(String legalPersonName) {
+            this.legalPersonName = legalPersonName;
+        }
+
+        public String getUserReferee() {
+            return userReferee;
+        }
+
+        public void setUserReferee(String userReferee) {
+            this.userReferee = userReferee;
+        }
+
+        public double getRate1() {
+            return rate1;
+        }
+
+        public void setRate1(double rate1) {
+            this.rate1 = rate1;
+        }
+
+        public double getRate2() {
+            return rate2;
+        }
+
+        public void setRate2(double rate2) {
+            this.rate2 = rate2;
+        }
+
+        public double getRate3() {
+            return rate3;
+        }
+
+        public void setRate3(double rate3) {
+            this.rate3 = rate3;
+        }
+
+        public String getIsDefault() {
+            return isDefault;
+        }
+
+        public void setIsDefault(String isDefault) {
+            this.isDefault = isDefault;
+        }
+
         public String getStatus() {
             return status;
         }
@@ -490,20 +522,12 @@ public class DiscountModel implements Serializable {
             this.status = status;
         }
 
-        public String getApprover() {
-            return approver;
+        public String getUpdater() {
+            return updater;
         }
 
-        public void setApprover(String approver) {
-            this.approver = approver;
-        }
-
-        public String getApproveDatetime() {
-            return approveDatetime;
-        }
-
-        public void setApproveDatetime(String approveDatetime) {
-            this.approveDatetime = approveDatetime;
+        public void setUpdater(String updater) {
+            this.updater = updater;
         }
 
         public String getUpdateDatetime() {
@@ -514,20 +538,20 @@ public class DiscountModel implements Serializable {
             this.updateDatetime = updateDatetime;
         }
 
-        public String getRemark() {
-            return remark;
-        }
-
-        public void setRemark(String remark) {
-            this.remark = remark;
-        }
-
         public String getOwner() {
             return owner;
         }
 
         public void setOwner(String owner) {
             this.owner = owner;
+        }
+
+        public int getTotalRmbNum() {
+            return totalRmbNum;
+        }
+
+        public void setTotalRmbNum(int totalRmbNum) {
+            this.totalRmbNum = totalRmbNum;
         }
 
         public int getTotalJfNum() {
@@ -544,6 +568,22 @@ public class DiscountModel implements Serializable {
 
         public void setTotalDzNum(int totalDzNum) {
             this.totalDzNum = totalDzNum;
+        }
+
+        public int getTotalScNum() {
+            return totalScNum;
+        }
+
+        public void setTotalScNum(int totalScNum) {
+            this.totalScNum = totalScNum;
+        }
+
+        public String getCompanyCode() {
+            return companyCode;
+        }
+
+        public void setCompanyCode(String companyCode) {
+            this.companyCode = companyCode;
         }
 
         public String getSystemCode() {

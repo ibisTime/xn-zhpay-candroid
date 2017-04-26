@@ -8,21 +8,19 @@ public class JewelRecordModel {
 
 
     /**
-     * code : JR201702221944379478
-     * userId : U2017022117434980222
-     * jewelCode : J201702221727520758
-     * investDatetime : Feb 22, 2017 7:44:37 PM
-     * times : 97
-     * payAmount : 970000
-     * payDatetime : Feb 22, 2017 7:44:37 PM
-     * status : 1
-     * remark : 已分配号码，待开奖
+     * code : JR201703221954424868
+     * userId : U2017032216121358915
+     * jewelCode : J201703221710011129
+     * investDatetime : Mar 22, 2017 7:54:42 PM
+     * times : 1
      * ip : 183.129.227.58
+     * status : 1
+     * payAmount : 10
+     * payDatetime : 2017-03-22 19:54:42:487
+     * companyCode : CD-CZH000001
      * systemCode : CD-CZH000001
-     * nickname : 34980222
-     * mobile : 15888888888
-     * photo : IOS_1487751839428025_750_1334.jpg
-     * jewel : {"code":"J201702221727520758","templateCode":"JT201702212000179938","periods":4,"currency":"FRB","amount":10000,"totalNum":100,"price":10000,"maxInvestNum":1000,"advText":"宣传文字","advPic":"宣传图","investNum":97,"createDatetime":"Feb 22, 2017 5:27:52 PM","status":"0","systemCode":"CD-CZH000001"}
+     * jewel : {"code":"J201703221710011129","templateCode":"JT201703221427246662","periods":2,"toAmount":10,"toCurrency":"FRB","totalNum":10,"maxNum":10,"investNum":2,"fromAmount":10,"fromCurrency":"FRB","slogan":"宣传文字update","advPic":"宣传图update","startDatetime":"Mar 22, 2017 5:10:01 PM","status":"0","companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
+     * user : {"userId":"U2017032216121358915","loginName":"18984955240","mobile":"18984955240"}
      */
 
     private String code;
@@ -30,33 +28,39 @@ public class JewelRecordModel {
     private String jewelCode;
     private String investDatetime;
     private int times;
+    private String ip;
+    private String status;
     private int payAmount;
     private String payDatetime;
-    private String status;
-    private String remark;
-    private String ip;
+    private String companyCode;
     private String systemCode;
-    private String nickname;
-    private String mobile;
-    private String photo;
     /**
-     * code : J201702221727520758
-     * templateCode : JT201702212000179938
-     * periods : 4
-     * currency : FRB
-     * amount : 10000
-     * totalNum : 100
-     * price : 10000
-     * maxInvestNum : 1000
-     * advText : 宣传文字
-     * advPic : 宣传图
-     * investNum : 97
-     * createDatetime : Feb 22, 2017 5:27:52 PM
+     * code : J201703221710011129
+     * templateCode : JT201703221427246662
+     * periods : 2
+     * toAmount : 10
+     * toCurrency : FRB
+     * totalNum : 10
+     * maxNum : 10
+     * investNum : 2
+     * fromAmount : 10
+     * fromCurrency : FRB
+     * slogan : 宣传文字update
+     * advPic : 宣传图update
+     * startDatetime : Mar 22, 2017 5:10:01 PM
      * status : 0
+     * companyCode : CD-CZH000001
      * systemCode : CD-CZH000001
      */
 
     private JewelBean jewel;
+    /**
+     * userId : U2017032216121358915
+     * loginName : 18984955240
+     * mobile : 18984955240
+     */
+
+    private UserBean user;
 
     public String getCode() {
         return code;
@@ -98,6 +102,22 @@ public class JewelRecordModel {
         this.times = times;
     }
 
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public int getPayAmount() {
         return payAmount;
     }
@@ -114,28 +134,12 @@ public class JewelRecordModel {
         this.payDatetime = payDatetime;
     }
 
-    public String getStatus() {
-        return status;
+    public String getCompanyCode() {
+        return companyCode;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
     }
 
     public String getSystemCode() {
@@ -146,30 +150,6 @@ public class JewelRecordModel {
         this.systemCode = systemCode;
     }
 
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
     public JewelBean getJewel() {
         return jewel;
     }
@@ -178,20 +158,30 @@ public class JewelRecordModel {
         this.jewel = jewel;
     }
 
+    public UserBean getUser() {
+        return user;
+    }
+
+    public void setUser(UserBean user) {
+        this.user = user;
+    }
+
     public static class JewelBean {
         private String code;
         private String templateCode;
         private int periods;
-        private String currency;
-        private int amount;
+        private int toAmount;
+        private String toCurrency;
         private int totalNum;
-        private double price;
-        private int maxInvestNum;
-        private String advText;
-        private String advPic;
+        private int maxNum;
         private int investNum;
-        private String createDatetime;
+        private int fromAmount;
+        private String fromCurrency;
+        private String slogan;
+        private String advPic;
+        private String startDatetime;
         private String status;
+        private String companyCode;
         private String systemCode;
 
         public String getCode() {
@@ -218,20 +208,20 @@ public class JewelRecordModel {
             this.periods = periods;
         }
 
-        public String getCurrency() {
-            return currency;
+        public int getToAmount() {
+            return toAmount;
         }
 
-        public void setCurrency(String currency) {
-            this.currency = currency;
+        public void setToAmount(int toAmount) {
+            this.toAmount = toAmount;
         }
 
-        public int getAmount() {
-            return amount;
+        public String getToCurrency() {
+            return toCurrency;
         }
 
-        public void setAmount(int amount) {
-            this.amount = amount;
+        public void setToCurrency(String toCurrency) {
+            this.toCurrency = toCurrency;
         }
 
         public int getTotalNum() {
@@ -242,36 +232,12 @@ public class JewelRecordModel {
             this.totalNum = totalNum;
         }
 
-        public double getPrice() {
-            return price;
+        public int getMaxNum() {
+            return maxNum;
         }
 
-        public void setPrice(double price) {
-            this.price = price;
-        }
-
-        public int getMaxInvestNum() {
-            return maxInvestNum;
-        }
-
-        public void setMaxInvestNum(int maxInvestNum) {
-            this.maxInvestNum = maxInvestNum;
-        }
-
-        public String getAdvText() {
-            return advText;
-        }
-
-        public void setAdvText(String advText) {
-            this.advText = advText;
-        }
-
-        public String getAdvPic() {
-            return advPic;
-        }
-
-        public void setAdvPic(String advPic) {
-            this.advPic = advPic;
+        public void setMaxNum(int maxNum) {
+            this.maxNum = maxNum;
         }
 
         public int getInvestNum() {
@@ -282,12 +248,44 @@ public class JewelRecordModel {
             this.investNum = investNum;
         }
 
-        public String getCreateDatetime() {
-            return createDatetime;
+        public int getFromAmount() {
+            return fromAmount;
         }
 
-        public void setCreateDatetime(String createDatetime) {
-            this.createDatetime = createDatetime;
+        public void setFromAmount(int fromAmount) {
+            this.fromAmount = fromAmount;
+        }
+
+        public String getFromCurrency() {
+            return fromCurrency;
+        }
+
+        public void setFromCurrency(String fromCurrency) {
+            this.fromCurrency = fromCurrency;
+        }
+
+        public String getSlogan() {
+            return slogan;
+        }
+
+        public void setSlogan(String slogan) {
+            this.slogan = slogan;
+        }
+
+        public String getAdvPic() {
+            return advPic;
+        }
+
+        public void setAdvPic(String advPic) {
+            this.advPic = advPic;
+        }
+
+        public String getStartDatetime() {
+            return startDatetime;
+        }
+
+        public void setStartDatetime(String startDatetime) {
+            this.startDatetime = startDatetime;
         }
 
         public String getStatus() {
@@ -298,6 +296,14 @@ public class JewelRecordModel {
             this.status = status;
         }
 
+        public String getCompanyCode() {
+            return companyCode;
+        }
+
+        public void setCompanyCode(String companyCode) {
+            this.companyCode = companyCode;
+        }
+
         public String getSystemCode() {
             return systemCode;
         }
@@ -306,4 +312,6 @@ public class JewelRecordModel {
             this.systemCode = systemCode;
         }
     }
+
+
 }

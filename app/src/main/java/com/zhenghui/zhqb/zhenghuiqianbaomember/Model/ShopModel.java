@@ -12,6 +12,7 @@ public class ShopModel {
     /**
      * code : SJ201701031437067246
      * name : ios测试
+     * level : 2
      * type : 2
      * legalPersonName : 田磊
      * userReferee : 18767101909
@@ -40,13 +41,14 @@ public class ShopModel {
 
     private String code;
     private String name;
+    private String level;
     private String type;
     private String legalPersonName;
     private String userReferee;
     private double rate1;
     private double rate2;
     private String slogan;
-    private String adPic;
+    private String advPic;
     private String pic;
     private String description;
     private String province;
@@ -81,6 +83,14 @@ public class ShopModel {
      */
 
     private List<StoreTicketsBean> storeTickets;
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
 
     public String getCode() {
         return code;
@@ -146,12 +156,12 @@ public class ShopModel {
         this.slogan = slogan;
     }
 
-    public String getAdPic() {
-        return adPic;
+    public String getAdvPic() {
+        return advPic;
     }
 
-    public void setAdPic(String adPic) {
-        this.adPic = adPic;
+    public void setAdvPic(String adPic) {
+        this.advPic = adPic;
     }
 
     public String getPic() {

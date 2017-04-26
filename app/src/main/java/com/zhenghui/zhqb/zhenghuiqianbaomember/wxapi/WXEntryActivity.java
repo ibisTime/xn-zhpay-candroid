@@ -124,13 +124,13 @@ public class WXEntryActivity extends MyBaseActivity implements IWXAPIEventHandle
 	public void give() {
 		JSONObject object = new JSONObject();
 		try {
-			object.put("userId", userInfoSp.getString("userId", ""));
+			object.put("tokne", userInfoSp.getString("tokne", ""));
 			object.put("code", wxShareSp.getString("giveCode", ""));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 
-		new Xutil().post("808470", object.toString(), new Xutil.XUtils3CallBackPost() {
+		new Xutil().post("615130", object.toString(), new Xutil.XUtils3CallBackPost() {
 			@Override
 			public void onSuccess(String result) {
 				Toast.makeText(WXEntryActivity.this, "红包发送成功", Toast.LENGTH_SHORT).show();

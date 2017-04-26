@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.MyJewelHistoryAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.MyJewelHistoreModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TargetModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -37,7 +37,7 @@ public class MyJewelHistoryActivity extends MyBaseActivity implements SwipeRefre
     RefreshLayout swipeContainer;
 
     private MyJewelHistoryAdapter adapter;
-    private List<MyJewelHistoreModel> list;
+    private List<TargetModel> list;
 
     private int page = 1;
     private int pageSize = 10;
@@ -87,25 +87,28 @@ public class MyJewelHistoryActivity extends MyBaseActivity implements SwipeRefre
 
         JSONObject object = new JSONObject();
         try {
-            object.put("jewelStatus", "");
+            object.put("jewelStatus", "all");
             object.put("start", page);
             object.put("limit", pageSize);
             object.put("orderDir", "");
             object.put("orderColumn", "");
+            object.put("token", userInfoSp.getString("token", null));
             object.put("userId", userInfoSp.getString("userId", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808313", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615027", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 try {
                     JSONObject jsonObject = new JSONObject(result);
 
                     Gson gson = new Gson();
-                    List<MyJewelHistoreModel> lists = gson.fromJson(jsonObject.getJSONArray("list").toString(), new TypeToken<ArrayList<MyJewelHistoreModel>>() {
+                    List<TargetModel> lists = gson.fromJson(jsonObject.getJSONArray("list").toString(), new TypeToken<ArrayList<TargetModel>>() {
                     }.getType());
 
                     if (page == 1) {
@@ -181,11 +184,17 @@ public class MyJewelHistoryActivity extends MyBaseActivity implements SwipeRefre
             }
         }
 
-        startActivity(new Intent(MyJewelHistoryActivity.this, MyDuoBaoNumActivity.class)
-                .putExtra("winNumber", list.get(i).getJewel().getWinNumber())
-                .putExtra("model", list.get(i).getJewel())
-                .putExtra("color", color)
-                .putExtra("code", list.get(i).getJewel().getCode()));
+        Intent intent = new Intent(MyJewelHistoryActivity.this, MyDuoBaoNumActivity.class);
+        if(!list.get(i).getWinNumber().equals("")){
+            intent.putExtra("winTime", list.get(i).getWinDatetime());
+            intent.putExtra("winer", list.get(i).getUser().getNickname());
+        }
+        intent.putExtra("winNumber", list.get(i).getWinNumber());
+        intent.putExtra("model", list.get(i));
+        intent.putExtra("color", color);
+        intent.putExtra("code", list.get(i).getCode());
+
+        startActivity(intent);
 
     }
 

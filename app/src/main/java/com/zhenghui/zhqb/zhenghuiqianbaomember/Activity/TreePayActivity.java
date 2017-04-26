@@ -4,15 +4,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alipay.sdk.app.PayTask;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.AssetsModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PayResult;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.WalletModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
@@ -22,9 +27,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xutils.common.Callback;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,9 +125,9 @@ public class TreePayActivity extends MyBaseActivity {
 //                        if(txtDiscount.getText().toString().equals("选择折扣券")){
 //                            Toast.makeText(this, "请选择折扣券", Toast.LENGTH_SHORT).show();
 //                        }else{
-                        getIp();
+//                        getIp();
 //                        }
-
+                        pay();
                     }
                 } else {
                     Toast.makeText(TreePayActivity.this, "请输入消费金额", Toast.LENGTH_SHORT).show();
@@ -140,61 +142,18 @@ public class TreePayActivity extends MyBaseActivity {
         imgZhifubao.setBackgroundResource(R.mipmap.pay_unchoose);
     }
 
-    private void getIp() {
-
-        RequestParams params = new RequestParams("http://121.43.101.148:5601/forward-service/ip");
-        x.http().get(params, new Callback.CacheCallback<String>() {
-            @Override
-            public boolean onCache(String result) {
-                return false;
-            }
-
-            @Override
-            public void onSuccess(String result) {
-                System.out.println("resul=" + result);
-                try {
-                    JSONObject jsonObject = new JSONObject(result);
-                    pay(jsonObject.getString("ip"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-                System.out.println("onError:" + ex.getMessage());
-                Toast.makeText(TreePayActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-
-            }
-        });
-
-    }
-
-
-    private void pay(String ip) {
+    private void pay() {
         JSONObject object = new JSONObject();
         try {
             object.put("userId", userInfoSp.getString("userId", null));
             object.put("payType", payWay);
-            object.put("hzbCode", code);
-            object.put("ip", ip);
+            object.put("hzbTemplateCode", code);
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808452", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615110", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 JSONObject jsonObject = null;
@@ -208,7 +167,7 @@ public class TreePayActivity extends MyBaseActivity {
                             WxUtil.pay(TreePayActivity.this,jsonObject);
                         }
                     }else {
-
+                        AliPay(jsonObject.getString("signOrder"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -280,24 +239,32 @@ public class TreePayActivity extends MyBaseActivity {
         try {
             object.put("token", userInfoSp.getString("token", null));
             object.put("userId", userInfoSp.getString("userId", null));
-            object.put("currency", "FRB");
             object.put("systemCode", appConfigSp.getString("systemCode", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808803", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("802503", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
 
                 try {
-                    JSONObject jsonObject = new JSONObject(result);
-                    txtBalace.setText("分润:"+ MoneyUtil.moneyFormatDouble(jsonObject.getDouble("xnbAmount"))
-                            +"("+jsonObject.getString("rate")+"分润=1人民币)");
+                    JSONArray jsonArray = new JSONArray(result);
+                    Gson gson = new Gson();
+                    List<AssetsModel> lists = gson.fromJson(jsonArray.toString(), new TypeToken<ArrayList<AssetsModel>>() {
+                    }.getType());
+
+                    for (AssetsModel model : lists) {
+                        if (model.getCurrency().equals("FRB")) {
+
+                            txtBalace.setText("分润:"+ MoneyUtil.moneyFormatDouble(model.getAmount()) + "");
+
+                        }
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
 
             }
 
@@ -312,4 +279,69 @@ public class TreePayActivity extends MyBaseActivity {
             }
         });
     }
+
+    private void AliPay(String info){
+        final String payInfo = info;
+
+        Runnable payRunnable = new Runnable() {
+
+            @Override
+
+            public void run() {
+
+                // 构造PayTask 对象
+                PayTask alipay = new PayTask(TreePayActivity.this);
+                // 调用支付接口，获取支付结果
+
+                String result = alipay.pay(payInfo, true);
+
+                Message msg = new Message();
+
+                msg.what = 1;
+
+                msg.obj = result;
+
+                mHandler.sendMessage(msg);
+
+            }
+
+        };
+
+        Thread payThread = new Thread(payRunnable);
+
+        payThread.start();
+    }
+
+    private Handler mHandler = new Handler() {
+
+        public void handleMessage(Message msg) {
+
+            switch (msg.what) {
+
+                case 1:
+
+                    PayResult payResult = new PayResult((String) msg.obj);
+
+                    // 支付宝返回此次支付结果及加签，建议对支付宝签名信息拿签约时支付宝提供的公钥做验签
+
+                    String resultInfo = payResult.getResult();
+
+                    String resultStatus = payResult.getResultStatus();
+
+                    System.out.println("resultInfo="+resultInfo);
+                    System.out.println("resultStatus="+resultStatus);
+
+                    if(resultStatus.equals("9000")){
+                        Toast.makeText(TreePayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
+                        TreePayActivity.this.finish();
+                    }
+
+//                    Toast.makeText(ShopPayActivity.this, payResult.getResult(),
+//                            Toast.LENGTH_LONG).show();
+                    break;
+
+            }
+        };
+
+    };
 }

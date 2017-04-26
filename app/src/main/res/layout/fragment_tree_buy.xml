@@ -55,12 +55,64 @@
         android:layout_height="0.5dp"/>
 
     <ImageView
-        android:background="@mipmap/tree_big"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="45dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="265dp"
         android:layout_height="255dp"
         android:id="@+id/imageView3" />
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="价格:  "
+                android:textSize="16sp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:textSize="16sp"
+                android:textColor="@color/fontColor_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="效用:  "
+                android:textSize="16sp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="摇一摇信号源\n发定向红包"
+                android:textSize="16sp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        
+    </LinearLayout>
 
     <TextView
         android:id="@+id/txt_buy"
@@ -68,7 +120,7 @@
         android:text="确认购买"
         android:textSize="18sp"
         android:textColor="@color/white"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/corners_orange"

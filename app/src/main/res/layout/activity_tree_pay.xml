@@ -182,7 +182,6 @@
         android:layout_height="0.5dp"/>
 
     <LinearLayout
-        android:visibility="gone"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
