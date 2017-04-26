@@ -537,30 +537,6 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
         return false;
     }
 
-//    /**
-//     * 双击退出函数
-//     */
-//    private static Boolean isExit = false;
-//
-//    private void exitBy2Click() {
-//        Timer tExit = null;
-//        if (isExit == false) {
-//            isExit = true; // 准备退出
-//            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
-//            tExit = new Timer();
-//            tExit.schedule(new TimerTask() {
-//                @Override
-//                public void run() {
-//                    isExit = false; // 取消退出
-//                }
-//            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
-//
-//        } else {
-//
-//
-//        }
-//    }
-
     private void tip() {
         new AlertDialog.Builder(this).setTitle("提示")
                 .setMessage("您确定要退出正汇钱包吗?")
