@@ -87,10 +87,11 @@
                     android:layout_height="wrap_content" />
 
                 <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/more_right"
-                    android:layout_width="10dp"
-                    android:layout_height="17dp" />
+                    android:src="@mipmap/more_right_small" />
 
             </LinearLayout>
 
@@ -130,10 +131,11 @@
                     android:layout_height="wrap_content" />
 
                 <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/more_right"
-                    android:layout_width="10dp"
-                    android:layout_height="17dp" />
+                    android:src="@mipmap/more_right_small" />
 
             </LinearLayout>
 
@@ -173,10 +175,11 @@
                     android:layout_height="wrap_content" />
 
                 <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/more_right"
-                    android:layout_width="10dp"
-                    android:layout_height="17dp" />
+                    android:src="@mipmap/more_right_small" />
 
             </LinearLayout>
 
@@ -208,10 +211,11 @@
                     android:layout_height="match_parent"/>
 
                 <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/more_right"
-                    android:layout_width="10dp"
-                    android:layout_height="17dp" />
+                    android:src="@mipmap/more_right_small" />
 
             </LinearLayout>
 
@@ -245,10 +249,11 @@
 
 
                 <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/more_right"
-                    android:layout_width="10dp"
-                    android:layout_height="17dp" />
+                    android:src="@mipmap/more_right_small" />
 
             </LinearLayout>
 
@@ -288,10 +293,11 @@
                     android:layout_height="wrap_content" />
 
                 <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/more_right"
-                    android:layout_width="10dp"
-                    android:layout_height="17dp" />
+                    android:src="@mipmap/more_right_small" />
 
             </LinearLayout>
 
@@ -323,10 +329,47 @@
                     android:layout_height="match_parent"/>
 
                 <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/more_right"
-                    android:layout_width="10dp"
-                    android:layout_height="17dp" />
+                    android:src="@mipmap/more_right_small" />
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/lineColor"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_address"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:text="收货地址"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/fontColor_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:src="@mipmap/more_right_small" />
 
             </LinearLayout>
 
@@ -358,10 +401,11 @@
                     android:layout_height="match_parent"/>
 
                 <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/more_right"
-                    android:layout_width="10dp"
-                    android:layout_height="17dp" />
+                    android:src="@mipmap/more_right_small" />
 
             </LinearLayout>
 
@@ -372,7 +416,7 @@
 
             <TextView
                 android:id="@+id/txt_logout"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:gravity="center"
                 android:text="退出登录"

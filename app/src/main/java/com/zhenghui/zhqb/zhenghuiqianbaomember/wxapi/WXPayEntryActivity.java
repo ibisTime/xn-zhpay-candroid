@@ -61,12 +61,14 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
      */
     @Override
     public void onResp(BaseResp resp) {
-        System.out.println("resp.errCode"+resp.errCode);
-        System.out.println("resp.errStr"+resp.errStr);
+        System.out.println("resp.errCode="+resp.errCode);
+        System.out.println("resp.errStr="+resp.errStr);
 
         if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
             if(resp.errCode == 0){
                 Toast.makeText(WXPayEntryActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
+            } else if(resp.errCode == -1) {
+                Toast.makeText(WXPayEntryActivity.this, "支付取消", Toast.LENGTH_SHORT).show();
             } else if(resp.errCode == -2) {
                 Toast.makeText(WXPayEntryActivity.this, "支付取消", Toast.LENGTH_SHORT).show();
             } else {

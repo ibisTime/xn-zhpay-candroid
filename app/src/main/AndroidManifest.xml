@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zhenghui.zhqb.zhenghuiqianbaomember"
-    android:versionCode="2"
-    android:versionName="2.0.0">
+    package="com.zhenghui.zhqb.zhenghuiqianbaomember">
 
     <!-- JPush -->
     <permission
@@ -19,7 +17,6 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNA0L_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -32,6 +29,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
@@ -151,7 +149,7 @@
         <!-- 设置环信应用的AppKey -->
         <meta-data
             android:name="EASEMOB_APPKEY"
-            android:value="tianleios#zh-dev" />
+            android:value="1139170317178872#zhpay" />
         <!-- 声明SDK所需的service SDK核心功能 -->
         <service
             android:name="com.hyphenate.chat.EMChatService"
@@ -227,7 +225,20 @@
         <activity android:name=".Activity.ModifyPhoneActivity" />
         <activity android:name=".Activity.ModifyPasswordActivity" />
         <activity android:name=".Activity.ModifyAliasActivity" />
+        <!-- <activity -->
+        <!-- android:name=".Activity.DuoBaoListActivity" -->
+        <!-- android:configChanges="orientation|keyboardHidden" -->
+        <!-- android:windowSoftInputMode="adjustUnspecified|stateHidden" /> -->
+        <activity android:name=".Activity.GoodDetailsActivity" />
         <activity android:name=".Activity.ChatActivity" />
+        <activity android:name=".Activity.ShoppingCartActivity" />
+        <!-- <activity android:name=".Activity.PersonalActivity" /> -->
+        <activity android:name=".Activity.CommitOrderActivity" />
+        <activity android:name=".Activity.AddressSelectActivity" />
+        <activity android:name=".Activity.AddAddressActivity" />
+        <activity android:name=".Activity.ShopPayActivity" />
+        <activity android:name=".Activity.OrderListActivity" />
+        <activity android:name=".Activity.OrderDetailsActivity" />
         <activity android:name=".Activity.BankCardActivity" />
         <activity android:name=".Activity.SettingActivity" />
         <activity
@@ -246,13 +257,21 @@
                     android:scheme="zhqb" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.WalletActivity" />
+        <activity android:name=".Activity.DiscountActivity" />
+        <activity android:name=".Activity.ShopListActivity" />
+        <activity android:name=".Activity.ShopDetailsActivity" />
         <activity android:name=".Activity.TreeActivity" />
         <activity android:name=".Activity.WebActivity" />
+        <activity android:name=".Activity.MyShopActivity" />
+        <activity android:name=".Activity.MyShopDetailsActivity" />
         <activity android:name=".Activity.BankCardListActivity" />
         <activity android:name=".Activity.BindBankCardActivity" />
         <activity android:name=".Activity.SystemMessageActivity" />
         <activity android:name=".Activity.WithdrawalsActivity" />
         <activity android:name=".Activity.TransFenRunActivity" />
+        <activity android:name=".Activity.DiscountDetailActivity" />
+        <activity android:name=".Activity.DiscountStoreActivity" />
         <activity android:name=".Activity.BillActivity" />
         <activity android:name=".Activity.TreePayActivity" />
 
@@ -260,7 +279,6 @@
             android:name=".services.MyService"
             android:enabled="true"
             android:exported="true" />
-
         <service
             android:name=".services.JewelRecordService"
             android:enabled="true"
@@ -269,10 +287,17 @@
         <activity android:name=".Activity.ShakeListActivity" />
         <activity android:name=".Activity.ShakeDetailActivity" />
         <activity android:name=".Activity.ShakeResultActivity" />
+        <activity android:name=".Activity.GoodPayActivity" />
         <activity android:name=".Activity.RichTextActivity" />
+        <activity
+            android:name=".Activity.CityPickerActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".Activity.MyDuoBaoNumActivity"
             android:label="@string/title_activity_my_duo_bao_num" />
+        <activity
+            android:name=".Activity.GoodSearchActivity"
+            android:label="@string/title_activity_good_search" />
         <activity android:name=".Activity.ModifyTradeActivity" />
 
         <receiver android:name=".receiver.LogoutReceiver">
@@ -288,12 +313,18 @@
         <activity android:name="com.hyphenate.easeui.ui.EaseBaseActivity" />
         <activity android:name=".Activity.JewelActivity" />
         <activity android:name=".Activity.JewelRecordActivity" />
-        <activity android:name=".Activity.GiveActivity" />
         <activity android:name=".Activity.JewelHistoryActivity" />
+        <activity android:name=".Activity.GiveActivity" />
         <activity android:name=".Activity.JewelPayActivity" />
         <activity android:name=".Activity.MyJewelHistoryActivity" />
         <activity android:name=".Activity.TreeBillActivity" />
-        <activity android:name=".Activity.GiveHistoryActivity"></activity>
+        <activity android:name=".Activity.GiveHistoryActivity" />
+        <activity android:name=".Activity.EarningsActivity" />
+        <activity android:name=".Activity.RightsActivity" />
+        <activity android:name=".Activity.TargetActivity" />
+        <activity android:name=".Activity.MapRouteOverlayActivity" />
+        <activity android:name=".Activity.MapActivity" />
+        <activity android:name=".Activity.RightsListActivity"></activity>
     </application>
 
 </manifest>

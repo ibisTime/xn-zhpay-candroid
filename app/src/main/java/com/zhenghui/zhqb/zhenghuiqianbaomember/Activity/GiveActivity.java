@@ -29,7 +29,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -123,29 +122,34 @@ public class GiveActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
         JSONObject object = new JSONObject();
         try {
+            object.put("hzbCode", "");
             object.put("owner", userInfoSp.getString("userId", null));
+            object.put("token", userInfoSp.getString("token", null));
             object.put("receiver", "");
             object.put("status", "");
             object.put("createDatetimeStart", df.format(new Date()));
             object.put("createDatetimeEnd", df.format(new Date()));
             object.put("receiveDatetimeStart", "");
             object.put("receiveDatetimeEnd", "");
+            object.put("start","1");
+            object.put("limit","5");
             object.put("orderDir", "");
             object.put("orderColumn", "");
             object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808476", object.toString(), new Xutil.XUtils3CallBackPost() {
+            new Xutil().post("615135", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 try {
-                    JSONArray jsonObject = new JSONArray(result);
+                    JSONObject jsonObject = new JSONObject(result);
 
                     Gson gson = new Gson();
-                    ArrayList<GiveModel> lists = gson.fromJson(jsonObject.toString(), new TypeToken<ArrayList<GiveModel>>() {
+                    ArrayList<GiveModel> lists = gson.fromJson(jsonObject.getJSONArray("list").toString(), new TypeToken<ArrayList<GiveModel>>() {
                     }.getType());
 
                     list.clear();
@@ -179,10 +183,10 @@ public class GiveActivity extends MyBaseActivity implements SwipeRefreshLayout.O
             e.printStackTrace();
         }
 
-        new Xutil().post("808456", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615118", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
-                if (result.equals("{}")) {
+                if (result.equals("[]")) {
                     isBuy = false;
                     layoutMy.setVisibility(View.GONE);
                     txtHistory.setVisibility(View.GONE);
@@ -233,7 +237,7 @@ public class GiveActivity extends MyBaseActivity implements SwipeRefreshLayout.O
         } else if (list.get(i).getStatus().equals("1")) { // 已发送,待领取
             tip2();
         } else if (list.get(i).getStatus().equals("2")) { // 已领取
-            tip3();
+            tip3(i);
         }
     }
 
@@ -342,7 +346,7 @@ public class GiveActivity extends MyBaseActivity implements SwipeRefreshLayout.O
         });
     }
 
-    private void tip3() {
+    private void tip3(int position) {
         final AlertDialog alertDialog = new AlertDialog.Builder(GiveActivity.this).create();
         alertDialog.show();
         Window window = alertDialog.getWindow();
@@ -356,9 +360,12 @@ public class GiveActivity extends MyBaseActivity implements SwipeRefreshLayout.O
         txtContent1.setVisibility(View.VISIBLE);
         txtContent2.setVisibility(View.VISIBLE);
 
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date(list.get(position).getReceiveDatetime());
+
         txtTitle.setText("该红包已经被领取");
-        txtContent1.setText("领取人：");
-        txtContent2.setText("领取时间：");
+        txtContent1.setText("领取人：" + list.get(position).getReceiverUser().getMobile());
+        txtContent2.setText("领取时间：" + format.format(date));
         txtContent3.setText("您的红包业绩已经到账，请注意查收");
 
         txtOk.setOnClickListener(new View.OnClickListener() {

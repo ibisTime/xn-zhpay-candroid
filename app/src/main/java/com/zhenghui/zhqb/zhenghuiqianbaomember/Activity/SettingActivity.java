@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -67,13 +69,22 @@ public class SettingActivity extends MyBaseActivity {
 
     private SharedPreferences userInfoSp;
 
+    private Handler handler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            Toast.makeText(SettingActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+
+            super.handleMessage(msg);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         ButterKnife.inject(this);
         MyApplication.getInstance().addActivity(this);
-
 
         inits();
 
@@ -101,7 +112,8 @@ public class SettingActivity extends MyBaseActivity {
     }
 
     @OnClick({R.id.layout_back, R.id.layout_nickname, R.id.layout_phone, R.id.layout_authentication,
-            R.id.layout_loginPwd, R.id.layout_payPwd, R.id.txt_logout, R.id.layout_bankCard, R.id.layout_systemMessage, R.id.layout_about})
+            R.id.layout_loginPwd, R.id.layout_payPwd, R.id.txt_logout, R.id.layout_bankCard,
+            R.id.layout_systemMessage, R.id.layout_address, R.id.layout_about})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -115,7 +127,7 @@ public class SettingActivity extends MyBaseActivity {
             case R.id.layout_phone:
                 if (model.getTradepwdFlag().equals("0")) {
                     Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(SettingActivity.this, ModifyTradeActivity.class).putExtra("isModify", false).putExtra("phone", model.getMobile()));
+                    startActivity(new Intent(SettingActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
                 } else {
                     startActivity(new Intent(SettingActivity.this, ModifyPhoneActivity.class));
                 }
@@ -162,6 +174,10 @@ public class SettingActivity extends MyBaseActivity {
                 startActivity(new Intent(SettingActivity.this, SystemMessageActivity.class));
                 break;
 
+            case R.id.layout_address:
+                startActivity(new Intent(SettingActivity.this, AddressSelectActivity.class));
+                break;
+
             case R.id.layout_about:
                 startActivity(new Intent(SettingActivity.this, RichTextActivity.class).putExtra("cKey","aboutus"));
                 break;
@@ -185,7 +201,9 @@ public class SettingActivity extends MyBaseActivity {
 
             @Override
             public void onError(int code, String message) {
-                // TODO Auto-generated method stub
+                Message msg = handler.obtainMessage();
+                msg.obj = "退出失败: " + code + ", " + message;
+                handler.sendMessage(msg);
 
             }
         });
@@ -225,7 +243,7 @@ public class SettingActivity extends MyBaseActivity {
                         finish();
 
                         stopService(new Intent(SettingActivity.this, MyService.class));
-                        startActivity(new Intent(SettingActivity.this, LoginActivity.class));
+                        startActivity(new Intent(SettingActivity.this, MainActivity.class));
                     }else{
 
                     }

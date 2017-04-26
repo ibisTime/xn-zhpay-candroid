@@ -16,7 +16,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
@@ -50,6 +53,8 @@ public class AuthenticateActivity extends MyBaseActivity {
 
     private String code = "";
     private double price = 0.00;
+
+    private PersonalModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -212,14 +217,8 @@ public class AuthenticateActivity extends MyBaseActivity {
                         editor.putString("realName", edtName.getText().toString().trim());
                         editor.commit();
 
-                        Toast.makeText(AuthenticateActivity.this, "认证成功", Toast.LENGTH_SHORT).show();
-                        if(code != null){
-                            startActivity(new Intent(AuthenticateActivity.this, TreePayActivity.class)
-                                    .putExtra("price",price)
-                                    .putExtra("code",code));
-                        }else{
-                            finish();
-                        }
+                        getData();
+
                     }else{
                         Toast.makeText(AuthenticateActivity.this, "认证失败", Toast.LENGTH_SHORT).show();
                     }
@@ -292,4 +291,69 @@ public class AuthenticateActivity extends MyBaseActivity {
         return list != null && list.size() > 0;
     }
 
+
+    /**
+     * 获取用户详情
+     */
+    private void getData() {
+        JSONObject object = new JSONObject();
+        try {
+            object.put("userId", userInfoSp.getString("userId", null));
+            object.put("token", userInfoSp.getString("token", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        new Xutil().post("805056", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+
+                    Gson gson = new Gson();
+                    model = gson.fromJson(jsonObject.toString(), new TypeToken<PersonalModel>() {
+                    }.getType());
+
+                    SharedPreferences.Editor editor = userInfoSp.edit();
+                    editor.putString("mobile", model.getMobile());
+                    editor.putString("realName", model.getRealName());
+                    editor.putString("nickName", model.getNickname());
+                    editor.putString("identityFlag", model.getIdentityFlag());
+                    editor.putString("tradepwdFlag", model.getTradepwdFlag());
+                    editor.putString("userRefereeName", model.getUserRefereeName());
+                    if (null != model.getUserExt().getPhoto()) {
+                        editor.putString("photo", model.getUserExt().getPhoto());
+                    }
+                    String address = model.getUserExt().getProvince() + model.getUserExt().getCity() + model.getUserExt().getArea();
+                    editor.putString("address", address);
+                    editor.commit();
+
+
+                    Toast.makeText(AuthenticateActivity.this, "认证成功", Toast.LENGTH_SHORT).show();
+                    if(code != null){
+                        startActivity(new Intent(AuthenticateActivity.this, TreePayActivity.class)
+                                .putExtra("price",price)
+                                .putExtra("code",code));
+                    }else{
+                        finish();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(AuthenticateActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(AuthenticateActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

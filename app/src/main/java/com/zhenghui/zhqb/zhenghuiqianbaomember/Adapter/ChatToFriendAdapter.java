@@ -74,15 +74,15 @@ public class ChatToFriendAdapter extends BaseAdapter {
         if (list.get(position).getRefeereLevel() == -1) {
             holder.txtType.setText("P1");
             holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_red));
-        } else if (list.get(position).getRefeereLevel() == -2) {
-            holder.txtType.setText("P2");
-            holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_orange));
         } else if (list.get(position).getRefeereLevel() == 1) {
             holder.txtType.setText("C1");
             holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_green));
         } else if (list.get(position).getRefeereLevel() == 2) {
             holder.txtType.setText("C2");
             holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_blue));
+        } else if (list.get(position).getRefeereLevel() == 3) {
+            holder.txtType.setText("C3");
+            holder.layoutBg.setBackgroundColor(context.getResources().getColor(R.color.chat_orange));
         }
 
 

@@ -7,8 +7,8 @@ android {
         applicationId "com.zhenghui.zhqb.zhenghuiqianbaomember"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 5
+        versionName "3.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         // Enabling multidex support.
@@ -62,6 +62,8 @@ dependencies {
     compile 'com.zzhoujay.richtext:richtext:2.3.7'
     // citypicker
     compile 'liji.library.dev:citypickerview:0.9.0'
+    // largeImageView
+    compile 'com.shizhefei:LargeImageView:1.0.8'
 
     compile project(':easeui')
     compile files('libs/libammsdk.jar')
@@ -70,5 +72,4 @@ dependencies {
     compile 'com.android.support:percent:22.2.0'
     compile 'com.android.support:design:24.2.1'
     testCompile 'junit:junit:4.12'
-    compile files('libs/alipaySdk-20160516.jar')
 }

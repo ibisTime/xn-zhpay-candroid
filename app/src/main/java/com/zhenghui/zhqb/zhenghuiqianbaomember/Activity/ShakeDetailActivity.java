@@ -3,7 +3,6 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -23,9 +22,6 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
-import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
@@ -33,13 +29,12 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShakeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ConstantsUtil;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -115,7 +110,7 @@ public class ShakeDetailActivity extends MyBaseActivity {
     }
 
     private void setView() {
-        txtName.setText(model.getMobile() + "的");
+        txtName.setText(model.getUser().getNickname() + "的");
         if (model.getDistance().length() > 3) {
             txtDistance.setText((Integer.parseInt(model.getDistance()) / 1000) + "KM");
         } else {
@@ -133,7 +128,7 @@ public class ShakeDetailActivity extends MyBaseActivity {
         Bitmap mBitmap = CodeUtils.createImage(shareURL, 400, 400, null);
         imgQRCode.setImageBitmap(mBitmap);
 
-        initWebView();
+//        initWebView();
     }
 
     private void initWebView() {
@@ -289,46 +284,6 @@ public class ShakeDetailActivity extends MyBaseActivity {
 
     }
 
-    private void share() {
-
-        WXWebpageObject webpage = new WXWebpageObject();
-        webpage.webpageUrl = shareURL;
-
-        WXMediaMessage msg = new WXMediaMessage(webpage);
-        msg.title = "正汇钱包邀您玩转红包";
-        msg.description = "小目标，发一发，摇一摇，聊一聊各种红包玩法";
-
-        try {
-            Bitmap bmp1 = BitmapFactory.decodeResource(getResources(), R.mipmap.icon);
-            Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp1, 100, 100, true);
-            msg.thumbData = Bitmap2Bytes(thumbBmp);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        SendMessageToWX.Req req = new SendMessageToWX.Req();
-//        req.transaction = buildTransaction("图文链接");
-        req.message = msg;
-        req.scene = SendMessageToWX.Req.WXSceneTimeline;
-        api.sendReq(req);
-    }
-
-    /**
-     * 构造一个用于请求的唯一标识
-     *
-     * @param type 分享的内容类型
-     * @return
-     */
-    private String buildTransaction(final String type) {
-        return (type == null) ? String.valueOf(System.currentTimeMillis())
-                : type + System.currentTimeMillis();
-    }
-
-    public byte[] Bitmap2Bytes(Bitmap bm) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        return baos.toByteArray();
-    }
-
 
     public void getAward() {
 
@@ -344,20 +299,20 @@ public class ShakeDetailActivity extends MyBaseActivity {
             object.put("token", userInfoSp.getString("token", null));
             object.put("userId", userInfoSp.getString("userId", null));
             object.put("deviceNo", DEVICE_ID);
-            object.put("hzbHoldId", model.getId());
+            object.put("hzbCode", model.getCode());
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808460", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615120", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
 
                 try {
                     JSONObject jsonObject = new JSONObject(result);
 
-                    type = jsonObject.getString("type");
-                    quantity = jsonObject.getString("quantity");
+                    type = jsonObject.getString("yyCurrency");
+                    quantity = jsonObject.getString("yyAmount");
 
                     setAward();
 
@@ -384,15 +339,15 @@ public class ShakeDetailActivity extends MyBaseActivity {
 
     private void setAward() {
         layoutAward.setVisibility(View.VISIBLE);
-        if (type.equals("1")) {
+        if (type.equals("QBB")) {
             txtCoin.setText("个钱包币");
-            txtAward.setText(quantity + "");
-        } else if (type.equals("2")) {
+            txtAward.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(quantity)) + "");
+        } else if (type.equals("GWB")) {
             txtCoin.setText("个购物币");
-            txtAward.setText(quantity + "");
-        } else if (type.equals("3")) {
+            txtAward.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(quantity)) + "");
+        } else if (type.equals("HBB")) {
             txtCoin.setText("个红包");
-            txtAward.setText(quantity + "");
+            txtAward.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(quantity)) + "");
         }
     }
 

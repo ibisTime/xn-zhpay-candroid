@@ -235,6 +235,8 @@ public class WithdrawalsActivity extends MyBaseActivity {
 
     private void withdrawal() {
 
+        System.out.println("(Double.parseDouble(edtPrice.getText().toString().trim())="+Double.parseDouble(edtPrice.getText().toString().trim()));
+
         JSONArray accountNumberList = new JSONArray();
         accountNumberList.put(accountNumber);
 

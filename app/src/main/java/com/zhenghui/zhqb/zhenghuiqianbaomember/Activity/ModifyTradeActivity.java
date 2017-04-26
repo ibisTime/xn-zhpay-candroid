@@ -1,6 +1,5 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,9 +44,6 @@ public class ModifyTradeActivity extends MyBaseActivity {
     @InjectView(R.id.btn_confirm)
     Button btnConfirm;
 
-    private SharedPreferences preferences;
-    private SharedPreferences userInfoSp;
-
     private boolean isModify;
 
     // 验证码是否已发送 未发送false 已发送true
@@ -88,7 +84,7 @@ public class ModifyTradeActivity extends MyBaseActivity {
     }
 
     private void inits() {
-        edtPhone.setText(getIntent().getStringExtra("phone")) ;
+        edtPhone.setText(userInfoSp.getString("mobile","")) ;
         isModify = getIntent().getBooleanExtra("isModify", false);
 
         if (isModify) {
@@ -97,8 +93,6 @@ public class ModifyTradeActivity extends MyBaseActivity {
             txtTitle.setText("设置支付密码");
         }
 
-        userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-        preferences = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
     }
 
     @OnClick({R.id.layout_back, R.id.btn_send, R.id.btn_confirm})
@@ -156,7 +150,7 @@ public class ModifyTradeActivity extends MyBaseActivity {
                 object.put("bizType", "805045");
             }
             object.put("kind", "f1");
-            object.put("systemCode", preferences.getString("systemCode", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }

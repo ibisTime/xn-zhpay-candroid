@@ -2,8 +2,8 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.LinearLayout;
@@ -19,6 +19,7 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.JewelNumberModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TargetModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
 import org.json.JSONException;
@@ -37,7 +38,7 @@ import butterknife.OnClick;
 
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.txt_buy;
 
-public class MyDuoBaoNumActivity extends MyBaseActivity {
+public class MyDuoBaoNumActivity extends MyBaseActivity implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
 
 
     @InjectView(R.id.layout_back)
@@ -74,8 +75,9 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
     GridView gridviewNumber;
     @InjectView(R.id.txt_buy)
     TextView txtBuy;
+    @InjectView(R.id.swipe_container)
+    RefreshLayout swipeContainer;
 
-    private SharedPreferences userInfoSp;
 
     private String code;
     private String winer;
@@ -88,7 +90,7 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
     private List<Map<String, Object>> data_list;
 
     private int page = 1;
-    private int pageSize = 50;
+    private int pageSize = 30;
 
     private String color;
 
@@ -100,7 +102,8 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
         MyApplication.getInstance().addActivity(this);
 
         inits();
-        getDatas();
+        getData();
+        initRefreshLayout();
 
     }
 
@@ -130,7 +133,17 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
 
     }
 
-    private void getDatas() {
+    private void initRefreshLayout() {
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
+        swipeContainer.setOnRefreshListener(this);
+        swipeContainer.setOnLoadListener(this);
+    }
+
+    private void getData() {
         JSONObject object = new JSONObject();
         try {
             object.put("userId", userInfoSp.getString("userId", null));
@@ -143,7 +156,7 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
             e.printStackTrace();
         }
 
-        new Xutil().post("808318", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615028", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -154,13 +167,17 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
                     List<JewelNumberModel> lists = gson.fromJson(jsonObject.getJSONArray("list").toString(), new TypeToken<ArrayList<JewelNumberModel>>() {
                     }.getType());
 
+                    if(page == 1){
+                        list.clear();
+                    }
                     list.addAll(lists);
 
-                    setView();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+                setView();
 
             }
 
@@ -178,28 +195,30 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
 
     private void setView() {
 
-        if (!winNumber.equals("")) {
-            layoutWinNumber.setVisibility(View.VISIBLE);
-            txtWinNumber.setText(winNumber);
+        if (winNumber != null) {
+            if (!winNumber.equals("")) {
+                layoutWinNumber.setVisibility(View.VISIBLE);
+                txtWinNumber.setText(winNumber);
 
-            layoutWiner.setVisibility(View.VISIBLE);
-            txtWiner.setText(winer);
+                layoutWiner.setVisibility(View.VISIBLE);
+                txtWiner.setText(winer);
 
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            Date date = new Date(winTime);
-            layoutWinTime.setVisibility(View.VISIBLE);
-            txtWinTime.setText(format.format(date));
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date date = new Date(winTime);
+                layoutWinTime.setVisibility(View.VISIBLE);
+                txtWinTime.setText(format.format(date));
 
-            txtBuy.setVisibility(View.GONE);
-        } else {
-            txtBuy.setVisibility(View.VISIBLE);
+                txtBuy.setVisibility(View.GONE);
+            } else {
+                txtBuy.setVisibility(View.VISIBLE);
+            }
         }
 
-        txtName.setText((model.getAmount() / 1000) + getCurrency(model.getCurrency()));
+        txtName.setText((model.getToAmount() / 1000) + getCurrency(model.getToCurrency()));
         txtTime.setText("第" + model.getPeriods() + "期");
         txtSum.setText(model.getTotalNum() + "");
         txtResidue.setText((model.getTotalNum() - model.getInvestNum()) + "");
-        txtPrice.setText(MoneyUtil.moneyFormatDouble(model.getPrice()));
+        txtPrice.setText(MoneyUtil.moneyFormatDouble(model.getFromAmount()) + getCurrency(model.getFromCurrency()));
         layoutBg.setBackgroundResource(R.mipmap.target_bg_orange);
 
         switch (color) {
@@ -262,7 +281,9 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
                 type = "红包业绩";
                 break;
 
-
+            case "CNY":
+                type = "人民币";
+                break;
         }
 
 
@@ -283,4 +304,30 @@ public class MyDuoBaoNumActivity extends MyBaseActivity {
     }
 
 
+    @Override
+    public void onRefresh() {
+        swipeContainer.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                swipeContainer.setRefreshing(false);
+                page = 1;
+                getData();
+
+            }
+        }, 1500);
+    }
+
+    @Override
+    public void onLoad() {
+        swipeContainer.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                swipeContainer.setLoading(false);
+                page = page + 1;
+                getData();
+            }
+        }, 1500);
+    }
 }

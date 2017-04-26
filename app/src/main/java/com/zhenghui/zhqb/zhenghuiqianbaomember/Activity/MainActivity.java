@@ -1,6 +1,8 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -29,12 +31,11 @@ import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.controller.EaseUI;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ChatFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.GiveFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.GoodFragment;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.MyFragment2;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ShakeFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.TargetFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ShopFragment;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.FriendModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.JewelRecordService;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.MyService;
@@ -50,8 +51,6 @@ import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -62,18 +61,18 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
 
     @InjectView(R.id.id_content)
     FrameLayout idContent;
-    @InjectView(R.id.img_target)
-    ImageView imgTarget;
-    @InjectView(R.id.txt_target)
-    TextView txtTarget;
-    @InjectView(R.id.layout_target)
-    LinearLayout layoutTarget;
-    @InjectView(R.id.img_give)
-    ImageView imgGive;
-    @InjectView(R.id.txt_give)
-    TextView txtGive;
-    @InjectView(R.id.layout_give)
-    LinearLayout layoutGive;
+    @InjectView(R.id.img_shop)
+    ImageView imgShop;
+    @InjectView(R.id.txt_shop)
+    TextView txtShop;
+    @InjectView(R.id.layout_shop)
+    LinearLayout layoutShop;
+    @InjectView(R.id.img_good)
+    ImageView imgGood;
+    @InjectView(R.id.txt_good)
+    TextView txtGood;
+    @InjectView(R.id.layout_good)
+    LinearLayout layoutGodd;
     @InjectView(R.id.img_shake)
     ImageView imgShake;
     @InjectView(R.id.txt_shake)
@@ -96,8 +95,8 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
     LinearLayout layoutMy;
 
     // 内容fragment
-    private Fragment targetFragment;
-    private Fragment giveFragment;
+    private Fragment shopFragment;
+    private Fragment goodFragment;
     private Fragment shakeFragment;
     private ChatFragment chatFragment;
     private Fragment myFragment;
@@ -189,25 +188,25 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
         // 设置内容区域
         switch (i) {
             case 0:
-                if (targetFragment == null) {
-                    targetFragment = new TargetFragment();
-                    transaction.add(R.id.id_content, targetFragment);
+                if (shopFragment == null) {
+                    shopFragment = new ShopFragment();
+                    transaction.add(R.id.id_content, shopFragment);
                 } else {
-                    transaction.show(targetFragment);
+                    transaction.show(shopFragment);
                 }
-                txtTarget.setTextColor(getResources().getColor(R.color.fontColor_orange));
-                imgTarget.setImageResource(R.mipmap.target_orange);
+                txtShop.setTextColor(getResources().getColor(R.color.fontColor_orange));
+                imgShop.setImageResource(R.mipmap.shop_orange);
                 break;
             case 1:
-                if (giveFragment == null) {
-                    giveFragment = new GiveFragment();
-                    transaction.add(R.id.id_content, giveFragment);
+                if (goodFragment == null) {
+                    goodFragment = new GoodFragment();
+                    transaction.add(R.id.id_content, goodFragment);
                 } else {
-                    transaction.show(giveFragment);
+                    transaction.show(goodFragment);
 
                 }
-                txtGive.setTextColor(getResources().getColor(R.color.fontColor_orange));
-                imgGive.setImageResource(R.mipmap.give_orange);
+                txtGood.setTextColor(getResources().getColor(R.color.fontColor_orange));
+                imgGood.setImageResource(R.mipmap.good_orange);
                 break;
             case 2:
                 if (shakeFragment == null) {
@@ -251,11 +250,11 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
     }
 
     private void hideFragment(FragmentTransaction transaction) {
-        if (targetFragment != null) {
-            transaction.hide(targetFragment);
+        if (shopFragment != null) {
+            transaction.hide(shopFragment);
         }
-        if (giveFragment != null) {
-            transaction.hide(giveFragment);
+        if (goodFragment != null) {
+            transaction.hide(goodFragment);
         }
         if (shakeFragment != null) {
             transaction.hide(shakeFragment);
@@ -268,10 +267,10 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
         }
     }
 
-    @OnClick({R.id.layout_target, R.id.layout_give, R.id.layout_shake, R.id.layout_chat, R.id.layout_my})
+    @OnClick({R.id.layout_shop, R.id.layout_good, R.id.layout_shake, R.id.layout_chat, R.id.layout_my})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.layout_target:
+            case R.id.layout_shop:
                 isShake = false;
 
                 resetImgs();
@@ -279,16 +278,12 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
                 shakeFragment.onPause();
                 break;
 
-            case R.id.layout_give:
-                if (userInfoSp.getString("userId", null) != null) {
-                    isShake = false;
+            case R.id.layout_good:
+                isShake = false;
 
-                    resetImgs();
-                    setSelect(1);
-                    shakeFragment.onPause();
-                } else {
-                    LoginUtil.toLogin(MainActivity.this);
-                }
+                resetImgs();
+                setSelect(1);
+                shakeFragment.onPause();
                 break;
 
             case R.id.layout_shake:
@@ -323,13 +318,6 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
                     LoginUtil.toLogin(MainActivity.this);
                 }
 
-//                if(userInfoSp.getString("userId",null) == null){
-//                    Toast.makeText(MainActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
-//                }else{
-//
-//                }
-
                 break;
         }
     }
@@ -338,21 +326,18 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
      * 切换图片至暗色
      */
     public void resetImgs() {
-        txtTarget.setTextColor(getResources().getColor(R.color.gray4d));
-        txtGive.setTextColor(getResources().getColor(R.color.gray4d));
+        txtShop.setTextColor(getResources().getColor(R.color.gray4d));
+        txtGood.setTextColor(getResources().getColor(R.color.gray4d));
         txtShake.setTextColor(getResources().getColor(R.color.gray4d));
         txtChat.setTextColor(getResources().getColor(R.color.gray4d));
         txtMy.setTextColor(getResources().getColor(R.color.gray4d));
 
-        imgTarget.setImageResource(R.mipmap.target_gray);
-        imgGive.setImageResource(R.mipmap.give_gray);
+        imgShop.setImageResource(R.mipmap.shop_gray);
+        imgGood.setImageResource(R.mipmap.good_gray);
         imgShake.setImageResource(R.mipmap.shake_gray);
         imgChat.setImageResource(R.mipmap.chat_gray);
         imgMy.setImageResource(R.mipmap.my_gray);
     }
-
-
-    private PersonalModel model;
 
 
     public void getFriend() {
@@ -546,40 +531,50 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // TODO Auto-generated method stub
-        if(keyCode == KeyEvent.KEYCODE_BACK)
-        {
-            exitBy2Click(); //调用双击退出函数
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            tip();
         }
         return false;
     }
 
-    /**
-     * 双击退出函数
-     */
-    private static Boolean isExit = false;
+//    /**
+//     * 双击退出函数
+//     */
+//    private static Boolean isExit = false;
+//
+//    private void exitBy2Click() {
+//        Timer tExit = null;
+//        if (isExit == false) {
+//            isExit = true; // 准备退出
+//            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+//            tExit = new Timer();
+//            tExit.schedule(new TimerTask() {
+//                @Override
+//                public void run() {
+//                    isExit = false; // 取消退出
+//                }
+//            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
+//
+//        } else {
+//
+//
+//        }
+//    }
 
-    private void exitBy2Click() {
-        Timer tExit = null;
-        if (isExit == false) {
-            isExit = true; // 准备退出
-            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
-            tExit = new Timer();
-            tExit.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    isExit = false; // 取消退出
-                }
-            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
-
-        } else {
-            if(userInfoSp.getString("userId",null) != null){
-                logOut();
-            }else{
-                finish();
-                System.exit(0);
-            }
-
-        }
+    private void tip() {
+        new AlertDialog.Builder(this).setTitle("提示")
+                .setMessage("您确定要退出正汇钱包吗?")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (userInfoSp.getString("userId", null) != null) {
+                            logOut();
+                        } else {
+                            finish();
+                            System.exit(0);
+                        }
+                    }
+                }).setNegativeButton("取消", null).show();
     }
 
     /**
@@ -590,6 +585,9 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
         RequestParams params = new RequestParams(Xutil.URL + Xutil.LOGOUT);
         params.addBodyParameter("token", userInfoSp.getString("token", null));
 
+        System.out.println("url="+Xutil.URL + Xutil.LOGOUT);
+        System.out.println("token="+userInfoSp.getString("token", null));
+
         x.http().post(params, new Callback.CacheCallback<String>() {
             @Override
             public boolean onCache(String result) {
@@ -599,15 +597,18 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
             @Override
             public void onSuccess(String result) {
 
-                System.out.println("result="+result);
+                System.out.println("result=" + result);
 
                 try {
                     JSONObject jsonObject = new JSONObject(result);
-                    if(jsonObject.getJSONObject("data").getBoolean("isSuccess")){
+                    if (jsonObject.getJSONObject("data").getBoolean("isSuccess")) {
+                        SharedPreferences.Editor editor = userInfoSp.edit();
+                        editor.putString("userId", null);
+                        editor.putString("token", null);
+                        editor.commit();
+
                         finish();
                         System.exit(0);
-                    }else{
-
                     }
 
                 } catch (JSONException e) {

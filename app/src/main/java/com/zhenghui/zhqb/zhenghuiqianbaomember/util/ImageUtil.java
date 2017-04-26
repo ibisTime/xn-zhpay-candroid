@@ -13,7 +13,11 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 public class ImageUtil {
 
-    public static String IMAGE = "http://7xnuu2.com1.z0.glb.clouddn.com/";
+    public static String IMAGE = "http://omxvtiss6.bkt.clouddn.com/";
+    // 无损压缩
+    public static String COMPRESS = "?imageslim";
+
+
 
     public static final int RESULT_LOAD_IMAGE = 8888;
     public static final int RESULT_CAMARA_IMAGE = 9999;
@@ -38,12 +42,12 @@ public class ImageUtil {
                     .into(sellersmallimg);
         } else {
             Glide.with(context)
-                    .load(IMAGE + url )
+                    .load(IMAGE + url + COMPRESS)
 //                    .placeholder(R.mipmap.ic_launcher)
 //                    .error(R.mipmap.ic_launcher)
                     .into(sellersmallimg);
 
-            System.out.println("glide + uri="+IMAGE + url );
+            System.out.println("glide + uri ="+IMAGE + url + COMPRESS );
 
         }
 
@@ -69,12 +73,12 @@ public class ImageUtil {
                     .into(sellersmallimg);
         } else {
             Glide.with(context)
-                    .load(IMAGE + url )
+                    .load(IMAGE + url + COMPRESS )
 //                    .placeholder(R.mipmap.ic_launcher)
 //                    .error(R.mipmap.ic_launcher)
                     .into(sellersmallimg);
 
-            System.out.println("picasso + uri="+IMAGE + url );
+            System.out.println("picasso + uri="+IMAGE + url + COMPRESS );
 
         }
 
@@ -104,11 +108,11 @@ public class ImageUtil {
                     .into(sellersmallimg);
         } else {
             Picasso.with(context)
-                    .load(IMAGE + url )
+                    .load(IMAGE + url + COMPRESS )
                     .error(R.mipmap.photo_default)
                     .into(sellersmallimg);
 
-            System.out.println("photo + uri="+IMAGE + url );
+            System.out.println("photo + uri="+IMAGE + url + COMPRESS );
 
         }
 

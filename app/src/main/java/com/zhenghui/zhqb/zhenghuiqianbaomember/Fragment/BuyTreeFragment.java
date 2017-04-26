@@ -26,11 +26,12 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreePayActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TreeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LoginUtil;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 import com.zzhoujay.richtext.RichText;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -55,6 +56,8 @@ public class BuyTreeFragment extends Fragment {
     ImageView imageView3;
     @InjectView(R.id.txt_buy)
     TextView txtBuy;
+    @InjectView(R.id.txt_price)
+    TextView txtPrice;
 
     private View view;
 
@@ -189,24 +192,29 @@ public class BuyTreeFragment extends Fragment {
     public void getTree(){
         JSONObject object = new JSONObject();
         try {
-            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("start", "1");
+            object.put("limit", "1");
             object.put("token", userInfoSp.getString("token", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808451", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615105", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
 
                 try {
-                    JSONArray jsonObject = new JSONArray(result);
+                    JSONObject jsonObject = new JSONObject(result);
 
                     Gson gson = new Gson();
-                    ArrayList<TreeModel> lists = gson.fromJson(jsonObject.toString(), new TypeToken<ArrayList<TreeModel>>() {
+                    ArrayList<TreeModel> lists = gson.fromJson(jsonObject.getJSONArray("list").toString(), new TypeToken<ArrayList<TreeModel>>() {
                     }.getType());
 
                     list.addAll(lists);
+
+                    setView();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -226,9 +234,19 @@ public class BuyTreeFragment extends Fragment {
         });
     }
 
+    private void setView() {
+        if(list.size() == 0){
+            return;
+        }
+
+        ImageUtil.glide(list.get(0).getPic(), imageView3, getActivity());
+        txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(0).getPrice())+MoneyUtil.getCurrency(list.get(0).getCurrency()));
+    }
+
     private TextView content;
 
     private void statement(View view) {
+
 
         // 一个自定义的布局，作为显示的内容
         View mview = LayoutInflater.from(getActivity()).inflate(R.layout.popup_statement, null);

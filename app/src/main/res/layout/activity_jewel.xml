@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.JewelActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#FFFFFF" >
+
+        <LinearLayout
+            android:id="@+id/layout_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:src="@mipmap/back_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_share"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:src="@mipmap/share_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <ListView
+            android:id="@+id/list_jewel"
+            android:divider="@color/white"
+            android:dividerHeight="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+
+    </com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout>
+
+    <View
+        android:background="@color/lineColor_gray"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <LinearLayout
+        android:background="#F0F0f0"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+
+
+        <LinearLayout
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:textSize="16sp"
+                android:text="金额:"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:textSize="16sp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/fontColor_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/layout_rmb"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp">
+
+                    <TextView
+                        android:background="@mipmap/coin_rm"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/txt_rmb"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="10sp"
+                        android:textColor="@color/fontColor_orange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_gwb"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp">
+
+                    <TextView
+                        android:background="@mipmap/coin_gw"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/txt_gwb"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="10sp"
+                        android:textColor="@color/fontColor_orange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_qbb"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp">
+
+                    <TextView
+                        android:background="@mipmap/coin_qb"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/txt_qbb"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="10sp"
+                        android:textColor="@color/fontColor_orange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_buyNow"
+            android:background="@color/orange"
+            android:textSize="16sp"
+            android:text="参与"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_width="120dp"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

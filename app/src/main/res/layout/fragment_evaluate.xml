@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/bgcolor"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="44dp">
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:text="好评率"
+            android:textSize="15sp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.percent.PercentFrameLayout
+            android:layout_marginLeft="4dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                app:layout_heightPercent="100%"
+                app:layout_widthPercent="100%"
+                >
+
+                <ImageView
+                    android:id="@+id/img_start1"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/start_orange"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp" />
+
+                <ImageView
+                    android:id="@+id/img_start2"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/start_orange"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp" />
+
+                <ImageView
+                    android:id="@+id/img_start3"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/start_orange"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp" />
+
+                <ImageView
+                    android:id="@+id/img_start4"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/start_orange"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp" />
+
+                <ImageView
+                    android:id="@+id/img_start5"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/start_orange"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp" />
+
+            </LinearLayout>
+
+            <android.support.percent.PercentFrameLayout
+                android:visibility="gone"
+                android:id="@+id/layout_evalute"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                app:layout_heightPercent="100%"
+                app:layout_widthPercent="100%"
+                >
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_height="0dp"
+                    android:layout_width="0dp"
+                    app:layout_heightPercent="100%"
+                    app:layout_widthPercent="100%"
+                    >
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/img_start1"-->
+                        <!--android:layout_marginLeft="3dp"-->
+                        <!--android:background="@mipmap/start_orange"-->
+                        <!--android:layout_width="17dp"-->
+                        <!--android:layout_height="17dp" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/img_start2"-->
+                        <!--android:layout_marginLeft="3dp"-->
+                        <!--android:background="@mipmap/start_orange"-->
+                        <!--android:layout_width="17dp"-->
+                        <!--android:layout_height="17dp" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/img_start3"-->
+                        <!--android:layout_marginLeft="3dp"-->
+                        <!--android:background="@mipmap/start_orange"-->
+                        <!--android:layout_width="17dp"-->
+                        <!--android:layout_height="17dp" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/img_start4"-->
+                        <!--android:layout_marginLeft="3dp"-->
+                        <!--android:background="@mipmap/start_orange"-->
+                        <!--android:layout_width="17dp"-->
+                        <!--android:layout_height="17dp" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/img_start5"-->
+                        <!--android:layout_marginLeft="3dp"-->
+                        <!--android:background="@mipmap/start_orange"-->
+                        <!--android:layout_width="17dp"-->
+                        <!--android:layout_height="17dp" />-->
+
+                </LinearLayout>
+
+            </android.support.percent.PercentFrameLayout>
+
+
+        </android.support.percent.PercentFrameLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/txt_number"
+            android:gravity="right"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="14sp"
+            android:textColor="@color/fontColor_support"
+            android:text="购买人数(0)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/bgcolor"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <TextView
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="暂无评论"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/list_evaluate"
+            android:dividerHeight="0.5dp"
+            android:divider="@color/lineColor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+    </com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout>
+
+</LinearLayout>

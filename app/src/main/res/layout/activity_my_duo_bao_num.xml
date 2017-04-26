@@ -278,7 +278,6 @@
 
         <TextView
             android:id="@+id/txt_times"
-            android:text="1"
             android:textSize="12sp"
             android:textColor="@color/fontColor_orange"
             android:layout_width="wrap_content"
@@ -303,12 +302,20 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
-    <GridView
-        android:id="@+id/gridview_number"
-        android:numColumns="4"
+    <com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp"></GridView>
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/gridview_number"
+            android:numColumns="4"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"></GridView>
+
+    </com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout>
 
     <TextView
         android:id="@+id/txt_buy"

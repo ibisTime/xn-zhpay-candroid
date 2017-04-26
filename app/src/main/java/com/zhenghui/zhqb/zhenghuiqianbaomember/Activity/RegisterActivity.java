@@ -91,6 +91,15 @@ public class RegisterActivity extends MyBaseActivity {
         }
     };
 
+    private Handler EBhandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            Toast.makeText(RegisterActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+            super.handleMessage(msg);
+        }
+    };
+
     private String mCurrentProviceName;
     private String mCurrentCityName;
     private String mCurrentDistrictName;
@@ -110,6 +119,7 @@ public class RegisterActivity extends MyBaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        stopTime();
         MyApplication.getInstance().removeActivity(this);
     }
 
@@ -261,8 +271,6 @@ public class RegisterActivity extends MyBaseActivity {
             e.printStackTrace();
         }
 
-        System.out.println("object.toString()=" + object.toString());
-
         new Xutil().post("805041", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
@@ -271,7 +279,6 @@ public class RegisterActivity extends MyBaseActivity {
                 editor.putString("mobile", edtPhone.getText().toString().trim());
                 editor.commit();
 
-                Toast.makeText(RegisterActivity.this, "注册成功,为您自动登录", Toast.LENGTH_SHORT).show();
                 login();
             }
 
@@ -342,11 +349,12 @@ public class RegisterActivity extends MyBaseActivity {
                     editor.putString("userId", jsonObject.getString("userId"));
                     editor.putString("token", jsonObject.getString("token"));
                     editor.commit();
+
+                    signin();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
-                signin();
             }
 
             @Override
@@ -362,9 +370,11 @@ public class RegisterActivity extends MyBaseActivity {
     }
 
     private void signin() {
+        System.out.println("userInfoSp.getString(\"userId\",null)="+userInfoSp.getString("userId",null));
         EMClient.getInstance().login(userInfoSp.getString("userId", null), "888888", new EMCallBack() {
             @Override
             public void onSuccess() {
+//                Toast.makeText(RegisterActivity.this, "注册成功,为您自动登录", Toast.LENGTH_SHORT).show();
                 finish();
                 LoginActivity.instance.finish();
                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
@@ -373,7 +383,16 @@ public class RegisterActivity extends MyBaseActivity {
 
             @Override
             public void onError(int i, String s) {
-                Log.i("Qian", "登录失败 " + i + ", " + s);
+                if(i == 200){
+                    logout();
+                }else {
+                    Message message = EBhandler.obtainMessage();
+                    message.obj = "登录失败: " + i + ", " + s;
+                    EBhandler.sendMessage(message);
+                    Log.i("EMClient_login", "登录失败 " + i + ", " + s);
+                }
+
+//                Toast.makeText(RegisterActivity.this, "登录失败"+ i + ", " + s, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -445,8 +464,31 @@ public class RegisterActivity extends MyBaseActivity {
         isCodeSended = false;
         i = 60;
         btnSend.setText("重新发送");
-        timer.cancel();
     }
 
+    private void logout() {
+
+        EMClient.getInstance().logout(true, new EMCallBack() {
+
+            @Override
+            public void onSuccess() {
+                signin();
+            }
+
+            @Override
+            public void onProgress(int progress, String status) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onError(int code, String message) {
+                Message msg = handler.obtainMessage();
+                msg.obj = "退出失败: " + code + ", " + message;
+                handler.sendMessage(msg);
+
+            }
+        });
+    }
 
 }

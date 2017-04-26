@@ -109,15 +109,16 @@ public class JewelRecordService extends Service {
             object.put("start", "1");
             object.put("limit", "10");
             object.put("orderDir", "");
-            object.put("status","payed");
+            object.put("status","123");
             object.put("orderColumn", "");
             object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808315", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615025", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String c) {
 

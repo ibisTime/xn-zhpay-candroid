@@ -70,7 +70,7 @@ public class RichTextActivity extends MyBaseActivity {
                 break;
 
             case "fyf_rule":
-                txtTitle.setText("发一发玩法介绍");
+                txtTitle.setText("汇赚宝玩法介绍");
                 break;
 
             case "yyy_rule":

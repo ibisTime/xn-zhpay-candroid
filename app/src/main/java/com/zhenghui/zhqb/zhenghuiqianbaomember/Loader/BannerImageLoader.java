@@ -5,14 +5,13 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.youth.banner.loader.ImageLoader;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 
 /**
  * Created by dell1 on 2016/12/13.
  */
 
 public class BannerImageLoader extends ImageLoader {
-
-    public static String IMAGE = "http://7xnuu2.com1.z0.glb.clouddn.com/";
 
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
@@ -23,7 +22,7 @@ public class BannerImageLoader extends ImageLoader {
                     .into(imageView);
         } else {
             Glide.with(context)
-                    .load(IMAGE + path.toString() )
+                    .load(ImageUtil.IMAGE + path.toString() )
                     .into(imageView);
         }
 

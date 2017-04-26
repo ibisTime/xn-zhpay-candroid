@@ -16,7 +16,7 @@ public class AddressModel implements Serializable {
     private String city;
     private String district;
     private String detailAddress;
-    private String isDefault;
+    private String isDefault = "0";
 
     public String getCode() {
         return code;

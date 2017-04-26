@@ -41,14 +41,14 @@ public class TransFenRunActivity extends MyBaseActivity {
     TextView txtTitle;
     @InjectView(R.id.txt_type)
     TextView txtType;
+    @InjectView(R.id.txt_tip)
+    TextView txtTip;
 
     private SharedPreferences userInfoSp;
     private SharedPreferences appConfigSp;
 
-    // 0:提现,50:红包转分润,52:红包业绩转分润,54:红包业绩转贡献奖励
     private String type;
     private Double balance;
-    private String accountNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,9 @@ public class TransFenRunActivity extends MyBaseActivity {
         MyApplication.getInstance().addActivity(this);
 
         inits();
+        getTip();
         initEditText();
+
     }
 
     @Override
@@ -70,16 +72,10 @@ public class TransFenRunActivity extends MyBaseActivity {
     private void inits() {
         type = getIntent().getStringExtra("type");
         balance = getIntent().getDoubleExtra("balance", 0.00);
-        accountNumber = getIntent().getStringExtra("accountNumber");
-        if (type.equals("0")) {
-            txtTitle.setText("提现");
-            txtType.setText("提现金额");
-        } else if (type.equals("50")) {
-            txtTitle.setText("红包转分润");
-            txtType.setText("转分润金额");
-        } else if (type.equals("52")) {
-            txtTitle.setText("红包业绩转分润");
-            txtType.setText("转分润金额");
+
+        if (type.equals("HBB")) {
+            txtTitle.setText("红包转贡献值");
+            txtType.setText("转贡献值金额");
         } else {
             txtTitle.setText("红包业绩转贡献值");
             txtType.setText("转贡献值金额");
@@ -140,20 +136,56 @@ public class TransFenRunActivity extends MyBaseActivity {
         try {
             object.put("token", userInfoSp.getString("token", null));
             object.put("userId", userInfoSp.getString("userId", null));
-            object.put("systemCode", appConfigSp.getString("systemCode", null));
-            object.put("transAmount", "-"+(int) (Double.parseDouble(edtAmount.getText().toString().trim()) * 1000));
-            object.put("bizType", type + "");
+            object.put("fromAmount", Double.parseDouble(edtAmount.getText().toString().trim()) * 1000);
+            object.put("fromCurrency", type);
+            object.put("toCurrency", "GXJL");
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("802518", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("802410", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
 
                 Toast.makeText(TransFenRunActivity.this, "兑换成功", Toast.LENGTH_SHORT).show();
                 finish();
+
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(TransFenRunActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(TransFenRunActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void getTip() {
+        JSONObject object = new JSONObject();
+        try {
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("key", "EXCTIMES");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post("802027", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    txtTip.setText("*每个用户每月可以操作"+jsonObject.getString("cvalue")+"次");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
             }
 

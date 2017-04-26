@@ -8,35 +8,27 @@ public class BillUtil {
 
 
     /**
-     * AJ_CZ("11", "充值"),
-     * AJ_QX("-11", "取现"),
-     * AJ_QX("-12", "取现冻结"),
-     * AJ_QX("12", "取现解冻"),
-     * AJ_LB("19", "蓝补"),
-     * AJ_HC("-19", "红冲"),
-     * AJ_GW("-30", "购物"),
-     * AJ_DPXF("-31", "店铺消费"),
-     * AJ_GMZKQ("-32", "购买折扣券"),
-     * AJ_GMFLYK("-33", "购买福利月卡"),
-     * AJ_FLYKFC("34","福利月卡分成"),
-     * AJ_FLYKHH("35", "福利月卡返还"),
-     * AJ_GMHZB("-36", "购买汇赚宝"),
-     * AJ_GMHZBFC("37", "购买汇赚宝分成"),
-     * AJ_YYJL("38", "汇赚宝摇一摇奖励"),
-     * AJ_YYFC("39", "摇一摇分成"),
-     * AJ_DUOBAO("-40", "参与小目标"),
-     * AJ_DBFLOW("41", "夺宝流标"),
-     * AJ_QRSH("42", "确认收货，商户收钱"),
-     * AJ_HB2FR("50", "红包兑分润"),
-     * AJ_HBYJ2FR("52", "红包业绩兑分润"),
-     * AJ_HBYJ2GXJL("54", "红包业绩兑贡献奖励"),
-     * AJ_FR2RMB("56","分润兑人民币"),
-     * AJ_GXJL2RMB("58", "贡献奖励兑人民币");
-     * AJ_GXJL2RMB("60", "发送得红包");
-     * AJ_GXJL2RMB("61", "领取红包");
-     * AJ_GXJL2RMB("62", "小目标中奖");
-     * AJ_GXJL2RMB("-64", "参与小目标");
-     * AJ_GXJL2RMB("65", "小目标中奖");
+     * '11','充值'
+     '-11','取现'
+     '19','蓝补'
+     '-19','红冲'
+     '-30','购物'
+     '30','购物退款'
+     '32','确认收货，商户收钱'
+     '-40','购买折扣券'
+     '-ZH1','正汇O2O支付'
+     '-ZH2','正汇分红权分红'
+     '-50','购买汇赚宝'
+     '51','购买汇赚宝分成'
+     '52','汇赚宝摇一摇奖励'
+     '53','摇一摇分成'
+     '60','发一发得红包'
+     '61','领取红包'
+     '-70','参与小目标'
+     '71','小目标中奖'
+
+     '200','币种兑换'
+
      * @param bizType
      * @return
      */
@@ -47,10 +39,6 @@ public class BillUtil {
             return "充值";
         } else if(bizType.equals("-11")){
             return "取现";
-        }else if(bizType.equals("-12")){
-            return "取现冻结";
-        }else if(bizType.equals("12")){
-            return "取现解冻";
         } else if(bizType.equals("19")){
             return "蓝补";
         } else if(bizType.equals("-19")){
@@ -59,50 +47,34 @@ public class BillUtil {
             return "购物";
         } else if(bizType.equals("30")){
             return "购物退款";
-        } else if(bizType.equals("-31")){
-            return "店铺消费";
-        } else if(bizType.equals("-32")){
-            return "购买折扣券";
         } else if(bizType.equals("32")){
-            return "销售折扣券";
-        } else if(bizType.equals("-33")){
-            return "购买福利月卡";
-        } else if(bizType.equals("34")){
-            return "福利月卡分成";
-        } else if(bizType.equals("35")){
-            return "福利月卡返还";
-        } else if(bizType.equals("-36")){
-            return "购买汇赚宝";
-        } else if(bizType.equals("37")){
-            return "购买汇赚宝分成";
-        } else if(bizType.equals("38")){
-            return "汇赚宝摇一摇奖励";
-        } else if(bizType.equals("39")){
-            return "摇一摇分成";
-        } else if(bizType.equals("-40")){
-            return "参与小目标";
-        } else if(bizType.equals("41")){
-            return "夺宝流标";
-        } else if(bizType.equals("42")) {
             return "确认收货，商户收钱";
-        } else if(bizType.equals("50")){
-            return "红包兑分润";
-        } else if(bizType.equals("52")){
-            return "红包业绩兑分润";
+        } else if(bizType.equals("-40")){
+            return "购买折扣券";
+        } else if(bizType.equals("-50")){
+            return "购买汇赚宝";
+        } else if(bizType.equals("51")){
+            return "购买汇赚宝分成";
+        }else if(bizType.equals("52")){
+            return "汇赚宝摇一摇奖励";
+        } else if(bizType.equals("53")){
+            return "汇赚宝主人摇一摇分成";
         } else if(bizType.equals("54")){
-            return "红包业绩兑贡献奖励";
-        } else if(bizType.equals("56")){
-            return "分润兑人民币";
-        } else if(bizType.equals("58")){
-            return "贡献奖励兑人民币";
+            return "推荐人摇一摇分成";
         } else if(bizType.equals("60")){
-            return "发送得红包";
+            return "发一发得红包";
         } else if(bizType.equals("61")){
             return "领取红包";
-        } else if(bizType.equals("-64")){
+        }else if(bizType.equals("-70")){
             return "参与小目标";
-        }else if(bizType.equals("65")){
+        }else if(bizType.equals("71")){
             return "小目标中奖";
+        }else if(bizType.equals("200")){
+            return "币种兑换";
+        }else if(bizType.equals("-ZH1")){
+            return "正汇O2O支付";
+        }else if(bizType.equals("-ZH2")){
+            return "正汇分红权分红";
         }
         return "";
     }

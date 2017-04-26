@@ -62,7 +62,7 @@ public class ShakeAdapter extends BaseAdapter {
 
     public void setView(int position) {
 
-        holder.txtName.setText(list.get(position).getMobile()+"的");
+        holder.txtName.setText(list.get(position).getUser().getNickname()+"的");
         if(list.get(position).getDistance().length() > 3){
             holder.txtDistance.setText((Integer.parseInt(list.get(position).getDistance())/1000)+"KM");
         }else{

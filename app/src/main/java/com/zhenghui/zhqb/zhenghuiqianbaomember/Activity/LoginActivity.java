@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -48,6 +50,15 @@ public class LoginActivity extends MyBaseActivity {
 
     public static LoginActivity instance;
 
+    private Handler handler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            Toast.makeText(LoginActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+            super.handleMessage(msg);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,13 +67,13 @@ public class LoginActivity extends MyBaseActivity {
         MyApplication.getInstance().addActivity(this);
 
         inits();
-        if(userInfoSp.getString("userId",null) != null){
-            if(EMClient.getInstance().isLoggedInBefore()){
-                //已经登录，可以直接进入会话界面
-                finish();
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
-            }
-        }
+//        if(userInfoSp.getString("userId",null) != null){
+//            if(EMClient.getInstance().isLoggedInBefore()){
+//                //已经登录，可以直接进入会话界面
+//                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+//                finish();
+//            }
+//        }
 
 
     }
@@ -77,7 +88,7 @@ public class LoginActivity extends MyBaseActivity {
         instance = this;
         log = getIntent().getStringExtra("log");
         if(log != null){
-            Toast.makeText(LoginActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoginActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
         }
 
         appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
@@ -89,8 +100,7 @@ public class LoginActivity extends MyBaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
-                finish();
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                back();
                 break;
 
             case R.id.txt_register:
@@ -157,17 +167,26 @@ public class LoginActivity extends MyBaseActivity {
     }
 
     private void signin(){
+
+        System.out.println("userInfoSp.getString(\"userId\",null)="+userInfoSp.getString("userId",null));
         EMClient.getInstance().login(userInfoSp.getString("userId",null), "888888", new EMCallBack() {
             @Override
             public void onSuccess() {
-                finish();
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                back();
 
             }
 
             @Override
             public void onError(int i, String s) {
-                Log.i("Qian","登录失败 " + i + ", " + s);
+                if(i == 200){
+                    logout();
+                }else {
+                    Message message = handler.obtainMessage();
+                    message.obj = "登录失败: " + i + ", " + s;
+                    handler.sendMessage(message);
+                    Log.i("EMClient_login","登录失败 " + i + ", " + s);
+                }
+
             }
 
             @Override
@@ -179,16 +198,43 @@ public class LoginActivity extends MyBaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK)
-        {
-            back(); //调用双击退出函数
+        if(keyCode == KeyEvent.KEYCODE_BACK) {
+            back();
         }
         return false;
     }
 
     private void back(){
+        MainActivity.instance.finish();
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
         finish();
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+    }
+
+    private void logout() {
+
+        EMClient.getInstance().logout(true, new EMCallBack() {
+
+            @Override
+            public void onSuccess() {
+                signin();
+            }
+
+            @Override
+            public void onProgress(int progress, String status) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onError(int code, String message) {
+                Message msg = handler.obtainMessage();
+                msg.obj = "退出失败: " + code + ", " + message;
+                handler.sendMessage(msg);
+
+            }
+        });
     }
 
 }

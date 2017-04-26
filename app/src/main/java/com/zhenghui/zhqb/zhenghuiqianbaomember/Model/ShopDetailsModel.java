@@ -45,7 +45,7 @@ public class ShopDetailsModel {
     private double rate1;
     private double rate2;
     private String slogan;
-    private String adPic;
+    private String advPic;
     private String pic;
     private String description;
     private String province;
@@ -144,12 +144,12 @@ public class ShopDetailsModel {
         this.slogan = slogan;
     }
 
-    public String getAdPic() {
-        return adPic;
+    public String getAdvPic() {
+        return advPic;
     }
 
-    public void setAdPic(String adPic) {
-        this.adPic = adPic;
+    public void setAdvPic(String adPic) {
+        this.advPic = adPic;
     }
 
     public String getPic() {

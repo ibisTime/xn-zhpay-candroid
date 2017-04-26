@@ -65,7 +65,7 @@ public class WxUtil {
      * @param
      */
     public static void shareToPYQ(Context context, String url, String title, String description) {
-
+        System.out.println("shareURL="+url);
         api = registToWx(context);
 
         WXWebpageObject webpage = new WXWebpageObject();
@@ -94,7 +94,7 @@ public class WxUtil {
      * @param
      */
     public static void shareToWX(Context context, String url, String title, String description) {
-
+        System.out.println("shareURL="+url);
         api = registToWx(context);
 
         WXWebpageObject webpage = new WXWebpageObject();

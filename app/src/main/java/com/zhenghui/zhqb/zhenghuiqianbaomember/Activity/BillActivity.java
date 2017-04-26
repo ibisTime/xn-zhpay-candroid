@@ -93,10 +93,9 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
         list = new ArrayList<>();
         adapter = new BillAdapter(this, list);
 
-        accountAmount = getIntent().getDoubleExtra("accountAmount", 0.00);
-
         accountName = getIntent().getStringExtra("accountName");
         accountNumber = getIntent().getStringExtra("accountNumber");
+        accountAmount = getIntent().getDoubleExtra("accountAmount", 0.00);
 
         userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
@@ -116,6 +115,7 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
             case "frb":
                 txtBeGx.setVisibility(View.GONE);
+                txtBtn.setVisibility(View.VISIBLE);
                 txtBtn.setText("提现");
                 txtTitle.setText("分润流水");
                 break;
@@ -127,7 +127,7 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
                 break;
 
             case "hbb":
-                txtBeGx.setVisibility(View.GONE);
+                txtBeGx.setVisibility(View.VISIBLE);
                 txtBtn.setText("转分润");
                 txtTitle.setText("红包流水");
                 break;
@@ -168,6 +168,7 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
             object.put("token", userInfoSp.getString("token", null));
             object.put("systemCode", appConfigSp.getString("systemCode", null));
             object.put("accountNumber", accountNumber);
+            object.put("status","");
             object.put("start", page);
             object.put("limit", pageSize);
 
@@ -248,9 +249,19 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
             case R.id.txt_beGx:
 
-                startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
-                        .putExtra("type", "54")
-                        .putExtra("balance", accountAmount));
+                switch (accountName){
+                    case "hbyj":
+                        startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
+                                .putExtra("type", "HBYJ")
+                                .putExtra("balance", accountAmount));
+                        break;
+
+                    case "hbb":
+                        startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
+                                .putExtra("type", "HBB")
+                                .putExtra("balance", accountAmount));
+                        break;
+                }
 
                 break;
 
@@ -261,19 +272,19 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
                 }else if(txtBtn.getText().equals("转分润")){
 
-                    switch (accountName){
-                        case "hbyj":
-                            startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
-                                    .putExtra("type", "52")
-                                    .putExtra("balance", accountAmount));
-                            break;
-
-                        case "hbb":
-                            startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
-                                    .putExtra("type", "50")
-                                    .putExtra("balance", accountAmount));
-                            break;
-                    }
+//                    switch (accountName){
+//                        case "hbyj":
+//                            startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
+//                                    .putExtra("type", "52")
+//                                    .putExtra("balance", accountAmount));
+//                            break;
+//
+//                        case "hbb":
+//                            startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
+//                                    .putExtra("type", "50")
+//                                    .putExtra("balance", accountAmount));
+//                            break;
+//                    }
 
                 }else if(txtBtn.getText().equals("提现")){
 

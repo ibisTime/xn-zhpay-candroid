@@ -31,6 +31,8 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.txt_give;
+
 /**
  * Created by dell1 on 2016/12/19.
  */
@@ -72,7 +74,7 @@ public class MyTreeFragment extends Fragment {
     TextView txtGiveNumToday;
     @InjectView(R.id.txt_gxz)
     TextView txtGxz;
-    @InjectView(R.id.txt_give)
+    @InjectView(txt_give)
     TextView txtGive;
     private View view;
     private String tree;
@@ -134,7 +136,14 @@ public class MyTreeFragment extends Fragment {
                 txtState.setText("已激活");
             } else if (jsonObject.getString("status").equals("2")) {
                 txtState.setText("已冻结");
+            } else if (jsonObject.getString("status").equals("91")) {
+                txtState.setText("人为下架");
+            } else if (jsonObject.getString("status").equals("92")) {
+                txtState.setText("正常耗尽");
+                txtGive.setText("查看历史红包");
             }
+
+
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -149,7 +158,7 @@ public class MyTreeFragment extends Fragment {
         ButterKnife.reset(this);
     }
 
-    @OnClick({R.id.layout_back, R.id.txt_introduce, R.id.layout_activate, R.id.layout_shake, R.id.layout_give, R.id.txt_give})
+    @OnClick({R.id.layout_back, R.id.txt_introduce, R.id.layout_activate, R.id.layout_shake, R.id.layout_give, txt_give})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -157,7 +166,7 @@ public class MyTreeFragment extends Fragment {
                 break;
 
             case R.id.txt_introduce:
-                startActivity(new Intent(getActivity(), RichTextActivity.class).putExtra("cKey", "yyy_rule"));
+                startActivity(new Intent(getActivity(), RichTextActivity.class).putExtra("cKey", "fyf_rule"));
                 break;
 
             case R.id.layout_activate:
@@ -167,7 +176,7 @@ public class MyTreeFragment extends Fragment {
 
             case R.id.layout_shake:
                 startActivity(new Intent(getActivity(), TreeBillActivity.class)
-                        .putExtra("bizType", "39")
+                        .putExtra("bizType", "53")
                         .putExtra("currency", "HBYJ"));
                 break;
 
@@ -177,7 +186,7 @@ public class MyTreeFragment extends Fragment {
                         .putExtra("currency", "HBYJ"));
                 break;
 
-            case R.id.txt_give:
+            case txt_give:
                 startActivity(new Intent(getActivity(), GiveActivity.class));
 
                 break;
@@ -252,12 +261,11 @@ public class MyTreeFragment extends Fragment {
         try {
             object.put("userId", userInfoSp.getString("userId", null));
             object.put("token", userInfoSp.getString("token", null));
-            object.put("systemCode", appConfigSp.getString("systemCode", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808802", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615119", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
 

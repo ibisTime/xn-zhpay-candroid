@@ -8,16 +8,20 @@ public class JewelNumberModel {
 
 
     /**
-     * id : 419
-     * jewelCode : J201702222010582200
-     * recordCode : JR201702231254495568
-     * number : 10000009
+     * id : 597
+     * jewelCode : J201704011131055480
+     * recordCode : JR201704011132131594
+     * number : 10000075
+     * companyCode : CD-CZH000001
+     * systemCode : CD-CZH000001
      */
 
     private int id;
     private String jewelCode;
     private String recordCode;
     private String number;
+    private String companyCode;
+    private String systemCode;
 
     public int getId() {
         return id;
@@ -49,5 +53,21 @@ public class JewelNumberModel {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getCompanyCode() {
+        return companyCode;
+    }
+
+    public void setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+    }
+
+    public String getSystemCode() {
+        return systemCode;
+    }
+
+    public void setSystemCode(String systemCode) {
+        this.systemCode = systemCode;
     }
 }

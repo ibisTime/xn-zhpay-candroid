@@ -62,7 +62,6 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         inits();
-
         startTime();
         return super.onStartCommand(intent, flags, startId);
     }
@@ -113,6 +112,8 @@ public class MyService extends Service {
                         editor.putString("province",province);
                         editor.putString("city",city);
                         editor.putString("district",district);
+                        editor.putString("latitude",latitude);
+                        editor.putString("longitude",longitude);
                         editor.commit();
 
                         postLocation();
@@ -128,6 +129,7 @@ public class MyService extends Service {
     }
 
     private void postLocation(){
+        System.out.println("postLocation()");
         JSONObject object = new JSONObject();
         try {
             object.put("userId", userInfoSp.getString("userId", null));
@@ -151,7 +153,7 @@ public class MyService extends Service {
 
             @Override
             public void onError(String error, boolean isOnCallback) {
-                Toast.makeText(getApplicationContext(), "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
             }
         });
     }

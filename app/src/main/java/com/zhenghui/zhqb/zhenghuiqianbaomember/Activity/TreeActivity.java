@@ -13,6 +13,7 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.MyTreeFragment;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -59,22 +60,28 @@ public class TreeActivity extends MyBaseActivity {
     public void getMyTree(){
         JSONObject object = new JSONObject();
         try {
-            object.put("userId", userInfoSp.getString("userId", null));
             object.put("token", userInfoSp.getString("token", null));
+            object.put("userId", userInfoSp.getString("userId", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808456", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("615118", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
-                if(result.equals("{}")){
+                if(result.equals("[]")){
                     isBuy = false;
                     initFragment();
                     return;
                 }else {
                     isBuy = true;
-                    treeDetail = result;
+                    try {
+                        JSONArray jsonArray = new JSONArray(result);
+                        treeDetail = jsonArray.get(0).toString();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
                     initFragment();
                     return;
                 }
