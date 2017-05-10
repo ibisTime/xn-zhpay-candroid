@@ -242,6 +242,7 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
         }
 
         private void enableDisableSwipeRefresh(boolean b) {
+            // swipeContainer:自定义下拉刷新控件
             if (swipeContainer != null) {
                 swipeContainer.setEnabled(b);
             }

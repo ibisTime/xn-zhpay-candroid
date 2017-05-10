@@ -56,8 +56,12 @@ public class JewelAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = LayoutInflater.from(context).inflate(R.layout.item_jewel, null);
-        holder = new ViewHolder(view);
+        if(view == null){
+            view = LayoutInflater.from(context).inflate(R.layout.item_jewel, null);
+            holder = new ViewHolder(view);
+            view.setTag(holder);
+        }
+        holder = (ViewHolder) view.getTag();
 
         setView(i);
 
@@ -69,13 +73,13 @@ public class JewelAdapter extends BaseAdapter {
         ImageUtil.photo(list.get(i).getUser().getPhoto(),holder.imgPhoto,context);
         holder.txtIp.setText(list.get(i).getIp());
 
-        if(list.get(0).getStatus().equals("2")){
+        if(list.get(i).getStatus().equals("2")){
             holder.txtAward.setText(Html.fromHtml("中得<html><font color=\"#fe4332\">"+
-                    MoneyUtil.moneyFormatDouble(list.get(0).getJewel().getToAmount())+
+                    MoneyUtil.moneyFormatDouble(list.get(i).getJewel().getToAmount())+
                     "</font></html>"+getCurrency(list.get(i).getJewel().getToCurrency())));
         }else{
             holder.txtAward.setText(Html.fromHtml("参与了<html><font color=\"#fe4332\">"+
-                    list.get(0).getTimes()+ "</font></html>人次"));
+                    list.get(i).getTimes()+ "</font></html>人次"));
         }
 
         SimpleDateFormat s2 = new SimpleDateFormat("yyyy-MM-dd");

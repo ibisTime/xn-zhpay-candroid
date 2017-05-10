@@ -5,9 +5,9 @@ public class ConstantsUtil {
     // 骑来骑去
 //    public static final String APP_ID_WX = "wx3eb3d4d796093674";
     // 橙袋科技
-//    public static final String APP_ID_WX = "wx7202b6a02f0270b4";
+    public static final String APP_ID_WX = "wx7202b6a02f0270b4";
     // 正汇
-    public static final String APP_ID_WX = "wx9324d86fb16e8af0";
+//    public static final String APP_ID_WX = "wx9324d86fb16e8af0";
 //    public static final String APP_ID_WX = "wx1c40c1c60500a270";
 
 	// 微信商户号
