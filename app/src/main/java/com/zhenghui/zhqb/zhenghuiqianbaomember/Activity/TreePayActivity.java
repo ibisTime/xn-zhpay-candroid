@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -55,6 +56,10 @@ public class TreePayActivity extends MyBaseActivity {
     TextView txtDiscountMoney;
     @InjectView(R.id.txt_pay)
     TextView txtPay;
+    @InjectView(R.id.edt_tradePwd)
+    EditText edtTradePwd;
+    @InjectView(R.id.layout_tradePwd)
+    LinearLayout layoutTradePwd;
 
     private String code;
     private double price;
@@ -100,20 +105,21 @@ public class TreePayActivity extends MyBaseActivity {
                 intImage();
                 payWay = "1";
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);
-
+                layoutTradePwd.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.img_weixin:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
-
+                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.img_zhifubao:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
+                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.txt_pay:
@@ -127,7 +133,23 @@ public class TreePayActivity extends MyBaseActivity {
 //                        }else{
 //                        getIp();
 //                        }
-                        pay();
+
+                        if(layoutTradePwd.getVisibility() == View.VISIBLE){
+                            if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
+                                Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(TreePayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
+                            } else {
+                                if (check()) {
+                                    pay();
+                                }
+                            }
+                        }else {
+                            if (check()) {
+                                pay();
+                            }
+                        }
+
+
                     }
                 } else {
                     Toast.makeText(TreePayActivity.this, "请输入消费金额", Toast.LENGTH_SHORT).show();
@@ -148,6 +170,7 @@ public class TreePayActivity extends MyBaseActivity {
             object.put("userId", userInfoSp.getString("userId", null));
             object.put("payType", payWay);
             object.put("hzbTemplateCode", code);
+            object.put("tradePwd", edtTradePwd.getText().toString().trim());
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -160,13 +183,13 @@ public class TreePayActivity extends MyBaseActivity {
                 try {
                     jsonObject = new JSONObject(result);
 
-                    if(payWay.equals("1")){
+                    if (payWay.equals("1")) {
                         Toast.makeText(TreePayActivity.this, "购买成功", Toast.LENGTH_SHORT).show();
-                    }else if(payWay.equals("2")){
-                        if(WxUtil.check(TreePayActivity.this)){
-                            WxUtil.pay(TreePayActivity.this,jsonObject);
+                    } else if (payWay.equals("2")) {
+                        if (WxUtil.check(TreePayActivity.this)) {
+                            WxUtil.pay(TreePayActivity.this, jsonObject);
                         }
-                    }else {
+                    } else {
                         AliPay(jsonObject.getString("signOrder"));
                     }
                 } catch (JSONException e) {
@@ -210,7 +233,7 @@ public class TreePayActivity extends MyBaseActivity {
                     for (WalletModel model : lists) {
                         switch (model.getCurrency()) {
                             case "FRB": // 分润
-                                txtBalace.setText("分润("+ MoneyUtil.moneyFormatDouble(model.getAmount())+")");
+//                                txtBalace.setText("分润("+ MoneyUtil.moneyFormatDouble(model.getAmount())+")");
                                 break;
                         }
                     }
@@ -234,7 +257,7 @@ public class TreePayActivity extends MyBaseActivity {
         });
     }
 
-    private void getBalance(){
+    private void getBalance() {
         JSONObject object = new JSONObject();
         try {
             object.put("token", userInfoSp.getString("token", null));
@@ -257,7 +280,7 @@ public class TreePayActivity extends MyBaseActivity {
                     for (AssetsModel model : lists) {
                         if (model.getCurrency().equals("FRB")) {
 
-                            txtBalace.setText("分润:"+ MoneyUtil.moneyFormatDouble(model.getAmount()) + "");
+                            txtBalace.setText("分润:" + MoneyUtil.moneyFormatDouble(model.getAmount()) + "");
 
                         }
                     }
@@ -280,7 +303,7 @@ public class TreePayActivity extends MyBaseActivity {
         });
     }
 
-    private void AliPay(String info){
+    private void AliPay(String info) {
         final String payInfo = info;
 
         Runnable payRunnable = new Runnable() {
@@ -328,10 +351,10 @@ public class TreePayActivity extends MyBaseActivity {
 
                     String resultStatus = payResult.getResultStatus();
 
-                    System.out.println("resultInfo="+resultInfo);
-                    System.out.println("resultStatus="+resultStatus);
+                    System.out.println("resultInfo=" + resultInfo);
+                    System.out.println("resultStatus=" + resultStatus);
 
-                    if(resultStatus.equals("9000")){
+                    if (resultStatus.equals("9000")) {
                         Toast.makeText(TreePayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         TreePayActivity.this.finish();
                     }
@@ -341,7 +364,19 @@ public class TreePayActivity extends MyBaseActivity {
                     break;
 
             }
-        };
+        }
+
+        ;
 
     };
+
+    private boolean check() {
+        if(layoutTradePwd.getVisibility() == View.VISIBLE){
+            if (edtTradePwd.getText().toString().trim().equals("")) {
+                Toast.makeText(this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        return true;
+    }
 }

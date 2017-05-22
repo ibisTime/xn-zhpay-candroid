@@ -65,6 +65,10 @@ public class ShopPayActivity extends MyBaseActivity {
     TextView txtPay;
     @InjectView(R.id.txt_discountMoney)
     TextView txtDiscountMoney;
+    @InjectView(R.id.edt_tradePwd)
+    EditText edtTradePwd;
+    @InjectView(R.id.layout_tradePwd)
+    LinearLayout layoutTradePwd;
 
     private String ticketCode = "";
 
@@ -167,20 +171,21 @@ public class ShopPayActivity extends MyBaseActivity {
                 intImage();
                 payWay = "1";
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);
-
+                layoutTradePwd.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.img_weixin:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
-
+                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.img_zhifubao:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
+                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.txt_pay:
@@ -195,7 +200,20 @@ public class ShopPayActivity extends MyBaseActivity {
 //                        pay();
 //                        }
 //                        getIp();
-                        pay();
+                        if(layoutTradePwd.getVisibility() == View.VISIBLE){
+                            if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
+                                Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(ShopPayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
+                            } else {
+                                if (check()) {
+                                    pay();
+                                }
+                            }
+                        }else {
+                            if (check()) {
+                                pay();
+                            }
+                        }
                     }
                 } else {
                     Toast.makeText(ShopPayActivity.this, "请输入消费金额", Toast.LENGTH_SHORT).show();
@@ -229,7 +247,7 @@ public class ShopPayActivity extends MyBaseActivity {
 
     }
 
-    private void getBalance(){
+    private void getBalance() {
         JSONObject object = new JSONObject();
         try {
             object.put("token", userInfoSp.getString("token", null));
@@ -254,11 +272,11 @@ public class ShopPayActivity extends MyBaseActivity {
                     for (AssetsModel model : lists) {
                         if (model.getCurrency().equals("FRB")) {
                             frb = model.getAmount();
-                        }else if (model.getCurrency().equals("GXJL")) {
+                        } else if (model.getCurrency().equals("GXJL")) {
                             gxjl = model.getAmount();
                         }
                     }
-                    txtBalace.setText("余额:"+ MoneyUtil.moneyFormatDouble(frb+gxjl));
+//                    txtBalace.setText("余额:"+ MoneyUtil.moneyFormatDouble(frb+gxjl));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -285,7 +303,8 @@ public class ShopPayActivity extends MyBaseActivity {
             object.put("storeCode", code);
             object.put("payType", payWay);
             object.put("ticketCode", ticketCode);
-            object.put("amount", (int) (Double.parseDouble(edtPrice.getText().toString().trim()) * 1000)+"");
+            object.put("tradePwd", edtTradePwd.getText().toString().trim());
+            object.put("amount", (int) (Double.parseDouble(edtPrice.getText().toString().trim()) * 1000) + "");
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -295,16 +314,16 @@ public class ShopPayActivity extends MyBaseActivity {
             @Override
             public void onSuccess(String result) {
                 try {
-                    JSONObject jsonObject = new JSONObject(result);
-
-                    if(payWay.equals("1")){
+                    if (payWay.equals("1")) {
                         Toast.makeText(ShopPayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         finish();
-                    } else if(payWay.equals("2")){
-                        if(WxUtil.check(ShopPayActivity.this)){
-                            WxUtil.pay(ShopPayActivity.this,jsonObject);
+                    } else if (payWay.equals("2")) {
+                        JSONObject jsonObject = new JSONObject(result);
+                        if (WxUtil.check(ShopPayActivity.this)) {
+                            WxUtil.pay(ShopPayActivity.this, jsonObject);
                         }
-                    }else{
+                    } else {
+                        JSONObject jsonObject = new JSONObject(result);
                         AliPay(jsonObject.getString("signOrder"));
                     }
 
@@ -326,38 +345,38 @@ public class ShopPayActivity extends MyBaseActivity {
         });
     }
 
-    private void AliPay(String info){
+    private void AliPay(String info) {
         final String payInfo = info;
 
 //                EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
 
-                Runnable payRunnable = new Runnable() {
+        Runnable payRunnable = new Runnable() {
 
-                    @Override
+            @Override
 
-                    public void run() {
+            public void run() {
 
-                        // 构造PayTask 对象
-                        PayTask alipay = new PayTask(ShopPayActivity.this);
-                        // 调用支付接口，获取支付结果
+                // 构造PayTask 对象
+                PayTask alipay = new PayTask(ShopPayActivity.this);
+                // 调用支付接口，获取支付结果
 
-                        String result = alipay.pay(payInfo, true);
+                String result = alipay.pay(payInfo, true);
 
-                        Message msg = new Message();
+                Message msg = new Message();
 
-                        msg.what = 1;
+                msg.what = 1;
 
-                        msg.obj = result;
+                msg.obj = result;
 
-                        mHandler.sendMessage(msg);
+                mHandler.sendMessage(msg);
 
-                    }
+            }
 
-                };
+        };
 
-                Thread payThread = new Thread(payRunnable);
+        Thread payThread = new Thread(payRunnable);
 
-                payThread.start();
+        payThread.start();
     }
 
     private Handler mHandler = new Handler() {
@@ -377,10 +396,10 @@ public class ShopPayActivity extends MyBaseActivity {
 
                     String resultStatus = payResult.getResultStatus();
 
-                    System.out.println("resultInfo="+resultInfo);
-                    System.out.println("resultStatus="+resultStatus);
+                    System.out.println("resultInfo=" + resultInfo);
+                    System.out.println("resultStatus=" + resultStatus);
 
-                    if(resultStatus.equals("9000")){
+                    if (resultStatus.equals("9000")) {
                         Toast.makeText(ShopPayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         ShopPayActivity.this.finish();
                     }
@@ -390,8 +409,21 @@ public class ShopPayActivity extends MyBaseActivity {
                     break;
 
             }
-        };
+        }
+
+        ;
 
     };
+
+    private boolean check() {
+
+        if(layoutTradePwd.getVisibility() == View.VISIBLE){
+            if (edtTradePwd.getText().toString().trim().equals("")) {
+                Toast.makeText(this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        return true;
+    }
 
 }

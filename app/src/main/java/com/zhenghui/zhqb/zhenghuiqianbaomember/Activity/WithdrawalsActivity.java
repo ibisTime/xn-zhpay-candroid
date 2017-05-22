@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.BankModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.MyBankCardModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -56,16 +57,20 @@ public class WithdrawalsActivity extends MyBaseActivity {
     EditText edtRepassword;
     @InjectView(R.id.txt_confirm)
     TextView txtConfirm;
+    @InjectView(R.id.txt_tip)
+    TextView txtTip;
 
     private String[] bank;
     //    private String[] bank = { "Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9"};
     private List<BankModel> list;
+    private List<MyBankCardModel> bankCardList;
 
     private SharedPreferences userInfoSp;
     private SharedPreferences appConfigSp;
 
     private double balance;
-    private String bankcardCode;
+    private String subbranch;
+    private String bankcardNumber;
     private String accountNumber;
 
     @Override
@@ -78,7 +83,9 @@ public class WithdrawalsActivity extends MyBaseActivity {
         inits();
         initEditText();
 
+        getTip();
         getData();
+        getList();
     }
 
     @Override
@@ -89,6 +96,7 @@ public class WithdrawalsActivity extends MyBaseActivity {
 
     private void inits() {
         list = new ArrayList<>();
+        bankCardList = new ArrayList<>();
         balance = getIntent().getDoubleExtra("balance", 0.00);
         accountNumber = getIntent().getStringExtra("accountNumber");
 
@@ -136,13 +144,13 @@ public class WithdrawalsActivity extends MyBaseActivity {
                     if (Double.parseDouble(edtPrice.getText().toString().trim()) == 0.0) {
                         Toast.makeText(WithdrawalsActivity.this, "金额必须大于等于0.01元", Toast.LENGTH_SHORT).show();
                     } else {
-                        if (txtBankCard.getText().toString().equals("选择银行卡")) {
-                            Toast.makeText(WithdrawalsActivity.this, "请先选择银行卡", Toast.LENGTH_SHORT).show();
+                        if (txtBankCard.getText().toString().equals("添加银行卡")) {
+                            Toast.makeText(WithdrawalsActivity.this, "请先添加银行卡", Toast.LENGTH_SHORT).show();
                         } else {
-                            if(edtRepassword.getText().toString().length() == 6){
+                            if (edtRepassword.getText().toString().length() == 0) {
+                                Toast.makeText(WithdrawalsActivity.this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+                            } else {
                                 withdrawal();
-                            }else{
-                                Toast.makeText(WithdrawalsActivity.this, "请输入6位支付密码", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
@@ -162,7 +170,8 @@ public class WithdrawalsActivity extends MyBaseActivity {
             txtBankCard.setText(data.getStringExtra("bankName"));
         }
 
-        bankcardCode = data.getStringExtra("bankcardCode");
+        subbranch = data.getStringExtra("subbranch");
+        bankcardNumber = data.getStringExtra("bankcardNumber");
 
 
     }
@@ -233,9 +242,112 @@ public class WithdrawalsActivity extends MyBaseActivity {
         });
     }
 
+    private void getList() {
+
+        JSONObject object = new JSONObject();
+        try {
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("token", userInfoSp.getString("token", null));
+            object.put("bankcardNumber", "");
+            object.put("bankName", "");
+            object.put("userId", userInfoSp.getString("userId", null));
+            object.put("realName", "");
+            object.put("type", "");
+            object.put("status", "1");
+            object.put("start", "1");
+            object.put("limit", "1");
+            object.put("orderColumn", "");
+            object.put("orderDir", "");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post("802015", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+
+                    Gson gson = new Gson();
+                    ArrayList<MyBankCardModel> lists = gson.fromJson(jsonObject.getJSONArray("list").toString(), new TypeToken<ArrayList<MyBankCardModel>>() {
+                    }.getType());
+
+                    bankCardList.addAll(lists);
+                    if (bankCardList.size() > 0) {
+                        System.out.println("bankCardList.get(0).getSubbranch()=" + bankCardList.get(0).getSubbranch());
+                        System.out.println("bankCardList.get(0).getBankCode()=" + bankCardList.get(0).getBankCode());
+
+                        subbranch = bankCardList.get(0).getSubbranch();
+                        bankcardNumber = bankCardList.get(0).getBankcardNumber();
+
+                        System.out.println("subbranch=" + subbranch);
+                        System.out.println("bankcardCode=" + bankcardNumber);
+
+                        txtBankCard.setText(bankCardList.get(0).getBankName());
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(WithdrawalsActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(WithdrawalsActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void getTip() {
+
+        JSONObject object = new JSONObject();
+        try {
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
+            object.put("token", userInfoSp.getString("token", null));
+            object.put("key", "CUSERMONTIMES");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post("802027", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+
+                    txtTip.setText("* 每月最大取现次数为"+jsonObject.getString("cvalue")+"次");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(WithdrawalsActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(WithdrawalsActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void withdrawal() {
 
-        System.out.println("(Double.parseDouble(edtPrice.getText().toString().trim())="+Double.parseDouble(edtPrice.getText().toString().trim()));
+        System.out.println("(Double.parseDouble(edtPrice.getText().toString().trim())=" + Double.parseDouble(edtPrice.getText().toString().trim()));
 
         JSONArray accountNumberList = new JSONArray();
         accountNumberList.put(accountNumber);
@@ -244,18 +356,22 @@ public class WithdrawalsActivity extends MyBaseActivity {
         try {
             object.put("systemCode", appConfigSp.getString("systemCode", null));
             object.put("token", userInfoSp.getString("token", null));
-            object.put("bankcardNumber", bankcardCode);
-            object.put("transAmount", "-"+(int) (Double.parseDouble(edtPrice.getText().toString().trim()) * 1000));
             object.put("accountNumber", accountNumber);
+            object.put("amount", (int) (Double.parseDouble(edtPrice.getText().toString().trim()) * 1000));
+            object.put("payCardNo", bankcardNumber);
+            // 开户行
+            object.put("payCardInfo", subbranch);
+            object.put("applyNote", "");
+            object.put("applyUser", userInfoSp.getString("userId", null));
             object.put("tradePwd", edtRepassword.getText().toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("802526", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("802750", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
-                Toast.makeText(WithdrawalsActivity.this, "提现成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(WithdrawalsActivity.this, "提现申请成功", Toast.LENGTH_SHORT).show();
                 finish();
             }
 

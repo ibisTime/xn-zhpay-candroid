@@ -66,9 +66,11 @@ public class RightsListAdapter extends BaseAdapter {
     private void setView(int position) {
         holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(position).getToAmount())+setAssets(position));
 
-        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date d5 = new Date(list.get(position).getCreateDatetime());
-        holder.txtTime.setText(s.format(d5));
+        if(list.get(position).getCreateDatetime() != null){
+            SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date d5 = new Date(list.get(position).getCreateDatetime());
+            holder.txtTime.setText(s.format(d5));
+        }
     }
 
     private String setAssets(int position) {

@@ -124,21 +124,49 @@
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="horizontal"
         android:gravity="right"
         android:layout_gravity="center_horizontal"
         android:layout_width="325dp"
         android:layout_height="58dp">
 
         <TextView
-            android:paddingLeft="15dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="21dp"
             android:id="@+id/txt_forget"
+            android:gravity="center"
+            android:paddingRight="15dp"
             android:textColor="@color/white"
             android:text="找回密码"
             android:textSize="12sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="48dp" />
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="48dp"/>
+
+        <LinearLayout
+            android:gravity="right|center"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp">
+
+            <TextView
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="记住账号密码"
+                android:textSize="12sp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+
+            <CheckBox
+                style="@style/CustomCheckBoxTheme"
+                android:id="@+id/box_remenber"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

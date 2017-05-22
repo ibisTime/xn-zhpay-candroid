@@ -1,9 +1,11 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,7 +17,6 @@ import com.google.gson.reflect.TypeToken;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PayResult;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.WalletModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
@@ -60,6 +61,10 @@ public class JewelPayActivity extends MyBaseActivity {
     LinearLayout layoutAli;
     @InjectView(R.id.layout_balance)
     LinearLayout layoutBalance;
+    @InjectView(R.id.edt_tradePwd)
+    EditText edtTradePwd;
+    @InjectView(R.id.layout_tradePwd)
+    LinearLayout layoutTradePwd;
 
     private String code;
     private String price;
@@ -122,20 +127,21 @@ public class JewelPayActivity extends MyBaseActivity {
                 intImage();
                 payWay = "1";
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);
-
+                layoutTradePwd.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.img_weixin:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
-
+                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.img_zhifubao:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
+                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.txt_pay:
@@ -144,11 +150,22 @@ public class JewelPayActivity extends MyBaseActivity {
                     if (Double.parseDouble(edtPrice.getText().toString().trim()) == 0.0) {
                         Toast.makeText(JewelPayActivity.this, "金额必须大于等于0.01元", Toast.LENGTH_SHORT).show();
                     } else {
-//                        if(txtDiscount.getText().toString().equals("选择折扣券")){
-//                            Toast.makeText(this, "请选择折扣券", Toast.LENGTH_SHORT).show();
-//                        }else{
-                        getIp();
-//                        }
+                        if(layoutTradePwd.getVisibility() == View.VISIBLE){
+                            if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
+                                Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(JewelPayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
+                            } else {
+                                if (check()) {
+                                    getIp();
+                                }
+                            }
+                        } else {
+                            if (check()) {
+                                getIp();
+                            }
+                        }
+
+
 
                     }
                 } else {
@@ -214,6 +231,7 @@ public class JewelPayActivity extends MyBaseActivity {
             object.put("payType", payWay);
             object.put("jewelCode", code);
             object.put("ip", ip);
+            object.put("tradePwd", edtTradePwd.getText().toString().trim());
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -301,8 +319,8 @@ public class JewelPayActivity extends MyBaseActivity {
     private void setMoney() {
         for (WalletModel model : list) {
             if (model.getCurrency().equals(currency)) {
-                if(!model.getCurrency().equals("CNY")){
-                    txtBalance.setText("余额(" + MoneyUtil.moneyFormatDouble(model.getAmount()) + MoneyUtil.getCurrency(currency) + ")");
+                if (!model.getCurrency().equals("CNY")) {
+//                    txtBalance.setText("余额(" + MoneyUtil.moneyFormatDouble(model.getAmount()) + MoneyUtil.getCurrency(currency) + ")");
                 }
             }
         }
@@ -378,5 +396,15 @@ public class JewelPayActivity extends MyBaseActivity {
         ;
 
     };
+
+    private boolean check() {
+        if(layoutTradePwd.getVisibility() == View.VISIBLE){
+            if (edtTradePwd.getText().toString().trim().equals("")) {
+                Toast.makeText(this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
