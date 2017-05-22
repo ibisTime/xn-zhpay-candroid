@@ -121,6 +121,14 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
     // 公告
     TextView noticeTxt;
 
+    TextView txtFlag1;
+    TextView txtFlag2;
+    TextView txtFlag3;
+    TextView txtFlag4;
+    TextView txtFlag5;
+    TextView txtFlag6;
+    List<TextView> txtFlagList;
+
     private List<String> images;
     private List<BannerModel> bannerList;
     private List<ShopModel> shopList;
@@ -157,6 +165,7 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
         initHeadView(inflater);
         initEvent();
         initListView();
+        initViewPager();
 
         // 初始城市按钮
         updateLocateState(locateState, locatedCity);
@@ -174,6 +183,7 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
     public void onResume() {
         super.onResume();
         getNotice();
+        getStoreType();
     }
 
 
@@ -181,11 +191,18 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
         images = new ArrayList<>();
         shopList = new ArrayList<>();
         bannerList = new ArrayList<>();
+        txtFlagList = new ArrayList<>();
 
         fragments = new ArrayList<>();
+        modelList = new ArrayList<>();
         storeTypelist = new ArrayList<>();
 
         adapter = new ShopAdapter(getActivity(), shopList);
+
+        //初始化pageAdapter
+        pageAdapter = new PagerAdapter(getActivity().getSupportFragmentManager(),
+                fragments);
+
 
         userInfoSp = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         appConfigSp = getActivity().getSharedPreferences("appConfig", Context.MODE_PRIVATE);
@@ -209,8 +226,14 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
 
         viewPager = (ViewPager) headView.findViewById(R.id.viewpager_layout);
 
-        noticeTxt = (TextView) headView.findViewById(R.id.txt_notice);
+        txtFlag1 = (TextView) headView.findViewById(R.id.txt_flag1);
+        txtFlag2 = (TextView) headView.findViewById(R.id.txt_flag2);
+        txtFlag3 = (TextView) headView.findViewById(R.id.txt_flag3);
+        txtFlag4 = (TextView) headView.findViewById(R.id.txt_flag4);
+        txtFlag5 = (TextView) headView.findViewById(R.id.txt_flag5);
+        txtFlag6 = (TextView) headView.findViewById(R.id.txt_flag6);
 
+        noticeTxt = (TextView) headView.findViewById(R.id.txt_notice);
         ktvLayout = (LinearLayout) headView.findViewById(R.id.layout_ktv);
         foodLayout = (LinearLayout) headView.findViewById(R.id.layout_food);
         hairLayout = (LinearLayout) headView.findViewById(R.id.layout_hair);
@@ -222,6 +245,12 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
 
         viewPager.setOnPageChangeListener(new MyPageChangeListener());
 
+        txtFlagList.add(txtFlag1);
+        txtFlagList.add(txtFlag2);
+        txtFlagList.add(txtFlag3);
+        txtFlagList.add(txtFlag4);
+        txtFlagList.add(txtFlag5);
+        txtFlagList.add(txtFlag6);
     }
 
     private class MyPageChangeListener implements ViewPager.OnPageChangeListener {
@@ -242,6 +271,7 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
         }
 
         private void enableDisableSwipeRefresh(boolean b) {
+            // swipeContainer:自定义下拉刷新控件
             if (swipeContainer != null) {
                 swipeContainer.setEnabled(b);
             }
@@ -269,7 +299,7 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
     private void initPagerDatas() {
         totalCount = storeTypelist.size();
 
-        modelList = new ArrayList<Model>();
+        modelList.clear();
         for (int i = 0; i < storeTypelist.size(); i++) {
             Model model = new Model(i + "", i + "name");
             model.setTitle(storeTypelist.get(i).getName());
@@ -279,13 +309,13 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
             modelList.add(model);
         }
 
-        initViewPager();
+        setViewPager();
     }
 
     /**
      *
      */
-    private void initViewPager() {
+    private void setViewPager() {
         int size = modelList.size();
         fragments.clear();
 
@@ -296,31 +326,27 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
         }
 
         for (int i = 0; i < pageCount; i++) {
+            if(i<6){
+                // 初始化点
+                txtFlagList.get(i).setVisibility(View.VISIBLE);
+            }
             //初始化每一个fragment
             GridFragment gf = GridFragment.newInstance(i, modelList);
             fragments.add(gf);
         }
 
-        //初始化pageAdapter
-        pageAdapter = new PagerAdapter(getActivity().getSupportFragmentManager(),
-                fragments);
-
-        viewPager.setAdapter(pageAdapter);
+        pageAdapter.notifyDataSetChanged();
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int arg0) {
-                if (arg0 == pageCount - 1) {
-                    // 在最后一页，开始加载后一页的数据
-//                    for (int i = totalCount; i < totalCount + 8; i++) {
-//                        Model model = new Model(i + "", i + "name");
-//                        modelList.add(model);
-//                    }
-//                    totalCount += 8;
-//                    pageAdapter.addFragment(pageCount++, modelList);
-//                    pageAdapter.notifyDataSetChanged();
-
+                for (int i = 0; i < pageCount; i++) {
+                    if(i == arg0){
+                        txtFlagList.get(i).setBackground(getResources().getDrawable(R.drawable.corners_store_type_orange));
+                    }else{
+                        txtFlagList.get(i).setBackground(getResources().getDrawable(R.drawable.corners_store_type_gray));
+                    }
                 }
 
             }
@@ -556,6 +582,10 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
         list.setOnItemClickListener(this);
     }
 
+    private void initViewPager() {
+        viewPager.setAdapter(pageAdapter);
+    }
+
     //如果你需要考虑更好的体验，可以这么操作
     @Override
     public void onStart() {
@@ -612,9 +642,11 @@ public class ShopFragment extends Fragment implements AdapterView.OnItemClickLis
                     JSONArray jsonArray = new JSONArray(result);
 
                     Gson gson = new Gson();
-                    storeTypelist = gson.fromJson(jsonArray.toString(), new TypeToken<ArrayList<StoreTypeModel>>() {
+                    List<StoreTypeModel> lists = gson.fromJson(jsonArray.toString(), new TypeToken<ArrayList<StoreTypeModel>>() {
                     }.getType());
 
+                    storeTypelist.clear();
+                    storeTypelist.addAll(lists);
                     System.out.println("storeTypelist.size()="+storeTypelist.size());
 
                     initPagerDatas();

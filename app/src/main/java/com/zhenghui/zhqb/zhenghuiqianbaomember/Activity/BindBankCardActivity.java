@@ -293,6 +293,10 @@ public class BindBankCardActivity extends MyBaseActivity {
         new Xutil().post("802012", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
+                SharedPreferences.Editor editor = userInfoSp.edit();
+                editor.putString("realName",txtName.getText().toString().trim());
+                editor.commit();
+
                 finish();
                 Toast.makeText(BindBankCardActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
             }

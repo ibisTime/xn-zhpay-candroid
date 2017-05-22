@@ -1,7 +1,6 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -28,9 +27,6 @@ public class RichTextActivity extends MyBaseActivity {
     TextView txtAbout;
     @InjectView(R.id.txt_title)
     TextView txtTitle;
-
-    private SharedPreferences appConfigSp;
-    private SharedPreferences userInfoSp;
 
     private String cKey;
 

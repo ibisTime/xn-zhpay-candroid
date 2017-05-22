@@ -36,6 +36,7 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.MyFragment2;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ShakeFragment;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ShopFragment;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.FriendModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.JewelRecordService;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.MyService;
@@ -106,6 +107,8 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
     public static MainActivity instance;
 
     public boolean isShake = true;
+
+    private PersonalModel model;
 
     private boolean logoutFlag = false;
     private boolean anotherDeviceFlag = true;
@@ -604,6 +607,62 @@ public class MainActivity extends MyBaseActivity implements EMMessageListener {
 
             @Override
             public void onFinished() {
+            }
+        });
+    }
+
+    /**
+     * 获取用户详情
+     */
+    private void getData() {
+        JSONObject object = new JSONObject();
+        try {
+            object.put("userId", userInfoSp.getString("userId", null));
+            object.put("token", userInfoSp.getString("token", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        new Xutil().post("805056", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+
+                    Gson gson = new Gson();
+                    model = gson.fromJson(jsonObject.toString(), new TypeToken<PersonalModel>() {
+                    }.getType());
+
+                    SharedPreferences.Editor editor = userInfoSp.edit();
+                    editor.putString("mobile", model.getMobile());
+                    editor.putString("realName", model.getRealName());
+                    editor.putString("nickName", model.getNickname());
+                    editor.putString("identityFlag", model.getIdentityFlag());
+                    editor.putString("tradepwdFlag", model.getTradepwdFlag());
+                    editor.putString("userRefereeName", model.getUserRefereeName());
+                    if (null != model.getUserExt().getPhoto()) {
+                        editor.putString("photo", model.getUserExt().getPhoto());
+                    }
+                    String address = model.getUserExt().getProvince() + model.getUserExt().getCity() + model.getUserExt().getArea();
+                    editor.putString("address", address);
+                    editor.commit();
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(MainActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(MainActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
             }
         });
     }

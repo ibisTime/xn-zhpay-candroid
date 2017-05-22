@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -193,7 +194,10 @@ public class MapActivity extends MyBaseActivity implements LocationSource, AMapL
                  * 调用高德导航
                  */
                 if (AMapUtil.isInstallByRead("com.autonavi.minimap")){
+                    Toast.makeText(this, "即将用高德地图打开导航", Toast.LENGTH_SHORT).show();
                     AMapUtil.goToNaviActivity(this,"zhpay",null,latitude+"",longitude+"","1","2");
+                }else {
+                    Toast.makeText(this, "请下载安装高德地图，方可导航", Toast.LENGTH_SHORT).show();
                 }
 //                startActivity(new Intent(MapActivity.this,MapRouteOverlayActivity.class).putExtra("longitude",longitude+"").putExtra("latitude",latitude+""));
                 break;

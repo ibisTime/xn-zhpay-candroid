@@ -20,7 +20,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.MyBankCardModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -75,7 +74,7 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
         MyApplication.getInstance().addActivity(this);
 
         // 初始返回数据
-        setResult(0,new Intent().putExtra("bankcardCode","").putExtra("bankName",""));
+        setResult(0,new Intent().putExtra("bankcardNumber","").putExtra("subbranch","").putExtra("bankName",""));
         inits();
         initEvent();
         initListView();
@@ -153,6 +152,9 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
                     }
 
                     list.addAll(lists);
+                    if(list.size()>0){
+                        txtAdd.setVisibility(View.GONE);
+                    }
                     adapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {
@@ -177,7 +179,7 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
-                setResult(0,new Intent().putExtra("bankcardCode","").putExtra("bankName",""));
+                setResult(0,new Intent().putExtra("bankcardNumber","").putExtra("subbranch","").putExtra("bankName",""));
                 finish();
                 break;
 
@@ -191,7 +193,9 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         if(isWithdrawal){
 //            withdrawal();
-            setResult(0,new Intent().putExtra("bankcardCode",list.get(i).getBankcardNumber()).putExtra("bankName",list.get(i).getBankName()));
+            setResult(0,new Intent().putExtra("bankcardNumber",list.get(i).getBankcardNumber())
+                    .putExtra("subbranch",list.get(i).getSubbranch())
+                    .putExtra("bankName",list.get(i).getBankName()));
             finish();
         }else{
             startActivity(new Intent(BankCardActivity.this, BindBankCardActivity.class)
@@ -219,42 +223,4 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
         System.out.println("onStop()");
     }
 
-
-    private void withdrawal(String bankcardCode){
-
-        JSONArray accountNumberList = new JSONArray();
-        accountNumberList.put(accountNumber);
-
-        JSONObject object = new JSONObject();
-        try {
-            object.put("systemCode", appConfigSp.getString("systemCode", null));
-            object.put("token", userInfoSp.getString("token", null));
-            object.put("bankcardCode", bankcardCode);
-            object.put("transAmount", transAmount);
-            object.put("accountNumberList", accountNumberList);
-            object.put("bizType", "-11");
-            object.put("bizNote", "1");
-            object.put("channelList", "");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        new Xutil().post("802510", object.toString(), new Xutil.XUtils3CallBackPost() {
-            @Override
-            public void onSuccess(String result) {
-                System.out.println("提现成功");
-                finish();
-            }
-
-            @Override
-            public void onTip(String tip) {
-                Toast.makeText(BankCardActivity.this, tip, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(String error, boolean isOnCallback) {
-                Toast.makeText(BankCardActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 }

@@ -1,11 +1,13 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -68,6 +70,10 @@ public class GoodPayActivity extends MyBaseActivity {
     LinearLayout layoutWx;
     @InjectView(R.id.layout_ali)
     LinearLayout layoutAli;
+    @InjectView(R.id.edt_tradePwd)
+    EditText edtTradePwd;
+    @InjectView(R.id.layout_tradePwd)
+    LinearLayout layoutTradePwd;
 
     private String payWay = "1";
 
@@ -101,14 +107,12 @@ public class GoodPayActivity extends MyBaseActivity {
     private void inits() {
 
         code = getIntent().getStringExtra("code");
-        rmb = getIntent().getDoubleExtra("rmb",0.00);
-        gwb = getIntent().getDoubleExtra("gwb",0.00);
-        qbb = getIntent().getDoubleExtra("qbb",0.00);
-        yunfei = getIntent().getDoubleExtra("yunfei",0.00);
+        rmb = getIntent().getDoubleExtra("rmb", 0.00);
+        gwb = getIntent().getDoubleExtra("gwb", 0.00);
+        qbb = getIntent().getDoubleExtra("qbb", 0.00);
+        yunfei = getIntent().getDoubleExtra("yunfei", 0.00);
 
-        System.out.println("yunfei="+yunfei);
-
-        shopCart = getIntent().getBooleanExtra("shopCart",false);
+        shopCart = getIntent().getBooleanExtra("shopCart", false);
         codeList = getIntent().getStringArrayListExtra("codeList");
         userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
@@ -126,28 +130,46 @@ public class GoodPayActivity extends MyBaseActivity {
                 intImage();
                 payWay = "1";
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);
-
+                layoutTradePwd.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.img_weixin:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
-
+                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.img_zhifubao:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
+                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.txt_pay:
 //                getIp();
-                if(shopCart){
-                    shoppingCartPay();
-                }else{
-                    pay();
+                if(layoutTradePwd.getVisibility() == View.VISIBLE){
+                    if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
+                        Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(GoodPayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
+                    }else {
+                        if (check()) {
+                            if (shopCart) {
+                                shoppingCartPay();
+                            } else {
+                                pay();
+                            }
+                        }
+                    }
+                }else {
+                    if (check()) {
+                        if (shopCart) {
+                            shoppingCartPay();
+                        } else {
+                            pay();
+                        }
+                    }
                 }
                 break;
         }
@@ -217,6 +239,7 @@ public class GoodPayActivity extends MyBaseActivity {
         try {
             object.put("codeList", jsonArray);
             object.put("payType", payWay);
+            object.put("tradePwd", edtTradePwd.getText().toString().trim());
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -265,7 +288,7 @@ public class GoodPayActivity extends MyBaseActivity {
     private void shoppingCartPay() {
 
         JSONArray jsonArray = new JSONArray();
-        for(int i=0; i<codeList.size(); i++){
+        for (int i = 0; i < codeList.size(); i++) {
             jsonArray.put(codeList.get(i));
         }
 
@@ -273,6 +296,7 @@ public class GoodPayActivity extends MyBaseActivity {
         try {
             object.put("codeList", jsonArray);
             object.put("payType", payWay);
+            object.put("tradePwd", edtTradePwd.getText().toString().trim());
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -320,7 +344,6 @@ public class GoodPayActivity extends MyBaseActivity {
     }
 
 
-
     private void setView() {
 
         if (rmb == 0) {
@@ -336,7 +359,7 @@ public class GoodPayActivity extends MyBaseActivity {
             txtRmb2.setVisibility(View.VISIBLE);
             txtRmb3.setVisibility(View.VISIBLE);
 
-            txtRmb2.setText(MoneyUtil.moneyFormatDouble(rmb+yunfei));
+            txtRmb2.setText(MoneyUtil.moneyFormatDouble(rmb + yunfei));
             if (gwb == 0 && qbb == 0) {
                 txtRmb3.setText("");
             }
@@ -369,7 +392,7 @@ public class GoodPayActivity extends MyBaseActivity {
 
     }
 
-    private void AliPay(String info){
+    private void AliPay(String info) {
         final String payInfo = info;
 
         Runnable payRunnable = new Runnable() {
@@ -418,10 +441,10 @@ public class GoodPayActivity extends MyBaseActivity {
 
                     String resultStatus = payResult.getResultStatus();
 
-                    System.out.println("resultInfo="+resultInfo);
-                    System.out.println("resultStatus="+resultStatus);
+                    System.out.println("resultInfo=" + resultInfo);
+                    System.out.println("resultStatus=" + resultStatus);
 
-                    if(resultStatus.equals("9000")){
+                    if (resultStatus.equals("9000")) {
                         Toast.makeText(GoodPayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         GoodPayActivity.this.finish();
                     }
@@ -431,7 +454,21 @@ public class GoodPayActivity extends MyBaseActivity {
                     break;
 
             }
-        };
+        }
+
+        ;
 
     };
+
+    private boolean check() {
+
+        if(layoutTradePwd.getVisibility() == View.VISIBLE){
+            if (edtTradePwd.getText().toString().trim().equals("")) {
+                Toast.makeText(this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

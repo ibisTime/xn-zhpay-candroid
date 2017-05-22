@@ -164,7 +164,8 @@ public class ShopListActivity extends MyBaseActivity implements AdapterView.OnIt
             object.put("legalPersonName", "");
             object.put("userReferee", "");
             object.put("province", "");
-            object.put("city", locatedCity);
+//            object.put("city", locatedCity);
+            object.put("city", "");
             object.put("area", "");
             object.put("status", "2");
             object.put("owner", "");

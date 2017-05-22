@@ -7,8 +7,8 @@ public class ConstantsUtil {
     // 橙袋科技
 //    public static final String APP_ID_WX = "wx7202b6a02f0270b4";
     // 正汇
-    public static final String APP_ID_WX = "wx9324d86fb16e8af0";
-//    public static final String APP_ID_WX = "wx1c40c1c60500a270";
+//    public static final String APP_ID_WX = "wx9324d86fb16e8af0";
+    public static final String APP_ID_WX = "wx1c40c1c60500a270";
 
 	// 微信商户号
 //	public static final String MCH_ID = "1300851701";

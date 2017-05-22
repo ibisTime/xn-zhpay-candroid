@@ -1,6 +1,5 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +9,8 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,11 +43,14 @@ public class LoginActivity extends MyBaseActivity {
     Button btnLogin;
     @InjectView(R.id.txt_forget)
     TextView txtForget;
+    @InjectView(R.id.box_remenber)
+    CheckBox boxRemenber;
+
+    SharedPreferences.Editor editor;
+    private boolean isRemenberPwd = false;
 
     private String log;
 
-    private SharedPreferences appConfigSp;
-    private SharedPreferences userInfoSp;
 
     public static LoginActivity instance;
 
@@ -54,7 +58,7 @@ public class LoginActivity extends MyBaseActivity {
 
         @Override
         public void handleMessage(Message msg) {
-            Toast.makeText(LoginActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, "暂时无法连接，请稍候重试!", Toast.LENGTH_SHORT).show();
             super.handleMessage(msg);
         }
     };
@@ -67,14 +71,17 @@ public class LoginActivity extends MyBaseActivity {
         MyApplication.getInstance().addActivity(this);
 
         inits();
-//        if(userInfoSp.getString("userId",null) != null){
-//            if(EMClient.getInstance().isLoggedInBefore()){
-//                //已经登录，可以直接进入会话界面
-//                startActivity(new Intent(LoginActivity.this,MainActivity.class));
-//                finish();
-//            }
-//        }
 
+        boxRemenber.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                System.out.println("b="+b);
+
+                isRemenberPwd = b;
+                editor.putBoolean("isRemenberPwd",isRemenberPwd);
+                editor.commit();
+            }
+        });
 
     }
 
@@ -87,12 +94,17 @@ public class LoginActivity extends MyBaseActivity {
     private void inits() {
         instance = this;
         log = getIntent().getStringExtra("log");
-        if(log != null){
-//            Toast.makeText(LoginActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
-        }
 
-        appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
-        userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        edtPhone.setText(userInfoSp.getString("loginName",""));
+        edtPassword.setText(userInfoSp.getString("loginPwd",""));
+
+        System.out.println("loginName="+userInfoSp.getString("loginName",""));
+        System.out.println("loginPwd="+userInfoSp.getString("loginPwd",""));
+
+        editor = userInfoSp.edit();
+        isRemenberPwd = userInfoSp.getBoolean("isRemenberPwd",false);
+        boxRemenber.setChecked(isRemenberPwd);
+
     }
 
 
@@ -104,15 +116,15 @@ public class LoginActivity extends MyBaseActivity {
                 break;
 
             case R.id.txt_register:
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 break;
 
             case R.id.btn_login:
-                if(edtPhone.getText().toString().trim().length() != 11){
+                if (edtPhone.getText().toString().trim().length() != 11) {
                     Toast.makeText(LoginActivity.this, "请填写正确的手机号码", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(edtPassword.getText().toString().trim().length() == 0){
+                if (edtPassword.getText().toString().trim().length() == 0) {
                     Toast.makeText(LoginActivity.this, "请填写密码", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -120,32 +132,39 @@ public class LoginActivity extends MyBaseActivity {
                 break;
 
             case R.id.txt_forget:
-                startActivity(new Intent(LoginActivity.this,ModifyPasswordActivity.class));
+                startActivity(new Intent(LoginActivity.this, ModifyPasswordActivity.class));
                 break;
         }
     }
 
-    private void login(){
+    private void login() {
         JSONObject object = new JSONObject();
         try {
-            object.put("loginName",edtPhone.getText().toString().trim());
-            object.put("loginPwd",edtPassword.getText().toString().trim());
-            object.put("kind","f1");
-            object.put("companyCode","");
-            object.put("systemCode",appConfigSp.getString("systemCode", null));
+            object.put("loginName", edtPhone.getText().toString().trim());
+            object.put("loginPwd", edtPassword.getText().toString().trim());
+            object.put("kind", "f1");
+            object.put("companyCode", "");
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("805043",object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("805043", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
-                SharedPreferences.Editor editor = userInfoSp.edit();
-
                 try {
                     JSONObject jsonObject = new JSONObject(result);
-                    editor.putString("userId",jsonObject.getString("userId"));
-                    editor.putString("token",jsonObject.getString("token"));
+                    editor.putString("userId", jsonObject.getString("userId"));
+                    editor.putString("token", jsonObject.getString("token"));
+
+                    System.out.println("isRemenberPwd="+isRemenberPwd);
+                    if(isRemenberPwd){
+                        editor.putString("loginName", edtPhone.getText().toString().trim());
+                        editor.putString("loginPwd", edtPassword.getText().toString().trim());
+                    }else {
+                        editor.putString("loginName", "");
+                        editor.putString("loginPwd", "");
+                    }
                     editor.commit();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -166,10 +185,10 @@ public class LoginActivity extends MyBaseActivity {
         });
     }
 
-    private void signin(){
+    private void signin() {
 
-        System.out.println("userInfoSp.getString(\"userId\",null)="+userInfoSp.getString("userId",null));
-        EMClient.getInstance().login(userInfoSp.getString("userId",null), "888888", new EMCallBack() {
+        System.out.println("userInfoSp.getString(\"userId\",null)=" + userInfoSp.getString("userId", null));
+        EMClient.getInstance().login(userInfoSp.getString("userId", null), "888888", new EMCallBack() {
             @Override
             public void onSuccess() {
                 back();
@@ -178,13 +197,13 @@ public class LoginActivity extends MyBaseActivity {
 
             @Override
             public void onError(int i, String s) {
-                if(i == 200){
+                if (i == 200) {
                     logout();
-                }else {
+                } else {
                     Message message = handler.obtainMessage();
                     message.obj = "登录失败: " + i + ", " + s;
                     handler.sendMessage(message);
-                    Log.i("EMClient_login","登录失败 " + i + ", " + s);
+                    Log.i("EMClient_login", "登录失败 " + i + ", " + s);
                 }
 
             }
@@ -198,13 +217,13 @@ public class LoginActivity extends MyBaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             back();
         }
         return false;
     }
 
-    private void back(){
+    private void back() {
         MainActivity.instance.finish();
 
         Intent intent = new Intent(this, MainActivity.class);
