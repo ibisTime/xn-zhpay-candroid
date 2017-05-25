@@ -69,7 +69,7 @@ public class WithdrawalsActivity extends MyBaseActivity {
     private SharedPreferences appConfigSp;
 
     private double balance;
-    private String subbranch;
+    private String bankName;
     private String bankcardNumber;
     private String accountNumber;
 
@@ -168,10 +168,8 @@ public class WithdrawalsActivity extends MyBaseActivity {
 
         if (!data.getStringExtra("bankName").equals("")) {
             txtBankCard.setText(data.getStringExtra("bankName"));
+            bankcardNumber = data.getStringExtra("bankcardNumber");
         }
-
-        subbranch = data.getStringExtra("subbranch");
-        bankcardNumber = data.getStringExtra("bankcardNumber");
 
 
     }
@@ -275,16 +273,16 @@ public class WithdrawalsActivity extends MyBaseActivity {
 
                     bankCardList.addAll(lists);
                     if (bankCardList.size() > 0) {
-                        System.out.println("bankCardList.get(0).getSubbranch()=" + bankCardList.get(0).getSubbranch());
-                        System.out.println("bankCardList.get(0).getBankCode()=" + bankCardList.get(0).getBankCode());
+                        System.out.println("bankCardList.get(0).getBankName()=" + bankCardList.get(0).getBankName());
+                        System.out.println("bankCardList.get(0).getBankcardNumber()=" + bankCardList.get(0).getBankcardNumber());
 
-                        subbranch = bankCardList.get(0).getSubbranch();
+                        bankName = bankCardList.get(0).getBankName();
                         bankcardNumber = bankCardList.get(0).getBankcardNumber();
 
-                        System.out.println("subbranch=" + subbranch);
-                        System.out.println("bankcardCode=" + bankcardNumber);
+                        System.out.println("bankName=" + bankName);
+                        System.out.println("bankcardNumber=" + bankcardNumber);
 
-                        txtBankCard.setText(bankCardList.get(0).getBankName());
+                        txtBankCard.setText(bankName);
                     }
 
 
@@ -360,7 +358,7 @@ public class WithdrawalsActivity extends MyBaseActivity {
             object.put("amount", (int) (Double.parseDouble(edtPrice.getText().toString().trim()) * 1000));
             object.put("payCardNo", bankcardNumber);
             // 开户行
-            object.put("payCardInfo", subbranch);
+            object.put("payCardInfo", bankName);
             object.put("applyNote", "");
             object.put("applyUser", userInfoSp.getString("userId", null));
             object.put("tradePwd", edtRepassword.getText().toString());

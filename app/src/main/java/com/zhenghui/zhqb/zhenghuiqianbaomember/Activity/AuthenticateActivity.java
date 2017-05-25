@@ -131,7 +131,7 @@ public class AuthenticateActivity extends MyBaseActivity {
 //                    return;
 //                }
 //                if (edtTrade.getText().toString().length() < 6) {
-//                    Toast.makeText(this, "请设置6位交易密码", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(this, "请设置6位支付密码", Toast.LENGTH_SHORT).show();
 //                }
                 authenticate();
 //                authentication();

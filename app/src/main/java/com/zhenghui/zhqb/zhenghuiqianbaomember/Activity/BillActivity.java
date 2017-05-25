@@ -295,7 +295,7 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
                     if(userInfoSp.getString("identityFlag", null).equals("1")){ //identityFlag 实名认证标示 1有 0 无
 
-                        if(userInfoSp.getString("tradepwdFlag", null).equals("1")){ // tradepwdFlag 交易密码标示 1有 0 无
+                        if(userInfoSp.getString("tradepwdFlag", null).equals("1")){ // tradepwdFlag 支付密码标示 1有 0 无
 
                             startActivity(new Intent(BillActivity.this, WithdrawalsActivity.class)
                                     .putExtra("balance", accountAmount)
@@ -303,7 +303,7 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
                         } else {
 
-                            Toast.makeText(this, "请先设置交易密码", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(BillActivity.this, ModifyTradeActivity.class).putExtra("isModify",false));
 
                         }

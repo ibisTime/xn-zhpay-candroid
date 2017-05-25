@@ -58,6 +58,9 @@ public class JewelRecordService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        System.out.println("intent.getStringExtra(\"appname\")="+intent.getStringExtra("appname"));
+        System.out.println("intent.getStringExtra(\"appurl\")="+intent.getStringExtra("appurl"));
+
         inits();
 
         getJewelRecord();

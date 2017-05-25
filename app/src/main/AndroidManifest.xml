@@ -274,16 +274,6 @@
         <activity android:name=".Activity.DiscountStoreActivity" />
         <activity android:name=".Activity.BillActivity" />
         <activity android:name=".Activity.TreePayActivity" />
-
-        <service
-            android:name=".services.MyService"
-            android:enabled="true"
-            android:exported="true" />
-        <service
-            android:name=".services.JewelRecordService"
-            android:enabled="true"
-            android:exported="true" />
-
         <activity android:name=".Activity.ShakeListActivity" />
         <activity android:name=".Activity.ShakeDetailActivity" />
         <activity android:name=".Activity.ShakeResultActivity" />
@@ -324,7 +314,31 @@
         <activity android:name=".Activity.TargetActivity" />
         <activity android:name=".Activity.MapRouteOverlayActivity" />
         <activity android:name=".Activity.MapActivity" />
-        <activity android:name=".Activity.RightsListActivity"></activity>
+        <activity android:name=".Activity.RightsListActivity" />
+
+        <service
+            android:name=".services.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".services.JewelRecordService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".services.UpdateService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.zhenghui.zhqb.zhenghuiqianbaomember.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false"
+            >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

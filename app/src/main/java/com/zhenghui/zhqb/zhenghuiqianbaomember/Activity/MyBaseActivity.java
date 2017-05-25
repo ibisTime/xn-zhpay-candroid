@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -246,5 +247,36 @@ public class MyBaseActivity extends FragmentActivity {
         }
     }
 
+    /**
+     * * 获取版本号
+     * @return 当前应用的版本号
+     */
+    public int getVersionCode() {
+        try {
+            PackageManager manager = this.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
+            int versionCode = info.versionCode;
+            return versionCode;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    /**
+     * * 获取版本名
+     * @return 当前应用的版本名
+     */
+    public String getVersionName() {
+        try {
+            PackageManager manager = this.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
+            String versionCode = info.versionName;
+            return versionCode;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "未能检测出当前版本";
+        }
+    }
 
 }

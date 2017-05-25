@@ -74,7 +74,7 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
         MyApplication.getInstance().addActivity(this);
 
         // 初始返回数据
-        setResult(0,new Intent().putExtra("bankcardNumber","").putExtra("subbranch","").putExtra("bankName",""));
+        setResult(0,new Intent().putExtra("bankcardNumber","").putExtra("bankName",""));
         inits();
         initEvent();
         initListView();
@@ -127,7 +127,7 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
             object.put("userId", userInfoSp.getString("userId", null));
             object.put("realName", "");
             object.put("type", "");
-            object.put("status", "1");
+            object.put("status", "");
             object.put("start", page);
             object.put("limit", pageSize);
             object.put("orderColumn", "");
@@ -179,7 +179,7 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
-                setResult(0,new Intent().putExtra("bankcardNumber","").putExtra("subbranch","").putExtra("bankName",""));
+                setResult(0,new Intent().putExtra("bankcardNumber","").putExtra("bankName",""));
                 finish();
                 break;
 
@@ -194,7 +194,6 @@ public class BankCardActivity extends MyBaseActivity implements AdapterView.OnIt
         if(isWithdrawal){
 //            withdrawal();
             setResult(0,new Intent().putExtra("bankcardNumber",list.get(i).getBankcardNumber())
-                    .putExtra("subbranch",list.get(i).getSubbranch())
                     .putExtra("bankName",list.get(i).getBankName()));
             finish();
         }else{
