@@ -1,6 +1,8 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.MyService;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.services.UpdateService;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
 import org.json.JSONException;
@@ -64,6 +67,12 @@ public class SettingActivity extends MyBaseActivity {
     LinearLayout layoutSystemMessage;
     @InjectView(R.id.layout_about)
     LinearLayout layoutAbout;
+    @InjectView(R.id.layout_address)
+    LinearLayout layoutAddress;
+    @InjectView(R.id.txt_versionName)
+    TextView txtVersionName;
+    @InjectView(R.id.layout_version)
+    LinearLayout layoutVersion;
 
     private PersonalModel model;
 
@@ -109,11 +118,13 @@ public class SettingActivity extends MyBaseActivity {
             txtAuthentication.setText(model.getRealName());
 
         }
+
+        txtVersionName.setText("V"+getVersionName());
     }
 
     @OnClick({R.id.layout_back, R.id.layout_nickname, R.id.layout_phone, R.id.layout_authentication,
             R.id.layout_loginPwd, R.id.layout_payPwd, R.id.txt_logout, R.id.layout_bankCard,
-            R.id.layout_systemMessage, R.id.layout_address, R.id.layout_about})
+            R.id.layout_systemMessage, R.id.layout_address, R.id.layout_about, R.id.layout_version})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -178,8 +189,12 @@ public class SettingActivity extends MyBaseActivity {
                 startActivity(new Intent(SettingActivity.this, AddressSelectActivity.class));
                 break;
 
+            case R.id.layout_version:
+                getVersion();
+                break;
+
             case R.id.layout_about:
-                startActivity(new Intent(SettingActivity.this, RichTextActivity.class).putExtra("cKey","aboutus"));
+                startActivity(new Intent(SettingActivity.this, RichTextActivity.class).putExtra("cKey", "aboutus"));
                 break;
         }
     }
@@ -217,8 +232,8 @@ public class SettingActivity extends MyBaseActivity {
         RequestParams params = new RequestParams(Xutil.URL + Xutil.LOGOUT);
         params.addBodyParameter("token", userInfoSp.getString("token", null));
 
-        System.out.println("url="+Xutil.URL + Xutil.LOGOUT);
-        System.out.println("token="+userInfoSp.getString("token", null));
+        System.out.println("url=" + Xutil.URL + Xutil.LOGOUT);
+        System.out.println("token=" + userInfoSp.getString("token", null));
 
         x.http().post(params, new Callback.CacheCallback<String>() {
             @Override
@@ -229,11 +244,11 @@ public class SettingActivity extends MyBaseActivity {
             @Override
             public void onSuccess(String result) {
 
-                System.out.println("result="+result);
+                System.out.println("result=" + result);
 
                 try {
                     JSONObject jsonObject = new JSONObject(result);
-                    if(jsonObject.getJSONObject("data").getBoolean("isSuccess")){
+                    if (jsonObject.getJSONObject("data").getBoolean("isSuccess")) {
                         SharedPreferences.Editor editor = userInfoSp.edit();
                         editor.putString("userId", null);
                         editor.putString("token", null);
@@ -244,7 +259,7 @@ public class SettingActivity extends MyBaseActivity {
 
                         stopService(new Intent(SettingActivity.this, MyService.class));
                         startActivity(new Intent(SettingActivity.this, MainActivity.class));
-                    }else{
+                    } else {
 
                     }
 
@@ -332,5 +347,61 @@ public class SettingActivity extends MyBaseActivity {
         });
     }
 
+    private void getVersion(){
+        JSONObject object = new JSONObject();
+        try {
+            object.put("key", "cVersionCode");
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        new Xutil().post("615917", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+
+                    int versionCode = Integer.parseInt(jsonObject.getString("cvalue"));
+
+                    if(versionCode > getVersionCode()){
+                        update();
+                    }else {
+                        Toast.makeText(SettingActivity.this, "当前已是最新版本哦", Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(SettingActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(SettingActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void update() {
+        new AlertDialog.Builder(this).setTitle("提示")
+                .setMessage("发现新版本请及时更新")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        startService(new Intent(SettingActivity.this, UpdateService.class)
+                                .putExtra("appname", "zhqb-release")
+                                .putExtra("appurl", "http://m.zhenghuijituan.com/app/zhqb-release.apk"));
+
+                    }
+                }).setNegativeButton("取消", null).show();
+    }
 
 }
