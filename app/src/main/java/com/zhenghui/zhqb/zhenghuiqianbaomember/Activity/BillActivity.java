@@ -119,7 +119,8 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
                 break;
 
             case "frb":
-                txtBeGx.setVisibility(View.GONE);
+                txtBeGx.setVisibility(View.VISIBLE);
+                txtBeGx.setText("转账");
                 txtBtn.setVisibility(View.VISIBLE);
                 txtBtn.setText("提现");
                 txtTitle.setText("分润流水");
@@ -265,6 +266,21 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
                         startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
                                 .putExtra("type", "HBB")
                                 .putExtra("balance", accountAmount));
+                        break;
+
+                    case "frb":
+                        if(userInfoSp.getString("tradepwdFlag", null).equals("1")){ // tradepwdFlag 支付密码标示 1有 0 无
+
+                            startActivity(new Intent(BillActivity.this, TransferActivity.class)
+                                    .putExtra("balance", accountAmount));
+
+                        } else {
+
+                            Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(BillActivity.this, ModifyTradeActivity.class).putExtra("isModify",false));
+
+                        }
+
                         break;
                 }
 

@@ -16,7 +16,7 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MyBaseActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShakeDetailActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ConstantsUtil;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
 import org.json.JSONException;
@@ -44,7 +44,7 @@ public class WXEntryActivity extends MyBaseActivity implements IWXAPIEventHandle
 
     private void initWx() {
         // 通过WXAPIFactory工厂，获取IWXAPI的实例
-        api = WXAPIFactory.createWXAPI(this, ConstantsUtil.APP_ID_WX, false);
+        api = WXAPIFactory.createWXAPI(this, Constants.APP_ID_WX, false);
 		api.handleIntent(getIntent(), this);
     }
 

@@ -28,13 +28,22 @@ public class Xutil {
 //    public static String API = "/forward-service/api";
 //    public static String LOGOUT = ":8901/forward-service/user/logOut";
 
-    // 正汇测试环境
-    public static String URL = "http://118.178.124.16";
-    public static String SHARE_URL = "http://118.178.124.16";
+    // 研发环境
+    public static String URL = "http://106.15.49.68";
+    public static String SHARE_URL = "http://121.43.101.148";
     public static String SHARE_PORT = ":5603";
     public static String PORT = ":5601";
     public static String API = "/forward-service/api";
-    public static String LOGOUT = ":5601/forward-service/user/logOut";
+    public static String LOGOUT = ":8901/forward-service/user/logOut";
+
+
+    // 正汇测试环境
+//    public static String URL = "http://118.178.124.16";
+//    public static String SHARE_URL = "http://118.178.124.16";
+//    public static String SHARE_PORT = ":5603";
+//    public static String PORT = ":5601";
+//    public static String API = "/forward-service/api";
+//    public static String LOGOUT = ":5601/forward-service/user/logOut";
 
 //    public static String URL = "http://139.224.200.54";
 //    public static String SHARE_URL = "http://m.zhenghuijituan.com";

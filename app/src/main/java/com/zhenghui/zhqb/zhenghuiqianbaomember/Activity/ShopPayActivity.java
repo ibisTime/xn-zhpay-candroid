@@ -11,10 +11,15 @@ import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Spanned;
 import android.text.TextWatcher;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,10 +70,6 @@ public class ShopPayActivity extends MyBaseActivity {
     TextView txtPay;
     @InjectView(R.id.txt_discountMoney)
     TextView txtDiscountMoney;
-    @InjectView(R.id.edt_tradePwd)
-    EditText edtTradePwd;
-    @InjectView(R.id.layout_tradePwd)
-    LinearLayout layoutTradePwd;
 
     private String ticketCode = "";
 
@@ -171,21 +172,18 @@ public class ShopPayActivity extends MyBaseActivity {
                 intImage();
                 payWay = "1";
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);
-                layoutTradePwd.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.img_weixin:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
-                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.img_zhifubao:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
-                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.txt_pay:
@@ -194,26 +192,18 @@ public class ShopPayActivity extends MyBaseActivity {
                     if (Double.parseDouble(edtPrice.getText().toString().trim()) == 0.0) {
                         Toast.makeText(ShopPayActivity.this, "金额必须大于等于0.01元", Toast.LENGTH_SHORT).show();
                     } else {
-//                        if(txtDiscount.getText().toString().equals("选择折扣券")){
-//                            Toast.makeText(this, "请选择折扣券", Toast.LENGTH_SHORT).show();
-//                        }else{
-//                        pay();
-//                        }
-//                        getIp();
-                        if(layoutTradePwd.getVisibility() == View.VISIBLE){
+
+                        if(payWay.equals("1")){
                             if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
                                 Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(ShopPayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
                             } else {
-                                if (check()) {
-                                    pay();
-                                }
+                                tip(view);
                             }
                         }else {
-                            if (check()) {
-                                pay();
-                            }
+                            pay("");
                         }
+
                     }
                 } else {
                     Toast.makeText(ShopPayActivity.this, "请输入消费金额", Toast.LENGTH_SHORT).show();
@@ -295,7 +285,7 @@ public class ShopPayActivity extends MyBaseActivity {
         });
     }
 
-    private void pay() {
+    private void pay(String tradePwd) {
         JSONObject object = new JSONObject();
         try {
             object.put("userId", userInfoSp.getString("userId", null));
@@ -303,7 +293,7 @@ public class ShopPayActivity extends MyBaseActivity {
             object.put("storeCode", code);
             object.put("payType", payWay);
             object.put("ticketCode", ticketCode);
-            object.put("tradePwd", edtTradePwd.getText().toString().trim());
+            object.put("tradePwd", tradePwd);
             object.put("amount", (int) (Double.parseDouble(edtPrice.getText().toString().trim()) * 1000) + "");
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
@@ -415,15 +405,61 @@ public class ShopPayActivity extends MyBaseActivity {
 
     };
 
-    private boolean check() {
 
-        if(layoutTradePwd.getVisibility() == View.VISIBLE){
-            if (edtTradePwd.getText().toString().trim().equals("")) {
-                Toast.makeText(this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+    private void tip(View view) {
+
+        // 一个自定义的布局，作为显示的内容
+        View mview = LayoutInflater.from(this).inflate(R.layout.popup_trade, null);
+
+        final EditText edtTradePwd = (EditText) mview.findViewById(R.id.edt_tradePwd);
+
+        TextView txtCancel = (TextView) mview.findViewById(R.id.txt_cancel);
+        TextView txtConfirm = (TextView) mview.findViewById(R.id.txt_confirm);
+
+        final PopupWindow popupWindow = new PopupWindow(mview,
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
+
+        popupWindow.setTouchable(true);
+        popupWindow.setAnimationStyle(R.style.PopupAnimation);
+
+        popupWindow.setTouchInterceptor(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
                 return false;
+                // 这里如果返回true的话，touch事件将被拦截
+                // 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
             }
-        }
-        return true;
+        });
+
+
+        txtCancel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                popupWindow.dismiss();
+            }
+        });
+
+        txtConfirm.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                if (edtTradePwd.getText().toString().trim().equals("")) {
+                    Toast.makeText(ShopPayActivity.this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+                }else {
+                    popupWindow.dismiss();
+                    pay(edtTradePwd.getText().toString().toString());
+                }
+            }
+        });
+
+        // 如果不设置PopupWindow的背景，无论是点击外部区域还是Back键都无法dismiss弹框
+        popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.corners_layout));
+        // 设置好参数之后再show
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 50);
+
     }
 
 }
