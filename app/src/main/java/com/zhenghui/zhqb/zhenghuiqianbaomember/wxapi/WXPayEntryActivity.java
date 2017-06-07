@@ -16,7 +16,7 @@ import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ConstantsUtil;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants;
 
 /**
  * 微信支付结果界面
@@ -37,7 +37,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_wx_entry);
-        api = WXAPIFactory.createWXAPI(this, ConstantsUtil.APP_ID_WX);
+        api = WXAPIFactory.createWXAPI(this, Constants.APP_ID_WX);
         api.handleIntent(getIntent(), this);
 
         preferences = getSharedPreferences("userLogin", Context.MODE_PRIVATE);

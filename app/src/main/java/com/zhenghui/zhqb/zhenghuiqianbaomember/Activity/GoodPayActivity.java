@@ -6,10 +6,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,10 +75,6 @@ public class GoodPayActivity extends MyBaseActivity {
     LinearLayout layoutWx;
     @InjectView(R.id.layout_ali)
     LinearLayout layoutAli;
-    @InjectView(R.id.edt_tradePwd)
-    EditText edtTradePwd;
-    @InjectView(R.id.layout_tradePwd)
-    LinearLayout layoutTradePwd;
 
     private String payWay = "1";
 
@@ -130,45 +131,33 @@ public class GoodPayActivity extends MyBaseActivity {
                 intImage();
                 payWay = "1";
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);
-                layoutTradePwd.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.img_weixin:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
-                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.img_zhifubao:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
-                layoutTradePwd.setVisibility(View.GONE);
                 break;
 
             case R.id.txt_pay:
-//                getIp();
-                if(layoutTradePwd.getVisibility() == View.VISIBLE){
+                if(payWay.equals("1")){
                     if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
                         Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(GoodPayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
-                    }else {
-                        if (check()) {
-                            if (shopCart) {
-                                shoppingCartPay();
-                            } else {
-                                pay();
-                            }
-                        }
+                    } else {
+                        tip(view);
                     }
                 }else {
-                    if (check()) {
-                        if (shopCart) {
-                            shoppingCartPay();
-                        } else {
-                            pay();
-                        }
+                    if (shopCart) {
+                        shoppingCartPay("");
+                    } else {
+                        pay("");
                     }
                 }
                 break;
@@ -181,54 +170,8 @@ public class GoodPayActivity extends MyBaseActivity {
         imgZhifubao.setBackgroundResource(R.mipmap.pay_unchoose);
     }
 
-    private void getIp() {
 
-//        RequestParams params = new RequestParams("http://121.43.101.148:5601/forward-service/ip");
-//        x.http().get(params, new Callback.CacheCallback<String>() {
-//            @Override
-//            public boolean onCache(String result) {
-//                return false;
-//            }
-//
-//            @Override
-//            public void onSuccess(String result) {
-//                System.out.println("resul=" + result);
-//                try {
-//                    JSONObject jsonObject = new JSONObject(result);
-//                    if(shopCart){
-//                        shoppingCartPay(jsonObject.getString("ip"));
-//                    }else{
-//                        pay(jsonObject.getString("ip"));
-//                    }
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//
-//
-//            }
-//
-//            @Override
-//            public void onError(Throwable ex, boolean isOnCallback) {
-//                System.out.println("onError:" + ex.getMessage());
-//                Toast.makeText(GoodPayActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onCancelled(CancelledException cex) {
-//
-//            }
-//
-//            @Override
-//            public void onFinished() {
-//
-//            }
-//        });
-
-    }
-
-
-    private void pay() {
+    private void pay(String tradePwd) {
         JSONArray jsonArray = new JSONArray();
         jsonArray.put(code);
 //        for(int i=0; i<codeList.size(); i++){
@@ -239,7 +182,7 @@ public class GoodPayActivity extends MyBaseActivity {
         try {
             object.put("codeList", jsonArray);
             object.put("payType", payWay);
-            object.put("tradePwd", edtTradePwd.getText().toString().trim());
+            object.put("tradePwd", tradePwd);
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -285,7 +228,7 @@ public class GoodPayActivity extends MyBaseActivity {
         });
     }
 
-    private void shoppingCartPay() {
+    private void shoppingCartPay(String tradePwd) {
 
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < codeList.size(); i++) {
@@ -296,7 +239,7 @@ public class GoodPayActivity extends MyBaseActivity {
         try {
             object.put("codeList", jsonArray);
             object.put("payType", payWay);
-            object.put("tradePwd", edtTradePwd.getText().toString().trim());
+            object.put("tradePwd", tradePwd);
             object.put("token", userInfoSp.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -460,15 +403,65 @@ public class GoodPayActivity extends MyBaseActivity {
 
     };
 
-    private boolean check() {
+    private void tip(View view) {
 
-        if(layoutTradePwd.getVisibility() == View.VISIBLE){
-            if (edtTradePwd.getText().toString().trim().equals("")) {
-                Toast.makeText(this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+        // 一个自定义的布局，作为显示的内容
+        View mview = LayoutInflater.from(this).inflate(R.layout.popup_trade, null);
+
+        final EditText edtTradePwd = (EditText) mview.findViewById(R.id.edt_tradePwd);
+
+        TextView txtCancel = (TextView) mview.findViewById(R.id.txt_cancel);
+        TextView txtConfirm = (TextView) mview.findViewById(R.id.txt_confirm);
+
+        final PopupWindow popupWindow = new PopupWindow(mview,
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
+
+        popupWindow.setTouchable(true);
+        popupWindow.setAnimationStyle(R.style.PopupAnimation);
+
+        popupWindow.setTouchInterceptor(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
                 return false;
+                // 这里如果返回true的话，touch事件将被拦截
+                // 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
             }
-        }
+        });
 
-        return true;
+
+        txtCancel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                popupWindow.dismiss();
+            }
+        });
+
+        txtConfirm.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                if (edtTradePwd.getText().toString().trim().equals("")) {
+                    Toast.makeText(GoodPayActivity.this, "请输入支付密码", Toast.LENGTH_SHORT).show();
+                }else {
+                    popupWindow.dismiss();
+
+                    if (shopCart) {
+                        shoppingCartPay(edtTradePwd.getText().toString().toString());
+                    } else {
+                        pay(edtTradePwd.getText().toString().toString());
+                    }
+                }
+            }
+        });
+
+        // 如果不设置PopupWindow的背景，无论是点击外部区域还是Back键都无法dismiss弹框
+        popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.corners_layout));
+        // 设置好参数之后再show
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 50);
+
     }
+
 }

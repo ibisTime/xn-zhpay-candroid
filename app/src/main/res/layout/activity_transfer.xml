@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/intervalColor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white" >
+
+        <LinearLayout
+            android:id="@+id/layout_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:background="@mipmap/back_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="转账"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:text="收款人手机号"
+            android:textSize="15sp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_marginLeft="15dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:textColor="#333333"
+            android:textColorHint="@color/fontColor_support"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:background="@null"
+            android:maxLength="11"
+            android:inputType="phone"
+            android:hint="输入完整手机号"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:text="转账金额"
+            android:textSize="15sp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_marginLeft="15dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edt_amount"
+            android:textColor="#333333"
+            android:textColorHint="@color/fontColor_support"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:background="@null"
+            android:hint="转账金额为100的倍数"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_balance"
+        android:background="@color/white"
+        android:text="可转账余额："
+        android:textSize="12sp"
+        android:textColor="@color/fontColor_orange"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:text="支付密码"
+            android:textSize="15sp"
+            android:textColor="@color/fontColor_gray"
+            android:layout_marginLeft="15dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edt_tradePwd"
+            android:textColor="#333333"
+            android:textColorHint="@color/fontColor_support"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:hint="请填写支付密码"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:textColor="@color/white"
+        android:text="确定"
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/corners_orange"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+</LinearLayout>

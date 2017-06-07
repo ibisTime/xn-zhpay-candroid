@@ -28,7 +28,7 @@ import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShakeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ConstantsUtil;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -96,7 +96,7 @@ public class ShakeDetailActivity extends MyBaseActivity {
     private void inis() {
         instance = this;
 
-        api = WXAPIFactory.createWXAPI(this, ConstantsUtil.APP_ID_WX);
+        api = WXAPIFactory.createWXAPI(this, Constants.APP_ID_WX);
 
         model = (ShakeModel) getIntent().getSerializableExtra("model");
 

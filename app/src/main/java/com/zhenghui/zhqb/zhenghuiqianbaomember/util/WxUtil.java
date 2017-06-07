@@ -31,8 +31,8 @@ public class WxUtil {
     private static IWXAPI api;
 
     public static IWXAPI registToWx(Context context){
-        api = WXAPIFactory.createWXAPI(context,ConstantsUtil.APP_ID_WX, false);
-        api.registerApp(ConstantsUtil.APP_ID_WX);
+        api = WXAPIFactory.createWXAPI(context, Constants.APP_ID_WX, false);
+        api.registerApp(Constants.APP_ID_WX);
 
         return api;
     }

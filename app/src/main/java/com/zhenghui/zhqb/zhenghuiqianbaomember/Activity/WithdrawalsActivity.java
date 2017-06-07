@@ -167,8 +167,10 @@ public class WithdrawalsActivity extends MyBaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (!data.getStringExtra("bankName").equals("")) {
-            txtBankCard.setText(data.getStringExtra("bankName"));
+            bankName = data.getStringExtra("bankName");
             bankcardNumber = data.getStringExtra("bankcardNumber");
+
+            txtBankCard.setText(bankName);
         }
 
 
