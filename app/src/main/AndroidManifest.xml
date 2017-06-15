@@ -340,6 +340,10 @@
         </provider>
 
         <activity android:name=".Activity.TransferActivity"></activity>
+        <activity android:name=".Activity.RelationActivity"></activity>
+        <activity android:name=".Activity.ReferrerActivity"></activity>
+        <activity android:name=".Activity.BillHistoryActivity"></activity>
+        <activity android:name=".Activity.RightsHistoryActivity"></activity>
     </application>
 
 </manifest>

@@ -9,13 +9,22 @@ import java.io.Serializable;
 public class ProductModel implements Serializable {
 
     private String productCode;
-
+    private String productSpecsCode;
+    private String productSpecsName;
     private String productName;
-    private Double price1;
-    private Integer price2;
-    private Integer price3;
+    private double price1;
+    private double price2;
+    private double price3;
     private String productImage;
     private int productNumber;
+
+    public String getProductSpecsName() {
+        return productSpecsName;
+    }
+
+    public void setProductSpecsName(String productSpecsName) {
+        this.productSpecsName = productSpecsName;
+    }
 
     public String getProductCode() {
         return productCode;
@@ -23,6 +32,14 @@ public class ProductModel implements Serializable {
 
     public void setProductCode(String productCode) {
         this.productCode = productCode;
+    }
+
+    public String getProductSpecsCode() {
+        return productSpecsCode;
+    }
+
+    public void setProductSpecsCode(String productSpecsCode) {
+        this.productSpecsCode = productSpecsCode;
     }
 
     public String getProductName() {
@@ -33,27 +50,27 @@ public class ProductModel implements Serializable {
         this.productName = productName;
     }
 
-    public Double getPrice1() {
+    public double getPrice1() {
         return price1;
     }
 
-    public void setPrice1(Double price1) {
+    public void setPrice1(double price1) {
         this.price1 = price1;
     }
 
-    public Integer getPrice2() {
+    public double getPrice2() {
         return price2;
     }
 
-    public void setPrice2(Integer price2) {
+    public void setPrice2(double price2) {
         this.price2 = price2;
     }
 
-    public Integer getPrice3() {
+    public double getPrice3() {
         return price3;
     }
 
-    public void setPrice3(Integer price3) {
+    public void setPrice3(double price3) {
         this.price3 = price3;
     }
 

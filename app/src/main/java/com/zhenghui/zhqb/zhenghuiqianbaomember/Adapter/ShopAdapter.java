@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShopModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 
 import java.util.List;
 
@@ -65,28 +64,17 @@ public class ShopAdapter extends BaseAdapter {
 
     private void setView(int position) {
         ImageUtil.glide(list.get(position).getAdvPic(), holder.imgShopPic, context);
+        holder.txtShopName.setText(list.get(position).getName());
 
         if (list.get(position).getLevel().equals("2")) {
-            holder.txtShopName.setText(list.get(position).getName()+"(公益)");
-        }else{
-            holder.txtShopName.setText(list.get(position).getName());
+            holder.txtType.setText("公益商家");
+        } else {
+            holder.txtType.setText("普通商家");
         }
-
 
         holder.txtInfo.setText(list.get(position).getSlogan());
 
-        if(null != list.get(position).getStoreTickets()){
-            if (list.get(position).getStoreTickets().size() != 0) {
-                holder.txtDiscount.setText("满" + MoneyUtil.moneyFormatDouble(list.get(position).getStoreTickets().get(0).getKey1())
-                        + "减" + MoneyUtil.moneyFormatDouble(list.get(position).getStoreTickets().get(0).getKey2()));
-            } else {
-                holder.txtDiscount.setText("该店铺暂无折扣券");
-            }
-        }else{
-            holder.txtDiscount.setText("该店铺暂无折扣券");
-        }
-
-        if(list.get(position).getDistance() != null){
+        if (list.get(position).getDistance() != null) {
             holder.txtDistance.setText((Integer.parseInt(list.get(position).getDistance()) / 1000) + "KM");
         }
     }
@@ -98,10 +86,8 @@ public class ShopAdapter extends BaseAdapter {
         TextView txtShopName;
         @InjectView(R.id.txt_info)
         TextView txtInfo;
-        @InjectView(R.id.img_discount)
-        ImageView imgDiscount;
-        @InjectView(R.id.txt_discount)
-        TextView txtDiscount;
+        @InjectView(R.id.txt_type)
+        TextView txtType;
         @InjectView(R.id.txt_distance)
         TextView txtDistance;
 

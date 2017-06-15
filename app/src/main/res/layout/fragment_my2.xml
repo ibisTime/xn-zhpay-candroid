@@ -227,7 +227,7 @@
                     <ImageView
                         android:layout_marginLeft="19dp"
                         android:scaleType="centerCrop"
-                        android:background="@mipmap/target_gray"
+                        android:background="@mipmap/target_grays"
                         android:layout_width="18dp"
                         android:layout_height="18dp" />
 
@@ -321,7 +321,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layout_discount"
+                    android:id="@+id/layout_relation"
                     android:layout_marginTop="0.1dp"
                     android:background="@color/white"
                     android:gravity="center_vertical"
@@ -332,12 +332,12 @@
                     <ImageView
                         android:layout_marginLeft="19dp"
                         android:scaleType="centerCrop"
-                        android:src="@mipmap/discount"
+                        android:src="@mipmap/relation"
                         android:layout_width="18dp"
                         android:layout_height="18dp" />
 
                     <TextView
-                        android:text="我的折扣券"
+                        android:text="推荐关系"
                         android:layout_marginLeft="9dp"
                         android:gravity="center_vertical"
                         android:textSize="14sp"

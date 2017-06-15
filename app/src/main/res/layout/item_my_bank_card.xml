@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:id="@+id/layout_bankBg"
-        android:background="@mipmap/bank_cart_bg_gongshang"
+        android:background="@mipmap/back_default"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -14,7 +14,7 @@
 
         <ImageView
             android:id="@+id/img_bankCart"
-            android:background="@mipmap/bank_cart_logo_gongshang"
+            android:background="@mipmap/logo_defalut"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:layout_width="37dp"

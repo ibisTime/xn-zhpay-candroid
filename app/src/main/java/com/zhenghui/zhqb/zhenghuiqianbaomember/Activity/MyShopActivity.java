@@ -83,6 +83,8 @@ public class MyShopActivity extends MyBaseActivity implements SwipeRefreshLayout
             object.put("storeCode", "");
             object.put("userId", userInfoSp.getString("userId", null));
             object.put("token", userInfoSp.getString("token", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
             object.put("start", page+"");
             object.put("limit", pageSize+"");
             object.put("status", "1");

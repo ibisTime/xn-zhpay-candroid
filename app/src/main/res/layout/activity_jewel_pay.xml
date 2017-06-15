@@ -35,7 +35,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:textColor="@color/fontColor_gray"
-            android:text="参与夺宝"
+            android:text="参与小目标"
             android:textSize="17sp" />
 
     </RelativeLayout>

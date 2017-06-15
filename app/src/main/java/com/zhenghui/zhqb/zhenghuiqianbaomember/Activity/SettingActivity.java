@@ -6,8 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,8 +13,6 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
@@ -77,16 +73,6 @@ public class SettingActivity extends MyBaseActivity {
     private PersonalModel model;
 
     private SharedPreferences userInfoSp;
-
-    private Handler handler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            Toast.makeText(SettingActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
-
-            super.handleMessage(msg);
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,7 +154,7 @@ public class SettingActivity extends MyBaseActivity {
                 break;
 
             case R.id.txt_logout:
-                logout();
+                logOut();
                 break;
 
             case R.id.layout_bankCard:
@@ -197,31 +183,6 @@ public class SettingActivity extends MyBaseActivity {
                 startActivity(new Intent(SettingActivity.this, RichTextActivity.class).putExtra("cKey", "aboutus"));
                 break;
         }
-    }
-
-    private void logout() {
-
-        EMClient.getInstance().logout(true, new EMCallBack() {
-
-            @Override
-            public void onSuccess() {
-                logOut();
-            }
-
-            @Override
-            public void onProgress(int progress, String status) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onError(int code, String message) {
-                Message msg = handler.obtainMessage();
-                msg.obj = "退出失败: " + code + ", " + message;
-                handler.sendMessage(msg);
-
-            }
-        });
     }
 
     /**

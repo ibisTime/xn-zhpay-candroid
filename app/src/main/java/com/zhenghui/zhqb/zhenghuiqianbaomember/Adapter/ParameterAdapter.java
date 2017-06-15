@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GoodsModel;
@@ -16,17 +17,16 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * Created by LeiQ on 2017/1/18.
+ * Created by LeiQ on 2017/6/7.
  */
 
 public class ParameterAdapter extends BaseAdapter {
 
-    private ViewHolder holder;
-
-    private List<GoodsModel.ProductSpecsBean> list;
     private Context context;
+    private ViewHolder holder;
+    private List<GoodsModel.ProductSpecsListBean> list;
 
-    public ParameterAdapter(Context context, List<GoodsModel.ProductSpecsBean> list) {
+    public ParameterAdapter(Context context, List<GoodsModel.ProductSpecsListBean> list) {
         this.list = list;
         this.context = context;
     }
@@ -56,18 +56,27 @@ public class ParameterAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
 
-        holder.txtKey.setText(list.get(i).getDkey());
-        holder.txtValue.setText(list.get(i).getDvalue());
-
+        setView(i);
 
         return view;
     }
 
+    public void setView(int i) {
+        holder.txtParameter.setText(list.get(i).getName()+"    "+"重量:" + list.get(i).getWeight() + "Kg" + "    " + "发货地:" + list.get(i).getProvince());
+        if (list.get(i).isSelect()) {
+            holder.txtParameter.setTextColor(context.getResources().getColor(R.color.white));
+            holder.layoutParameter.setBackground(context.getResources().getDrawable(R.drawable.corners_parameter));
+        } else {
+            holder.txtParameter.setTextColor(context.getResources().getColor(R.color.fontColor_gray));
+            holder.layoutParameter.setBackground(context.getResources().getDrawable(R.drawable.corners_parameter_gray));
+        }
+    }
+
     static class ViewHolder {
-        @InjectView(R.id.txt_key)
-        TextView txtKey;
-        @InjectView(R.id.txt_value)
-        TextView txtValue;
+        @InjectView(R.id.txt_parameter)
+        TextView txtParameter;
+        @InjectView(R.id.layout_parameter)
+        LinearLayout layoutParameter;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

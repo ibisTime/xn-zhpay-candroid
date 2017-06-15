@@ -35,7 +35,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:textColor="@color/fontColor_gray"
-            android:text="夺宝记录"
+            android:text="小目标记录"
             android:textSize="17sp" />
 
 

@@ -49,6 +49,7 @@ public class PersonalModel implements Serializable {
     private String status;
     private String updater;
     private String updateDatetime;
+    private String createDatetime;
     private String amount;
     private String ljAmount;
     /**
@@ -66,6 +67,14 @@ public class PersonalModel implements Serializable {
     private String tradepwdFlag;
     private String totalFollowNum;
     private String totalFansNum;
+
+    public String getCreateDatetime() {
+        return createDatetime;
+    }
+
+    public void setCreateDatetime(String createDatetime) {
+        this.createDatetime = createDatetime;
+    }
 
     public String getTradepwdFlag() {
         return tradepwdFlag;

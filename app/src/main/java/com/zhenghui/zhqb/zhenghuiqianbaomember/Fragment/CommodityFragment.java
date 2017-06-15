@@ -127,37 +127,44 @@ public class CommodityFragment extends Fragment {
         txtInfo.setText(model.getSlogan());
 
 
-        if(model.getPrice1() == 0){
+        if(model.getProductSpecsList().get(0).getPrice1() == 0){
             txtRmb1.setVisibility(View.GONE);
             txtRmb2.setVisibility(View.GONE);
         }else{
             txtRmb1.setVisibility(View.VISIBLE);
             txtRmb2.setVisibility(View.VISIBLE);
-            txtRmb1.setText("¥"+ MoneyUtil.moneyFormatDouble(model.getPrice1()));
-            if(model.getPrice2() == 0 && model.getPrice3() == 0){
+            txtRmb1.setText("¥"+ MoneyUtil.moneyFormatDouble(model.getProductSpecsList().get(0).getPrice1()));
+            if(model.getProductSpecsList().get(0).getPrice2() == 0 && model.getProductSpecsList().get(0).getPrice3() == 0){
                 txtRmb2.setText("");
             }
         }
 
-        if(model.getPrice2() == 0){
+        if(model.getProductSpecsList().get(0).getPrice2() == 0){
             txtGwb1.setVisibility(View.GONE);
             txtGwb2.setVisibility(View.GONE);
         }else{
             txtGwb1.setVisibility(View.VISIBLE);
             txtGwb2.setVisibility(View.VISIBLE);
-            txtGwb1.setText(MoneyUtil.moneyFormatDouble(model.getPrice2()));
-            if(model.getPrice3() == 0){
+            txtGwb1.setText(MoneyUtil.moneyFormatDouble(model.getProductSpecsList().get(0).getPrice2()));
+            if(model.getProductSpecsList().get(0).getPrice3() == 0){
                 txtGwb2.setText("购物币");
             }
         }
 
-        if(model.getPrice3() == 0){
+        if(model.getProductSpecsList().get(0).getPrice3() == 0){
             txtQbb1.setVisibility(View.GONE);
             txtQbb2.setVisibility(View.GONE);
         }else{
             txtQbb1.setVisibility(View.VISIBLE);
             txtQbb2.setVisibility(View.VISIBLE);
-            txtQbb1.setText(MoneyUtil.moneyFormatDouble(model.getPrice3()));
+            txtQbb1.setText(MoneyUtil.moneyFormatDouble(model.getProductSpecsList().get(0).getPrice3()));
+        }
+
+        if(model.getProductSpecsList().get(0).getPrice1() == 0
+                && model.getProductSpecsList().get(0).getPrice2() == 0
+                && model.getProductSpecsList().get(0).getPrice3() == 0){
+            txtRmb1.setText("0");
+            txtRmb1.setVisibility(View.VISIBLE);
         }
     }
 

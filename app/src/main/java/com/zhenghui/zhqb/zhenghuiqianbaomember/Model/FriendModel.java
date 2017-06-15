@@ -23,6 +23,7 @@ public class FriendModel {
      * status : 0
      * updater :
      * updateDatetime : Jan 17, 2017 4:20:38 AM
+     * CreateDatetime : Jan 17, 2017 4:20:38 AM
      * amount : 0
      * ljAmount : 0
      * systemCode : CD-CZH000001
@@ -45,6 +46,7 @@ public class FriendModel {
     private String status;
     private String updater;
     private String updateDatetime;
+    private String createDatetime;
     private int amount;
     private int ljAmount;
     private String systemCode;
@@ -60,6 +62,14 @@ public class FriendModel {
 
     private UserExtBean userExt;
     private int refeereLevel;
+
+    public String getCreateDatetime() {
+        return createDatetime;
+    }
+
+    public void setCreateDatetime(String createDatetime) {
+        this.createDatetime = createDatetime;
+    }
 
     public String getUserId() {
         return userId;

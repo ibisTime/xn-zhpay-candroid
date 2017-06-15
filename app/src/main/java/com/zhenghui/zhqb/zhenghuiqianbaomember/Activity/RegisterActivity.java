@@ -20,8 +20,6 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
 import com.lljjcoder.citypickerview.widget.CityPicker;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
@@ -87,15 +85,6 @@ public class RegisterActivity extends MyBaseActivity {
             } else {
                 startTime();
             }
-            super.handleMessage(msg);
-        }
-    };
-
-    private Handler EBhandler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            Toast.makeText(RegisterActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
             super.handleMessage(msg);
         }
     };
@@ -350,7 +339,10 @@ public class RegisterActivity extends MyBaseActivity {
                     editor.putString("token", jsonObject.getString("token"));
                     editor.commit();
 
-                    signin();
+                    finish();
+                    LoginActivity.instance.finish();
+                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                    Toast.makeText(RegisterActivity.this, "注册成功,为您自动登录", Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -369,38 +361,6 @@ public class RegisterActivity extends MyBaseActivity {
         });
     }
 
-    private void signin() {
-        System.out.println("userInfoSp.getString(\"userId\",null)="+userInfoSp.getString("userId",null));
-        EMClient.getInstance().login(userInfoSp.getString("userId", null), "888888", new EMCallBack() {
-            @Override
-            public void onSuccess() {
-//                Toast.makeText(RegisterActivity.this, "注册成功,为您自动登录", Toast.LENGTH_SHORT).show();
-                finish();
-                LoginActivity.instance.finish();
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                if(i == 200){
-                    logout();
-                }else {
-                    Message message = EBhandler.obtainMessage();
-                    message.obj = "登录失败: " + i + ", " + s;
-                    EBhandler.sendMessage(message);
-                    Log.i("EMClient_login", "登录失败 " + i + ", " + s);
-                }
-
-//                Toast.makeText(RegisterActivity.this, "登录失败"+ i + ", " + s, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onProgress(int i, String s) {
-
-            }
-        });
-    }
 
     private void cityPicker(){
         CityPicker cityPicker = new CityPicker.Builder(RegisterActivity.this)
@@ -466,29 +426,5 @@ public class RegisterActivity extends MyBaseActivity {
         btnSend.setText("重新发送");
     }
 
-    private void logout() {
-
-        EMClient.getInstance().logout(true, new EMCallBack() {
-
-            @Override
-            public void onSuccess() {
-                signin();
-            }
-
-            @Override
-            public void onProgress(int progress, String status) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onError(int code, String message) {
-                Message msg = handler.obtainMessage();
-                msg.obj = "退出失败: " + code + ", " + message;
-                handler.sendMessage(msg);
-
-            }
-        });
-    }
 
 }

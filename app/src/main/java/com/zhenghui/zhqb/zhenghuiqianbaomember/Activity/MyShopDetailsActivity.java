@@ -1,7 +1,6 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -80,7 +79,7 @@ public class MyShopDetailsActivity extends MyBaseActivity {
 
         ImageUtil.glide(model.getStore().getAdvPic(), imgShopPic, this);
 
-        txtShopName.setText(model.getRemark());
+        txtShopName.setText(model.getStore().getName());
 
         if (model.getStatus().equals("0")) {
             txtStatus.setText("订单状态:待支付");
@@ -90,23 +89,25 @@ public class MyShopDetailsActivity extends MyBaseActivity {
             txtStatus.setText("订单状态:已取消");
         }
 
-        if (model.getStoreTicket() == null) {
-            layoutDiscount.setVisibility(View.INVISIBLE);
-        } else {
-            double key1 = model.getStoreTicket().getKey1();
-            double key2 = model.getStoreTicket().getKey2();
-            txtDiscount.setText("满" + MoneyUtil.moneyFormatDouble(key1) + "减" + MoneyUtil.moneyFormatDouble(key2));
-        }
+        txtDiscount.setText(model.getStore().getSlogan());
+
+//        if (model.getStoreTicket() == null) {
+//            layoutDiscount.setVisibility(View.INVISIBLE);
+//        } else {
+//            double key1 = model.getStoreTicket().getKey1();
+//            double key2 = model.getStoreTicket().getKey2();
+//            txtDiscount.setText("满" + MoneyUtil.moneyFormatDouble(key1) + "减" + MoneyUtil.moneyFormatDouble(key2));
+//        }
 
         txtPrice.setText("消费: ¥" + MoneyUtil.moneyFormatDouble(model.getPrice()));
 
-        if(model.getPayType().equals("1")){
-            txtReal.setText("实付:"+
-                    MoneyUtil.moneyFormatDouble(model.getPayAmount2()
-                            +model.getPayAmount3()));
-        }else {
-            txtReal.setText("实付:"+ MoneyUtil.moneyFormatDouble(model.getPayAmount1()));
-        }
+//        if(model.getPayType().equals("1")){
+//            txtReal.setText("实付:"+
+//                    MoneyUtil.moneyFormatDouble(model.getPayAmount2()
+//                            +model.getPayAmount3()));
+//        }else {
+//            txtReal.setText("实付:"+ MoneyUtil.moneyFormatDouble(model.getPayAmount1()));
+//        }
 //        if (model.getPayType().equals("1")) {
 //            txtReal.setText("实付:" + MoneyUtil.moneyFormatDouble(model.getAmount2() + model.getAmount3()));
 //        } else {

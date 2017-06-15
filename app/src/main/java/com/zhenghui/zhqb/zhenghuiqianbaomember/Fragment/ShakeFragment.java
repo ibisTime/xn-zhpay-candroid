@@ -23,6 +23,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
@@ -32,6 +33,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MainActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.RichTextActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShakeListActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShakeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
@@ -70,6 +72,8 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
     LinearLayout layoutNo;
     @InjectView(R.id.img_bg)
     ImageView imgBg;
+    @InjectView(R.id.txt_introduce)
+    TextView txtIntroduce;
 
     private String latitude = "";
     private String longitude = "";
@@ -261,11 +265,15 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
         });
     }
 
-    @OnClick({R.id.layout_no})
+    @OnClick({R.id.layout_no,R.id.txt_introduce})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_no:
                 layoutNo.setVisibility(View.GONE);
+                break;
+
+            case R.id.txt_introduce:
+                startActivity(new Intent(getActivity(), RichTextActivity.class).putExtra("cKey","fyf_rule"));
                 break;
         }
     }

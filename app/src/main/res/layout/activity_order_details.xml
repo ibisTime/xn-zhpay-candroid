@@ -30,6 +30,7 @@
 
 
         <TextView
+            android:id="@+id/txt_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -53,15 +54,35 @@
 
     </ListView>
 
-    <TextView
-        android:id="@+id/txt_btn"
-        android:visibility="gone"
-        android:gravity="center"
-        android:text="收货"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:background="@color/orange"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="49dp" />
+        android:layout_height="49dp">
+
+        <TextView
+            android:id="@+id/txt_btn"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="收货"
+            android:textSize="18sp"
+            android:layout_marginRight="1dp"
+            android:textColor="@color/white"
+            android:background="@color/orange"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="49dp" />
+
+        <TextView
+            android:id="@+id/txt_cancel"
+            android:visibility="gone"
+            android:gravity="center"
+            android:text="取消订单"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:background="@color/orange"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="49dp" />
+    </LinearLayout>
 
 </LinearLayout>

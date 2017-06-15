@@ -3,9 +3,6 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -53,15 +48,6 @@ public class LoginActivity extends MyBaseActivity {
 
 
     public static LoginActivity instance;
-
-    private Handler handler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            Toast.makeText(LoginActivity.this, "暂时无法连接，请稍候重试!", Toast.LENGTH_SHORT).show();
-            super.handleMessage(msg);
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +98,7 @@ public class LoginActivity extends MyBaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
-                back();
+                toMain();
                 break;
 
             case R.id.txt_register:
@@ -170,7 +156,7 @@ public class LoginActivity extends MyBaseActivity {
                     e.printStackTrace();
                 }
 
-                signin();
+                toMain();
             }
 
             @Override
@@ -185,45 +171,16 @@ public class LoginActivity extends MyBaseActivity {
         });
     }
 
-    private void signin() {
-
-        System.out.println("userInfoSp.getString(\"userId\",null)=" + userInfoSp.getString("userId", null));
-        EMClient.getInstance().login(userInfoSp.getString("userId", null), "888888", new EMCallBack() {
-            @Override
-            public void onSuccess() {
-                back();
-
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                if (i == 200) {
-                    logout();
-                } else {
-                    Message message = handler.obtainMessage();
-                    message.obj = "登录失败: " + i + ", " + s;
-                    handler.sendMessage(message);
-                    Log.i("EMClient_login", "登录失败 " + i + ", " + s);
-                }
-
-            }
-
-            @Override
-            public void onProgress(int i, String s) {
-
-            }
-        });
-    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            back();
+            toMain();
         }
         return false;
     }
 
-    private void back() {
+    private void toMain() {
         MainActivity.instance.finish();
 
         Intent intent = new Intent(this, MainActivity.class);
@@ -231,29 +188,5 @@ public class LoginActivity extends MyBaseActivity {
         finish();
     }
 
-    private void logout() {
-
-        EMClient.getInstance().logout(true, new EMCallBack() {
-
-            @Override
-            public void onSuccess() {
-                signin();
-            }
-
-            @Override
-            public void onProgress(int progress, String status) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onError(int code, String message) {
-                Message msg = handler.obtainMessage();
-                msg.obj = "退出失败: " + code + ", " + message;
-                handler.sendMessage(msg);
-
-            }
-        });
-    }
 
 }

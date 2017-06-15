@@ -1,5 +1,7 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -38,14 +40,22 @@ public class OrderDetailsActivity extends MyBaseActivity {
     ListView listOrder;
     @InjectView(R.id.txt_btn)
     TextView txtBtn;
+    @InjectView(R.id.txt_cancel)
+    TextView txtCancel;
+    @InjectView(R.id.txt_title)
+    TextView txtTitle;
 
     TextView txtOrderId;
     TextView txtTime;
+    TextView txtNote;
     TextView txtStatus;
     TextView txtConsignee;
     TextView txtYunfei;
+    TextView txtParameter;
     TextView txtPhone;
     TextView txtAddress;
+
+    LinearLayout layoutNote;
 
     TextView txtLogistics;
     TextView txtLogisticsId;
@@ -73,6 +83,11 @@ public class OrderDetailsActivity extends MyBaseActivity {
         initHeadView();
         initFootView();
         initListView();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         getDatas();
         getYunfei();
     }
@@ -96,12 +111,16 @@ public class OrderDetailsActivity extends MyBaseActivity {
         headView = LayoutInflater.from(this).inflate(R.layout.head_order_details, null);
 
         txtTime = (TextView) headView.findViewById(R.id.txt_time);
+        txtNote = (TextView) headView.findViewById(R.id.txt_note);
         txtPhone = (TextView) headView.findViewById(R.id.txt_phone);
         txtStatus = (TextView) headView.findViewById(R.id.txt_status);
         txtYunfei = (TextView) headView.findViewById(R.id.txt_yunfei);
         txtOrderId = (TextView) headView.findViewById(R.id.txt_orderId);
         txtAddress = (TextView) headView.findViewById(R.id.txt_address);
+        txtParameter = (TextView) headView.findViewById(R.id.txt_parameter);
         txtConsignee = (TextView) headView.findViewById(R.id.txt_consignee);
+
+        layoutNote = (LinearLayout) headView.findViewById(R.id.layout_note);
 
     }
 
@@ -174,35 +193,47 @@ public class OrderDetailsActivity extends MyBaseActivity {
 
         txtPhone.setText(model.getReMobile());
 
-
         txtOrderId.setText(model.getCode());
         txtAddress.setText(model.getReAddress());
         txtConsignee.setText(model.getReceiver());
-        txtLogistics.setText(model.getLogisticsCompany());
-        txtLogisticsId.setText(model.getLogisticsCode());
-
+        txtParameter.setText(model.getProductSpecsName());
 
         txtStatus.setText(OrderStatusUtil.getOrderStatus(model.getStatus()));
 
+        if(model.getApplyNote() != null){
+            if(!model.getApplyNote().equals("")){
+                txtNote.setText(model.getApplyNote());
+                layoutNote.setVisibility(View.VISIBLE);
+            }
+        }
+
         if(txtStatus.getText().equals("待收货") || txtStatus.getText().equals("已收货") || txtStatus.getText().equals("快递异常")){
             layoutLogistics.setVisibility(View.VISIBLE);
+            txtLogistics.setText(model.getLogisticsCompany());
+            txtLogisticsId.setText(model.getLogisticsCode());
         }else{
             layoutLogistics.setVisibility(View.GONE);
         }
 
         if(model.getStatus().equals("1")){
             txtBtn.setVisibility(View.VISIBLE);
+            txtCancel.setVisibility(View.VISIBLE);
             txtBtn.setText("去支付");
+        }else if(model.getStatus().equals("2")){
+            txtBtn.setVisibility(View.GONE);
+            txtCancel.setVisibility(View.GONE);
         }else if(model.getStatus().equals("3")){
             txtBtn.setVisibility(View.VISIBLE);
             txtBtn.setText("去收货");
-        }else {
+        }else if(model.getStatus().equals("91")) {
             txtBtn.setVisibility(View.GONE);
+            txtCancel.setVisibility(View.VISIBLE);
+            txtCancel.setText("订单已取消");
         }
 
     }
 
-    @OnClick({R.id.layout_back, R.id.txt_btn})
+    @OnClick({R.id.layout_back, R.id.txt_btn, R.id.txt_cancel})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -219,6 +250,12 @@ public class OrderDetailsActivity extends MyBaseActivity {
                             .putExtra("code",model.getCode()));
                 }else{
                     confirmGet();
+                }
+                break;
+
+            case R.id.txt_cancel:
+                if(txtCancel.getText().toString().equals("取消订单")){
+                    tipCancel();
                 }
                 break;
         }
@@ -245,7 +282,42 @@ public class OrderDetailsActivity extends MyBaseActivity {
             @Override
             public void onSuccess(String result) {
                 getDatas();
-//                Toast.makeText(OrderDetailsActivity.this, "收货成功", Toast.LENGTH_SHORT).show();
+                tip();
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(OrderDetailsActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(OrderDetailsActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    /**
+     * 取消订单
+     */
+    private void cancel() {
+
+        JSONObject object = new JSONObject();
+        try {
+            object.put("code", model.getCode());
+            object.put("userId", userInfoSp.getString("userId",null));
+            object.put("remark", "用户取消订单");
+            object.put("token", appConfigSp.getString("systemCode", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post("808053", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+                Toast.makeText(OrderDetailsActivity.this, "订单取消成功", Toast.LENGTH_SHORT).show();
+                getDatas();
             }
 
             @Override
@@ -285,6 +357,61 @@ public class OrderDetailsActivity extends MyBaseActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(OrderDetailsActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(OrderDetailsActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void tip() {
+        new AlertDialog.Builder(this).setTitle("提示")
+                .setMessage("收货成功，给个好评吧!")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        good();
+                    }
+                }).setNegativeButton("残忍拒绝", null).show();
+    }
+
+    private void tipCancel() {
+        new AlertDialog.Builder(this).setTitle("提示")
+                .setMessage("您确定要取消此订单吗?")
+                .setPositiveButton("确定取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        cancel();
+                    }
+                }).setNegativeButton("不取消", null).show();
+    }
+
+    public void good() {
+        JSONObject object = new JSONObject();
+        try {
+            object.put("storeCode", model.getProduct().getCode());
+            object.put("type", "3");
+            object.put("token", userInfoSp.getString("token", null));
+            object.put("userId", userInfoSp.getString("userId", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post("808240", object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+
+                Toast.makeText(OrderDetailsActivity.this, "评价成功", Toast.LENGTH_SHORT).show();
+                finish();
 
             }
 

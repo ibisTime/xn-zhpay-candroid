@@ -37,6 +37,19 @@
             android:text="绑定银行卡"
             android:textColor="@color/fontColor_gray"
             android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/txt_delete"
+            android:visibility="gone"
+            android:gravity="center"
+            android:paddingRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/fontColor_gray"
+            android:text="删除"
+            android:textSize="17sp" />
     </RelativeLayout>
 
     <View
@@ -56,12 +69,12 @@
         android:layout_height="50dp">
 
         <TextView
-            android:text="真实姓名"
+            android:text="持卡人"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
             android:textSize="15sp"
             android:textColor="@color/fontColor_gray"
-            android:layout_width="153dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent" />
 
         <TextView
@@ -82,39 +95,6 @@
         android:background="@color/lineColor"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"/>
-    <LinearLayout
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <TextView
-            android:text="银行卡预留手机号"
-            android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:textSize="15sp"
-            android:textColor="@color/fontColor_gray"
-            android:layout_width="153dp"
-            android:layout_height="match_parent" />
-
-        <EditText
-            android:id="@+id/edt_phone"
-            android:layout_marginRight="15dp"
-            android:hint="请输入手机号码"
-            android:textSize="15sp"
-            android:inputType="phone"
-            android:textColorHint="@color/fontColor_hint"
-            android:textColor="#333333"
-            android:background="@null"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-    <View
-        android:background="@color/lineColor"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"/>
 
     <LinearLayout
         android:background="@color/white"
@@ -123,12 +103,12 @@
         android:layout_height="50dp">
 
         <TextView
-            android:text="开户行"
+            android:text="银行"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
             android:textSize="15sp"
             android:textColor="@color/fontColor_gray"
-            android:layout_width="153dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent" />
 
         <TextView
@@ -157,38 +137,6 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"/>
 
-    <LinearLayout
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <TextView
-            android:text="开户支行"
-            android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:textSize="15sp"
-            android:textColor="@color/fontColor_gray"
-            android:layout_width="153dp"
-            android:layout_height="match_parent" />
-
-        <EditText
-            android:id="@+id/edt_subbranch"
-            android:layout_marginRight="15dp"
-            android:hint="请输入银行开户行"
-            android:textSize="15sp"
-            android:textColorHint="@color/fontColor_hint"
-            android:textColor="#333333"
-            android:background="@null"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-    <View
-        android:background="@color/lineColor"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"/>
 
     <LinearLayout
         android:background="@color/white"
@@ -197,12 +145,12 @@
         android:layout_height="50dp">
 
         <TextView
-            android:text="银行卡号"
+            android:text="卡号"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
             android:textSize="15sp"
             android:textColor="@color/fontColor_gray"
-            android:layout_width="153dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent" />
 
         <EditText

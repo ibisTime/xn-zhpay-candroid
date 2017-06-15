@@ -87,11 +87,13 @@
 
 
     <View
+        android:visibility="gone"
         android:background="@color/intervalColor"
         android:layout_width="match_parent"
         android:layout_height="10dp"/>
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/layout_discount"
         android:background="@color/white"
         android:gravity="center_vertical"

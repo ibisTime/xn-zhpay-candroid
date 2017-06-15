@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
     }

@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class OrderListActivity extends MyBaseActivity implements AdapterView.OnItemClickListener,SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
+public class OrderListActivity extends MyBaseActivity implements AdapterView.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
 
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;
@@ -48,6 +48,10 @@ public class OrderListActivity extends MyBaseActivity implements AdapterView.OnI
     ListView listOrder;
     @InjectView(R.id.swipe_container)
     RefreshLayout swipeContainer;
+    @InjectView(R.id.line_waitGet)
+    View lineWaitGet;
+    @InjectView(R.id.layout_waitGet)
+    LinearLayout layoutWaitGet;
 
     private OrderAdapter adapter;
     private List<OrderModel> list;
@@ -95,7 +99,7 @@ public class OrderListActivity extends MyBaseActivity implements AdapterView.OnI
         swipeContainer.setOnLoadListener(this);
     }
 
-    @OnClick({R.id.layout_back, R.id.layout_all, R.id.layout_waitPay, R.id.layout_waitConfirm})
+    @OnClick({R.id.layout_back, R.id.layout_all, R.id.layout_waitPay, R.id.layout_waitGet, R.id.layout_waitConfirm})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -123,6 +127,16 @@ public class OrderListActivity extends MyBaseActivity implements AdapterView.OnI
                 getDatas(state);
                 break;
 
+            case R.id.layout_waitGet:
+                initBtn();
+                lineWaitGet.setVisibility(View.VISIBLE);
+                layoutWaitGet.setBackgroundColor(getResources().getColor(R.color.white));
+
+                page = 1;
+                state = "2";
+                getDatas(state);
+                break;
+
             case R.id.layout_waitConfirm:
                 initBtn();
                 lineWaitConfirm.setVisibility(View.VISIBLE);
@@ -138,10 +152,12 @@ public class OrderListActivity extends MyBaseActivity implements AdapterView.OnI
     private void initBtn() {
         layoutAll.setBackgroundColor(getResources().getColor(R.color.grayfa));
         layoutWaitPay.setBackgroundColor(getResources().getColor(R.color.grayfa));
+        layoutWaitGet.setBackgroundColor(getResources().getColor(R.color.grayfa));
         layoutWaitConfirm.setBackgroundColor(getResources().getColor(R.color.grayfa));
 
         lineAll.setVisibility(View.INVISIBLE);
         lineWaitPay.setVisibility(View.INVISIBLE);
+        lineWaitGet.setVisibility(View.INVISIBLE);
         lineWaitConfirm.setVisibility(View.INVISIBLE);
     }
 
@@ -172,7 +188,7 @@ public class OrderListActivity extends MyBaseActivity implements AdapterView.OnI
                     ArrayList<OrderModel> lists = gson.fromJson(jsonObject.getJSONArray("list").toString(), new TypeToken<ArrayList<OrderModel>>() {
                     }.getType());
 
-                    if(page == 1){
+                    if (page == 1) {
                         list.clear();
                     }
                     list.addAll(lists);

@@ -54,20 +54,14 @@ public class OrderAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-//        if (view == null) {
+        if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_order, null);
             holder = new ViewHolder(view);
-//            view.setTag(holder);
-//        } else {
-//            holder = (ViewHolder) view.getTag();
-//        }
+            view.setTag(holder);
+        } else {
+            holder = (ViewHolder) view.getTag();
+        }
 
-//        holder.txtBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
 
         setView(i);
 
@@ -98,50 +92,55 @@ public class OrderAdapter extends BaseAdapter {
             holder.txtBtn.setText("快递异常");
         }
 
-        if(list.get(position).getProductOrderList().size() != 0){
-            ImageUtil.glide(list.get(position).getProductOrderList().get(0).getProduct().getAdvPic(), holder.imgGood, context);
-            holder.txtName.setText(list.get(position).getProductOrderList().get(0).getProduct().getName());
-            holder.txtNumber.setText("X" + list.get(position).getProductOrderList().get(0).getQuantity() + "件");
+        ImageUtil.glide(list.get(position).getProduct().getAdvPic(), holder.imgGood, context);
+        holder.txtName.setText(list.get(position).getProduct().getName());
+        holder.txtNumber.setText("X" + list.get(position).getQuantity() + "件");
 
-            setPrice(position);
-        }
+        holder.txtParameter.setText(list.get(position).getProductSpecsName());
+
+        setPrice(position);
 
         setTotalPrice(position);
 
     }
 
     private void setPrice(int position) {
-        if(list.get(position).getProductOrderList().get(0).getPrice1() == 0){
+        if(list.get(position).getPrice1() == 0){
             holder.txtRmb1.setVisibility(View.GONE);
             holder.txtRmb2.setVisibility(View.GONE);
         }else{
             holder.txtRmb1.setVisibility(View.VISIBLE);
             holder.txtRmb2.setVisibility(View.VISIBLE);
-            holder.txtRmb1.setText("¥"+ MoneyUtil.moneyFormatDouble(list.get(position).getProductOrderList().get(0).getPrice1()));
-            if(list.get(position).getProductOrderList().get(0).getPrice2() == 0 && list.get(position).getProductOrderList().get(0).getPrice3() == 0){
+            holder.txtRmb1.setText("¥"+ MoneyUtil.moneyFormatDouble(list.get(position).getPrice1()));
+            if(list.get(position).getPrice2() == 0 && list.get(position).getPrice3() == 0){
                 holder.txtRmb2.setText("");
             }
         }
 
-        if(list.get(position).getProductOrderList().get(0).getPrice2() == 0){
+        if(list.get(position).getPrice2() == 0){
             holder.txtGwb1.setVisibility(View.GONE);
             holder.txtGwb2.setVisibility(View.GONE);
         }else{
             holder.txtGwb1.setVisibility(View.VISIBLE);
             holder.txtGwb2.setVisibility(View.VISIBLE);
-            holder.txtGwb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getProductOrderList().get(0).getPrice2()));
-            if(list.get(position).getProductOrderList().get(0).getPrice3() == 0){
+            holder.txtGwb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getPrice2()));
+            if(list.get(position).getPrice3() == 0){
                 holder.txtGwb2.setText("购物币");
             }
         }
 
-        if(list.get(position).getProductOrderList().get(0).getPrice3() == 0){
+        if(list.get(position).getPrice3() == 0){
             holder.txtQbb1.setVisibility(View.GONE);
             holder.txtQbb2.setVisibility(View.GONE);
         }else{
             holder.txtQbb1.setVisibility(View.VISIBLE);
             holder.txtQbb2.setVisibility(View.VISIBLE);
-            holder.txtQbb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getProductOrderList().get(0).getPrice3()));
+            holder.txtQbb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getPrice3()));
+        }
+
+        if(list.get(position).getPrice1() == 0 && list.get(position).getPrice2() == 0 && list.get(position).getPrice3() == 0) {
+            holder.txtRmb1.setText("0");
+            holder.txtRmb1.setVisibility(View.VISIBLE);
         }
     }
 
@@ -200,6 +199,11 @@ public class OrderAdapter extends BaseAdapter {
 
             holder.txtQbb_2.setText(MoneyUtil.moneyFormatDouble(qbb));
         }
+
+        if(rmb == 0 && gwb == 0 && qbb == 0){
+            holder.txtRmb_2.setText("0");
+            holder.txtRmb_2.setVisibility(View.VISIBLE);
+        }
     }
 
     static class ViewHolder {
@@ -207,6 +211,8 @@ public class OrderAdapter extends BaseAdapter {
         TextView txtOrderId;
         @InjectView(R.id.txt_time)
         TextView txtTime;
+        @InjectView(R.id.txt_parameter)
+        TextView txtParameter;
         @InjectView(R.id.img_good)
         ImageView imgGood;
         @InjectView(R.id.txt_name)

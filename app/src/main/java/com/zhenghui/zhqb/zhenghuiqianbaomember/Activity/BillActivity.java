@@ -85,6 +85,7 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
     @Override
     protected void onResume() {
         super.onResume();
+        page = 1;
         getData();
     }
 
@@ -246,7 +247,7 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
         }, 1500);
     }
 
-    @OnClick({R.id.txt_beGx, R.id.txt_btn, R.id.layout_back})
+    @OnClick({R.id.txt_beGx, R.id.txt_btn, R.id.layout_back, R.id.txt_history})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -330,6 +331,11 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
                     }
 
                 }
+                break;
+
+            case R.id.txt_history:
+                startActivity(new Intent(BillActivity.this, BillHistoryActivity.class)
+                        .putExtra("code", accountNumber));
                 break;
         }
     }

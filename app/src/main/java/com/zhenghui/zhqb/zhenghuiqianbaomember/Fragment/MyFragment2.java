@@ -33,11 +33,11 @@ import com.google.gson.reflect.TypeToken;
 import com.qiniu.android.http.ResponseInfo;
 import com.squareup.picasso.Picasso;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.DiscountActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.EarningsActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MyJewelHistoryActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MyShopActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.OrderListActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.RelationActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.SettingActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreeActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.WalletActivity;
@@ -92,8 +92,8 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
     LinearLayout layoutShoppinglist;
     @InjectView(R.id.layout_shop)
     LinearLayout layoutShop;
-    @InjectView(R.id.layout_discount)
-    LinearLayout layoutDiscount;
+    @InjectView(R.id.layout_relation)
+    LinearLayout layoutRelation;
     @InjectView(R.id.layout_seting)
     LinearLayout layoutSeting;
     @InjectView(R.id.swipe_container)
@@ -237,7 +237,7 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
 
     @OnClick({R.id.layout_moneyTree, R.id.layout_target, R.id.layout_seting, R.id.txt_share,
             R.id.img_photo,R.id.layout_earnings, R.id.layout_wallet, R.id.layout_shoppinglist,
-            R.id.layout_shop, R.id.layout_discount})
+            R.id.layout_shop, R.id.layout_relation})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.img_photo:
@@ -286,8 +286,13 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
                 startActivity(new Intent(getActivity(), MyShopActivity.class));
                 break;
 
-            case R.id.layout_discount:
-                startActivity(new Intent(getActivity(), DiscountActivity.class));
+            case R.id.layout_relation:
+                startActivity(new Intent(getActivity(), RelationActivity.class)
+                        .putExtra("nickName", model.getNickname())
+                        .putExtra("photo",model.getUserExt().getPhoto())
+                        .putExtra("userReferee",model.getUserRefereeName())
+                        .putExtra("updateDatetime", model.getCreateDatetime()));
+
                 break;
         }
     }

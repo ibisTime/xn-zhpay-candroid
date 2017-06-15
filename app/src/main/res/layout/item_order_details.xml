@@ -7,7 +7,7 @@
         android:background="@color/white"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="110dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/img_good"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
             android:paddingRight="13dp"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="18dp"
             android:layout_toEndOf="@+id/img_good" />
 
 
@@ -34,7 +34,7 @@
             android:id="@+id/layout_price"
             android:layout_below="@+id/txt_name"
             android:layout_alignStart="@+id/txt_name"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -90,15 +90,28 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txt_number"
-            android:textSize="12sp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="10dp"
+            android:id="@+id/txt_parameter"
+            android:textSize="13sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/fontColor_support"
             android:layout_below="@+id/layout_price"
+            android:layout_alignStart="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txt_name" />
+
+        <TextView
+            android:id="@+id/txt_number"
+            android:text="X1件"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/txt_parameter"
             android:layout_alignStart="@+id/txt_name"
             android:textColor="@color/fontColor_support"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txt_name" />
 
         <TextView
             android:id="@+id/txt_btn"

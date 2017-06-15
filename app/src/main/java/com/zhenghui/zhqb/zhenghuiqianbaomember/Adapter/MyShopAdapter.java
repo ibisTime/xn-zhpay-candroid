@@ -87,32 +87,34 @@ public class MyShopAdapter extends BaseAdapter {
             holder.txtStatus.setText("已取消");
         }
 
-        if (list.get(position).getStoreTicket() == null) {
-            holder.layoutDiscount.setVisibility(View.INVISIBLE);
-        } else {
-            double key1 = list.get(position).getStoreTicket().getKey1();
-            double key2 = list.get(position).getStoreTicket().getKey2();
-            holder.txtDiscount.setText("满"+ MoneyUtil.moneyFormatDouble(key1)+"减"+ MoneyUtil.moneyFormatDouble(key2));
-        }
+        holder.txtDiscount.setText(list.get(position).getStore().getSlogan());
 
+//        if (list.get(position).getStoreTicket() == null) {
+//            holder.layoutDiscount.setVisibility(View.INVISIBLE);
+//        } else {
+//            double key1 = list.get(position).getStoreTicket().getKey1();
+//            double key2 = list.get(position).getStoreTicket().getKey2();
+//            holder.txtDiscount.setText("满"+ MoneyUtil.moneyFormatDouble(key1)+"减"+ MoneyUtil.moneyFormatDouble(key2));
+//        }
+//
         holder.txtPrice.setText("消费: ¥" + MoneyUtil.moneyFormatDouble(list.get(position).getPrice()));
 
-        if(list.get(position).getPayType().equals("1")){
-            holder.txtReal.setText("实付:"+
-                    MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount2()
-                            +list.get(position).getPayAmount3()));
-        }else {
-            holder.txtReal.setText("实付:"+ MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount1()));
-        }
-
-        if(list.get(position).getPayAmount1() != 0){
-            holder.txtReal.setText("实付:"+ MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount1()));
+//        if(list.get(position).getPayType().equals("1")){
+//            holder.txtReal.setText("实付:"+
+//                    MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount2()
+//                            +list.get(position).getPayAmount3()));
+//        }else {
+//            holder.txtReal.setText("实付:"+ MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount1()));
+//        }
+//
+//        if(list.get(position).getPayAmount1() != 0){
+//            holder.txtReal.setText("实付:"+ MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount1()));
 //            if (list.get(position).getPayType().equals("1")) {
 //                holder.txtReal.setText("实付:"+MoneyUtil.moneyFormatDouble(list.get(position).getAmount2() + list.get(position).getAmount3()));
 //            } else {
 //                holder.txtReal.setText("实付:"+MoneyUtil.moneyFormatDouble(list.get(position).getAmount1()));
 //            }
-        }
+//        }
 
 
 

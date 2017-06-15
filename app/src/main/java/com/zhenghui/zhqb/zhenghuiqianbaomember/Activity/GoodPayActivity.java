@@ -333,6 +333,13 @@ public class GoodPayActivity extends MyBaseActivity {
             txtQbb2.setText(MoneyUtil.moneyFormatDouble(qbb));
         }
 
+        if(rmb == 0
+                && gwb == 0
+                && qbb == 0){
+            txtRmb2.setText("0");
+            txtRmb2.setVisibility(View.VISIBLE);
+        }
+
     }
 
     private void AliPay(String info) {

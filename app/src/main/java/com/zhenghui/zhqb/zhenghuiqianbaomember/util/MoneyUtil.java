@@ -15,6 +15,53 @@ public class MoneyUtil {
         return showMoney.substring(0,showMoney.length()-1);
     }
 
+    public static String moneyFormatPrice(double rmb, double gwb, double qbb){
+
+        String s1,s2,s3;
+
+        if(rmb == 0){
+            s1 = "";
+            if(gwb == 0){
+                s2 = "";
+                if(qbb == 0){
+                    s3 = "";
+                }else {
+                    s3 = moneyFormatDouble(qbb)+"钱包币";
+                }
+            }else {
+                s2 = moneyFormatDouble(gwb)+"购物币";
+                if(qbb == 0){
+                    s3 = "";
+                }else {
+                    s3 = "+"+moneyFormatDouble(qbb)+"钱包币";
+                }
+            }
+        }else {
+            s1 = moneyFormatDouble(rmb)+"人民币";
+            if(gwb == 0){
+                s2= "";
+                if(qbb == 0){
+                    s3 = "";
+                }else {
+                    s3 = "+"+moneyFormatDouble(qbb)+"钱包币";
+                }
+            }else {
+                s2= "+"+moneyFormatDouble(gwb)+"购物币";
+                if(qbb == 0){
+                    s3 = "";
+                }else {
+                    s3 = "+"+moneyFormatDouble(qbb)+"钱包币";
+                }
+            }
+        }
+
+        if(rmb == 0 && gwb == 0 && qbb == 0){
+            s1 = "0";
+        }
+
+        return s1+s2+s3;
+    }
+
     public static String getCurrency(String currency){
         switch (currency){
             case "CNY":

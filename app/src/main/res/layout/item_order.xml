@@ -74,18 +74,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="19dp"
                     android:paddingRight="13dp"
-                    android:layout_marginTop="23dp"
-                    android:layout_toEndOf="@+id/img_good" />
+                    android:layout_marginTop="18dp"
+                    android:layout_toEndOf="@+id/img_good"
+                    android:layout_marginLeft="19dp"
+                    android:layout_toRightOf="@+id/img_good" />
 
 
                 <LinearLayout
                     android:id="@+id/layout_price"
                     android:layout_below="@+id/txt_name"
                     android:layout_alignStart="@+id/txt_name"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/txt_name">
 
                     <TextView
                         android:id="@+id/txt_rmb1"
@@ -138,16 +141,29 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/txt_parameter"
+                    android:textSize="13sp"
+                    android:singleLine="true"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/fontColor_support"
+                    android:layout_below="@+id/layout_price"
+                    android:layout_alignStart="@+id/txt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/txt_name" />
+
+                <TextView
                     android:id="@+id/txt_number"
                     android:text="X1件"
                     android:textSize="12sp"
                     android:layout_marginLeft="3dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/layout_price"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/txt_parameter"
                     android:layout_alignStart="@+id/txt_name"
                     android:textColor="@color/fontColor_support"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/txt_name" />
 
             </RelativeLayout>
 

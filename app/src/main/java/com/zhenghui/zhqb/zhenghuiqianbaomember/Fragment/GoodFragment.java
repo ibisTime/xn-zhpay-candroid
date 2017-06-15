@@ -548,9 +548,6 @@ public class GoodFragment extends Fragment implements AdapterView.OnItemClickLis
     @Override
     public void onResume() {
         super.onResume();
-        if(userInfoSp.getString("userId",null) != null){
-            getShoppingCartNum();
-        }
     }
 
     @Override
@@ -565,9 +562,6 @@ public class GoodFragment extends Fragment implements AdapterView.OnItemClickLis
                 getProductType();
                 // 更新数据
                 // 更新完后调用该方法结束刷新
-                if(userInfoSp.getString("userId",null) != null){
-                    getShoppingCartNum();
-                }
             }
         }, 1500);
     }

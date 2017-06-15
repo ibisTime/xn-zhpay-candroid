@@ -26,16 +26,13 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShopDetailsModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import butterknife.ButterKnife;
@@ -217,17 +214,17 @@ public class ShopDetailsActivity extends MyBaseActivity {
 
         ImageUtil.glide(model.getAdvPic(), imgShopPic, this);
 
-        if (model.getStoreTickets().size() > 0) {
-            layoutDiscountVisible.setVisibility(View.VISIBLE);
-            txtPrice.setText(((int) model.getStoreTickets().get(0).getKey2() / 1000) + "");
-            txtSlogan.setText("满" + MoneyUtil.moneyFormatDouble(model.getStoreTickets().get(0).getKey1())
-                    + "减" + MoneyUtil.moneyFormatDouble(model.getStoreTickets().get(0).getKey2()));
-            SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
-            Date d5 = new Date(model.getStoreTickets().get(0).getValidateEnd());
-            txtDiscountTime.setText(s.format(d5));
-        } else {
-            layoutDiscountVisible.setVisibility(View.GONE);
-        }
+//        if (model.getStoreTickets().size() > 0) {
+//            layoutDiscountVisible.setVisibility(View.VISIBLE);
+//            txtPrice.setText(((int) model.getStoreTickets().get(0).getKey2() / 1000) + "");
+//            txtSlogan.setText("满" + MoneyUtil.moneyFormatDouble(model.getStoreTickets().get(0).getKey1())
+//                    + "减" + MoneyUtil.moneyFormatDouble(model.getStoreTickets().get(0).getKey2()));
+//            SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
+//            Date d5 = new Date(model.getStoreTickets().get(0).getValidateEnd());
+//            txtDiscountTime.setText(s.format(d5));
+//        } else {
+//            layoutDiscountVisible.setVisibility(View.GONE);
+//        }
 
 
         txtDescription.setText(model.getDescription());
@@ -368,7 +365,7 @@ public class ShopDetailsActivity extends MyBaseActivity {
             @Override
             public void onClick(View arg0) {
 
-                WxUtil.shareToWX(ShopDetailsActivity.this, shareURL, "小目标大玩法", "正汇钱包邀您一元夺宝");
+                WxUtil.shareToWX(ShopDetailsActivity.this, shareURL, model.getName(), model.getSlogan());
                 popupWindow.dismiss();
             }
         });
@@ -377,7 +374,7 @@ public class ShopDetailsActivity extends MyBaseActivity {
 
             @Override
             public void onClick(View arg0) {
-                WxUtil.shareToPYQ(ShopDetailsActivity.this, shareURL, "小目标大玩法", "正汇钱包邀您一元夺宝");
+                WxUtil.shareToPYQ(ShopDetailsActivity.this, shareURL, model.getName(), model.getSlogan());
                 popupWindow.dismiss();
 
             }

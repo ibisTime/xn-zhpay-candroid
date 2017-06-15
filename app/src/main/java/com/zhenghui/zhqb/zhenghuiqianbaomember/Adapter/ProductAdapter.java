@@ -67,6 +67,7 @@ public class ProductAdapter extends BaseAdapter {
     private void setView(int position) {
         holder.txtName.setText(list.get(position).getProductName());
         holder.txtNumber.setText("X" + list.get(position).getProductNumber());
+        holder.txtParameter.setText(list.get(position).getProductSpecsName());
         ImageUtil.glide(list.get(position).getProductImage(), holder.imgProduct, context);
 
         if(list.get(position).getPrice1() == 0){
@@ -101,6 +102,13 @@ public class ProductAdapter extends BaseAdapter {
             holder.txtQbb2.setVisibility(View.VISIBLE);
             holder.txtQbb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getPrice3()));
         }
+
+        if(list.get(position).getPrice1() == 0
+                && list.get(position).getPrice2() == 0
+                && list.get(position).getPrice3() == 0){
+            holder.txtRmb1.setText("0");
+            holder.txtRmb1.setVisibility(View.VISIBLE);
+        }
     }
 
     static class ViewHolder {
@@ -122,6 +130,8 @@ public class ProductAdapter extends BaseAdapter {
         TextView txtQbb2;
         @InjectView(R.id.txt_number)
         TextView txtNumber;
+        @InjectView(R.id.txt_parameter)
+        TextView txtParameter;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

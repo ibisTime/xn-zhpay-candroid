@@ -1,7 +1,9 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,7 +29,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class TreeBillActivity extends MyBaseActivity  implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
+public class TreeBillActivity extends MyBaseActivity implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
 
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;
@@ -37,6 +39,8 @@ public class TreeBillActivity extends MyBaseActivity  implements SwipeRefreshLay
     ListView listBill;
     @InjectView(R.id.swipe_container)
     RefreshLayout swipeContainer;
+    @InjectView(R.id.txt_history)
+    TextView txtHistory;
 
     private int page = 1;
     private int pageSize = 10;
@@ -60,11 +64,6 @@ public class TreeBillActivity extends MyBaseActivity  implements SwipeRefreshLay
         getMoney();
     }
 
-    @OnClick(R.id.layout_back)
-    public void onClick() {
-        finish();
-    }
-
     private void inits() {
         list = new ArrayList<>();
         adapter = new BillAdapter(this, list);
@@ -86,6 +85,20 @@ public class TreeBillActivity extends MyBaseActivity  implements SwipeRefreshLay
 
         swipeContainer.setOnRefreshListener(this);
         swipeContainer.setOnLoadListener(this);
+    }
+
+    @OnClick({R.id.layout_back, R.id.txt_history})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.layout_back:
+                finish();
+                break;
+
+            case R.id.txt_history:
+                startActivity(new Intent(TreeBillActivity.this, BillHistoryActivity.class)
+                        .putExtra("code", accountNumber));
+                break;
+        }
     }
 
     private void getMoney() {
@@ -216,4 +229,5 @@ public class TreeBillActivity extends MyBaseActivity  implements SwipeRefreshLay
             }
         }, 1500);
     }
+
 }

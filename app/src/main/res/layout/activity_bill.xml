@@ -34,9 +34,21 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="账单"
+            android:text="今日账单"
             android:textColor="@color/fontColor_gray"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_history"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:text="历史账单"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/fontColor_gray" />
 
     </RelativeLayout>
 

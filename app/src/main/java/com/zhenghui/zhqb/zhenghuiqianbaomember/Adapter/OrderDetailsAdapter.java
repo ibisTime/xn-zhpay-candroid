@@ -90,55 +90,54 @@ public class OrderDetailsAdapter extends BaseAdapter {
 
     public void setView(int position) {
 
-        ImageUtil.glide(list.get(0).getProductOrderList().get(position).getProduct().getAdvPic(), holder.imgGood, context);
+        ImageUtil.glide(list.get(position).getProduct().getAdvPic(), holder.imgGood, context);
 
-        holder.txtName.setText(list.get(0).getProductOrderList().get(position).getProduct().getName());
-        holder.txtNumber.setText("X" + list.get(0).getProductOrderList().get(position).getQuantity() + "件");
+        holder.txtName.setText(list.get(position).getProduct().getName());
+        holder.txtNumber.setText("X" + list.get(position).getQuantity() + "件");
 
-        if(list.get(0).getStatus().equals("4")){
-            if(list.get(0).getProductOrderList().get(position).getIsComment().equals("0")){ // 未评价
-                holder.txtBtn.setVisibility(View.VISIBLE);
-            }else{
-                holder.txtBtn.setVisibility(View.GONE);
-            }
-        }
+        holder.txtParameter.setText(list.get(position).getProductSpecsName());
 
         setPrice(position);
 
     }
 
     private void setPrice(int position) {
-        if (list.get(0).getProductOrderList().get(position).getPrice1() == 0) {
+        if (list.get(position).getPrice1() == 0) {
             holder.txtRmb1.setVisibility(View.GONE);
             holder.txtRmb2.setVisibility(View.GONE);
         } else {
             holder.txtRmb1.setVisibility(View.VISIBLE);
             holder.txtRmb2.setVisibility(View.VISIBLE);
-            holder.txtRmb1.setText("¥" + MoneyUtil.moneyFormatDouble(list.get(0).getProductOrderList().get(position).getPrice1()));
-            if (list.get(0).getProductOrderList().get(position).getPrice2() == 0 && list.get(0).getProductOrderList().get(position).getPrice3() == 0) {
+            holder.txtRmb1.setText("¥" + MoneyUtil.moneyFormatDouble(list.get(position).getPrice1()));
+            if (list.get(position).getPrice2() == 0 && list.get(position).getPrice3() == 0) {
                 holder.txtRmb2.setText("");
             }
         }
 
-        if (list.get(0).getProductOrderList().get(position).getPrice2() == 0) {
+        if (list.get(position).getPrice2() == 0) {
             holder.txtGwb1.setVisibility(View.GONE);
             holder.txtGwb2.setVisibility(View.GONE);
         } else {
             holder.txtGwb1.setVisibility(View.VISIBLE);
             holder.txtGwb2.setVisibility(View.VISIBLE);
-            holder.txtGwb1.setText(MoneyUtil.moneyFormatDouble(list.get(0).getProductOrderList().get(position).getPrice2()));
-            if (list.get(0).getProductOrderList().get(position).getPrice3() == 0) {
+            holder.txtGwb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getPrice2()));
+            if (list.get(position).getPrice3() == 0) {
                 holder.txtGwb2.setText("购物币");
             }
         }
 
-        if (list.get(0).getProductOrderList().get(position).getPrice3() == 0) {
+        if (list.get(position).getPrice3() == 0) {
             holder.txtQbb1.setVisibility(View.GONE);
             holder.txtQbb2.setVisibility(View.GONE);
         } else {
             holder.txtQbb1.setVisibility(View.VISIBLE);
             holder.txtQbb2.setVisibility(View.VISIBLE);
-            holder.txtQbb1.setText(MoneyUtil.moneyFormatDouble(list.get(0).getProductOrderList().get(position).getPrice3()));
+            holder.txtQbb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getPrice3()));
+        }
+
+        if(list.get(position).getPrice1() == 0 && list.get(position).getPrice2() == 0 && list.get(position).getPrice3() == 0){
+            holder.txtRmb1.setText("0");
+            holder.txtRmb1.setVisibility(View.VISIBLE);
         }
     }
 
@@ -165,12 +164,12 @@ public class OrderDetailsAdapter extends BaseAdapter {
     private void evaluate(String evaluateType,int position) {
         JSONObject object = new JSONObject();
         try {
-//            object.put("orderCode", list.get(0).getProductOrderList().get(position).getOrderCode());
-//            object.put("jewelCode", list.get(0).getProductOrderList().get(position).getProductCode());
+//            object.put("orderCode", list.get(0).getOrderCode());
+//            object.put("jewelCode", list.get(0).getProductCode());
 //            object.put("evaluateType", evaluateType);
 //            object.put("interacter", userInfoSp.getString("userId",null));
 
-            object.put("storeCode", list.get(0).getProductOrderList().get(position).getProductCode());
+            object.put("storeCode", list.get(0).getProductCode());
             object.put("type", evaluateType);
             object.put("userId", userInfoSp.getString("userId",null));
 
@@ -201,6 +200,8 @@ public class OrderDetailsAdapter extends BaseAdapter {
     static class ViewHolder {
         @InjectView(R.id.img_good)
         ImageView imgGood;
+        @InjectView(R.id.txt_parameter)
+        TextView txtParameter;
         @InjectView(R.id.txt_name)
         TextView txtName;
         @InjectView(R.id.txt_rmb1)

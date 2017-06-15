@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="我的夺宝"
+            android:text="我的小目标"
             android:textColor="@color/fontColor_gray"
             android:textSize="17sp" />
 

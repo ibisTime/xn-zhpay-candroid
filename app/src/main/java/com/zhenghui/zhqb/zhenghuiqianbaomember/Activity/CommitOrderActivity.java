@@ -1,4 +1,4 @@
-    package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -35,7 +35,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-    public class CommitOrderActivity extends MyBaseActivity {
+public class CommitOrderActivity extends MyBaseActivity {
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;
     @InjectView(R.id.txt_consignee)
@@ -68,7 +68,7 @@ import butterknife.OnClick;
     TextView txtYunfei;
 
     private String orderType;
-        private String yunfei;
+    private String yunfei;
 
     private ProductAdapter adapter;
 
@@ -209,6 +209,13 @@ import butterknife.OnClick;
 
             txtQbb2.setText(MoneyUtil.moneyFormatDouble(qbb));
         }
+
+        if(rmb == 0
+                && gwb == 0
+                && qbb == 0){
+            txtRmb2.setText("0");
+            txtRmb2.setVisibility(View.VISIBLE);
+        }
     }
 
 
@@ -244,11 +251,11 @@ import butterknife.OnClick;
                 if(addressList.size() == 0){
                     Toast.makeText(this, "请先选择收货地址", Toast.LENGTH_SHORT).show();
                 }else{
-                    if (orderType.equals("now")) {
-                        buyNow();
-                    } else {
-                        buyShoppingCart();
-                    }
+//                    if (orderType.equals("now")) {
+                    buyNow();
+//                    } else {
+//                        buyShoppingCart();
+//                    }
                 }
 
 
@@ -325,27 +332,15 @@ import butterknife.OnClick;
         AddressModel model = addressList.get(0);
         String wholeAddress = model.getProvince() + " " + model.getCity() + " " + model.getDistrict() + " " + model.getDetailAddress();
 
-        JSONObject pojo = new JSONObject();
-        try {
-            pojo.put("receiver", addressList.get(0).getAddressee());
-            pojo.put("reMobile", addressList.get(0).getMobile());
-            pojo.put("reAddress", wholeAddress);
-            pojo.put("applyUser", userInfo.getString("userId", null));
-            pojo.put("applyNote", edtEnjoin.getText().toString().trim());
-            pojo.put("receiptType", "");
-            pojo.put("receiptTitle", "");
-            pojo.put("systemCode", appConfigSp.getString("systemCode", null));
-            pojo.put("companyCode", appConfigSp.getString("systemCode", null));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         JSONObject object = new JSONObject();
         try {
-            object.put("productCode", productList.get(0).getProductCode());
-            object.put("toUser", "");
+            object.put("productSpecsCode", productList.get(0).getProductSpecsCode());
             object.put("quantity", productList.get(0).getProductNumber());
-            object.put("pojo", pojo);
+            object.put("receiver", addressList.get(0).getAddressee());
+            object.put("reMobile", addressList.get(0).getMobile());
+            object.put("reAddress", wholeAddress);
+            object.put("applyUser", userInfo.getString("userId", null));
+            object.put("applyNote", edtEnjoin.getText().toString().trim());
             object.put("token", userInfo.getString("token", null));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -356,7 +351,7 @@ import butterknife.OnClick;
             public void onSuccess(String result) {
                 Toast.makeText(CommitOrderActivity.this, "下单成功", Toast.LENGTH_SHORT).show();
                 try {
-//                    JSONArray jsonArray = new JSONArray(result);
+                    JSONObject jsonObject = new JSONObject(result);
 //                    System.out.println("jsonArray.get(0).toString()="+jsonArray.get(0).toString());
 
                     startActivity(new Intent(CommitOrderActivity.this, GoodPayActivity.class)
@@ -364,7 +359,7 @@ import butterknife.OnClick;
                             .putExtra("gwb",gwb)
                             .putExtra("qbb",qbb)
                             .putExtra("yunfei",Double.parseDouble(yunfei)*1000)
-                            .putExtra("code", result));
+                            .putExtra("code", jsonObject.getString("code")));
                     finish();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -385,67 +380,106 @@ import butterknife.OnClick;
 
     }
 
-    private void buyShoppingCart() {
-        AddressModel model = addressList.get(0);
-        String wholeAddress = model.getProvince() + " " + model.getCity() + " " + model.getDistrict() + " " + model.getDetailAddress();
+//    private void buyShoppingCart() {
+//        AddressModel model = addressList.get(0);
+//        String wholeAddress = model.getProvince() + " " + model.getCity() + " " + model.getDistrict() + " " + model.getDetailAddress();
+//
+//        JSONArray jsonArray = new JSONArray();
+//        for (int i = 0; i < productList.size(); i++) {
+//            jsonArray.put(productList.get(i).getProductCode());
+//        }
+//
+//        JSONObject pojo = new JSONObject();
+//        try {
+//            pojo.put("receiver", addressList.get(0).getAddressee());
+//            pojo.put("reMobile", addressList.get(0).getMobile());
+//            pojo.put("reAddress", wholeAddress);
+//            pojo.put("applyUser", userInfo.getString("userId", null));
+//            pojo.put("applyNote", edtEnjoin.getText().toString().trim());
+//            pojo.put("receiptType", "");
+//            pojo.put("receiptTitle", "");
+//            pojo.put("systemCode", appConfigSp.getString("systemCode", null));
+//            pojo.put("companyCode", appConfigSp.getString("systemCode", null));
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        JSONObject object = new JSONObject();
+//        try {
+//            object.put("toUser", "");
+//            object.put("pojo", pojo);
+//            object.put("cartCodeList", jsonArray);
+//            object.put("token", userInfo.getString("token", null));
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        new Xutil().post("808051", object.toString(), new Xutil.XUtils3CallBackPost() {
+//            @Override
+//            public void onSuccess(String result) {
+//                Toast.makeText(CommitOrderActivity.this, "下单成功", Toast.LENGTH_SHORT).show();
+//
+//                JSONArray jsonArray = null;
+//                try {
+//                    jsonArray = new JSONArray(result);
+//                    System.out.println("jsonArray.get(0).toString()="+jsonArray.get(0).toString());
+//
+//                    ArrayList<String> codeList = new ArrayList<String>();
+//                    for(int i=0; i<jsonArray.length(); i++){
+//                        codeList.add(jsonArray.get(i).toString());
+//                    }
+//
+//                    startActivity(new Intent(CommitOrderActivity.this, GoodPayActivity.class)
+//                            .putStringArrayListExtra("codeList", codeList)
+//                            .putExtra("rmb",rmb)
+//                            .putExtra("gwb",gwb)
+//                            .putExtra("qbb",qbb)
+//                            .putExtra("yunfei",Double.parseDouble(yunfei)*(1000 * jsonArray.length()))
+//                            .putExtra("shopCart",true));
+//                    finish();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onTip(String tip) {
+//                Toast.makeText(CommitOrderActivity.this, tip, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onError(String error, boolean isOnCallback) {
+//                Toast.makeText(CommitOrderActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
 
-        JSONArray jsonArray = new JSONArray();
-        for (int i = 0; i < productList.size(); i++) {
-            jsonArray.put(productList.get(i).getProductCode());
-        }
-
-        JSONObject pojo = new JSONObject();
-        try {
-            pojo.put("receiver", addressList.get(0).getAddressee());
-            pojo.put("reMobile", addressList.get(0).getMobile());
-            pojo.put("reAddress", wholeAddress);
-            pojo.put("applyUser", userInfo.getString("userId", null));
-            pojo.put("applyNote", edtEnjoin.getText().toString().trim());
-            pojo.put("receiptType", "");
-            pojo.put("receiptTitle", "");
-            pojo.put("systemCode", appConfigSp.getString("systemCode", null));
-            pojo.put("companyCode", appConfigSp.getString("systemCode", null));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
+    public void getYunfei() {
         JSONObject object = new JSONObject();
         try {
-            object.put("toUser", "");
-            object.put("pojo", pojo);
-            object.put("cartCodeList", jsonArray);
-            object.put("token", userInfo.getString("token", null));
+            object.put("key", "SP_YUNFEI");
+            object.put("token", userInfoSp.getString("token", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post("808051", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post("808917", object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
-                Toast.makeText(CommitOrderActivity.this, "下单成功", Toast.LENGTH_SHORT).show();
 
-                JSONArray jsonArray = null;
                 try {
-                    jsonArray = new JSONArray(result);
-                    System.out.println("jsonArray.get(0).toString()="+jsonArray.get(0).toString());
+                    JSONObject jsonObject = new JSONObject(result);
+                    yunfei = jsonObject.getString("cvalue");
+                    txtYunfei.setText(yunfei + "元");
 
-                    ArrayList<String> codeList = new ArrayList<String>();
-                    for(int i=0; i<jsonArray.length(); i++){
-                        codeList.add(jsonArray.get(i).toString());
-                    }
-
-                    startActivity(new Intent(CommitOrderActivity.this, GoodPayActivity.class)
-                            .putStringArrayListExtra("codeList", codeList)
-                            .putExtra("rmb",rmb)
-                            .putExtra("gwb",gwb)
-                            .putExtra("qbb",qbb)
-                            .putExtra("yunfei",Double.parseDouble(yunfei)*(1000 * jsonArray.length()))
-                            .putExtra("shopCart",true));
-                    finish();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
 
             }
 
@@ -461,44 +495,5 @@ import butterknife.OnClick;
         });
 
     }
-
-        public void getYunfei() {
-            JSONObject object = new JSONObject();
-            try {
-                object.put("key", "SP_YUNFEI");
-                object.put("token", userInfoSp.getString("token", null));
-                object.put("systemCode", appConfigSp.getString("systemCode", null));
-                object.put("companyCode", appConfigSp.getString("systemCode", null));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            new Xutil().post("808917", object.toString(), new Xutil.XUtils3CallBackPost() {
-                @Override
-                public void onSuccess(String result) {
-
-                    try {
-                        JSONObject jsonObject = new JSONObject(result);
-                        yunfei = jsonObject.getString("cvalue");
-                        txtYunfei.setText(yunfei + "元");
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-
-                @Override
-                public void onTip(String tip) {
-                    Toast.makeText(CommitOrderActivity.this, tip, Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onError(String error, boolean isOnCallback) {
-                    Toast.makeText(CommitOrderActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-        }
 
 }

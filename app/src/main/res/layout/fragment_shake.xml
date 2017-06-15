@@ -30,6 +30,17 @@
                     android:text="摇一摇"
                     android:textSize="17sp" />
 
+                <TextView
+                    android:id="@+id/txt_introduce"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/fontColor_gray"
+                    android:text="玩法介绍"
+                    android:textSize="15sp" />
 
             </RelativeLayout>
 

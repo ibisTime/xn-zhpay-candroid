@@ -1,5 +1,6 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
@@ -28,7 +29,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLayout.OnRefreshListener,RefreshLayout.OnLoadListener,AdapterView.OnItemClickListener {
+public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener, AdapterView.OnItemClickListener {
 
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;
@@ -36,6 +37,8 @@ public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLa
     ListView listRights;
     @InjectView(R.id.swipe_container)
     RefreshLayout swipeContainer;
+    @InjectView(R.id.txt_history)
+    TextView txtHistory;
 
     List<RightsListModel> list;
     RightsListAdapter adapter;
@@ -64,15 +67,15 @@ public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLa
 
     private void inits() {
         list = new ArrayList<>();
-        adapter = new RightsListAdapter(this,list);
+        adapter = new RightsListAdapter(this, list);
         code = getIntent().getStringExtra("code");
 
     }
 
     private void initHeadView() {
-        headView = LayoutInflater.from(this).inflate(R.layout.head_rights,null);
+        headView = LayoutInflater.from(this).inflate(R.layout.head_rights, null);
         txtCode = (TextView) headView.findViewById(R.id.txt_code);
-        txtCode.setText(code.substring(code.length()-6,code.length()));
+        txtCode.setText(code.substring(code.length() - 6, code.length()));
     }
 
     private void initsListView() {
@@ -91,9 +94,17 @@ public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLa
         swipeContainer.setOnRefreshListener(this);
     }
 
-    @OnClick(R.id.layout_back)
-    public void onClick() {
-        finish();
+    @OnClick({R.id.layout_back, R.id.txt_history})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.layout_back:
+                finish();
+                break;
+
+            case R.id.txt_history:
+                startActivity(new Intent(RightsListActivity.this, RightsHistoryActivity.class).putExtra("code", code));
+                break;
+        }
     }
 
 
