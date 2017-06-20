@@ -116,6 +116,7 @@
 
             <LinearLayout
                 android:id="@+id/layout_target"
+                android:visibility="gone"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:layout_width="0dp"

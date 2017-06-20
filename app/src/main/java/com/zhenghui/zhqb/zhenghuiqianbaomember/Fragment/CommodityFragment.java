@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.GoodDetailsActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Loader.BannerImageLoader;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GoodsModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
@@ -63,6 +65,14 @@ public class CommodityFragment extends Fragment {
     TextView txtQbb2;
     @InjectView(R.id.txt_yunfei)
     TextView txtYunfei;
+    @InjectView(R.id.img_shopPic)
+    ImageView imgShopPic;
+    @InjectView(R.id.txt_shopName)
+    TextView txtShopName;
+    @InjectView(R.id.txt_mobile)
+    TextView txtMobile;
+    @InjectView(R.id.txt_slogan)
+    TextView txtSlogan;
 
     private View view;
     private GoodsModel model;
@@ -112,10 +122,10 @@ public class CommodityFragment extends Fragment {
 
         String[] pic = model.getAdvPic().split("\\|\\|");
 
-        System.out.println("pic.length="+pic.length);
+        System.out.println("pic.length=" + pic.length);
 
-        for(String str : pic){
-            System.out.print("url="+ str);
+        for (String str : pic) {
+            System.out.print("url=" + str);
             images.add(str);
         }
 
@@ -127,45 +137,50 @@ public class CommodityFragment extends Fragment {
         txtInfo.setText(model.getSlogan());
 
 
-        if(model.getProductSpecsList().get(0).getPrice1() == 0){
+        if (model.getProductSpecsList().get(0).getPrice1() == 0) {
             txtRmb1.setVisibility(View.GONE);
             txtRmb2.setVisibility(View.GONE);
-        }else{
+        } else {
             txtRmb1.setVisibility(View.VISIBLE);
             txtRmb2.setVisibility(View.VISIBLE);
-            txtRmb1.setText("¥"+ MoneyUtil.moneyFormatDouble(model.getProductSpecsList().get(0).getPrice1()));
-            if(model.getProductSpecsList().get(0).getPrice2() == 0 && model.getProductSpecsList().get(0).getPrice3() == 0){
+            txtRmb1.setText("¥" + MoneyUtil.moneyFormatDouble(model.getProductSpecsList().get(0).getPrice1()));
+            if (model.getProductSpecsList().get(0).getPrice2() == 0 && model.getProductSpecsList().get(0).getPrice3() == 0) {
                 txtRmb2.setText("");
             }
         }
 
-        if(model.getProductSpecsList().get(0).getPrice2() == 0){
+        if (model.getProductSpecsList().get(0).getPrice2() == 0) {
             txtGwb1.setVisibility(View.GONE);
             txtGwb2.setVisibility(View.GONE);
-        }else{
+        } else {
             txtGwb1.setVisibility(View.VISIBLE);
             txtGwb2.setVisibility(View.VISIBLE);
             txtGwb1.setText(MoneyUtil.moneyFormatDouble(model.getProductSpecsList().get(0).getPrice2()));
-            if(model.getProductSpecsList().get(0).getPrice3() == 0){
+            if (model.getProductSpecsList().get(0).getPrice3() == 0) {
                 txtGwb2.setText("购物币");
             }
         }
 
-        if(model.getProductSpecsList().get(0).getPrice3() == 0){
+        if (model.getProductSpecsList().get(0).getPrice3() == 0) {
             txtQbb1.setVisibility(View.GONE);
             txtQbb2.setVisibility(View.GONE);
-        }else{
+        } else {
             txtQbb1.setVisibility(View.VISIBLE);
             txtQbb2.setVisibility(View.VISIBLE);
             txtQbb1.setText(MoneyUtil.moneyFormatDouble(model.getProductSpecsList().get(0).getPrice3()));
         }
 
-        if(model.getProductSpecsList().get(0).getPrice1() == 0
+        if (model.getProductSpecsList().get(0).getPrice1() == 0
                 && model.getProductSpecsList().get(0).getPrice2() == 0
-                && model.getProductSpecsList().get(0).getPrice3() == 0){
+                && model.getProductSpecsList().get(0).getPrice3() == 0) {
             txtRmb1.setText("0");
             txtRmb1.setVisibility(View.VISIBLE);
         }
+
+        ImageUtil.glide(model.getStore().getAdvPic(), imgShopPic, getActivity());
+        txtShopName.setText(model.getStore().getName());
+        txtMobile.setText("联系电话:" + model.getStore().getBookMobile());
+        txtSlogan.setText(model.getStore().getSlogan());
     }
 
     private void initBanner() {
@@ -233,7 +248,7 @@ public class CommodityFragment extends Fragment {
                 try {
                     JSONObject jsonObject = new JSONObject(result);
 
-                    txtYunfei.setText("运费: "+ jsonObject.getString("cvalue") + "元");
+                    txtYunfei.setText("运费: " + jsonObject.getString("cvalue") + "元");
 
 
                 } catch (JSONException e) {

@@ -21,14 +21,6 @@ import org.xutils.x;
 public class Xutil {
 
     // 研发环境
-//    public static String URL = "http://121.43.101.148";
-//    public static String SHARE_URL = "http://121.43.101.148";
-//    public static String SHARE_PORT = ":5603";
-//    public static String PORT = ":8901";
-//    public static String API = "/forward-service/api";
-//    public static String LOGOUT = ":8901/forward-service/user/logOut";
-
-//     研发环境
 //    public static String URL = "http://106.15.49.68";
 //    public static String SHARE_URL = "http://121.43.101.148";
 //    public static String SHARE_PORT = ":5603";

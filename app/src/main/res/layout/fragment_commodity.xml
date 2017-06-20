@@ -162,6 +162,61 @@
                 android:layout_height="0.5dp"/>
 
             <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="96dp">
+
+                <ImageView
+                    android:layout_marginLeft="15dp"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="80dp"
+                    android:layout_height="65dp"
+                    android:id="@+id/img_shopPic" />
+
+                <LinearLayout
+                    android:layout_marginLeft="14dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_shopName"
+                        android:text="asdasd"
+                        android:textColor="@color/fontColor_gray"
+                        android:textSize="15sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/txt_mobile"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center_vertical"
+                        android:textSize="11sp"
+                        android:text="asdasd"
+                        android:singleLine="true"
+                        android:textColor="@color/fontColor_support"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp" />
+
+                    <TextView
+                        android:id="@+id/txt_slogan"
+                        android:textSize="11sp"
+                        android:text="asdasd"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/fontColor_support"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:visibility="gone"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
