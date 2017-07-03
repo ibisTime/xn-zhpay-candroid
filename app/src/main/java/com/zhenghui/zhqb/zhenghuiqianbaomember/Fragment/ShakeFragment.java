@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -32,10 +32,10 @@ import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MainActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.RichTextActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShakeListActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShakeModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.MainActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RichTextActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.ShakeListActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ShakeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LoginUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -50,10 +50,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-
-/**
- * Created by dell1 on 2016/12/12.
- */
 
 public class ShakeFragment extends Fragment implements SensorEventListener {
 

@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Loader;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.loader;
 
 import android.content.Context;
 import android.widget.ImageView;
@@ -6,10 +6,6 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.youth.banner.loader.ImageLoader;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
-
-/**
- * Created by dell1 on 2016/12/13.
- */
 
 public class BannerImageLoader extends ImageLoader {
 

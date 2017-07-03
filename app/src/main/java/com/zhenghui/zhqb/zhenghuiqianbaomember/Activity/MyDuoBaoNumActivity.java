@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +14,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.JewelNumberModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TargetModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.JewelNumberModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.TargetModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
@@ -39,7 +39,6 @@ import butterknife.OnClick;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.txt_buy;
 
 public class MyDuoBaoNumActivity extends MyBaseActivity implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
-
 
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;

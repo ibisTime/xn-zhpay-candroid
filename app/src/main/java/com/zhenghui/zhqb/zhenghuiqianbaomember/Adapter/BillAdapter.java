@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.BillModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.BillModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.BillUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
@@ -18,10 +18,6 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/18.
- */
 
 public class BillAdapter extends BaseAdapter {
 

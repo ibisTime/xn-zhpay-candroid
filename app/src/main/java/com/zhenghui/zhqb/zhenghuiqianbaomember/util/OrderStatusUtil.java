@@ -3,10 +3,6 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.util;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by dell1 on 2016/12/17.
- */
-
 public class OrderStatusUtil {
 
 

@@ -1,21 +1,7 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by dell1 on 2016/12/15.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class ShoppingCartModel {
 
-
-    /**
-     * code : GW201703291941494563
-     * userId : U2017032913574410381
-     * productCode : CP201703291727333540
-     * quantity : 1
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     * product : {"code":"CP201703291727333540","name":"we bare bears","advPic":"ANDROID_1490779593774_612_344.jpg","price1":10000,"price2":10000,"price3":10000,"companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
-     */
 
     private String code;
     private String userId;
@@ -23,16 +9,6 @@ public class ShoppingCartModel {
     private int quantity;
     private String companyCode;
     private String systemCode;
-    /**
-     * code : CP201703291727333540
-     * name : we bare bears
-     * advPic : ANDROID_1490779593774_612_344.jpg
-     * price1 : 10000
-     * price2 : 10000
-     * price3 : 10000
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private ProductBean product;
 

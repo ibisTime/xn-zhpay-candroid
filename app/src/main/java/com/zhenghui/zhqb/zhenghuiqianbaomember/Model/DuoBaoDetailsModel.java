@@ -1,33 +1,9 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 
-/**
- * Created by dell1 on 2016/12/23.
- */
 
 public class DuoBaoDetailsModel implements Serializable {
-
-
-    /**
-     * code : IW201612221124367087
-     * storeCode : SJ201612191453270582
-     * name : 兰博基尼
-     * slogan : 111
-     * advPic : http://7xnuu2.com1.z0.glb.clouddn.com/o_1b4i8u58111fl1h8g1l7geu51049.png
-     * description : <p>11</p>
-     * investNum : 1
-     * investAmount : 1000
-     * totalNum : 1
-     * price : 1000000000
-     * startDatetime : Dec 22, 2016 12:00:00 AM
-     * raiseDays : 1
-     * winNumber : 1
-     * winUserId : 1
-     * lotAlg : 1 1
-     * status : 1
-     * systemCode : CD-CZH000001
-     */
 
     private String code;
     private String storeCode;

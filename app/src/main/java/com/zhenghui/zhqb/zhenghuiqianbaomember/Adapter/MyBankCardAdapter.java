@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,17 +9,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.MyBankCardModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.MyBankCardModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/24.
- */
 
 public class MyBankCardAdapter extends BaseAdapter {
 

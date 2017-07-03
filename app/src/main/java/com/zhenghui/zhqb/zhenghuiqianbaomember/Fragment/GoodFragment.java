@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,15 +21,15 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.GoodDetailsActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.GoodSearchActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.LoginActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShoppingCartActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TargetActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.GoodAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.RecyclerViewAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GoodsModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ProductTypeModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.GoodDetailsActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.GoodSearchActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.LoginActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.ShoppingCartActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TargetActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.GoodAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.RecyclerViewAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.GoodsModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ProductTypeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -44,10 +44,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-
-/**
- * Created by dell1 on 2016/12/12.
- */
 
 public class GoodFragment extends Fragment implements AdapterView.OnItemClickListener, RecyclerViewAdapter.MyItemClickListener, SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
 

@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

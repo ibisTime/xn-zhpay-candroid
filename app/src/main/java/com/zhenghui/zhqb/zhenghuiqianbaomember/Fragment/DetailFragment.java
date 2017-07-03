@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,16 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.DetailAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GoodsModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.DetailAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.GoodsModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/13.
- */
 
 public class DetailFragment extends Fragment {
 

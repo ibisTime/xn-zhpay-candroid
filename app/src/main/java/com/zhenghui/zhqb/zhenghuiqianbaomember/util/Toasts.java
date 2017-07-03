@@ -3,11 +3,6 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.util;
 import android.content.Context;
 import android.os.Handler;
 
-/**
- * 
- * @author Administrator
- *			提示工具类
- */
 public abstract class Toasts {
     public static final int LENGTH_SHORT = android.widget.Toast.LENGTH_SHORT;
     public static final int LENGTH_LONG = android.widget.Toast.LENGTH_LONG;

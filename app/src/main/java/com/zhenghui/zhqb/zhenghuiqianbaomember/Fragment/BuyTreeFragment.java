@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,12 +19,12 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.AuthenticateActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.RichTextActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreeActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreePayActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TreeModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.AuthenticateActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RichTextActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TreeActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TreePayActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PersonalModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.TreeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LoginUtil;
@@ -41,10 +41,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-
-/**
- * Created by dell1 on 2016/12/19.
- */
 
 public class BuyTreeFragment extends Fragment {
 

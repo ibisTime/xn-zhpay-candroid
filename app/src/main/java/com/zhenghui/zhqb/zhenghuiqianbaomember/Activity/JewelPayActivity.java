@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,8 +19,8 @@ import android.widget.Toast;
 import com.alipay.sdk.app.PayTask;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PayResult;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.WalletModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PayResult;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.WalletModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -40,7 +40,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class JewelPayActivity extends MyBaseActivity {
-
 
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;

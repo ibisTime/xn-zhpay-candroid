@@ -7,10 +7,6 @@ import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
-/**
- * Created by dell1 on 2016/12/17.
- */
-
 public class ImageUtil {
 
     public static String IMAGE = "http://omxvtiss6.bkt.clouddn.com/";

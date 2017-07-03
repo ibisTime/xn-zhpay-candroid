@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,9 +13,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.OrderDetailsAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.OrderModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.OrderDetailsAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.OrderModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.OrderStatusUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -246,6 +246,7 @@ public class OrderDetailsActivity extends MyBaseActivity {
                             .putExtra("rmb",model.getAmount1())
                             .putExtra("gwb",model.getAmount2())
                             .putExtra("qbb",model.getAmount3())
+                            .putExtra("currency",model.getProduct().getPayCurrency())
                             .putExtra("yunfei",Double.parseDouble(yunfei)*1000)
                             .putExtra("code",model.getCode()));
                 }else{

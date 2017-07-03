@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.City;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.City;
 
 import java.io.File;
 import java.io.FileOutputStream;

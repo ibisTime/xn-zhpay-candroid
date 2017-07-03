@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.BillAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.BillModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.WalletModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.BillAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.BillModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.WalletModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;

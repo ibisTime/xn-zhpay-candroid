@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,17 +7,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShakeModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ShakeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by LeiQ on 2017/1/9.
- */
 
 public class ShakeAdapter extends BaseAdapter {
 

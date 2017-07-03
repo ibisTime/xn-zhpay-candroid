@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +13,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.BillAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.BillModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.BillAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.BillModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
@@ -30,11 +30,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-
-/**
- * Created by Leiq on 2016/12/26.
- * 账单
- */
 
 public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
 

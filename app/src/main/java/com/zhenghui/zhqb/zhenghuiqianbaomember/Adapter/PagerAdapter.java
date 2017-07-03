@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

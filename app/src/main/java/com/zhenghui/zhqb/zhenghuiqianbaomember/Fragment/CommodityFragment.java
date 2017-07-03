@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,9 +15,9 @@ import android.widget.Toast;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.GoodDetailsActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Loader.BannerImageLoader;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GoodsModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.GoodDetailsActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.loader.BannerImageLoader;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.GoodsModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
@@ -32,10 +32,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-
-/**
- * Created by dell1 on 2016/12/13.
- */
 
 public class CommodityFragment extends Fragment {
 

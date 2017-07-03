@@ -1,25 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by LeiQ on 2017/1/11.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class ScheduleModel {
-
-
-    /**
-     * code : IR201701130324151895
-     * userId : U2017010614240498971
-     * jewelCode : IW201701122106370580
-     * createDatetime : Jan 13, 2017 3:24:15 AM
-     * times : 1
-     * payAmount : 1000
-     * status : 0
-     * remark : 已分配夺宝号，待开奖
-     * systemCode : CD-CZH000001
-     * nickname : 40498971
-     * photo : ANDROID_1483698115033_1080_1920.jpg
-     */
 
     private String code;
     private String userId;

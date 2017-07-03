@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/intervalColor"
-    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.BankCardActivity">
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.activity.BankCardActivity">
 
     <RelativeLayout
         android:background="@color/white"
@@ -97,7 +97,8 @@
             android:layout_alignTop="@+id/img_bankCart2"
             android:layout_toEndOf="@+id/img_bankCart2"
             android:layout_marginStart="15dp"
-            />
+            android:layout_toRightOf="@+id/img_bankCart2"
+            android:layout_marginLeft="15dp" />
 
         <TextView
             android:id="@+id/txt_type2"
@@ -108,7 +109,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_name2"
-            android:layout_alignStart="@+id/txt_name2" />
+            android:layout_alignStart="@+id/txt_name2"
+            android:layout_alignLeft="@+id/txt_name2" />
 
         <TextView
             android:text="**** **** **** 4728"
@@ -118,7 +120,8 @@
             android:layout_below="@+id/txt_type2"
             android:layout_alignStart="@+id/txt_name2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txt_name2" />
 
     </RelativeLayout>
 
@@ -150,7 +153,8 @@
             android:layout_alignTop="@+id/img_bankCart3"
             android:layout_toEndOf="@+id/img_bankCart3"
             android:layout_marginStart="15dp"
-            />
+            android:layout_toRightOf="@+id/img_bankCart3"
+            android:layout_marginLeft="15dp" />
 
         <TextView
             android:id="@+id/txt_type3"
@@ -161,7 +165,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_name3"
-            android:layout_alignStart="@+id/txt_name3" />
+            android:layout_alignStart="@+id/txt_name3"
+            android:layout_alignLeft="@+id/txt_name3" />
 
         <TextView
             android:text="**** **** **** 4728"
@@ -171,7 +176,8 @@
             android:layout_below="@+id/txt_type3"
             android:layout_alignStart="@+id/txt_name3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txt_name3" />
 
     </RelativeLayout>
 

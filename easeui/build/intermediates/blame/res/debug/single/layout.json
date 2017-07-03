@@ -1,15 +1,23 @@
 [
     {
-        "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_bigexpression.xml",
-        "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_received_bigexpression.xml"
-    },
-    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_widget_emojicon.xml"
     },
     {
+        "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_bigexpression.xml",
+        "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_received_bigexpression.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_expression_gridview.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_expression_gridview.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_baidumap.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_activity_baidumap.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_layout_emojicon_menu.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_layout_emojicon_menu.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video.xml",
@@ -28,8 +36,16 @@
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_expression_gridview.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_conversation_list.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_fragment_conversation_list.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_big_expression.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_big_expression.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_chat.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_fragment_chat.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_voice_recorder.xml",
@@ -40,28 +56,40 @@
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_received_file.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_voice_recorder.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_widget_voice_recorder.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_activity_show_big_image.xml"
     },
     {
-        "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_showvideo_activity.xml",
-        "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_showvideo_activity.xml"
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_video.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_message.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_sent_message.xml"
     },
     {
+        "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_showvideo_activity.xml",
+        "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_showvideo_activity.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_alert_dialog.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_alert_dialog.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar.xml",
+        "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_search_bar.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_bigexpression.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_sent_bigexpression.xml"
     },
     {
-        "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar.xml",
-        "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_search_bar.xml"
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video_call.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_video_call.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_contact.xml",
@@ -72,12 +100,28 @@
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_widget_voice_recorder.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon_tab_bar.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_widget_emojicon_tab_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video_call.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_video_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_location.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_location.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video_call.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_received_video_call.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_file.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_sent_file.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_expression.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_expression.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video_call.xml",
@@ -88,8 +132,16 @@
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_widget_chat_input_menu.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_chat_history.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_chat_history.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video_call.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_sent_video_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_activity_show_big_image.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_expression_gridview.xml",
@@ -120,8 +172,16 @@
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_widget_chat_input_menu.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_location.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_location.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_received_voice.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_bigexpression.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_bigexpression.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_expression.xml",
@@ -136,8 +196,16 @@
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_widget_title_bar.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_picture.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_picture.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_chat_history.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_chat_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_chat_menu_item.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_chat_menu_item.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_switch_button.xml",
@@ -148,12 +216,28 @@
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_chat_message_list.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_voice.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_message.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_message.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_emojicon.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_emojicon.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_bigexpression.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_sent_bigexpression.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_voice.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar_with_padding.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_search_bar_with_padding.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_baidumap.xml",
@@ -184,12 +268,24 @@
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_fragment_contact_list.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_emojicon.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_emojicon.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_sent_video.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_chat.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_fragment_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice_call.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_voice_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_file.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_file.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_expression.xml",
@@ -216,8 +312,20 @@
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_alert_dialog.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_title_bar.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_widget_title_bar.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_conversation_list.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_fragment_conversation_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_commom_back_btn.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_commom_back_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_contact.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_contact.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_location.xml",
@@ -252,20 +360,44 @@
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_widget_emojicon.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_contact_list.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_widget_contact_list.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice_call.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_received_voice_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_primary_menu.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_widget_chat_primary_menu.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice_call.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_received_voice_call.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_big_expression.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_big_expression.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice_call.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_sent_voice_call.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_scroll_tab_item.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_scroll_tab_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_message.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_message.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_contact.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice_call.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_voice_call.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_contact_list.xml",
@@ -284,12 +416,36 @@
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_sent_message.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_layout_chat_primary_menu.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_layout_chat_primary_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_contact_list.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_fragment_contact_list.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_scroll_tab_item.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_scroll_tab_item.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_input_menu.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_widget_chat_input_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_bigexpression.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_bigexpression.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_commom_back_btn.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_commom_back_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_alert_dialog.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_alert_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_search_bar.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_message.xml",
@@ -332,8 +488,16 @@
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_sent_picture.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_chat_message_list.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_chat_message_list.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_big_expression.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_big_expression.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_conversation_item.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_conversation_item.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_commom_back_btn.xml",
@@ -344,6 +508,14 @@
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_sent_file.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_received_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_widget_emojicon.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_message.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_row_received_message.xml"
     },
@@ -352,12 +524,24 @@
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_row_received_picture.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_showvideo_activity.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_showvideo_activity.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_showvideo_activity.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_showvideo_activity.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_contact_list.xml",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\layout\\ease_fragment_contact_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_file.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_activity_show_file.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_switch_button.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_widget_switch_button.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_emojicon.xml",
@@ -388,7 +572,19 @@
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_widget_title_bar.xml"
     },
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_baidumap.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_activity_baidumap.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_scroll_tab_item.xml",
         "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\layout\\ease_scroll_tab_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_picture.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_picture.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_file.xml",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\layout\\ease_row_sent_file.xml"
     }
 ]

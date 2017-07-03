@@ -1,33 +1,9 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by dell1 on 2016/12/15.
- */
-
 public class GoodsModel implements Serializable {
-
-
-    /**
-     * code : CP2017061211263085730915
-     * category : FL201700000000000001
-     * type : FL201700000000000003
-     * name : 这是一个良心会痛的商品
-     * slogan : 广告标语
-     * advPic : ANDROID_1497237954074_580_580.jpg
-     * pic : ANDROID_1497237969404_580_580.jpg
-     * description : 哈哈哈哈哈哈哈哈计算机等级你放假烦恼叠加金额u付洋洋我怕热可能性此间少年尿道结石那我呢就
-     * status : 3
-     * updater : U201706041609037734313
-     * updateDatetime : Jun 12, 2017 11:26:30 AM
-     * boughtCount : 0
-     * companyCode : U201706041609037734313
-     * systemCode : CD-CZH000001
-     * store : {"code":"SJ2017060416155036789952","name":"安卓店铺2","level":"2","type":"1","slogan":"广告语","advPic":"ANDROID_1496564031759_580_580.jpg","pic":"ANDROID_1496564058384_580_580.jpg||ANDROID_1496564063708_580_580.jpg||ANDROID_1496564073059_580_580.jpg","description":"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈不哈哈哈哈哈哈哈哈哈那就是就是就是计算机技术就","province":"浙江省","city":"杭州市","area":"余杭区","address":"梦想小镇","longitude":"119.998089","latitude":"30.38812","bookMobile":"1234567","smsMobile":"18984955240","uiLocation":"1","uiOrder":"1","legalPersonName":"雷黔","userReferee":"U2017010713451027748","isDefault":"1","status":"91","updater":"U201706041609037734313","updateDatetime":"Jun 12, 2017 4:42:12 PM","remark":"","createDatetime":"Jun 4, 2017 4:15:50 PM","approveUser":"xman","approveDatetime":"Jun 12, 2017 4:42:31 PM","onUser":"xman","onDatetime":"Jun 12, 2017 1:56:53 PM","offUser":"xman","offDatetime":"Jun 12, 2017 1:56:14 PM","owner":"U201706041609037734313","companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
-     * productSpecsList : [{"code":"PS2017061211263086532140","name":"规格1","productCode":"CP2017061211263085730915","price1":0,"price2":0,"price3":0,"quantity":99,"province":"浙江省","weight":1,"orderNo":0,"companyCode":"U201706041609037734313","systemCode":"CD-CZH000001"}]
-     */
 
     private String code;
     private String category;
@@ -36,6 +12,7 @@ public class GoodsModel implements Serializable {
     private String slogan;
     private String advPic;
     private String pic;
+    private String payCurrency;
     private String description;
     private String status;
     private String updater;
@@ -43,59 +20,16 @@ public class GoodsModel implements Serializable {
     private int boughtCount;
     private String companyCode;
     private String systemCode;
-    /**
-     * code : SJ2017060416155036789952
-     * name : 安卓店铺2
-     * level : 2
-     * type : 1
-     * slogan : 广告语
-     * advPic : ANDROID_1496564031759_580_580.jpg
-     * pic : ANDROID_1496564058384_580_580.jpg||ANDROID_1496564063708_580_580.jpg||ANDROID_1496564073059_580_580.jpg
-     * description : 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈不哈哈哈哈哈哈哈哈哈那就是就是就是计算机技术就
-     * province : 浙江省
-     * city : 杭州市
-     * area : 余杭区
-     * address : 梦想小镇
-     * longitude : 119.998089
-     * latitude : 30.38812
-     * bookMobile : 1234567
-     * smsMobile : 18984955240
-     * uiLocation : 1
-     * uiOrder : 1
-     * legalPersonName : 雷黔
-     * userReferee : U2017010713451027748
-     * isDefault : 1
-     * status : 91
-     * updater : U201706041609037734313
-     * updateDatetime : Jun 12, 2017 4:42:12 PM
-     * remark :
-     * createDatetime : Jun 4, 2017 4:15:50 PM
-     * approveUser : xman
-     * approveDatetime : Jun 12, 2017 4:42:31 PM
-     * onUser : xman
-     * onDatetime : Jun 12, 2017 1:56:53 PM
-     * offUser : xman
-     * offDatetime : Jun 12, 2017 1:56:14 PM
-     * owner : U201706041609037734313
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private StoreBean store;
-    /**
-     * code : PS2017061211263086532140
-     * name : 规格1
-     * productCode : CP2017061211263085730915
-     * price1 : 0
-     * price2 : 0
-     * price3 : 0
-     * quantity : 99
-     * province : 浙江省
-     * weight : 1
-     * orderNo : 0
-     * companyCode : U201706041609037734313
-     * systemCode : CD-CZH000001
-     */
+
+    public String getPayCurrency() {
+        return payCurrency;
+    }
+
+    public void setPayCurrency(String payCurrency) {
+        this.payCurrency = payCurrency;
+    }
 
     private List<ProductSpecsListBean> productSpecsList;
 

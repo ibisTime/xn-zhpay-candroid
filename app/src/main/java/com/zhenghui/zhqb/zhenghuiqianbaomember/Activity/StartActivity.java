@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.util.Timer;

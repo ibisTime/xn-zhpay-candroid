@@ -1,30 +1,8 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.util.List;
 
-/**
- * Created by LeiQ on 2017/1/13.
- */
-
 public class MyDuoBaoNumModel {
-
-
-    /**
-     * code : IR201701141721589322
-     * userId : U2017011400020700192
-     * jewelCode : IW201701140645018608
-     * createDatetime : Jan 14, 2017 5:21:58 PM
-     * times : 1
-     * payAmount1 : 0
-     * payAmount2 : 0
-     * payAmount3 : 0
-     * status : 1
-     * remark : 已分配夺宝号，待开奖
-     * systemCode : CD-CZH000001
-     * nickname : 20700192
-     * jewelRecordNumberList : [{"id":42,"jewelCode":"IW201701140645018608","recordCode":"IR201701141721589322","number":"10000005"}]
-     * jewel : {"code":"IW201701140645018608"}
-     */
 
     private String code;
     private String userId;
@@ -38,17 +16,8 @@ public class MyDuoBaoNumModel {
     private String remark;
     private String systemCode;
     private String nickname;
-    /**
-     * code : IW201701140645018608
-     */
 
     private JewelBean jewel;
-    /**
-     * id : 42
-     * jewelCode : IW201701140645018608
-     * recordCode : IR201701141721589322
-     * number : 10000005
-     */
 
     private List<JewelRecordNumberListBean> jewelRecordNumberList;
 

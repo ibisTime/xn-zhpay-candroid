@@ -1,12 +1,12 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.MyShopModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.MyShopModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
@@ -19,7 +19,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class MyShopDetailsActivity extends MyBaseActivity {
-
 
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;

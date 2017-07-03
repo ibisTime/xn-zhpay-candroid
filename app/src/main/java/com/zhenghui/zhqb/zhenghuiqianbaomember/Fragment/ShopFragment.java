@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -29,19 +29,19 @@ import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerClickListener;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.CityPickerActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShopDetailsActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShopListActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.SystemMessageActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.WebActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.PagerAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ShopAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Loader.BannerImageLoader;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.BannerModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.MessageModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.Model;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShopModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.StoreTypeModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.CityPickerActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.ShopDetailsActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.ShopListActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.SystemMessageActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.WebActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.PagerAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.ShopAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.loader.BannerImageLoader;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.BannerModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.MessageModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.Model;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ShopModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.StoreTypeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LocateState;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
@@ -60,10 +60,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 import static android.app.Activity.RESULT_OK;
-
-/**
- * Created by dell1 on 2016/12/12.
- */
 
 public class ShopFragment extends Fragment implements AdapterView.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener, OnBannerClickListener {
 

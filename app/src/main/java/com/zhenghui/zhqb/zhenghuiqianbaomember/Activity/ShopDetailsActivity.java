@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,9 +21,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ShopDetailsAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShopDetailsModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.ShopDetailsAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ShopDetailsModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
@@ -302,7 +302,9 @@ public class ShopDetailsActivity extends MyBaseActivity {
                         Toast.makeText(ShopDetailsActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(ShopDetailsActivity.this, LoginActivity.class));
                     } else {
-                        startActivity(new Intent(ShopDetailsActivity.this, ShopPayActivity.class).putExtra("code", code));
+                        startActivity(new Intent(ShopDetailsActivity.this, ShopPayActivity.class)
+                                .putExtra("currency", model.getPayCurrency())
+                                .putExtra("code", code));
                     }
                     break;
 

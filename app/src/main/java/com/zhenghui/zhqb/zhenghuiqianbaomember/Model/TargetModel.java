@@ -1,36 +1,8 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 
-/**
- * Created by LeiQ on 2017/2/22.
- */
-
 public class TargetModel implements Serializable {
-
-
-    /**
-     * code : J201703221508346783
-     * templateCode : JT201703221427246662
-     * periods : 1
-     * toAmount : 10
-     * toCurrency : FRB
-     * totalNum : 10
-     * maxNum : 10
-     * investNum : 10
-     * fromAmount : 10
-     * fromCurrency : FRB
-     * slogan : 宣传文字update
-     * advPic : 宣传图update
-     * startDatetime : Mar 22, 2017 3:08:34 PM
-     * status : 1
-     * winNumber : 10000008
-     * winUser : U2017032216121358915
-     * winDatetime : Mar 22, 2017 5:10:00 PM
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     * user : {"userId":"U2017032216121358915","loginName":"18984955240","nickname":"21358915","mobile":"18984955240"}
-     */
 
     private String code;
     private String templateCode;
@@ -51,12 +23,6 @@ public class TargetModel implements Serializable {
     private String winDatetime;
     private String companyCode;
     private String systemCode;
-    /**
-     * userId : U2017032216121358915
-     * loginName : 18984955240
-     * nickname : 21358915
-     * mobile : 18984955240
-     */
 
     private UserBean user;
 

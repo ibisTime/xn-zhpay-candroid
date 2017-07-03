@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +13,10 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ShoppingCartAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ProductModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShoppingCartModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.ShoppingCartAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ProductModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ShoppingCartModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;

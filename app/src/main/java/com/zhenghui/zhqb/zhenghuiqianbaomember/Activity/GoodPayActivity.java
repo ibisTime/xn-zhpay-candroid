@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,8 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PayResult;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PayResult;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
@@ -83,6 +83,7 @@ public class GoodPayActivity extends MyBaseActivity {
     private double qbb;
     private double yunfei;
     private String code;
+    private String currency;
     private boolean shopCart;
     private ArrayList<String> codeList;
     private SharedPreferences userInfoSp;
@@ -108,6 +109,7 @@ public class GoodPayActivity extends MyBaseActivity {
     private void inits() {
 
         code = getIntent().getStringExtra("code");
+        currency = getIntent().getStringExtra("currency");
         rmb = getIntent().getDoubleExtra("rmb", 0.00);
         gwb = getIntent().getDoubleExtra("gwb", 0.00);
         qbb = getIntent().getDoubleExtra("qbb", 0.00);
@@ -117,6 +119,12 @@ public class GoodPayActivity extends MyBaseActivity {
         codeList = getIntent().getStringArrayListExtra("codeList");
         userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
+
+        if(currency.equals("1")){
+            txtBalace.setText("分润支付");
+        }else {
+            txtBalace.setText("贡献值分润支付");
+        }
 
     }
 

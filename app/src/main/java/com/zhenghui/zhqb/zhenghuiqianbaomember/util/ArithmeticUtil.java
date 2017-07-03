@@ -2,10 +2,6 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.util;
 
 import java.math.BigDecimal;
 
-/**
- * Created by LeiQ on 2017/1/5.
- */
-
 public class ArithmeticUtil {
     //默认除法运算精度
     private static final int DEF_DIV_SCALE = 10;

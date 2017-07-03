@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.TagetAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TargetModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.TargetAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.TargetModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -38,7 +38,7 @@ public class JewelHistoryActivity extends MyBaseActivity implements SwipeRefresh
 
     private String templateCode;
 
-    private TagetAdapter adapter;
+    private TargetAdapter adapter;
     private List<TargetModel> list;
 
     private int page = 1;
@@ -61,7 +61,7 @@ public class JewelHistoryActivity extends MyBaseActivity implements SwipeRefresh
 
     private void inits() {
         list = new ArrayList<>();
-        adapter = new TagetAdapter(this, list);
+        adapter = new TargetAdapter(this, list);
 
         templateCode = getIntent().getStringExtra("templateCode");
 

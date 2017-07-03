@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,16 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ProductTypeModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ProductTypeModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.util.List;
 
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/20.
- */
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 

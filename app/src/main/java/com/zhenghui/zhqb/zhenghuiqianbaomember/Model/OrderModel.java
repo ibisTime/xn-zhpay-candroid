@@ -1,47 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by dell1 on 2016/12/17.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class OrderModel {
-
-
-    /**
-     * code : DD2017061213454225660472
-     * receiver : 雷黔
-     * reMobile : 18984955240
-     * reAddress : 浙江省 杭州市 余杭区 梦想小镇
-     * applyUser : U201706071406231322783
-     * applyNote :
-     * applyDatetime : Jun 12, 2017 1:45:42 PM
-     * productCode : CP2017061211263085730915
-     * productName : 这是一个良心会痛的商品
-     * productSpecsCode : PS2017061211263086532140
-     * productSpecsName : 规格1
-     * quantity : 1
-     * price1 : 0
-     * price2 : 0
-     * price3 : 0
-     * amount1 : 0
-     * amount2 : 0
-     * amount3 : 0
-     * yunfei : 0
-     * status : 2
-     * payType : 1
-     * payDatetime : Jun 12, 2017 1:45:52 PM
-     * payAmount1 : 0
-     * payAmount11 : 0
-     * payAmount2 : 0
-     * payAmount3 : 0
-     * promptTimes : 0
-     * logisticsCompany : 0
-     * logisticsCode : 0
-     * companyCode : U201706041609037734313
-     * systemCode : CD-CZH000001
-     * store : {"code":"SJ2017060416155036789952","name":"安卓店铺2","level":"2","type":"1","slogan":"广告语","advPic":"ANDROID_1496564031759_580_580.jpg","pic":"ANDROID_1496564058384_580_580.jpg||ANDROID_1496564063708_580_580.jpg||ANDROID_1496564073059_580_580.jpg","description":"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈不哈哈哈哈哈哈哈哈哈那就是就是就是计算机技术就","province":"浙江省","city":"杭州市","area":"余杭区","address":"梦想小镇","longitude":"119.998089","latitude":"30.38812","bookMobile":"1234567","smsMobile":"18984955240","uiLocation":"1","uiOrder":"1","legalPersonName":"雷黔","userReferee":"U2017010713451027748","isDefault":"1","status":"91","updater":"U201706041609037734313","updateDatetime":"Jun 12, 2017 4:42:12 PM","remark":"","createDatetime":"Jun 4, 2017 4:15:50 PM","approveUser":"xman","approveDatetime":"Jun 12, 2017 4:42:31 PM","onUser":"xman","onDatetime":"Jun 12, 2017 1:56:53 PM","offUser":"xman","offDatetime":"Jun 12, 2017 1:56:14 PM","owner":"U201706041609037734313","companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
-     * product : {"code":"CP2017061211263085730915","category":"FL201700000000000001","type":"FL201700000000000003","name":"这是一个良心会痛的商品","slogan":"广告标语","advPic":"ANDROID_1497237954074_580_580.jpg","pic":"ANDROID_1497237969404_580_580.jpg","description":"哈哈哈哈哈哈哈哈计算机等级你放假烦恼叠加金额u付洋洋我怕热可能性此间少年尿道结石那我呢就","status":"3","updater":"U201706041609037734313","updateDatetime":"Jun 12, 2017 11:26:30 AM","boughtCount":0,"companyCode":"U201706041609037734313","systemCode":"CD-CZH000001"}
-     */
 
     private String code;
     private String receiver;
@@ -74,62 +33,7 @@ public class OrderModel {
     private String logisticsCode;
     private String companyCode;
     private String systemCode;
-    /**
-     * code : SJ2017060416155036789952
-     * name : 安卓店铺2
-     * level : 2
-     * type : 1
-     * slogan : 广告语
-     * advPic : ANDROID_1496564031759_580_580.jpg
-     * pic : ANDROID_1496564058384_580_580.jpg||ANDROID_1496564063708_580_580.jpg||ANDROID_1496564073059_580_580.jpg
-     * description : 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈不哈哈哈哈哈哈哈哈哈那就是就是就是计算机技术就
-     * province : 浙江省
-     * city : 杭州市
-     * area : 余杭区
-     * address : 梦想小镇
-     * longitude : 119.998089
-     * latitude : 30.38812
-     * bookMobile : 1234567
-     * smsMobile : 18984955240
-     * uiLocation : 1
-     * uiOrder : 1
-     * legalPersonName : 雷黔
-     * userReferee : U2017010713451027748
-     * isDefault : 1
-     * status : 91
-     * updater : U201706041609037734313
-     * updateDatetime : Jun 12, 2017 4:42:12 PM
-     * remark :
-     * createDatetime : Jun 4, 2017 4:15:50 PM
-     * approveUser : xman
-     * approveDatetime : Jun 12, 2017 4:42:31 PM
-     * onUser : xman
-     * onDatetime : Jun 12, 2017 1:56:53 PM
-     * offUser : xman
-     * offDatetime : Jun 12, 2017 1:56:14 PM
-     * owner : U201706041609037734313
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
-
     private StoreBean store;
-    /**
-     * code : CP2017061211263085730915
-     * category : FL201700000000000001
-     * type : FL201700000000000003
-     * name : 这是一个良心会痛的商品
-     * slogan : 广告标语
-     * advPic : ANDROID_1497237954074_580_580.jpg
-     * pic : ANDROID_1497237969404_580_580.jpg
-     * description : 哈哈哈哈哈哈哈哈计算机等级你放假烦恼叠加金额u付洋洋我怕热可能性此间少年尿道结石那我呢就
-     * status : 3
-     * updater : U201706041609037734313
-     * updateDatetime : Jun 12, 2017 11:26:30 AM
-     * boughtCount : 0
-     * companyCode : U201706041609037734313
-     * systemCode : CD-CZH000001
-     */
-
     private ProductBean product;
 
     public String getLogisticsCode() {
@@ -726,9 +630,18 @@ public class OrderModel {
         private String status;
         private String updater;
         private String updateDatetime;
+        private String payCurrency;
         private int boughtCount;
         private String companyCode;
         private String systemCode;
+
+        public String getPayCurrency() {
+            return payCurrency;
+        }
+
+        public void setPayCurrency(String payCurrency) {
+            this.payCurrency = payCurrency;
+        }
 
         public String getCode() {
             return code;

@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MyDuoBaoNumActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.MyDuoBaoDetailModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.MyDuoBaoNumActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.MyDuoBaoDetailModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.text.SimpleDateFormat;
@@ -19,11 +19,6 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-
-/**
- * Created by LeiQ on 2017/1/12.
- */
 
 public class MyDuoBaoDetailAdapter extends BaseAdapter {
 

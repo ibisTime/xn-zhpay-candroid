@@ -20,8 +20,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants;
 
 /**
  * 微信支付结果界面
- * @author hfk
- * create at 2016/5/3 10:42
  */
 public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 

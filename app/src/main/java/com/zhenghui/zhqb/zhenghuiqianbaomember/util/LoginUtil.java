@@ -3,12 +3,8 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.util;
 import android.content.Context;
 import android.content.Intent;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.LoginActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-
-/**
- * Created by dell1 on 2016/12/15.
- */
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.LoginActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 
 public class LoginUtil {
 

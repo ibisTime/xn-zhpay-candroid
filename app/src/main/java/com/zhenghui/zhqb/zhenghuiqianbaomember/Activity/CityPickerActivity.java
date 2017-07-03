@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,10 +20,10 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.CityListAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ResultListAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.City;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.CityListAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.ResultListAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.City;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.db.DBManager;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LocateState;
@@ -32,9 +32,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.view.SideLetterBar;
 
 import java.util.List;
 
-/**
- *  城市选择
- */
 public class CityPickerActivity extends MyBaseActivity implements View.OnClickListener {
     public static final int REQUEST_CODE_PICK_CITY = 2333;
     public static final String KEY_PICKED_CITY = "picked_city";

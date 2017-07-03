@@ -1,30 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by LeiQ on 2017/1/8.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class TreeModel {
-
-
-    /**
-     * code : HT201703221532370205
-     * name : 汇赚宝
-     * pic : http://123/default.jpg
-     * price : 2000000
-     * currency : CNY
-     * periodRockNum : 10
-     * totalRockNum : 100
-     * backAmount1 : 10
-     * backAmount2 : 10
-     * backAmount3 : 10
-     * status : 0
-     * updater : admin
-     * updateDatetime : Mar 22, 2017 3:32:37 PM
-     * remark : 备注
-     * systemCode : CD-CZH000001
-     * companyCode : CD-CZH000001
-     */
 
     private String code;
     private String name;

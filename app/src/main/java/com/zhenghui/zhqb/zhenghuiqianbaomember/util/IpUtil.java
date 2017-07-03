@@ -9,10 +9,6 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
-/**
- * Created by LeiQ on 2017/1/8.
- */
-
 public class IpUtil {
 
     static String ip = "";

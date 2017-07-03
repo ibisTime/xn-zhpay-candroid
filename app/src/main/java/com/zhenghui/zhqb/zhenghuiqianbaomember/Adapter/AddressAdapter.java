@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,9 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.AddAddressActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.AddressSelectActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.AddressModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.AddAddressActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.AddressSelectActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.AddressModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
@@ -28,9 +28,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-/**
- * Created by dell1 on 2016/12/16.
- */
 
 public class AddressAdapter extends BaseAdapter {
 

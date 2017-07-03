@@ -1,27 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by dell1 on 2016/12/23.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class StockModel {
-
-
-    /**
-     * code : GF201612191707503581
-     * name : 股份两千update
-     * pic :
-     * description : 股份1
-     * capital : 200
-     * price : 2000
-     * currency : CNY
-     * backInterval : 1
-     * backCount : 10
-     * welfare1 : 200
-     * welfare2 : 200
-     * status : 1
-     * systemCode : system001
-     */
 
     private String code;
     private String name;

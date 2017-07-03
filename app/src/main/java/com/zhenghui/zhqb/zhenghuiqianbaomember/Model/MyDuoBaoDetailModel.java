@@ -1,30 +1,9 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.util.List;
 
-/**
- * Created by LeiQ on 2017/1/12.
- */
 
 public class MyDuoBaoDetailModel {
-
-
-    /**
-     * code : IR201701141721589322
-     * userId : U2017011400020700192
-     * jewelCode : IW201701140645018608
-     * createDatetime : Jan 14, 2017 5:21:58 PM
-     * times : 1
-     * payAmount1 : 0
-     * payAmount2 : 0
-     * payAmount3 : 0
-     * status : 1
-     * remark : 已分配夺宝号，待开奖
-     * systemCode : CD-CZH000001
-     * nickname : 20700192
-     * jewelRecordNumberList : [{"id":42,"jewelCode":"IW201701140645018608","recordCode":"IR201701141721589322","number":"10000005"}]
-     * jewel : {"code":"IW201701140645018608","name":"夺宝","slogan":"12","advPic":"OSS_1484235138920_2592_1936.JPG","descriptionText":"<p>123<\/p>","price1":0,"price2":0,"price3":0,"totalNum":10,"investNum":1,"startDatetime":"Jan 14, 2017 6:45:24 AM","lotteryDatetime":"Jan 24, 2017 6:45:24 AM","raiseDays":10,"status":"3","systemCode":"CD-CZH000001","approver":"admin","approveDatetime":"Jan 14, 2017 6:45:10 AM","updater":"admin","updateDatetime":"Jan 14, 2017 6:45:24 AM","remark":"12"}
-     */
 
     private String code;
     private String userId;
@@ -38,36 +17,8 @@ public class MyDuoBaoDetailModel {
     private String remark;
     private String systemCode;
     private String nickname;
-    /**
-     * code : IW201701140645018608
-     * name : 夺宝
-     * slogan : 12
-     * advPic : OSS_1484235138920_2592_1936.JPG
-     * descriptionText : <p>123</p>
-     * price1 : 0
-     * price2 : 0
-     * price3 : 0
-     * totalNum : 10
-     * investNum : 1
-     * startDatetime : Jan 14, 2017 6:45:24 AM
-     * lotteryDatetime : Jan 24, 2017 6:45:24 AM
-     * raiseDays : 10
-     * status : 3
-     * systemCode : CD-CZH000001
-     * approver : admin
-     * approveDatetime : Jan 14, 2017 6:45:10 AM
-     * updater : admin
-     * updateDatetime : Jan 14, 2017 6:45:24 AM
-     * remark : 12
-     */
 
     private JewelBean jewel;
-    /**
-     * id : 42
-     * jewelCode : IW201701140645018608
-     * recordCode : IR201701141721589322
-     * number : 10000005
-     */
 
     private List<JewelRecordNumberListBean> jewelRecordNumberList;
 

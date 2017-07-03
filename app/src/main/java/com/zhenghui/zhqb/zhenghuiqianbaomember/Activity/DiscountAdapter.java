@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.DiscountModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.DiscountModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.text.SimpleDateFormat;
@@ -18,10 +18,6 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/18.
- */
 
 public class DiscountAdapter extends BaseAdapter {
 

@@ -1,38 +1,8 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 
-/**
- * Created by dell1 on 2016/12/23.
- */
-
 public class DuoBaoModel implements Serializable {
-
-
-    /**
-     * code : IW201701102054236452
-     * storeCode : SC00000001
-     * name : iphone7s一元夺宝
-     * slogan : iphone7s
-     * advPic : picPath
-     * descriptionText : 图文描述
-     * price1 : 1000
-     * price2 : 0
-     * price3 : 0
-     * totalNum : 10
-     * investNum : 10
-     * startDatetime : Jan 10, 2017 8:56:00 PM
-     * raiseDays : 2
-     * winNumber : 10000002
-     * winUserId : U000000000000001
-     * status : 7
-     * systemCode : CD-CZH000001
-     * approver : admin
-     * approveDatetime : Jan 10, 2017 8:55:18 PM
-     * updater : admin
-     * updateDatetime : Jan 10, 2017 8:56:00 PM
-     * remark : 开始夺宝
-     */
 
     private String code;
     private String storeCode;

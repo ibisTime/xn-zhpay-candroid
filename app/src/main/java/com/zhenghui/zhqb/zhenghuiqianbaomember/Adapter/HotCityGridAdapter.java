@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,9 +12,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * author zaaach on 2016/1/26.
- */
 public class HotCityGridAdapter extends BaseAdapter {
     private Context mContext;
     private List<String> mCities;

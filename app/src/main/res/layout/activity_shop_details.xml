@@ -5,7 +5,7 @@
     android:background="@color/intervalColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShopDetailsActivity">
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.activity.ShopDetailsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

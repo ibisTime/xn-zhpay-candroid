@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 
@@ -8,79 +8,14 @@ import java.io.Serializable;
 
 public class DiscountModel implements Serializable {
 
-
-    /**
-     * code : UT201704041609383483
-     * userId : U2017032913574410381
-     * ticketCode : ZKQ201704041602292069
-     * createDatetime : Apr 4, 2017 4:09:38 PM
-     * status : 0
-     * systemCode : CD-CZH000001
-     * storeTicket : {"code":"ZKQ201704041602292069","name":"满减","type":"1","key1":200000,"key2":20000,"description":"让我给你姓名一言一行您look哦咯破ing民工why","price":20000,"currency":"QBB","validateStart":"Apr 4, 2017 12:00:00 AM","validateEnd":"Apr 6, 2017 12:00:00 AM","createDatetime":"Apr 4, 2017 4:02:29 PM","status":"1","storeCode":"SJ201704041559165775","companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
-     * store : {"code":"SJ201704041559165775","name":"公益行商家","level":"2","type":"FL201703301952165460","slogan":"过敏共鸣哦嘻嘻嘻XP一起我","advPic":"ANDROID_1491292374197_459_816.jpg","pic":"ANDROID_1491292758800_144_192.jpg","description":"您whyXP心你好也行名字一名嘻嘻YY你移民嘻嘻嘻嘻嘻嘻晚自习嘻嘻嘻嘻嘻嘻","province":"浙江省","city":"杭州市","area":"余杭区","address":"梦想战神","longitude":"119.998089","latitude":"30.38812","bookMobile":"18177777777","smsMobile":"18177777777","uiLocation":"1","uiOrder":"1","legalPersonName":"工艺","userReferee":"U2017040415165912175","rate1":0.01,"rate2":0.1,"rate3":0,"isDefault":"0","status":"2","updater":"admin","updateDatetime":"Apr 4, 2017 4:00:08 PM","owner":"U2017040415521614218","totalRmbNum":0,"totalJfNum":0,"totalDzNum":0,"totalScNum":0,"companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
-     */
-
     private String code;
     private String userId;
     private String ticketCode;
     private String createDatetime;
     private String status;
     private String systemCode;
-    /**
-     * code : ZKQ201704041602292069
-     * name : 满减
-     * type : 1
-     * key1 : 200000
-     * key2 : 20000
-     * description : 让我给你姓名一言一行您look哦咯破ing民工why
-     * price : 20000
-     * currency : QBB
-     * validateStart : Apr 4, 2017 12:00:00 AM
-     * validateEnd : Apr 6, 2017 12:00:00 AM
-     * createDatetime : Apr 4, 2017 4:02:29 PM
-     * status : 1
-     * storeCode : SJ201704041559165775
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private StoreTicketBean storeTicket;
-    /**
-     * code : SJ201704041559165775
-     * name : 公益行商家
-     * level : 2
-     * type : FL201703301952165460
-     * slogan : 过敏共鸣哦嘻嘻嘻XP一起我
-     * advPic : ANDROID_1491292374197_459_816.jpg
-     * pic : ANDROID_1491292758800_144_192.jpg
-     * description : 您whyXP心你好也行名字一名嘻嘻YY你移民嘻嘻嘻嘻嘻嘻晚自习嘻嘻嘻嘻嘻嘻
-     * province : 浙江省
-     * city : 杭州市
-     * area : 余杭区
-     * address : 梦想战神
-     * longitude : 119.998089
-     * latitude : 30.38812
-     * bookMobile : 18177777777
-     * smsMobile : 18177777777
-     * uiLocation : 1
-     * uiOrder : 1
-     * legalPersonName : 工艺
-     * userReferee : U2017040415165912175
-     * rate1 : 0.01
-     * rate2 : 0.1
-     * rate3 : 0
-     * isDefault : 0
-     * status : 2
-     * updater : admin
-     * updateDatetime : Apr 4, 2017 4:00:08 PM
-     * owner : U2017040415521614218
-     * totalRmbNum : 0
-     * totalJfNum : 0
-     * totalDzNum : 0
-     * totalScNum : 0
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private StoreBean store;
 

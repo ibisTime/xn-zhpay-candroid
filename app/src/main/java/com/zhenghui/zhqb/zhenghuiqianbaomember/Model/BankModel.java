@@ -1,25 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-/**
- * Created by LeiQ on 2016/12/28.
- */
-
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class BankModel {
-
-
-    /**
-     * id : 4
-     * bankCode : ADC
-     * bankName : 中国农业银行
-     * channelType : 11
-     * payType : PC
-     * status : 1
-     * paybank : 080009
-     * orderAmount : 10000
-     * dayAmount : 20000
-     * monthAmount : 100000
-     * remark : remark
-     */
 
     private int id;
     private String bankCode;

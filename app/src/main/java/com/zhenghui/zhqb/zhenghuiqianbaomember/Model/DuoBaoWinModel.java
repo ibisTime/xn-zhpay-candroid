@@ -1,36 +1,9 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.util.List;
 
-/**
- * Created by LeiQ on 2017/1/13.
- */
 
 public class DuoBaoWinModel {
-
-
-    /**
-     * code : IR201701142307120530
-     * userId : U2017011400020700192
-     * jewelCode : IW201701140645018608
-     * createDatetime : Jan 14, 2017 11:07:12 PM
-     * investDatetime
-     * times : 8
-     * payAmount1 : 0
-     * payAmount2 : 0
-     * payAmount3 : 0
-     * status : 4
-     * receiver : 雷黔
-     * reMobile : 18984955240
-     * mobile
-     * reAddress : 浙江省杭州市余杭区梦想小镇
-     * remark : 已中奖，中奖号码10000010
-     * systemCode : CD-CZH000001
-     * nickname : 20700192
-     * jewelRecordNumberList : [{"id":145,"jewelCode":"IW201701140645018608","recordCode":"IR201701142307120530","number":"10000001"},{"id":146,"jewelCode":"IW201701140645018608","recordCode":"IR201701142307120530","number":"10000002"},{"id":147,"jewelCode":"IW201701140645018608","recordCode":"IR201701142307120530","number":"10000003"},{"id":148,"jewelCode":"IW201701140645018608","recordCode":"IR201701142307120530","number":"10000004"},{"id":149,"jewelCode":"IW201701140645018608","recordCode":"IR201701142307120530","number":"10000006"},{"id":150,"jewelCode":"IW201701140645018608","recordCode":"IR201701142307120530","number":"10000007"},{"id":151,"jewelCode":"IW201701140645018608","recordCode":"IR201701142307120530","number":"10000009"},{"id":152,"jewelCode":"IW201701140645018608","recordCode":"IR201701142307120530","number":"10000010"}]
-     * jewel : {"code":"IW201701140645018608","name":"夺宝","slogan":"12","advPic":"OSS_1484235138920_2592_1936.JPG","descriptionText":"<p>123<\/p>","price1":0,"price2":0,"price3":0,"totalNum":10,"investNum":10,"startDatetime":"Jan 14, 2017 6:45:24 AM","lotteryDatetime":"Jan 24, 2017 6:45:24 AM","raiseDays":10,"winNumber":"10000010","winUserId":"U2017011400020700192","status":"7","systemCode":"CD-CZH000001","approver":"admin","approveDatetime":"Jan 14, 2017 6:45:10 AM","updater":"admin","updateDatetime":"Jan 14, 2017 6:45:24 AM","remark":"已开奖"}
-     * myInvestTimes : 10
-     */
 
     private String code;
     private String userId;
@@ -49,40 +22,8 @@ public class DuoBaoWinModel {
     private String remark;
     private String systemCode;
     private String nickname;
-    /**
-     * code : IW201701140645018608
-     * name : 夺宝
-     * slogan : 12
-     * advPic : OSS_1484235138920_2592_1936.JPG
-     * descriptionText : <p>123</p>
-     * price1 : 0
-     * price2 : 0
-     * price3 : 0
-     * totalNum : 10
-     * investNum : 10
-     * startDatetime : Jan 14, 2017 6:45:24 AM
-     * lotteryDatetime : Jan 24, 2017 6:45:24 AM
-     * raiseDays : 10
-     * winNumber : 10000010
-     * winUserId : U2017011400020700192
-     * status : 7
-     * systemCode : CD-CZH000001
-     * approver : admin
-     * approveDatetime : Jan 14, 2017 6:45:10 AM
-     * updater : admin
-     * updateDatetime : Jan 14, 2017 6:45:24 AM
-     * remark : 已开奖
-     */
-
     private JewelBean jewel;
     private String myInvestTimes;
-    /**
-     * id : 145
-     * jewelCode : IW201701140645018608
-     * recordCode : IR201701142307120530
-     * number : 10000001
-     */
-
     private List<JewelRecordNumberListBean> jewelRecordNumberList;
 
     public String getInvestDatetime() {

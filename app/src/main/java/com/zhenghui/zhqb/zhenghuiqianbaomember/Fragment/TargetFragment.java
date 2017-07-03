@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -22,12 +22,12 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.JewelActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.JewelRecordActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.JewelRecordAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.TagetAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.JewelRecordModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TargetModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.JewelActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.JewelRecordActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.JewelRecordAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.TargetAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.JewelRecordModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.TargetModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.JewelRecordService;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
@@ -78,7 +78,7 @@ public class TargetFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private SharedPreferences userInfoSp;
     private SharedPreferences appConfigSp;
 
-    private TagetAdapter adapter;
+    private TargetAdapter adapter;
     private JewelRecordAdapter recordAdapter;
     private List<TargetModel> list;
     private List<JewelRecordModel> recorList;
@@ -192,7 +192,7 @@ public class TargetFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private void inits() {
         list = new ArrayList<>();
         recorList = new ArrayList<>();
-        adapter = new TagetAdapter(getActivity(),list);
+        adapter = new TargetAdapter(getActivity(),list);
         recordAdapter = new JewelRecordAdapter(getActivity(),recorList);
 
         userInfoSp = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);

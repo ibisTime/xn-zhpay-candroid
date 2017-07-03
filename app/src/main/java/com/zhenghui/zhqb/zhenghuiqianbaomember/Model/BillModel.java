@@ -1,26 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by LeiQ on 2016/12/30.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class BillModel {
-
-
-    /**
-     * code : AJ2017010621334975089
-     * userId : U2017010615181802379
-     * realName : 田磊
-     * accountNumber : A2017010615181821641
-     * channelType : 01
-     * bizType : -11
-     * bizNote : 取现:银行卡号[11]划转金额
-     * transAmount : 1000
-     * status : 0
-     * createDatetime : Jan 6, 2017 9:33:49 PM
-     * workDate : 20170106
-     * systemCode : CD-CZH000001
-     */
 
     private String code;
     private String userId;

@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.EvaluateAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.EvaluateModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GoodsModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.EvaluateAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.EvaluateModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.GoodsModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -29,10 +29,6 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/13.
- */
 
 public class EvaluateFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
 

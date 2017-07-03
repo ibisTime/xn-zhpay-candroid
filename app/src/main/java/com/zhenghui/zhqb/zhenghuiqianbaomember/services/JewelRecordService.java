@@ -17,10 +17,6 @@ import org.json.JSONObject;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * Created by LeiQ on 2017/2/28.
- */
-
 public class JewelRecordService extends Service {
 
     private SharedPreferences userInfoSp;

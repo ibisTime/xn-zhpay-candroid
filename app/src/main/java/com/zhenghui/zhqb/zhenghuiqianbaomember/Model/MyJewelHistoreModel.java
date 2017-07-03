@@ -1,35 +1,11 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 
-/**
- * Created by LeiQ on 2017/2/23.
- */
 
 public class MyJewelHistoreModel implements Serializable {
 
 
-    /**
-     * code : J201703241514036317
-     * templateCode : JT201703241513366804
-     * periods : 1
-     * toAmount : 10000
-     * toCurrency : CGB
-     * totalNum : 100
-     * maxNum : 1000
-     * investNum : 100
-     * fromAmount : 10000
-     * fromCurrency : CGB
-     * slogan : 宣传文字
-     * advPic : 6e2dc159-ff20-4d91-b8bf-8a62d95c97d7_1490339142375.jpg
-     * startDatetime : Mar 24, 2017 3:14:03 PM
-     * status : 1
-     * winNumber : 10000060
-     * winUser : U2017032820273497120
-     * winDatetime : Mar 24, 2017 3:23:39 PM
-     * companyCode : CD-CCG000007
-     * systemCode : CD-CCG000007
-     */
 
     private String code;
     private String templateCode;

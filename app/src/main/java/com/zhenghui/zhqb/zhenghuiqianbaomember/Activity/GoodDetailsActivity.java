@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,14 +22,14 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.PagerAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ParameterAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.CommodityFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.DetailFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.EvaluateFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GoodsModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ProductModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.PagerAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.ParameterAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.CommodityFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.DetailFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.EvaluateFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.GoodsModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ProductModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LoginUtil;
@@ -565,6 +565,7 @@ public class GoodDetailsActivity extends MyBaseActivity {
                 productModel.setProductNumber(number);
                 startActivity(new Intent(GoodDetailsActivity.this, CommitOrderActivity.class)
                         .putExtra("orderType", "now")
+                        .putExtra("currency", model.getPayCurrency())
                         .putExtra("productModel", productModel));
 
 

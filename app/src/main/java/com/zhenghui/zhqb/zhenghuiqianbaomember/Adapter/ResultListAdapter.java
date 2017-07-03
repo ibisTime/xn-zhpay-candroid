@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,15 +7,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.City;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.City;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.util.List;
 
-
-/**
- * author zaaach on 2016/1/26.
- */
 public class ResultListAdapter extends BaseAdapter {
     private Context mContext;
     private List<City> mCities;

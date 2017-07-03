@@ -46,5 +46,29 @@
                 }
             }
         ]
+    },
+    {
+        "outputFile": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\values-w820dp\\ease_dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 312,
+                        "endColumn": 57,
+                        "endOffset": 365
+                    }
+                }
+            }
+        ]
     }
 ]

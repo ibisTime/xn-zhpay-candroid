@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,10 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ProductAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.AddressModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ProductModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.ProductAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.AddressModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ProductModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -36,6 +36,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class CommitOrderActivity extends MyBaseActivity {
+
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;
     @InjectView(R.id.txt_consignee)
@@ -67,8 +68,9 @@ public class CommitOrderActivity extends MyBaseActivity {
     TextView txtQbb2;
     TextView txtYunfei;
 
-    private String orderType;
     private String yunfei;
+    private String currency;
+    private String orderType;
 
     private ProductAdapter adapter;
 
@@ -112,6 +114,7 @@ public class CommitOrderActivity extends MyBaseActivity {
 
     private void inits() {
         // 获取订单类型
+        currency = getIntent().getStringExtra("currency");
         orderType = getIntent().getStringExtra("orderType");
 
         addressList = new ArrayList<>();
@@ -358,6 +361,7 @@ public class CommitOrderActivity extends MyBaseActivity {
                             .putExtra("rmb",rmb)
                             .putExtra("gwb",gwb)
                             .putExtra("qbb",qbb)
+                            .putExtra("currency",currency)
                             .putExtra("yunfei",Double.parseDouble(yunfei)*1000)
                             .putExtra("code", jsonObject.getString("code")));
                     finish();

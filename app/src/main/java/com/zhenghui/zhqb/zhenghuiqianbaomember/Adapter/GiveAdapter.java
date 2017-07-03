@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,17 +8,13 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GiveModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.GiveModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by LeiQ on 2017/2/21.
- */
 
 public class GiveAdapter extends BaseAdapter {
 

@@ -1,8 +1,5 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.listener;
 
-/**
- * Created by LeiQ on 2017/4/3.
- */
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;

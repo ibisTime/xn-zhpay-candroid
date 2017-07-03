@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,10 +23,10 @@ import com.google.gson.reflect.TypeToken;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.JewelAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Loader.BannerImageLoader;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.JewelRecordModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.TargetModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.JewelAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.loader.BannerImageLoader;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.JewelRecordModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.TargetModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LoginUtil;

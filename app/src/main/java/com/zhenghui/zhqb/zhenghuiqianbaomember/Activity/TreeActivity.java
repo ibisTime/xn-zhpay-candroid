@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,9 +7,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.BuyTreeFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.MyTreeFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.BuyTreeFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.MyTreeFragment;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 

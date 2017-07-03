@@ -4,9 +4,6 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.view.MotionEvent;
 
-/**
- * Created by LeiQ on 2017/4/4.
- */
 
 public class MoveGestureDetector extends BaseGestureDetector
 {

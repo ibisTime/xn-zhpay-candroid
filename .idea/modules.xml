@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/easeui/easeui.iml" filepath="$PROJECT_DIR$/easeui/easeui.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xn-zhpay-candroid.iml" filepath="$PROJECT_DIR$/xn-zhpay-candroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhpay_c.iml" filepath="$PROJECT_DIR$/zhpay_c.iml" />
     </modules>
   </component>
 </project>

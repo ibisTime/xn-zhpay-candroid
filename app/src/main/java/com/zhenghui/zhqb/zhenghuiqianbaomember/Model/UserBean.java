@@ -1,10 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
-
-/**
- * Created by LeiQ on 2017/3/22.
- */
 
 public class UserBean implements Serializable {
     private String userId;

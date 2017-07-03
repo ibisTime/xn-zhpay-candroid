@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,15 +33,15 @@ import com.google.gson.reflect.TypeToken;
 import com.qiniu.android.http.ResponseInfo;
 import com.squareup.picasso.Picasso;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.EarningsActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MyJewelHistoryActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MyShopActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.OrderListActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.RelationActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.SettingActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreeActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.WalletActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.EarningsActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.MyJewelHistoryActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.MyShopActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.OrderListActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RelationActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.SettingActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TreeActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.WalletActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.QiNiuUtil;
@@ -65,10 +65,6 @@ import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil.RESULT_CAMARA_IMAGE;
-
-/**
- * Created by LeiQ on 2017/2/20.
- */
 
 public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 

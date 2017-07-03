@@ -38,7 +38,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
-        android:name=".Application.MyApplication"
+        android:name=".application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
@@ -198,7 +198,7 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind" />
-        <activity android:name=".Activity.StartActivity">
+        <activity android:name=".activity.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -216,33 +216,33 @@
             <!-- </data> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Activity.MyBaseActivity" />
-        <activity android:name=".Activity.ModifyPhoneActivity" />
-        <activity android:name=".Activity.ModifyPasswordActivity" />
-        <activity android:name=".Activity.ModifyAliasActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.MyBaseActivity" />
+        <activity android:name=".activity.ModifyPhoneActivity" />
+        <activity android:name=".activity.ModifyPasswordActivity" />
+        <activity android:name=".activity.ModifyAliasActivity" />
         <!-- <activity -->
         <!-- android:name=".Activity.DuoBaoListActivity" -->
         <!-- android:configChanges="orientation|keyboardHidden" -->
         <!-- android:windowSoftInputMode="adjustUnspecified|stateHidden" /> -->
-        <activity android:name=".Activity.GoodDetailsActivity" />
-        <activity android:name=".Activity.ChatActivity" />
-        <activity android:name=".Activity.ShoppingCartActivity" />
+        <activity android:name=".activity.GoodDetailsActivity" />
+        <activity android:name=".activity.ChatActivity" />
+        <activity android:name=".activity.ShoppingCartActivity" />
         <!-- <activity android:name=".Activity.PersonalActivity" /> -->
-        <activity android:name=".Activity.CommitOrderActivity" />
-        <activity android:name=".Activity.AddressSelectActivity" />
-        <activity android:name=".Activity.AddAddressActivity" />
-        <activity android:name=".Activity.ShopPayActivity" />
-        <activity android:name=".Activity.OrderListActivity" />
-        <activity android:name=".Activity.OrderDetailsActivity" />
-        <activity android:name=".Activity.BankCardActivity" />
-        <activity android:name=".Activity.SettingActivity" />
+        <activity android:name=".activity.CommitOrderActivity" />
+        <activity android:name=".activity.AddressSelectActivity" />
+        <activity android:name=".activity.AddAddressActivity" />
+        <activity android:name=".activity.ShopPayActivity" />
+        <activity android:name=".activity.OrderListActivity" />
+        <activity android:name=".activity.OrderDetailsActivity" />
+        <activity android:name=".activity.BankCardActivity" />
+        <activity android:name=".activity.SettingActivity" />
         <activity
-            android:name=".Activity.AuthenticateActivity"
+            android:name=".activity.AuthenticateActivity"
             android:launchMode="singleTask">
 
             <!-- 需要添加下面的intent-filter配置 -->
@@ -257,38 +257,38 @@
                     android:scheme="zhqb" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.WalletActivity" />
-        <activity android:name=".Activity.DiscountActivity" />
-        <activity android:name=".Activity.ShopListActivity" />
-        <activity android:name=".Activity.ShopDetailsActivity" />
-        <activity android:name=".Activity.TreeActivity" />
-        <activity android:name=".Activity.WebActivity" />
-        <activity android:name=".Activity.MyShopActivity" />
-        <activity android:name=".Activity.MyShopDetailsActivity" />
-        <activity android:name=".Activity.BankCardListActivity" />
-        <activity android:name=".Activity.BindBankCardActivity" />
-        <activity android:name=".Activity.SystemMessageActivity" />
-        <activity android:name=".Activity.WithdrawalsActivity" />
-        <activity android:name=".Activity.TransFenRunActivity" />
-        <activity android:name=".Activity.DiscountDetailActivity" />
-        <activity android:name=".Activity.DiscountStoreActivity" />
-        <activity android:name=".Activity.BillActivity" />
-        <activity android:name=".Activity.TreePayActivity" />
-        <activity android:name=".Activity.ShakeListActivity" />
-        <activity android:name=".Activity.ShakeDetailActivity" />
-        <activity android:name=".Activity.ShakeResultActivity" />
-        <activity android:name=".Activity.GoodPayActivity" />
-        <activity android:name=".Activity.RichTextActivity" />
+        <activity android:name=".activity.WalletActivity" />
+        <activity android:name=".activity.DiscountActivity" />
+        <activity android:name=".activity.ShopListActivity" />
+        <activity android:name=".activity.ShopDetailsActivity" />
+        <activity android:name=".activity.TreeActivity" />
+        <activity android:name=".activity.WebActivity" />
+        <activity android:name=".activity.MyShopActivity" />
+        <activity android:name=".activity.MyShopDetailsActivity" />
+        <activity android:name=".activity.BankCardListActivity" />
+        <activity android:name=".activity.BindBankCardActivity" />
+        <activity android:name=".activity.SystemMessageActivity" />
+        <activity android:name=".activity.WithdrawalsActivity" />
+        <activity android:name=".activity.TransFenRunActivity" />
+        <activity android:name=".activity.DiscountDetailActivity" />
+        <activity android:name=".activity.DiscountStoreActivity" />
+        <activity android:name=".activity.BillActivity" />
+        <activity android:name=".activity.TreePayActivity" />
+        <activity android:name=".activity.ShakeListActivity" />
+        <activity android:name=".activity.ShakeDetailActivity" />
+        <activity android:name=".activity.ShakeResultActivity" />
+        <activity android:name=".activity.GoodPayActivity" />
+        <activity android:name=".activity.RichTextActivity" />
         <activity
-            android:name=".Activity.CityPickerActivity"
+            android:name=".activity.CityPickerActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".Activity.MyDuoBaoNumActivity"
+            android:name=".activity.MyDuoBaoNumActivity"
             android:label="@string/title_activity_my_duo_bao_num" />
         <activity
-            android:name=".Activity.GoodSearchActivity"
+            android:name=".activity.GoodSearchActivity"
             android:label="@string/title_activity_good_search" />
-        <activity android:name=".Activity.ModifyTradeActivity" />
+        <activity android:name=".activity.ModifyTradeActivity" />
 
         <receiver android:name=".receiver.LogoutReceiver">
             <intent-filter>
@@ -301,20 +301,20 @@
         <activity android:name="com.hyphenate.easeui.ui.EaseShowNormalFileActivity" />
         <activity android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity" />
         <activity android:name="com.hyphenate.easeui.ui.EaseBaseActivity" />
-        <activity android:name=".Activity.JewelActivity" />
-        <activity android:name=".Activity.JewelRecordActivity" />
-        <activity android:name=".Activity.JewelHistoryActivity" />
-        <activity android:name=".Activity.GiveActivity" />
-        <activity android:name=".Activity.JewelPayActivity" />
-        <activity android:name=".Activity.MyJewelHistoryActivity" />
-        <activity android:name=".Activity.TreeBillActivity" />
-        <activity android:name=".Activity.GiveHistoryActivity" />
-        <activity android:name=".Activity.EarningsActivity" />
-        <activity android:name=".Activity.RightsActivity" />
-        <activity android:name=".Activity.TargetActivity" />
-        <activity android:name=".Activity.MapRouteOverlayActivity" />
-        <activity android:name=".Activity.MapActivity" />
-        <activity android:name=".Activity.RightsListActivity" />
+        <activity android:name=".activity.JewelActivity" />
+        <activity android:name=".activity.JewelRecordActivity" />
+        <activity android:name=".activity.JewelHistoryActivity" />
+        <activity android:name=".activity.GiveActivity" />
+        <activity android:name=".activity.JewelPayActivity" />
+        <activity android:name=".activity.MyJewelHistoryActivity" />
+        <activity android:name=".activity.TreeBillActivity" />
+        <activity android:name=".activity.GiveHistoryActivity" />
+        <activity android:name=".activity.EarningsActivity" />
+        <activity android:name=".activity.RightsActivity" />
+        <activity android:name=".activity.TargetActivity" />
+        <activity android:name=".activity.MapRouteOverlayActivity" />
+        <activity android:name=".activity.MapActivity" />
+        <activity android:name=".activity.RightsListActivity" />
 
         <service
             android:name=".services.MyService"
@@ -339,11 +339,11 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".Activity.TransferActivity"></activity>
-        <activity android:name=".Activity.RelationActivity"></activity>
-        <activity android:name=".Activity.ReferrerActivity"></activity>
-        <activity android:name=".Activity.BillHistoryActivity"></activity>
-        <activity android:name=".Activity.RightsHistoryActivity"></activity>
+        <activity android:name=".activity.TransferActivity"></activity>
+        <activity android:name=".activity.RelationActivity"></activity>
+        <activity android:name=".activity.ReferrerActivity"></activity>
+        <activity android:name=".activity.BillHistoryActivity"></activity>
+        <activity android:name=".activity.RightsHistoryActivity"></activity>
     </application>
 
 </manifest>

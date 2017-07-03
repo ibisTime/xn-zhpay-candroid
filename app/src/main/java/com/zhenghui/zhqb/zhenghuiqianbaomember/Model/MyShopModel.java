@@ -1,30 +1,10 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 
-/**
- * Created by dell1 on 2016/12/24.
- */
 
 public class MyShopModel implements Serializable {
 
-    /**
-     * code : XF201703301408365739
-     * userId : U2017032913574410381
-     * storeCode : SJ201703291152426359
-     * price : 10
-     * createDatetime : Mar 30, 2017 2:08:36 PM
-     * status : 1
-     * payType : 3
-     * payGroup : XF201703301408365739
-     * payCode : AJ2017033014083659877
-     * payAmount1 : 10
-     * payDatetime : Mar 30, 2017 2:08:43 PM
-     * remark : 支付宝支付O2O消费
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     * store : {"code":"SJ201703291152426359","name":"恍恍惚惚","level":"1","type":"2","slogan":"恍恍惚惚","advPic":"IOS_1490768654437286_950_1280.jpg","pic":"IOS_1490768666050592_800_600.jpg||IOS_1490768666039728_950_1280.jpg","description":"恍恍惚惚","province":"浙江省","city":"杭州市","area":"上城区","address":"隐隐约约","longitude":"120.00161517444184","latitude":"30.28818213827786","bookMobile":"1386855866","smsMobile":"13868074590","legalPersonName":"恍恍惚惚","userReferee":"U2017010713451027748","rate1":0.1,"rate2":0.1,"status":"2","updater":"U2017032911375586527","updateDatetime":"Mar 29, 2017 2:46:45 PM","owner":"U2017032911375586527","totalRmbNum":0,"totalJfNum":0,"totalDzNum":0,"totalScNum":0,"companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
-     */
 
     private String code;
     private String userId;
@@ -42,38 +22,6 @@ public class MyShopModel implements Serializable {
     private String remark;
     private String companyCode;
     private String systemCode;
-    /**
-     * code : SJ201703291152426359
-     * name : 恍恍惚惚
-     * level : 1
-     * type : 2
-     * slogan : 恍恍惚惚
-     * advPic : IOS_1490768654437286_950_1280.jpg
-     * pic : IOS_1490768666050592_800_600.jpg||IOS_1490768666039728_950_1280.jpg
-     * description : 恍恍惚惚
-     * province : 浙江省
-     * city : 杭州市
-     * area : 上城区
-     * address : 隐隐约约
-     * longitude : 120.00161517444184
-     * latitude : 30.28818213827786
-     * bookMobile : 1386855866
-     * smsMobile : 13868074590
-     * legalPersonName : 恍恍惚惚
-     * userReferee : U2017010713451027748
-     * rate1 : 0.1
-     * rate2 : 0.1
-     * status : 2
-     * updater : U2017032911375586527
-     * updateDatetime : Mar 29, 2017 2:46:45 PM
-     * owner : U2017032911375586527
-     * totalRmbNum : 0
-     * totalJfNum : 0
-     * totalDzNum : 0
-     * totalScNum : 0
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private StoreBean store;
     private StoreTicketBean storeTicket;

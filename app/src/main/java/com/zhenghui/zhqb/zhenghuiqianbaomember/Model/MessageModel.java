@@ -1,30 +1,7 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
-/**
- * Created by LeiQ on 2016/12/30.
- */
 
 public class MessageModel {
-
-
-    /**
-     * id : 10
-     * fromSystemCode : CD-CZH000001
-     * channelType : 4
-     * pushType : 41
-     * toSystemCode : CD-CZH000001
-     * toKind : 2
-     * smsType : 1
-     * smsTitle : bbbbb
-     * smsContent : <p>nnbbbbbbb</p>
-     * status : 1
-     * createDatetime : Feb 7, 2017 4:34:58 PM
-     * topushDatetime : Feb 7, 2017 4:34:58 PM
-     * pushedDatetime : Feb 7, 2017 4:35:11 PM
-     * updater : admin
-     * updateDatetime : Feb 7, 2017 4:35:11 PM
-     * remark : nnn
-     */
 
     private int id;
     private String fromSystemCode;

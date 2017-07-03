@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -13,8 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.OrderDetailsActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.OrderModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.OrderDetailsActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.OrderModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
@@ -27,10 +27,6 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/17.
- */
 
 public class OrderDetailsAdapter extends BaseAdapter {
 

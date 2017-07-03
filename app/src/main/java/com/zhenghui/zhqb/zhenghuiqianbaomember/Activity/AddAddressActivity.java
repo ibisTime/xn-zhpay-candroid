@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lljjcoder.citypickerview.widget.CityPicker;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 

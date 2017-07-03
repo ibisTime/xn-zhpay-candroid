@@ -1,9 +1,9 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.services;
 
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.CityModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.DistrictModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ProvinceModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.CityModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.DistrictModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ProvinceModel;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

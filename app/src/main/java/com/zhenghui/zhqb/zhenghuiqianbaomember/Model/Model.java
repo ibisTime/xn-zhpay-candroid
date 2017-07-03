@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,8 +13,6 @@ public class Model implements Parcelable {
 	private String locationCity;
 	private String longitude;
 	private String latitude;
-
-
 
 	public Model(String index, String name) {
 		this.index = index;

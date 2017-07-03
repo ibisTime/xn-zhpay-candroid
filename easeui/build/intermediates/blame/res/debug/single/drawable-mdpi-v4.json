@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },

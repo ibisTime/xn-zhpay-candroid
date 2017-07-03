@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,10 +14,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by LeiQ on 2017/1/18.
- */
 
 public class DetailAdapter extends BaseAdapter {
 

@@ -7,8 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.WindowManager;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.LoginActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.LoginActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 
 
 public class LogoutReceiver extends BroadcastReceiver {

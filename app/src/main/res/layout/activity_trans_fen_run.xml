@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TransFenRunActivity">
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TransFenRunActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

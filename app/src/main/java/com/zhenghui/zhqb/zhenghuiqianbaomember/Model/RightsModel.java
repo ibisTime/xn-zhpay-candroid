@@ -1,30 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by LeiQ on 2017/4/1.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class RightsModel {
-
-
-    /**
-     * code : S201703282124304488
-     * userId : U2017032913574410381
-     * fundCode : USER_POOL_ZHPAY
-     * costAmount : 500000
-     * costCurrency : FRB
-     * backInterval : 5
-     * profitAmount : 1000
-     * profitCurrency : FRB
-     * backCount : 0
-     * backAmount : 0
-     * todayAmount : 0
-     * nextBackDate : Mar 28, 2017 9:24:30 PM
-     * createDatetime : Mar 28, 2017 9:24:30 PM
-     * status : 2
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private String code;
     private String userId;

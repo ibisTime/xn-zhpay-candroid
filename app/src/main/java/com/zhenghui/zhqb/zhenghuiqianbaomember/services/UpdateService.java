@@ -16,7 +16,7 @@ import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import org.apache.http.HttpEntity;

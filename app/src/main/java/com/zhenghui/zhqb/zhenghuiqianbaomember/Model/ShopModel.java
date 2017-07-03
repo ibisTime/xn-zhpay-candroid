@@ -1,44 +1,8 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.util.List;
 
-/**
- * Created by dell1 on 2016/12/19.
- */
-
 public class ShopModel {
-
-
-    /**
-     * code : SJ201701031437067246
-     * name : ios测试
-     * level : 2
-     * type : 2
-     * legalPersonName : 田磊
-     * userReferee : 18767101909
-     * rate1 : 10.0
-     * rate2 : 10.0
-     * slogan : 好的
-     * adPic : IOS_1483425431406767_1280_950.jpg
-     * pic : IOS_1483425444916138_950_1280.jpg
-     * description : 你们好啊
-     * province : 河南省
-     * city : 平顶山市
-     * area : 卫东区
-     * address : 666号
-     * longitude : 120.00076055720312
-     * latitude : 30.28846874728093
-     * bookMobile : 15737935617
-     * status : 2
-     * updateDatetime : Jan 3, 2017 2:37:06 PM
-     * owner : U2017010314210015658
-     * totalJfNum : 0.0
-     * totalDzNum : 0.0
-     * systemCode : CD-CZH000001
-     * storeTickets : [{"code":"ZKQ201701052053127929","name":"iOS","type":"1","key1":100000,"key2":30000,"description":"1221221","price":30000,"currency":"CNY","validateStart":"Jan 5, 2017 12:00:00 AM","validateEnd":"May 9, 2017 11:59:59 PM","createDatetime":"Jan 5, 2017 8:53:12 PM","status":"1","storeCode":"SJ201701031437067246","systemCode":"CD-CZH000001"},{"code":"ZKQ201701052055232041","name":"Iosios--2-2","type":"1","key1":100000,"key2":10000,"description":"Second zqq","price":10000,"currency":"CNY","validateStart":"Jan 5, 2017 12:00:00 AM","validateEnd":"Mar 5, 2017 11:59:59 PM","createDatetime":"Jan 5, 2017 8:55:23 PM","status":"1","storeCode":"SJ201701031437067246","systemCode":"CD-CZH000001"},{"code":"ZKQ201701052111384742","name":"iOS zhen","key1":100000,"key2":50000,"description":"1111---zhekouquan","price":50000,"currency":"CNY","validateStart":"Jan 5, 2017 12:00:00 AM","validateEnd":"Jan 26, 2017 11:59:59 PM","createDatetime":"Jan 5, 2017 9:11:38 PM","status":"1","storeCode":"SJ201701031437067246","systemCode":"CD-CZH000001"}]
-     * distance : 74
-     */
-
     private String code;
     private String name;
     private String level;
@@ -65,22 +29,6 @@ public class ShopModel {
     private double totalDzNum;
     private String systemCode;
     private String distance;
-    /**
-     * code : ZKQ201701052053127929
-     * name : iOS
-     * type : 1
-     * key1 : 100000.0
-     * key2 : 30000.0
-     * description : 1221221
-     * price : 30000.0
-     * currency : CNY
-     * validateStart : Jan 5, 2017 12:00:00 AM
-     * validateEnd : May 9, 2017 11:59:59 PM
-     * createDatetime : Jan 5, 2017 8:53:12 PM
-     * status : 1
-     * storeCode : SJ201701031437067246
-     * systemCode : CD-CZH000001
-     */
 
     private List<StoreTicketsBean> storeTickets;
 

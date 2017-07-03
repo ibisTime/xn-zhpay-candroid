@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -24,11 +24,11 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.RichTextActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreeActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.GiveAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.GiveModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RichTextActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TreeActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.GiveAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.GiveModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
@@ -46,10 +46,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-
-/**
- * Created by LeiQ on 2017/2/21.
- */
 
 public class GiveFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, AdapterView.OnItemClickListener {
 

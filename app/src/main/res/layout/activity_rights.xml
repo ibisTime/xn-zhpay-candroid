@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.RightsActivity">
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RightsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

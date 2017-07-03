@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,9 +26,9 @@ import android.widget.Toast;
 import com.alipay.sdk.app.PayTask;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.AssetsModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PayResult;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.AssetsModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PayResult;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.WxUtil;
@@ -74,6 +74,7 @@ public class ShopPayActivity extends MyBaseActivity {
     private String ticketCode = "";
 
     private String code;
+    private String currency;
     private SharedPreferences userInfoSp;
 
     private String payWay = "1";
@@ -101,7 +102,14 @@ public class ShopPayActivity extends MyBaseActivity {
 
     private void inits() {
         code = getIntent().getStringExtra("code");
+        currency = getIntent().getStringExtra("currency");
         userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+
+        if(currency.equals("1")){
+            txtBalace.setText("分润支付");
+        }else {
+            txtBalace.setText("贡献值分润支付");
+        }
 
     }
 

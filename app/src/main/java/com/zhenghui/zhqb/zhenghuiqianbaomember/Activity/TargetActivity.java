@@ -1,10 +1,10 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.TargetFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.TargetFragment;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import butterknife.ButterKnife;

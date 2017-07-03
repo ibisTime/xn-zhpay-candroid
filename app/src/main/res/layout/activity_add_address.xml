@@ -5,7 +5,7 @@
     android:background="@color/intervalColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.AddAddressActivity">
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.activity.AddAddressActivity">
 
     <RelativeLayout
         android:background="@color/white"

@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +13,9 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShopListActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.GridAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.Model;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.ShopListActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.GridAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.Model;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 
 import java.util.ArrayList;

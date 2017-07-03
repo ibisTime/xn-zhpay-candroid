@@ -1,10 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
-
-/**
- * Created by dell1 on 2016/12/16.
- */
 
 public class ProductModel implements Serializable {
 

@@ -1,37 +1,8 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 
-/**
- * Created by LeiQ on 2017/1/9.
- */
-
 public class ShakeModel implements Serializable {
-
-
-    /**
-     * code : H201704011045215682
-     * userId : U2017032913574410381
-     * templateCode : HT201703311118384902
-     * price : 10000
-     * currency : CNY
-     * periodRockNum : 0
-     * totalRockNum : 0
-     * backAmount1 : 0
-     * backAmount2 : 0
-     * backAmount3 : 0
-     * createDatetime : Apr 1, 2017 10:45:21 AM
-     * status : 1
-     * payDatetime : Apr 1, 2017 10:45:21 AM
-     * payAmount1 : 10000
-     * payAmount2 : 0
-     * payAmount3 : 0
-     * systemCode : CD-CZH000001
-     * companyCode : CD-CZH000001
-     * distance : 2
-     * shareUrl : http://www.sina.com.cn
-     * user : {"userId":"U2017032913574410381","loginName":"18984955240","nickname":"74410381","photo":"ANDROID_1490874687342_0_0.jpg","mobile":"18984955240","identityFlag":"1","userReferee":"U2017010713451027748"}
-     */
 
     private String code;
     private String userId;
@@ -53,15 +24,6 @@ public class ShakeModel implements Serializable {
     private String companyCode;
     private String distance;
     private String shareUrl;
-    /**
-     * userId : U2017032913574410381
-     * loginName : 18984955240
-     * nickname : 74410381
-     * photo : ANDROID_1490874687342_0_0.jpg
-     * mobile : 18984955240
-     * identityFlag : 1
-     * userReferee : U2017010713451027748
-     */
 
     private UserBean user;
 

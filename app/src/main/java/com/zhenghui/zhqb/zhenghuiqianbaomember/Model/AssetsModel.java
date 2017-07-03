@@ -1,24 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by LeiQ on 2017/1/7.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class AssetsModel {
-
-    /**
-     * accountNumber : A2017010320352810486
-     * userId : U2017010320352790096
-     * realName : 18984955240
-     * type : C
-     * status : 0
-     * currency : CNY
-     * amount : 0
-     * frozenAmount : 0
-     * md5 : f0ed31502f5d1f206753a5e8114c87e0
-     * createDatetime : Jan 3, 2017 8:35:28 PM
-     * systemCode : CD-CZH000001
-     */
 
     private String accountNumber;
     private String userId;

@@ -1,26 +1,7 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
-/**
- * Created by dell1 on 2016/12/24.
- */
 
 public class MyBankCardModel {
-
-
-    /**
-     * code : CT2016122415174773687
-     * bankcardNumber : 121321312312312
-     * bankName : 农业银行
-     * subbranch : 余杭
-     * bindMobile : 12312312312
-     * userId : U2016121720251308788
-     * realName : 天雷
-     * type : B
-     * status : 1
-     * currency : CNY
-     * createDatetime : Dec 24, 2016 3:17:47 PM
-     * systemCode : CD-CZH000001
-     */
 
     private String code;
     private String bankcardNumber;

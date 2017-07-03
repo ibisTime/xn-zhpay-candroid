@@ -1,20 +1,6 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by LeiQ on 2017/2/23.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class JewelNumberModel {
-
-
-    /**
-     * id : 597
-     * jewelCode : J201704011131055480
-     * recordCode : JR201704011132131594
-     * number : 10000075
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private int id;
     private String jewelCode;

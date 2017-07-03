@@ -1,31 +1,7 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
-/**
- * Created by LeiQ on 2017/2/23.
- */
 
 public class GiveModel {
-
-
-    /**
-     * code : HM20170401104521574209
-     * hzbCode : H201704011045215682
-     * slogan : 小小心意
-     * owner : U2017032913574410381
-     * ownerCurrency : HBYJ
-     * ownerAmount : 5000
-     * receiveCurrency : GXJL
-     * receiveAmount : 5000
-     * createDatetime : Apr 1, 2017 12:00:00 AM
-     * remark : 该红包已经被领取
-     * status : 2
-     * receiver : U2017040115062606386
-     * receiveDatetime : Apr 1, 2017 3:59:34 PM
-     * systemCode : CD-CZH000001
-     * companyCode : CD-CZH000001
-     * ownerUser : {"userId":"U2017032913574410381","loginName":"18984955240","nickname":"74410381","photo":"ANDROID_1490874687342_0_0.jpg","mobile":"18984955240","identityFlag":"1","userReferee":"U2017010713451027748"}
-     * receiverUser : {"userId":"U2017040115062606386","loginName":"18767101909","nickname":"62606386","mobile":"18767101909","identityFlag":"0","userReferee":"U2017032913574410381"}
-     */
 
     private String code;
     private String hzbCode;
@@ -42,26 +18,7 @@ public class GiveModel {
     private String receiveDatetime;
     private String systemCode;
     private String companyCode;
-    /**
-     * userId : U2017032913574410381
-     * loginName : 18984955240
-     * nickname : 74410381
-     * photo : ANDROID_1490874687342_0_0.jpg
-     * mobile : 18984955240
-     * identityFlag : 1
-     * userReferee : U2017010713451027748
-     */
-
     private OwnerUserBean ownerUser;
-    /**
-     * userId : U2017040115062606386
-     * loginName : 18767101909
-     * nickname : 62606386
-     * mobile : 18767101909
-     * identityFlag : 0
-     * userReferee : U2017032913574410381
-     */
-
     private ReceiverUserBean receiverUser;
 
     public String getCode() {

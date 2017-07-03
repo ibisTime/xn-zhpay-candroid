@@ -5,7 +5,7 @@
     android:background="@color/lineColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.WithdrawalsActivity">
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.activity.WithdrawalsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

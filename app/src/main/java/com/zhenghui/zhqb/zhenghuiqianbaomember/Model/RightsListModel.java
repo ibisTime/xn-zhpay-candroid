@@ -1,23 +1,7 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
-/**
- * Created by LeiQ on 2017/4/1.
- */
 
 public class RightsListModel {
-
-
-    /**
-     * id : 1
-     * fundCode : USER_POOL_ZHPAY
-     * stockCode : S201703282124304488
-     * toUser : S201703282124304488
-     * toAmount : 1000
-     * toCurrency : FRB
-     * createDatetime : Mar 28, 2017 9:28:45 PM
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private int id;
     private String fundCode;

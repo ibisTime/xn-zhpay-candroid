@@ -21,10 +21,6 @@ import java.util.List;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
 
-/**
- * Created by LeiQ on 2016/12/29.
- */
-
 public class QiNiuUtil {
 
     private static String ANDROID = "ANDROID";

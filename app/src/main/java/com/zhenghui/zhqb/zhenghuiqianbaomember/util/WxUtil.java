@@ -22,9 +22,6 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by LeiQ on 2017/1/10.
- */
 
 public class WxUtil {
 

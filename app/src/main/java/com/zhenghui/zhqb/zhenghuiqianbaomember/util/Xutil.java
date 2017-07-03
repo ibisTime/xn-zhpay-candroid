@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.LoginActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.LoginActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,9 +14,6 @@ import org.xutils.ex.HttpException;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
-/**
- * Created by dell1 on 2016/12/15.
- */
 
 public class Xutil {
 

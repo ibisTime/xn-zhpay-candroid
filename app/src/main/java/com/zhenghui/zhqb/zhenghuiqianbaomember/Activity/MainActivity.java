@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -19,13 +19,13 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Application.MyApplication;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.GoodFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.MyFragment2;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ShakeFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.ShopFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment.TargetFragment;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.PersonalModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.GoodFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.MyFragment2;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.ShakeFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.ShopFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.fragment.TargetFragment;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.JewelRecordService;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.services.MyService;
@@ -317,7 +317,7 @@ public class MainActivity extends MyBaseActivity {
      * 退出登录
      */
     private void logOut() {
-
+        System.out.println("logOut()");
         RequestParams params = new RequestParams(Xutil.URL + Xutil.LOGOUT);
         params.addBodyParameter("token", userInfoSp.getString("token", null));
 
@@ -353,6 +353,7 @@ public class MainActivity extends MyBaseActivity {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
+                System.out.println("onError="+ex.getMessage());
             }
 
             @Override
@@ -361,6 +362,7 @@ public class MainActivity extends MyBaseActivity {
 
             @Override
             public void onFinished() {
+                System.out.println("logOut___________onFinished()");
             }
         });
     }

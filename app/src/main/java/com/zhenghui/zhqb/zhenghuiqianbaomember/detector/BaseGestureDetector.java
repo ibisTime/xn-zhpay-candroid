@@ -3,9 +3,6 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.detector;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/**
- * Created by LeiQ on 2017/4/4.
- */
 
 public abstract class BaseGestureDetector
 {

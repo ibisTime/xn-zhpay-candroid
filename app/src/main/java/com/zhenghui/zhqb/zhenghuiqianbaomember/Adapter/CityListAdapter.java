@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.City;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.City;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.LocateState;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.PinyinUtils;
@@ -19,9 +19,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * author zaaach on 2016/1/26.
- */
 public class CityListAdapter extends BaseAdapter {
     private static final int VIEW_TYPE_COUNT = 3;
 

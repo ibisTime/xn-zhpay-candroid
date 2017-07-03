@@ -6,7 +6,7 @@
     android:id="@+id/activity_earnings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.EarningsActivity">
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.activity.EarningsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -60,7 +61,7 @@
             <TextView
                 android:textSize="15sp"
                 android:textColor="@color/fontColor_white"
-                android:text="公益基金(元)"
+                android:text="免单额度(元)"
                 android:layout_marginTop="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

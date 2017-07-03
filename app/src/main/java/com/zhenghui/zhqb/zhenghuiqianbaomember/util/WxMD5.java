@@ -2,9 +2,6 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.util;
 
 import java.security.MessageDigest;
 
-/**
- * Created by LeiQ on 2017/1/12.
- */
 
 public class WxMD5 {
 

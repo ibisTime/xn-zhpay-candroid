@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,11 +24,11 @@ import com.google.gson.reflect.TypeToken;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.easeui.EaseConstant;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ChatActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.MainActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter.ChatToFriendAdapter;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.FriendModel;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShopModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.ChatActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.MainActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.adapter.ChatToFriendAdapter;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.FriendModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ShopModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -43,10 +43,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-
-/**
- * Created by dell1 on 2016/12/12.
- */
 
 public class ChatFragment extends Fragment implements AdapterView.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 

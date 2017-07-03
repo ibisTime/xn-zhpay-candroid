@@ -4,9 +4,6 @@ import android.provider.DocumentsContract;
 
 import java.io.File;
 
-/**
- * Created by LeiQ on 2017/2/13.
- */
 
 public class RootUtil {
     private static String LOG_TAG = DocumentsContract.Root.class.getName();

@@ -1,8 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by dell1 on 2016/12/17.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class TypeModel {
 

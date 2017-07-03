@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShopModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ShopModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 
@@ -16,10 +16,6 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/13.
- */
 
 public class ShopAdapter extends BaseAdapter {
 
@@ -67,7 +63,7 @@ public class ShopAdapter extends BaseAdapter {
         holder.txtShopName.setText(list.get(position).getName());
 
         if (list.get(position).getLevel().equals("2")) {
-            holder.txtType.setText("公益商家");
+            holder.txtType.setText("普通商家");
         } else {
             holder.txtType.setText("普通商家");
         }

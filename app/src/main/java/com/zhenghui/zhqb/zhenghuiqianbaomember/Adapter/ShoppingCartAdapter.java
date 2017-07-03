@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -12,8 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.ShoppingCartActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.ShoppingCartModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.ShoppingCartActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.ShoppingCartModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
@@ -27,10 +27,6 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-/**
- * Created by dell1 on 2016/12/15.
- */
 
 public class ShoppingCartAdapter extends BaseAdapter {
 

@@ -1,38 +1,12 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
-
-/**
- * Created by dell1 on 2016/12/16.
- */
 
 public class PersonalModel implements Serializable {
 
     private static final long serialVersionUID = -7060210544600464481L;
 
 
-    /**
-     * userId : U2017011718493035352
-     * loginName : 15268501481
-     * nickname : 小海哥
-     * loginPwdStrength : 2
-     * kind : f1
-     * level : 0
-     * userReferee : U2017010713451027748
-     * userRefereeName : 18767101909
-     * mobile : 15268501481
-     * idKind : 1
-     * idNo : 33028119890802331X
-     * realName : 郑海清
-     * status : 0
-     * updater : U2017011718493035352
-     * updateDatetime : Jan 17, 2017 6:49:30 PM
-     * amount : 0
-     * ljAmount : 0
-     * userExt : {"userId":"U2017011718493035352","province":"浙江省","city":"杭州市","area":"余杭区","systemCode":"CD-CZH000001","loginName":"15268501481","mobile":"15268501481"}
-     * totalFollowNum : 0
-     * totalFansNum : 0
-     */
 
     private String userId;
     private String loginName;
@@ -52,15 +26,6 @@ public class PersonalModel implements Serializable {
     private String createDatetime;
     private String amount;
     private String ljAmount;
-    /**
-     * userId : U2017011718493035352
-     * province : 浙江省
-     * city : 杭州市
-     * area : 余杭区
-     * systemCode : CD-CZH000001
-     * loginName : 15268501481
-     * mobile : 15268501481
-     */
 
     private UserExtBean userExt;
     private String identityFlag;

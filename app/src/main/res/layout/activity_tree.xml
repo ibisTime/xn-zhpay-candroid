@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreeActivity">
+    tools:context="com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TreeActivity">
 
     <LinearLayout
         android:id="@+id/layout_fragment"

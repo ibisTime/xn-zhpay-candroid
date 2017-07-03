@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Adapter;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.FriendModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.FriendModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 
@@ -22,10 +22,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import de.hdodenhof.circleimageview.CircleImageView;
-
-/**
- * Created by dell1 on 2016/12/14.
- */
 
 public class ChatToFriendAdapter extends BaseAdapter {
 

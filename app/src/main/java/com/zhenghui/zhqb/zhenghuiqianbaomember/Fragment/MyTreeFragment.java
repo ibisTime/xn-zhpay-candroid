@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Fragment;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,10 @@ import android.widget.Toast;
 
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.GiveActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.RichTextActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreeActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Activity.TreeBillActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.GiveActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RichTextActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TreeActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.TreeBillActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -32,10 +32,6 @@ import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.txt_give;
-
-/**
- * Created by dell1 on 2016/12/19.
- */
 
 public class MyTreeFragment extends Fragment {
 

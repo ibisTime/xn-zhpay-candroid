@@ -1,27 +1,7 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
-
-/**
- * Created by LeiQ on 2017/2/22.
- */
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 public class JewelRecordModel {
 
-
-    /**
-     * code : JR201703221954424868
-     * userId : U2017032216121358915
-     * jewelCode : J201703221710011129
-     * investDatetime : Mar 22, 2017 7:54:42 PM
-     * times : 1
-     * ip : 183.129.227.58
-     * status : 1
-     * payAmount : 10
-     * payDatetime : 2017-03-22 19:54:42:487
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     * jewel : {"code":"J201703221710011129","templateCode":"JT201703221427246662","periods":2,"toAmount":10,"toCurrency":"FRB","totalNum":10,"maxNum":10,"investNum":2,"fromAmount":10,"fromCurrency":"FRB","slogan":"宣传文字update","advPic":"宣传图update","startDatetime":"Mar 22, 2017 5:10:01 PM","status":"0","companyCode":"CD-CZH000001","systemCode":"CD-CZH000001"}
-     * user : {"userId":"U2017032216121358915","loginName":"18984955240","mobile":"18984955240"}
-     */
 
     private String code;
     private String userId;
@@ -34,31 +14,8 @@ public class JewelRecordModel {
     private String payDatetime;
     private String companyCode;
     private String systemCode;
-    /**
-     * code : J201703221710011129
-     * templateCode : JT201703221427246662
-     * periods : 2
-     * toAmount : 10
-     * toCurrency : FRB
-     * totalNum : 10
-     * maxNum : 10
-     * investNum : 2
-     * fromAmount : 10
-     * fromCurrency : FRB
-     * slogan : 宣传文字update
-     * advPic : 宣传图update
-     * startDatetime : Mar 22, 2017 5:10:01 PM
-     * status : 0
-     * companyCode : CD-CZH000001
-     * systemCode : CD-CZH000001
-     */
 
     private JewelBean jewel;
-    /**
-     * userId : U2017032216121358915
-     * loginName : 18984955240
-     * mobile : 18984955240
-     */
 
     private UserBean user;
 

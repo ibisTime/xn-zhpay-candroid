@@ -1,11 +1,10 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Application;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.application;
 
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.multidex.MultiDex;
-import android.util.Log;
 
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.controller.EaseUI;
@@ -19,10 +18,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import cn.jpush.android.api.JPushInterface;
-
-/**
- * Created by dell1 on 2016/12/12.
- */
 
 public class MyApplication extends Application {
 
@@ -41,7 +36,6 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d("LQ", "onCreate");
         applicationContext = this;
         instance = this;
         initAppConfig();

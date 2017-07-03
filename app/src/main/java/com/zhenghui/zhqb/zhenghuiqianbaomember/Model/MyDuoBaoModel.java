@@ -1,29 +1,9 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Model;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.model;
 
 import java.io.Serializable;
 
-/**
- * Created by LeiQ on 2017/1/11.
- */
 
 public class MyDuoBaoModel implements Serializable {
-
-
-    /**
-     * code : IR201701112201300306
-     * userId : U2017010614240498971
-     * jewelCode : IW201701121834162328
-     * createDatetime : Jan 11, 2017 10:01:30 PM
-     * times : 1
-     * payAmount1 : 10000
-     * payAmount2 : 100000
-     * payAmount3 : 1000000
-     * status : 1
-     * remark : 已分配夺宝号，待开奖
-     * systemCode : CD-CZH000001
-     * jewel : {"code":"IW201701121834162328","name":"To yuan duo nap","slogan":"Moment hao","advPic":"IOS_1484104999321146_3000_2002.jpg","price1":10000,"price2":100000,"price3":1000000,"totalNum":1000,"investNum":1,"raiseDays":4,"status":"3","remark":"拖过"}
-     * myInvestTimes : 1
-     */
 
     private String code;
     private String userId;
@@ -36,20 +16,6 @@ public class MyDuoBaoModel implements Serializable {
     private String status;
     private String remark;
     private String systemCode;
-    /**
-     * code : IW201701121834162328
-     * name : To yuan duo nap
-     * slogan : Moment hao
-     * advPic : IOS_1484104999321146_3000_2002.jpg
-     * price1 : 10000
-     * price2 : 100000
-     * price3 : 1000000
-     * totalNum : 1000
-     * investNum : 1
-     * raiseDays : 4
-     * status : 3
-     * remark : 拖过
-     */
 
     private JewelBean jewel;
     private String myInvestTimes;

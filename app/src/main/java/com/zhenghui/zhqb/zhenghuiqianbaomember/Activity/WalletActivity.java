@@ -1,4 +1,4 @@
-package com.zhenghui.zhqb.zhenghuiqianbaomember.Activity;
+package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.Model.WalletModel;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.WalletModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
@@ -58,8 +58,11 @@ public class WalletActivity extends MyBaseActivity {
     LinearLayout layoutGwb;
     @InjectView(R.id.activity_wallet)
     LinearLayout activityWallet;
+    @InjectView(R.id.txt_frozenAmount)
+    TextView txtFrozenAmount;
 
     private double frb;
+    private double frozenAmount;
     private double gxb;
     private double hbb;
     private double qbb;
@@ -175,6 +178,7 @@ public class WalletActivity extends MyBaseActivity {
 //                    "¥" +
                     txtFenrun.setText(MoneyUtil.moneyFormatDouble(model.getAmount()));
                     frb = model.getAmount();
+                    frozenAmount = model.getFrozenAmount();
 
                     frbCode = model.getAccountNumber();
                     break;
@@ -215,8 +219,8 @@ public class WalletActivity extends MyBaseActivity {
                     break;
             }
         }
-
         txtBalance.setText(MoneyUtil.moneyFormatDouble(frb + gxb));
+        txtFrozenAmount.setText("提现中金额(含手续费):"+MoneyUtil.moneyFormatDouble(frozenAmount));
     }
 
 
