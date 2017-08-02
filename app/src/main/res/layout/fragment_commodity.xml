@@ -63,87 +63,106 @@
                     android:layout_marginTop="11dp"
                     android:layout_marginLeft="15dp"
                     android:orientation="horizontal"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <!--<TextView-->
-                    <!--android:text="￥"-->
-                    <!--android:textSize="16sp"-->
-                    <!--android:textColor="@color/fontColor_orange"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
-
-                    <!--<TextView-->
-                    <!--android:id="@+id/txt_price"-->
-                    <!--android:text="129.00"-->
-                    <!--android:textSize="25sp"-->
-                    <!--android:textColor="@color/fontColor_orange"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
-
-                    <LinearLayout
-                        android:orientation="horizontal"
+                    <FrameLayout
+                        android:layout_marginBottom="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txt_rmb1"
-                            android:text="5"
-                            android:textSize="15sp"
-                            android:textColor="@color/orange"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent" />
+                        <LinearLayout
+                            android:id="@+id/layout_price"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txt_rmb2"
-                            android:layout_marginLeft="5dp"
-                            android:text=" + "
-                            android:textSize="15sp"
-                            android:textColor="@color/fontColor_orange"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            <TextView
+                                android:id="@+id/txt_rmb1"
+                                android:text="5"
+                                android:textSize="15sp"
+                                android:textColor="@color/orange"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
 
-                        <TextView
-                            android:id="@+id/txt_gwb1"
-                            android:textColor="@color/orange"
-                            android:text="5"
-                            android:textSize="15sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent" />
+                            <TextView
+                                android:id="@+id/txt_rmb2"
+                                android:layout_marginLeft="5dp"
+                                android:text=" + "
+                                android:textSize="15sp"
+                                android:textColor="@color/fontColor_orange"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
 
-                        <TextView
-                            android:id="@+id/txt_gwb2"
-                            android:layout_marginLeft="5dp"
-                            android:text="购物币 + "
-                            android:textSize="15sp"
-                            android:textColor="@color/fontColor_orange"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            <TextView
+                                android:id="@+id/txt_gwb1"
+                                android:textColor="@color/orange"
+                                android:text="5"
+                                android:textSize="15sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
 
-                        <TextView
-                            android:id="@+id/txt_qbb1"
-                            android:textColor="@color/orange"
-                            android:text="5"
-                            android:textSize="15sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent" />
+                            <TextView
+                                android:id="@+id/txt_gwb2"
+                                android:layout_marginLeft="5dp"
+                                android:text="购物币 + "
+                                android:textSize="15sp"
+                                android:textColor="@color/fontColor_orange"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
 
-                        <TextView
-                            android:id="@+id/txt_qbb2"
-                            android:layout_marginLeft="5dp"
-                            android:text="钱包币"
-                            android:textSize="15sp"
-                            android:textColor="@color/fontColor_orange"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            <TextView
+                                android:id="@+id/txt_qbb1"
+                                android:textColor="@color/orange"
+                                android:text="5"
+                                android:textSize="15sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:id="@+id/txt_qbb2"
+                                android:layout_marginLeft="5dp"
+                                android:text="钱包币"
+                                android:textSize="15sp"
+                                android:textColor="@color/fontColor_orange"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
 
 
-                    </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_lpq"
+                            android:visibility="gone"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txt_lpq"
+                                android:text="5"
+                                android:textSize="15sp"
+                                android:textColor="@color/orange"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:text="礼品券"
+                                android:textSize="15sp"
+                                android:textColor="@color/fontColor_orange"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/txt_yunfei"
+                    android:visibility="gone"
                     android:gravity="center"
                     android:text="运费:10"
                     android:layout_marginTop="8dp"
@@ -162,6 +181,7 @@
                 android:layout_height="0.5dp"/>
 
             <LinearLayout
+                android:id="@+id/layout_store"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"

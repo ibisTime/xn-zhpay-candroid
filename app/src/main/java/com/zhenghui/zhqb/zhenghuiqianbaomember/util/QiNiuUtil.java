@@ -21,6 +21,8 @@ import java.util.List;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
 
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_807900;
+
 public class QiNiuUtil {
 
     private static String ANDROID = "ANDROID";
@@ -116,7 +118,7 @@ public class QiNiuUtil {
         }
 
 
-        new Xutil().post("807900", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post(CODE_807900, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 try {

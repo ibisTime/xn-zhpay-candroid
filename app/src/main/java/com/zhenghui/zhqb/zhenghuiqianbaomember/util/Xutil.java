@@ -3,6 +3,7 @@ package com.zhenghui.zhqb.zhenghuiqianbaomember.util;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.LoginActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
@@ -19,26 +20,30 @@ public class Xutil {
 
     // 研发环境
 //    public static String URL = "http://106.15.49.68";
-//    public static String SHARE_URL = "http://121.43.101.148";
-//    public static String SHARE_PORT = ":5603";
-//    public static String PORT = ":5601";
+//    public static String PORT = ":5501";
 //    public static String API = "/forward-service/api";
-//    public static String LOGOUT = ":8901/forward-service/user/logOut";
+//    public static String LOGOUT = ":5501/forward-service/user/logOut";
+//
+//    public static String SHARE_URL = "http://106.15.49.68";
+//    public static String SHARE_PORT = ":5503";
 
-    // 正汇测试环境
-//    public static String URL = "http://118.178.124.16";
-//    public static String SHARE_URL = "http://118.178.124.16";
-//    public static String SHARE_PORT = ":5603";
+    // 测试环境
+//    public static String URL = "http://106.15.49.68";
 //    public static String PORT = ":5601";
 //    public static String API = "/forward-service/api";
 //    public static String LOGOUT = ":5601/forward-service/user/logOut";
+//
+//    public static String SHARE_URL = "http://m.zhqb.hichengdai.com";
+//    public static String SHARE_PORT = "";
 
+    // 正式环境
     public static String URL = "http://139.224.200.54";
-    public static String SHARE_URL = "http://m.zhenghuijituan.com";
-    public static String SHARE_PORT = "";
     public static String PORT = ":5601";
     public static String API = "/forward-service/api";
     public static String LOGOUT = ":5601/forward-service/user/logOut";
+
+    public static String SHARE_URL = "http://m.zhenghuijituan.com";
+    public static String SHARE_PORT = "";
 
 
     SharedPreferences userInfoSp;
@@ -51,8 +56,8 @@ public class Xutil {
         params.addBodyParameter("code", code);
         params.addBodyParameter("json", json);
 
-        System.out.println("lei_http,code="+code);
-        System.out.println("lei_http,json="+json);
+        Log.i("ZH_http",code);
+        Log.i("ZH_http",json);
 
         x.http().post(params, new Callback.CacheCallback<String>() {
             @Override

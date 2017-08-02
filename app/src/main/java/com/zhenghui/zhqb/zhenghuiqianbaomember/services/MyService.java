@@ -22,6 +22,8 @@ import org.json.JSONObject;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_805158;
+
 public class MyService extends Service {
 
     private SharedPreferences userInfoSp;
@@ -140,7 +142,7 @@ public class MyService extends Service {
             e.printStackTrace();
         }
 
-        new Xutil().post("805158", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post(CODE_805158, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 startTime();

@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.zhenghui.zhqb.zhenghuiqianbaomember"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 14
-        versionName "3.4.0"
+        versionCode 15
+        versionName "4.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         // Enabling multidex support.
@@ -70,6 +70,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.2.1'
     // Picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
+    // glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
     // 二维码
     compile 'cn.yipianfengye.android:zxing-library:2.1'
     // RichText
@@ -78,8 +80,9 @@ dependencies {
     compile 'liji.library.dev:citypickerview:0.9.0'
     // largeImageView
     compile 'com.shizhefei:LargeImageView:1.0.8'
+    // multidex
+    compile 'com.android.support:multidex:1.0.1'
 
-    compile project(':easeui')
     compile files('libs/libammsdk.jar')
     compile 'com.android.support:appcompat-v7:24.2.1'
 

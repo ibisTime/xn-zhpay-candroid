@@ -38,7 +38,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
 
                 <LinearLayout
@@ -150,7 +150,7 @@
                         android:layout_height="wrap_content">
 
                         <LinearLayout
-                            android:id="@+id/layout_moneyTree"
+                            android:id="@+id/layout_relation"
                             android:orientation="horizontal"
                             android:gravity="center_vertical"
                             android:layout_width="wrap_content"
@@ -166,7 +166,7 @@
 
                             <TextView
                                 android:layout_marginLeft="15dp"
-                                android:text="汇赚宝"
+                                android:text="推荐关系"
                                 android:textSize="13sp"
                                 android:textColor="@color/fontColor_gray"
                                 android:layout_width="wrap_content"
@@ -321,40 +321,11 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/layout_relation"
-                    android:layout_marginTop="0.1dp"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+                <View
+                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp">
+                    android:layout_height="0dp"/>
 
-                    <ImageView
-                        android:layout_marginLeft="19dp"
-                        android:scaleType="centerCrop"
-                        android:src="@mipmap/relation"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp" />
-
-                    <TextView
-                        android:text="推荐关系"
-                        android:layout_marginLeft="9dp"
-                        android:gravity="center_vertical"
-                        android:textSize="14sp"
-                        android:textColor="@color/fontColor_gray"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent" />
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="15dp"
-                        android:src="@mipmap/more_right_small" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layout_seting"

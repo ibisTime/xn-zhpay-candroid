@@ -4,10 +4,6 @@ import android.content.Context;
 import android.view.Display;
 import android.view.WindowManager;
 
-/**
- * Created by LeiQ on 2017/4/1.
- */
-
 public class DeviceUtils {
 
     public static int getScreenWith(Context context) {

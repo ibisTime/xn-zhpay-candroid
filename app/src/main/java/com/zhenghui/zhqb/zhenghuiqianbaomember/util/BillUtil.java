@@ -71,8 +71,12 @@ public class BillUtil {
             return "正汇O2O支付";
         }else if(bizType.equals("-ZH2")){
             return "正汇分红权分红";
+        }else if(bizType.equals("-ZH3")){
+            return "正汇币种售卖";
         }else if(bizType.equals("206")){
             return "C端用户间转账";
+        }else if(bizType.equals("IDRZ")){
+            return "实名认证";
         }
         return "";
     }

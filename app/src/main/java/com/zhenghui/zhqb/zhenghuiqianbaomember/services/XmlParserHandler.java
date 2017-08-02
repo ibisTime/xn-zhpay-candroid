@@ -26,7 +26,6 @@ public class XmlParserHandler extends DefaultHandler {
 
 	@Override
 	public void startDocument() throws SAXException {
-		// ��������һ����ʼ��ǩ��ʱ�򣬻ᴥ���������
 	}
 
 	ProvinceModel provinceModel = new ProvinceModel();
@@ -36,7 +35,6 @@ public class XmlParserHandler extends DefaultHandler {
 	@Override
 	public void startElement(String uri, String localName, String qName,
 							 Attributes attributes) throws SAXException {
-		// ��������ʼ��ǵ�ʱ�򣬵����������
 		if (qName.equals("province")) {
 			provinceModel = new ProvinceModel();
 			provinceModel.setName(attributes.getValue(0));
@@ -55,7 +53,6 @@ public class XmlParserHandler extends DefaultHandler {
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
-		// ����������ǵ�ʱ�򣬻�����������
 		if (qName.equals("district")) {
 			cityModel.getDistrictList().add(districtModel);
         } else if (qName.equals("city")) {

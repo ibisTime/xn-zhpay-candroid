@@ -17,6 +17,8 @@ import org.json.JSONObject;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_615025;
+
 public class JewelRecordService extends Service {
 
     private SharedPreferences userInfoSp;
@@ -117,7 +119,7 @@ public class JewelRecordService extends Service {
             e.printStackTrace();
         }
 
-        new Xutil().post("615025", object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post(CODE_615025, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String c) {
 

@@ -146,32 +146,6 @@
         <!-- 定位需要的服务 -->
         <service android:name="com.amap.api.location.APSService" />
 
-        <!-- 设置环信应用的AppKey -->
-        <meta-data
-            android:name="EASEMOB_APPKEY"
-            android:value="1139170317178872#zhpay" />
-        <!-- 声明SDK所需的service SDK核心功能 -->
-        <service
-            android:name="com.hyphenate.chat.EMChatService"
-            android:exported="true" />
-        <service
-            android:name="com.hyphenate.chat.EMJobService"
-            android:exported="true"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-        <!-- 声明SDK所需的receiver -->
-        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-
-                <data android:scheme="package" />
-            </intent-filter>
-            <!-- 可选filter -->
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-            </intent-filter>
-        </receiver>
-
         <!-- 微信分享回调 -->
         <activity
             android:name=".wxapi.WXEntryActivity"
@@ -230,7 +204,6 @@
         <!-- android:configChanges="orientation|keyboardHidden" -->
         <!-- android:windowSoftInputMode="adjustUnspecified|stateHidden" /> -->
         <activity android:name=".activity.GoodDetailsActivity" />
-        <activity android:name=".activity.ChatActivity" />
         <activity android:name=".activity.ShoppingCartActivity" />
         <!-- <activity android:name=".Activity.PersonalActivity" /> -->
         <activity android:name=".activity.CommitOrderActivity" />
@@ -296,11 +269,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
-        <activity android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity" />
-        <activity android:name="com.hyphenate.easeui.ui.EaseShowNormalFileActivity" />
-        <activity android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity" />
-        <activity android:name="com.hyphenate.easeui.ui.EaseBaseActivity" />
         <activity android:name=".activity.JewelActivity" />
         <activity android:name=".activity.JewelRecordActivity" />
         <activity android:name=".activity.JewelHistoryActivity" />
@@ -344,6 +312,9 @@
         <activity android:name=".activity.ReferrerActivity"></activity>
         <activity android:name=".activity.BillHistoryActivity"></activity>
         <activity android:name=".activity.RightsHistoryActivity"></activity>
+        <activity android:name=".activity.GiftPayActivity"></activity>
+        <activity android:name=".activity.GiftBuyActivity"></activity>
+        <activity android:name=".activity.ShopGoodActivity"></activity>
     </application>
 
 </manifest>
