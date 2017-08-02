@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/easeui/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\bundles\\debug\\res\\values-w820dp-v13\\values-w820dp-v13.xml",
+                    "file": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/easeui/build/intermediates/bundles/debug/res/values-w820dp-v13/values-w820dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\bundles\\debug\\res\\values-w820dp-v13\\values-w820dp-v13.xml",
+                    "file": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\bundles\\debug\\res\\values-w820dp-v13\\values-w820dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "outputFile": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -59,7 +59,31 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\bundles\\debug\\res\\values-w820dp-v13\\values-w820dp-v13.xml",
+                    "file": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\bundles\\debug\\res\\values-w820dp-v13\\values-w820dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 57,
+                        "endOffset": 108
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\bundles\\debug\\res\\values-w820dp-v13\\values-w820dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

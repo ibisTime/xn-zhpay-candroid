@@ -1,14 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+        "merged": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/C:\\Users\\dell1\\Desktop\\chengdai\\zhPay\\340\\zhpay_c\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+        "merged": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/E:\\AndroidStudio\\control\\xn-zhpay-candroid\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+        "merged": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/easeui/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
+        "source": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/easeui/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/lei/AndroidStudioProjects/xn-zhpay-candroid/E:\\AndroidStudio\\Zhenghui\\ZhenghuiqianbaoMember\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     }
 ]
