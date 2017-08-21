@@ -214,6 +214,48 @@
 
         </LinearLayout>
 
+        <View
+            android:background="@color/lineColor"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/layout_done"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="45dp">
+
+            <TextView
+                android:textSize="15sp"
+                android:gravity="center"
+                android:text="已收货"
+                android:layout_weight="1"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp">
+
+                <View
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/lineColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"/>
+
+                <View
+                    android:id="@+id/line_done"
+                    android:visibility="invisible"
+                    android:background="@color/orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <com.zhenghui.zhqb.zhenghuiqianbaomember.util.RefreshLayout

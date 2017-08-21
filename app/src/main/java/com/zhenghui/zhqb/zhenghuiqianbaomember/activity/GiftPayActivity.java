@@ -31,10 +31,6 @@ import butterknife.OnClick;
 
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808241;
 
-/**
- * Created by lei on 2017/7/26.
- */
-
 public class GiftPayActivity extends MyBaseActivity {
 
 
@@ -112,6 +108,8 @@ public class GiftPayActivity extends MyBaseActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 txtFinallyPrice.setText(editable.toString());
+
+
             }
         });
 

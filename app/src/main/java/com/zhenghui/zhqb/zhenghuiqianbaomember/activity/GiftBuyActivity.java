@@ -35,6 +35,7 @@ import butterknife.OnClick;
 
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_002051;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808250;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808251;
 
 /**
  * Created by lei on 2017/7/26.
@@ -65,6 +66,8 @@ public class GiftBuyActivity extends MyBaseActivity {
     TextView txtDiscountMoney;
     @InjectView(R.id.txt_pay)
     TextView txtPay;
+    @InjectView(R.id.txt_type)
+    TextView txtType;
 
     private String code;
     private String type;
@@ -72,6 +75,7 @@ public class GiftBuyActivity extends MyBaseActivity {
     private double rate = 1.0;
 
     private String payWay = "1";
+    private String currency = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +92,16 @@ public class GiftBuyActivity extends MyBaseActivity {
     private void inits() {
         code = getIntent().getStringExtra("code");
         type = getIntent().getStringExtra("type");
+
+        if (type.equals("gift")) {
+            currency = "LPQ";
+            txtType.setText("购买数量");
+            edtPrice.setHint("请输入礼品券数量");
+        }else {
+            currency = "LMQ";
+            txtType.setText("购买数量");
+            edtPrice.setHint("请输入联盟券数量");
+        }
 
     }
 
@@ -125,9 +139,9 @@ public class GiftBuyActivity extends MyBaseActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 if(editable.toString().equals("")){
-                    txtFinallyPrice.setText("¥ 0");
+                    txtFinallyPrice.setText("0");
                 }else
-                    txtFinallyPrice.setText("¥ "+ MoneyUtil.moneyFormatDouble(Double.parseDouble(editable.toString()) / rate * 1000)+"");
+                    txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(editable.toString()) / rate * 1000)+"");
             }
         });
 
@@ -184,7 +198,14 @@ public class GiftBuyActivity extends MyBaseActivity {
 
                     }
                 } else {
-                    Toast.makeText(GiftBuyActivity.this, "请输入消费金额", Toast.LENGTH_SHORT).show();
+
+                    if (type.equals("gift")) {
+                        Toast.makeText(GiftBuyActivity.this, "请输入礼品券数量", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(GiftBuyActivity.this, "请输入联盟券数量", Toast.LENGTH_SHORT).show();
+                    }
+
+
                 }
                 break;
         }
@@ -194,7 +215,7 @@ public class GiftBuyActivity extends MyBaseActivity {
         JSONObject object = new JSONObject();
         try {
             object.put("fromCurrency", "CNY");
-            object.put("toCurrency", "LPQ");
+            object.put("toCurrency", currency);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -236,7 +257,14 @@ public class GiftBuyActivity extends MyBaseActivity {
             e.printStackTrace();
         }
 
-        new Xutil().post(CODE_808250, object.toString(), new Xutil.XUtils3CallBackPost() {
+        String code;
+        if (type.equals("gift")){
+            code = CODE_808250;
+        }else {
+            code = CODE_808251;
+        }
+
+        new Xutil().post(code, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -263,8 +291,9 @@ public class GiftBuyActivity extends MyBaseActivity {
 
             @Override
             public void onTip(String tip) {
-                Toast.makeText(GiftBuyActivity.this, tip, Toast.LENGTH_SHORT).show();
-                if (tip.equals("您还未实名认证")) {
+
+                Toast.makeText(GiftBuyActivity.this, tip.split("_")[0], Toast.LENGTH_SHORT).show();
+                if (tip.split("_").length > 1) {
                     startActivity(new Intent(GiftBuyActivity.this, AuthenticateActivity.class));
                 }
             }
@@ -316,7 +345,6 @@ public class GiftBuyActivity extends MyBaseActivity {
 
                 case 1:
 
-
                     PayResult payResult = new PayResult((String) msg.obj);
 
                     // 支付宝返回此次支付结果及加签，建议对支付宝签名信息拿签约时支付宝提供的公钥做验签
@@ -325,16 +353,11 @@ public class GiftBuyActivity extends MyBaseActivity {
 
                     String resultStatus = payResult.getResultStatus();
 
-                    System.out.println("resultInfo=" + resultInfo);
-                    System.out.println("resultStatus=" + resultStatus);
-
                     if (resultStatus.equals("9000")) {
                         Toast.makeText(GiftBuyActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         GiftBuyActivity.this.finish();
                     }
 
-//                    Toast.makeText(ShopPayActivity.this, payResult.getResult(),
-//                            Toast.LENGTH_LONG).show();
                     break;
 
             }

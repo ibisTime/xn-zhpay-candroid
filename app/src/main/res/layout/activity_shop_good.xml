@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/txt_title"
-            android:text="店铺商品"
+            android:text="商品列表"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"

@@ -3,197 +3,131 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:background="@color/intervalColor"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
-
     <LinearLayout
-        android:orientation="vertical"
         android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="103dp">
+        android:layout_height="60dp">
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp">
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_code"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/fontColor_gray"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
 
             <LinearLayout
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="今日收益: "
-                    android:textSize="13sp"
+                    android:text="已领取: "
                     android:textColor="@color/fontColor_gray"
+                    android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/txt_today"
-                    android:textSize="13sp"
-                    android:textColor="@color/fontColor_orange"
+                    android:id="@+id/txt_received"
+                    android:text="0.00"
+                    android:textColor="@color/fontColor_pink"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="元"
+                    android:textColor="@color/fontColor_gray"
+                    android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="未领取: "
+                    android:textColor="@color/fontColor_gray"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txt_unclaimed"
+                    android:text="0.00"
+                    android:textColor="@color/fontColor_pink"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="元"
+                    android:textColor="@color/fontColor_gray"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
             <TextView
-                android:gravity="right"
-                android:text="分红权ID: "
-                android:textSize="13sp"
+                android:text="生效时间: "
+                android:layout_marginLeft="15dp"
                 android:textColor="@color/fontColor_gray"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:textColor="@color/fontColor_gray"
+                android:textSize="11sp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/txt_code"
-                android:gravity="right"
-                android:textSize="13sp"
-                android:layout_marginRight="30dp"
-                android:textColor="@color/fontColor_orange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/txt_status"
-                android:gravity="right"
-                android:textSize="13sp"
-                android:textColor="@color/fontColor_orange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:gravity="center"
+                android:background="@drawable/corners_rights"
+                android:text="查看"
+                android:textSize="11sp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_marginRight="15dp"
+                android:layout_width="55dp"
+                android:layout_height="20dp" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_weight="2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp">
-
-                    <TextView
-                        android:text="收益总额: "
-                        android:textSize="13sp"
-                        android:textColor="@color/fontColor_gray"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView2" />
-
-                    <TextView
-                        android:id="@+id/txt_total"
-                        android:gravity="center"
-                        android:textSize="13sp"
-                        android:textColor="@color/fontColor_orange"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp">
-                    <TextView
-                        android:text="获得条件: "
-                        android:textSize="13sp"
-                        android:textColor="@color/fontColor_gray"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/txt_condition"
-                        android:textSize="13sp"
-                        android:textColor="@color/fontColor_orange"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
 
 
-                <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp">
-
-                    <TextView
-                        android:gravity="right"
-                        android:text="已获得: "
-                        android:textSize="13sp"
-                        android:textColor="@color/fontColor_gray"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView3" />
-
-                    <TextView
-                        android:id="@+id/txt_has"
-                        android:gravity="center"
-                        android:textSize="13sp"
-                        android:textColor="@color/fontColor_orange"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp">
-
-                    <TextView
-                        android:gravity="right"
-                        android:text="生效日期: "
-                        android:textSize="13sp"
-                        android:textColor="@color/fontColor_gray"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/txt_date"
-                        android:textSize="13sp"
-                        android:textColor="@color/fontColor_orange"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
 
     </LinearLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
 
 </LinearLayout>

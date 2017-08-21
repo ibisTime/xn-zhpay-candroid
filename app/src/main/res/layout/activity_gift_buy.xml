@@ -58,7 +58,8 @@
         android:layout_height="50dp">
 
         <TextView
-            android:text="礼品券数量"
+            android:id="@+id/txt_type"
+            android:text="购买数量"
             android:layout_marginLeft="15dp"
             android:textSize="15sp"
             android:textColor="@color/fontColor_gray"
@@ -205,7 +206,7 @@
             android:layout_height="25dp" />
 
         <TextView
-            android:text="微信支付"
+            android:text="微信"
             android:layout_marginLeft="10dp"
             android:textSize="15sp"
             android:textColor="@color/fontColor_gray"
@@ -287,7 +288,7 @@
         <TextView
             android:id="@+id/txt_finallyPrice"
             android:textSize="14sp"
-            android:text="¥ 0"
+            android:text="0"
             android:textColor="@color/fontColor_orange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

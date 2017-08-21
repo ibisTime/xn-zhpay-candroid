@@ -11,9 +11,9 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -21,135 +21,73 @@
 
                 <com.youth.banner.Banner
                     android:id="@+id/banner"
-                    app:image_scale_type="center_crop"
-                    android:background="@color/white"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    app:image_scale_type="center_crop" />
 
             </LinearLayout>
 
             <View
 
-                android:background="@color/lineColor_gray"
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
+                android:layout_height="0.5dp"
+                android:background="@color/lineColor_gray" />
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/txt_name"
-                    android:textSize="16sp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:textColor="@color/fontColor_gray"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/fontColor_gray"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txt_info"
-                    android:textColor="@color/fontColor_support"
-                    android:textSize="14sp"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/fontColor_support"
+                    android:textSize="14sp" />
 
                 <LinearLayout
-                    android:gravity="bottom"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginLeft="15dp"
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="11dp"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
 
                     <FrameLayout
-                        android:layout_marginBottom="15dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp">
 
                         <LinearLayout
                             android:id="@+id/layout_price"
-                            android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/txt_rmb1"
-                                android:text="5"
-                                android:textSize="15sp"
-                                android:textColor="@color/orange"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent" />
-
-                            <TextView
-                                android:id="@+id/txt_rmb2"
-                                android:layout_marginLeft="5dp"
-                                android:text=" + "
-                                android:textSize="15sp"
+                                android:id="@+id/txt_currency"
+                                android:textSize="12sp"
                                 android:textColor="@color/fontColor_orange"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:id="@+id/txt_gwb1"
-                                android:textColor="@color/orange"
-                                android:text="5"
-                                android:textSize="15sp"
-                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent" />
 
                             <TextView
-                                android:id="@+id/txt_gwb2"
-                                android:layout_marginLeft="5dp"
-                                android:text="购物币 + "
-                                android:textSize="15sp"
-                                android:textColor="@color/fontColor_orange"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:id="@+id/txt_qbb1"
-                                android:textColor="@color/orange"
-                                android:text="5"
-                                android:textSize="15sp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent" />
-
-                            <TextView
-                                android:id="@+id/txt_qbb2"
-                                android:layout_marginLeft="5dp"
-                                android:text="钱包币"
-                                android:textSize="15sp"
-                                android:textColor="@color/fontColor_orange"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/layout_lpq"
-                            android:visibility="gone"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:id="@+id/txt_lpq"
-                                android:text="5"
-                                android:textSize="15sp"
-                                android:textColor="@color/orange"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent" />
-
-                            <TextView
-                                android:layout_marginLeft="5dp"
-                                android:text="礼品券"
-                                android:textSize="15sp"
+                                android:id="@+id/txt_price"
+                                android:layout_marginLeft="2dp"
+                                android:textSize="12sp"
                                 android:textColor="@color/fontColor_orange"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
@@ -162,128 +100,125 @@
 
                 <TextView
                     android:id="@+id/txt_yunfei"
-                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="运费:10"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:textSize="12sp"
                     android:textColor="@color/fontColor_support"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textSize="12sp"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
             <View
-                android:background="@color/lineColor_gray"
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
+                android:layout_height="0.5dp"
+                android:background="@color/lineColor_gray" />
 
             <LinearLayout
                 android:id="@+id/layout_store"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:layout_width="match_parent"
+                android:layout_height="96dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="15dp"
-                android:layout_height="96dp">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_marginLeft="15dp"
-                    android:scaleType="centerCrop"
-                    android:layout_gravity="center_vertical"
+                    android:id="@+id/img_shopPic"
                     android:layout_width="80dp"
                     android:layout_height="65dp"
-                    android:id="@+id/img_shopPic" />
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:scaleType="centerCrop" />
 
                 <LinearLayout
-                    android:layout_marginLeft="14dp"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="14dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/txt_shopName"
-                        android:text="asdasd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/fontColor_gray"
-                        android:textSize="15sp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/txt_mobile"
-                        android:layout_marginTop="7dp"
-                        android:gravity="center_vertical"
-                        android:textSize="11sp"
-                        android:text="asdasd"
-                        android:singleLine="true"
-                        android:textColor="@color/fontColor_support"
-                        android:layout_width="match_parent"
-                        android:layout_weight="1"
-                        android:layout_height="0dp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/txt_slogan"
-                        android:textSize="11sp"
-                        android:text="asdasd"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/fontColor_support"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/txt_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
                         android:textColor="@color/fontColor_support"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:visibility="gone">
 
                 <TextView
-                    android:textSize="14sp"
-                    android:textColor="@color/fontColor_gray"
-                    android:text="数量"
-                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="数量"
+                    android:textColor="@color/fontColor_gray"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/txt_subtract"
-                    android:text="-"
-                    android:gravity="center"
-                    android:textColor="@color/fontColor_gray"
-                    android:background="@drawable/border_number"
-                    android:layout_marginLeft="19dp"
                     android:layout_width="20dp"
-                    android:layout_height="20dp" />
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="19dp"
+                    android:background="@drawable/border_number"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@color/fontColor_gray" />
 
                 <TextView
                     android:id="@+id/txt_number"
-                    android:gravity="center"
-                    android:textSize="15sp"
-                    android:textColor="@color/fontColor_gray"
-                    android:layout_marginLeft="35dp"
                     android:layout_width="35dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:gravity="center"
+                    android:textColor="@color/fontColor_gray"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/txt_add"
-                    android:text="+"
-                    android:gravity="center"
-                    android:textColor="@color/fontColor_gray"
-                    android:background="@drawable/border_number"
-                    android:layout_marginLeft="35dp"
                     android:layout_width="20dp"
-                    android:layout_height="20dp" />
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="35dp"
+                    android:background="@drawable/border_number"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@color/fontColor_gray" />
 
             </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
-    
+
 </LinearLayout>

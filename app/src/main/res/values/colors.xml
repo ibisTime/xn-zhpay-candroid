@@ -12,6 +12,7 @@
     <color name="lineColor_gray">#dedede</color>
     <color name="intervalColor">#f0f0f0</color>
 
+    <color name="fontColor_pink">#F05567</color>
     <color name="fontColor_gray">#484848</color>
     <color name="fontColor_hint">#aaaaaa</color>
     <color name="fontColor_orange">#FE4332</color>

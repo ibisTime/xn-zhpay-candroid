@@ -91,6 +91,7 @@ public class GridFragment extends Fragment {
                                     int position, long id) {
 
                 startActivity(new Intent(getActivity(), ShopListActivity.class)
+                        .putExtra("isHide", true)
                         .putExtra("title", text.get(position).getTitle())
                         .putExtra("type", text.get(position).getType())
                         .putExtra("locatedCity", text.get(position).getLocationCity())

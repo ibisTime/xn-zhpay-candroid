@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="系统消息"
+            android:text="系统公告"
             android:textColor="@color/fontColor_gray"
             android:textSize="17sp" />
 

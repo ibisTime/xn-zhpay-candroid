@@ -5,30 +5,159 @@
 
     <LinearLayout
         android:background="@color/white"
-        android:gravity="center"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="44dp">
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:id="@+id/layout_pool"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_pool"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:textColor="@color/fontColor_pink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="3dp"
+                android:text="消费者免单额度(元)"
+                android:textSize="11sp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_get"
+            android:visibility="gone"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_get"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:textColor="@color/fontColor_pink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="3dp"
+                android:text="已领取的收益(元)"
+                android:textSize="11sp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_earnings"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:textColor="@color/fontColor_pink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="待领取的收益(元)"
+                android:textSize="11sp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_fhq"
+                android:text="0"
+                android:textSize="18sp"
+                android:textColor="@color/fontColor_pink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="分红权"
+                android:textSize="12sp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/fontColor_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/intervalColor"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:background="@color/fontColor_pink"
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+
+        <ImageView
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/tip"
+            android:layout_width="12dp"
+            android:layout_height="12dp" />
 
         <TextView
-            android:text="分红权ID: "
-            android:textColor="@color/fontColor_gray"
-            android:textSize="16sp"
+            android:layout_marginLeft="5dp"
+            android:text="友情提示:营业额还差"
+            android:textSize="11sp"
+            android:textColor="@color/fontColor_white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/txt_code"
-            android:textColor="@color/fontColor_gray"
-            android:textSize="16sp"
+            android:id="@+id/txt_turnover"
+            android:text="500.00"
+            android:textSize="11sp"
+            android:textColor="@color/fontColor_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="元,就可以再获得一个分红权"
+            android:textSize="11sp"
+            android:textColor="@color/fontColor_white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
     <View
-        android:background="@color/lineColor"
+        android:background="@color/intervalColor"
         android:layout_width="match_parent"
-        android:layout_height="1px"/>
+        android:layout_height="10dp"/>
 
 </LinearLayout>

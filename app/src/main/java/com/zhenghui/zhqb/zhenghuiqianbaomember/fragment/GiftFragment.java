@@ -190,8 +190,8 @@ public class GiftFragment extends Fragment implements AdapterView.OnItemClickLis
             object.put("latitude", latitude);
             object.put("start", page);
             object.put("limit", pageSize);
-            object.put("orderColumn", "");
-            object.put("orderDir", "");
+            object.put("orderColumn", "ui_order");
+            object.put("orderDir", "desc");
             object.put("systemCode", appConfigSp.getString("systemCode", null));
             object.put("companyCode", appConfigSp.getString("systemCode", null));
             object.put("token", userInfoSp.getString("token", null));

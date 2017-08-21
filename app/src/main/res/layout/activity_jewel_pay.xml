@@ -200,7 +200,7 @@
             android:layout_height="25dp" />
 
         <TextView
-            android:text="支付宝"
+            android:text="支付宝支付"
             android:layout_marginLeft="10dp"
             android:textSize="15sp"
             android:textColor="@color/fontColor_gray"

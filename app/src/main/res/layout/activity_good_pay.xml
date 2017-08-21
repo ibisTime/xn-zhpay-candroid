@@ -70,113 +70,27 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
 
-        <FrameLayout
+        <LinearLayout
             android:layout_marginRight="15dp"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/layout_price"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+            <TextView
+                android:id="@+id/txt_currency"
+                android:textSize="12sp"
+                android:textColor="@color/fontColor_orange"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent" />
 
-                <TextView
-                    android:id="@+id/txt_rmb_1"
-                    android:background="@mipmap/coin_rm"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp" />
-
-                <TextView
-                    android:id="@+id/txt_rmb_2"
-                    android:layout_marginLeft="2dp"
-                    android:text="0.00"
-                    android:textSize="11sp"
-                    android:textColor="@color/fontColor_orange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/txt_rmb_3"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:text="+"
-                    android:textSize="11sp"
-                    android:textColor="@color/fontColor_orange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/txt_gwb_1"
-                    android:background="@mipmap/coin_gw"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp" />
-
-                <TextView
-                    android:id="@+id/txt_gwb_2"
-                    android:layout_marginLeft="2dp"
-                    android:text="0.00"
-                    android:textSize="11sp"
-                    android:textColor="@color/fontColor_orange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/txt_gwb_3"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:text="+"
-                    android:textSize="11sp"
-                    android:textColor="@color/fontColor_orange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/txt_qbb_1"
-                    android:background="@mipmap/coin_qb"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp" />
-
-                <TextView
-                    android:id="@+id/txt_qbb_2"
-                    android:layout_marginLeft="2dp"
-                    android:text="0.00"
-                    android:textSize="11sp"
-                    android:textColor="@color/fontColor_orange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_lpq"
-                android:visibility="gone"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_marginLeft="2dp"
+                android:textSize="12sp"
+                android:textColor="@color/fontColor_orange"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/txt_lpq"
-                    android:layout_marginLeft="2dp"
-                    android:text="0.00"
-                    android:textSize="11sp"
-                    android:textColor="@color/fontColor_orange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:text="礼品券"
-                    android:textSize="11sp"
-                    android:textColor="@color/fontColor_orange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-        </FrameLayout>
+        </LinearLayout>
 
 
 
@@ -243,7 +157,7 @@
         android:layout_height="0.5dp"/>
 
     <LinearLayout
-        android:id="@+id/layout_wx"
+        android:id="@+id/layout_lmq"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -251,13 +165,14 @@
         android:layout_height="50dp">
 
         <ImageView
-            android:background="@mipmap/wexin"
+            android:background="@mipmap/balance"
             android:layout_marginLeft="15dp"
             android:layout_width="25dp"
             android:layout_height="25dp" />
 
         <TextView
-            android:text="微信支付"
+            android:id="@+id/txt_lmq"
+            android:text="联盟券"
             android:layout_marginLeft="10dp"
             android:textSize="15sp"
             android:textColor="@color/fontColor_gray"
@@ -270,11 +185,53 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
-            android:id="@+id/img_weixin"
+            android:id="@+id/img_lmq"
             android:layout_marginRight="15dp"
             android:background="@mipmap/pay_unchoose"
+            android:textColor="@color/fontColor_orange"
             android:layout_width="20dp"
             android:layout_height="20dp" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <LinearLayout
+        android:id="@+id/layout_wx"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/wexin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="微信"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/img_weixin"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@mipmap/pay_unchoose" />
 
     </LinearLayout>
 
@@ -298,12 +255,13 @@
             android:layout_height="25dp" />
 
         <TextView
-            android:text="支付宝"
-            android:layout_marginLeft="10dp"
-            android:textSize="15sp"
-            android:textColor="@color/fontColor_gray"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="支付宝"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="15sp" />
 
         <View
             android:layout_weight="1"
@@ -332,7 +290,6 @@
         android:layout_height="49dp">
 
         <TextView
-            android:visibility="invisible"
             android:textSize="12sp"
             android:text="实际支付: "
             android:layout_marginLeft="15dp"
@@ -350,7 +307,7 @@
 
         <TextView
             android:id="@+id/txt_pay"
-            android:text="确认买单"
+            android:text="确认支付"
             android:textSize="18sp"
             android:gravity="center"
             android:background="@color/orange"

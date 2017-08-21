@@ -96,6 +96,10 @@ public class Constants {
      */
     public static String CODE_802116 = "802116";
     /**
+     *  查询收益资金池金额
+     */
+    public static String CODE_802502 = "802502";
+    /**
      *
      */
     public static String CODE_802410 = "802410";
@@ -220,6 +224,10 @@ public class Constants {
      */
     public static String CODE_807717 = "807717";
     /**
+     *  获取版本信息
+     */
+    public static String CODE_807718 = "807718";
+    /**
      *  uploadToken七牛图片服务器提供
      */
     public static String CODE_807900 = "807900";
@@ -289,7 +297,15 @@ public class Constants {
      */
     public static String CODE_808218 = "808218";
     /**
-     *
+     *  查询推荐店铺数量
+     */
+    public static String CODE_808220 = "808220";
+    /**
+     *  分页查询推荐商家
+     */
+    public static String CODE_808222 = "808222";
+    /**
+     *  评价订单
      */
     public static String CODE_808240 = "808240";
     /**
@@ -305,6 +321,10 @@ public class Constants {
      */
     public static String CODE_808250 = "808250";
     /**
+     *  购买礼品券
+     */
+    public static String CODE_808251 = "808251";
+    /**
      *
      */
     public static String CODE_808255 = "808255";
@@ -312,6 +332,10 @@ public class Constants {
      *
      */
     public static String CODE_808265 = "808265";
+    /**
+     *  查询累计营业额，分红权收益以及个数
+     */
+    public static String CODE_808275 = "808275";
     /**
      *  我的下一个分红权查询
      */

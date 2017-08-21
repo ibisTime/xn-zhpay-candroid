@@ -81,8 +81,19 @@ public class Xutil {
 
                     }else if(object.getString("errorCode").equals("3")){
 
-                        System.out.println("code="+code+",onTip="+object.getString("errorInfo"));
-                        backPost.onTip(object.getString("errorInfo"));
+                        System.out.println("code="+code+",onTip="+object.toString());
+                        if (object.getString("errorBizCode") != null) {
+                            if(object.getString("errorBizCode").equals("M000001")){
+                                backPost.onTip(object.getString("errorInfo")+"_"+object.getString("errorBizCode"));
+                            }else {
+                                backPost.onTip( object.getString("errorInfo"));
+                            }
+                        }else {
+                            backPost.onTip( object.getString("errorInfo"));
+                        }
+
+
+
 
                     } else if(object.getString("errorCode").equals("4")){
 

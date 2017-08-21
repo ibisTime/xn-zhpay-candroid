@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="礼品中心"
+            android:text="购物中心"
             android:textColor="@color/fontColor_gray"
             android:textSize="17sp" />
 

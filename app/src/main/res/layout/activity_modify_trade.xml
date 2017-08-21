@@ -142,7 +142,6 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp">
@@ -150,7 +149,7 @@
             <TextView
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"
-                android:text="原交易密码"
+                android:text="新密码"
                 android:textSize="15sp"
                 android:textColor="@color/fontColor_gray"
                 android:layout_width="127dp"
@@ -166,7 +165,7 @@
                 android:inputType="textPassword"
                 android:textColor="@color/fontColor_gray"
                 android:textColorHint="@color/fontColor_hint"
-                android:hint="请输入原6位交易密码"
+                android:hint="请输入密码(不少于6位)"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -185,7 +184,7 @@
             <TextView
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"
-                android:text="支付密码"
+                android:text="确认密码"
                 android:textSize="15sp"
                 android:textColor="@color/fontColor_gray"
                 android:layout_width="127dp"
@@ -202,9 +201,8 @@
                 android:inputType="textPassword"
                 android:textColor="@color/fontColor_gray"
                 android:textColorHint="@color/fontColor_hint"
-                android:hint="请输入支付密码"
+                android:hint="请确认密码(不少于6位)"
                 android:layout_height="match_parent" />
-
 
         </LinearLayout>
 

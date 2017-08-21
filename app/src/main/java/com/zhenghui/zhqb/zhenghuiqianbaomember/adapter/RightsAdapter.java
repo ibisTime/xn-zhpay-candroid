@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.model.RightsModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.model.RightsModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 
 import java.text.SimpleDateFormat;
@@ -60,44 +60,39 @@ public class RightsAdapter extends BaseAdapter {
     }
 
     public void setView(int i) {
-        if(list.get(i).getStatus().equals("3")) {
-            holder.txtStatus.setText("生效中");
-            holder.txtStatus.setTextColor(context.getResources().getColor(R.color.fontColor_orange));
-        }if(list.get(i).getStatus().equals("2")){
-            holder.txtStatus.setText("待生效");
-            holder.txtStatus.setTextColor(context.getResources().getColor(R.color.fontColor_brown));
-        }if(list.get(i).getStatus().equals("4")){
-            holder.txtStatus.setText("已生效");
-            holder.txtStatus.setTextColor(context.getResources().getColor(R.color.fontColor_support));
-        }
+//        if (list.get(i).getStatus().equals("3")) {
+//            holder.txtStatus.setText("生效中");
+//            holder.txtStatus.setTextColor(context.getResources().getColor(R.color.fontColor_orange));
+//        }
+//        if (list.get(i).getStatus().equals("2")) {
+//            holder.txtStatus.setText("待生效");
+//            holder.txtStatus.setTextColor(context.getResources().getColor(R.color.fontColor_brown));
+//        }
+//        if (list.get(i).getStatus().equals("4")) {
+//            holder.txtStatus.setText("已生效");
+//            holder.txtStatus.setTextColor(context.getResources().getColor(R.color.fontColor_support));
+//        }
 
-        holder.txtCode.setText(list.get(i).getCode().substring(list.get(i).getCode().length()-6,list.get(i).getCode().length()));
-        holder.txtToday.setText(MoneyUtil.moneyFormatDouble(list.get(i).getTodayAmount()));
-        holder.txtTotal.setText(MoneyUtil.moneyFormatDouble(list.get(i).getProfitAmount()));
-        holder.txtHas.setText(MoneyUtil.moneyFormatDouble(list.get(i).getBackAmount()));
-        holder.txtCondition.setText(MoneyUtil.moneyFormatDouble(list.get(i).getCostAmount())+"交易额");
-        if(list.get(i).getCreateDatetime() != null){
-            SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
+        holder.txtUnclaimed.setText(MoneyUtil.moneyFormatDouble(list.get(i).getProfitAmount() - list.get(i).getBackAmount()));
+        holder.txtReceived.setText(MoneyUtil.moneyFormatDouble(list.get(i).getBackAmount()));
+        holder.txtCode.setText("FHQID"+list.get(i).getCode().substring(list.get(i).getCode().length() - 6, list.get(i).getCode().length()));
+//        holder.txtCode.setText(list.get(i).getCode().substring(0,12));
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        if (list.get(i).getCreateDatetime() != null) {
             Date d5 = new Date(list.get(i).getCreateDatetime());
             holder.txtDate.setText(s.format(d5));
         }
     }
 
     static class ViewHolder {
-        @InjectView(R.id.txt_today)
-        TextView txtToday;
-        @InjectView(R.id.txt_total)
-        TextView txtTotal;
-        @InjectView(R.id.txt_condition)
-        TextView txtCondition;
-        @InjectView(R.id.txt_status)
-        TextView txtStatus;
-        @InjectView(R.id.txt_has)
-        TextView txtHas;
-        @InjectView(R.id.txt_date)
-        TextView txtDate;
         @InjectView(R.id.txt_code)
         TextView txtCode;
+        @InjectView(R.id.txt_received)
+        TextView txtReceived;
+        @InjectView(R.id.txt_unclaimed)
+        TextView txtUnclaimed;
+        @InjectView(R.id.txt_date)
+        TextView txtDate;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

@@ -45,13 +45,10 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"/>
 
-    <View
-        android:background="@color/intervalColor"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
-
     <ListView
         android:id="@+id/list_address"
+        android:divider="@color/intervalColor"
+        android:dividerHeight="0dp"
         android:background="@color/intervalColor"
         android:layout_width="match_parent"
         android:layout_weight="1"

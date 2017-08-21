@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
@@ -66,63 +65,20 @@ public class GoodAdapter extends BaseAdapter {
 
         ImageUtil.glide(list.get(position).getAdvPic(), holder.imgGoodPic, context);
 
-        if (list.get(position).getStore().getType().equals("G01")){
-            holder.layoutLpq.setVisibility(View.VISIBLE);
-            holder.layoutPrice.setVisibility(View.GONE);
+        switch (list.get(position).getStore().getType()) {
 
-            holder.txtLpq.setText(MoneyUtil.moneyFormatDouble(list.get(position).getProductSpecsList().get(0).getPrice1()));
+            case "G01":
+                holder.txtCurrency.setText("礼品券");
+                break;
 
-        }else {
-            holder.layoutPrice.setVisibility(View.VISIBLE);
-            holder.layoutLpq.setVisibility(View.GONE);
+            default:
+                holder.txtCurrency.setText("¥");
+                break;
 
-            if (list.get(position).getProductSpecsList().get(0).getPrice1() == 0) {
-                holder.txtRmb1.setVisibility(View.GONE);
-                holder.txtRmb2.setVisibility(View.GONE);
-            } else {
-                holder.txtRmb1.setVisibility(View.VISIBLE);
-                holder.txtRmb2.setVisibility(View.VISIBLE);
-                holder.txtRmb1.setText("¥" + MoneyUtil.moneyFormatDouble(list.get(position).getProductSpecsList().get(0).getPrice1()));
-                if (list.get(position).getProductSpecsList().get(0).getPrice2() == 0 && list.get(position).getProductSpecsList().get(0).getPrice3() == 0) {
-                    holder.txtRmb2.setText("");
-                } else {
-                    holder.txtRmb2.setText("+");
-                }
-            }
-
-            if (list.get(position).getProductSpecsList().get(0).getPrice2() == 0) {
-                holder.txtGwb1.setVisibility(View.GONE);
-                holder.txtGwb2.setVisibility(View.GONE);
-            } else {
-                holder.txtGwb1.setVisibility(View.VISIBLE);
-                holder.txtGwb2.setVisibility(View.VISIBLE);
-                holder.txtGwb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getProductSpecsList().get(0).getPrice2()));
-                if (list.get(position).getProductSpecsList().get(0).getPrice3() == 0) {
-                    holder.txtGwb2.setText("购物币");
-                } else {
-                    holder.txtGwb2.setText("购物币 + ");
-                }
-            }
-
-            if (list.get(position).getProductSpecsList().get(0).getPrice3() == 0) {
-                holder.txtQbb1.setVisibility(View.GONE);
-                holder.txtQbb2.setVisibility(View.GONE);
-            } else {
-                holder.txtQbb1.setVisibility(View.VISIBLE);
-                holder.txtQbb2.setVisibility(View.VISIBLE);
-                holder.txtQbb1.setText(MoneyUtil.moneyFormatDouble(list.get(position).getProductSpecsList().get(0).getPrice3()));
-            }
-
-            if (list.get(position).getProductSpecsList().get(0).getPrice3() == 0
-                    && list.get(position).getProductSpecsList().get(0).getPrice2() == 0
-                    && list.get(position).getProductSpecsList().get(0).getPrice1() == 0) {
-                holder.txtRmb1.setText("0");
-                holder.txtRmb1.setVisibility(View.VISIBLE);
-            }
         }
+        holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(position).getProductSpecsList().get(0).getPrice1()));
 
     }
-
 
     static class ViewHolder {
         @InjectView(R.id.img_goodPic)
@@ -131,24 +87,10 @@ public class GoodAdapter extends BaseAdapter {
         TextView txtGoodame;
         @InjectView(R.id.txt_info)
         TextView txtInfo;
-        @InjectView(R.id.txt_rmb1)
-        TextView txtRmb1;
-        @InjectView(R.id.txt_rmb2)
-        TextView txtRmb2;
-        @InjectView(R.id.txt_gwb1)
-        TextView txtGwb1;
-        @InjectView(R.id.txt_gwb2)
-        TextView txtGwb2;
-        @InjectView(R.id.txt_qbb1)
-        TextView txtQbb1;
-        @InjectView(R.id.txt_qbb2)
-        TextView txtQbb2;
-        @InjectView(R.id.layout_price)
-        LinearLayout layoutPrice;
-        @InjectView(R.id.txt_lpq)
-        TextView txtLpq;
-        @InjectView(R.id.layout_lpq)
-        LinearLayout layoutLpq;
+        @InjectView(R.id.txt_currency)
+        TextView txtCurrency;
+        @InjectView(R.id.txt_price)
+        TextView txtPrice;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);
