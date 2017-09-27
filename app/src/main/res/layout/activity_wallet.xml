@@ -50,7 +50,7 @@
 
         <TextView
             android:layout_marginTop="20dp"
-            android:text="可用余额(元)"
+            android:text="补贴(元)"
             android:textSize="12sp"
             android:textColor="@color/fontColor_white"
             android:layout_width="wrap_content"

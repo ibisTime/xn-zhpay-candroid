@@ -27,7 +27,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_802414;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_802029;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_802418;
 
 
 public class TransferActivity extends MyBaseActivity {
@@ -46,6 +47,8 @@ public class TransferActivity extends MyBaseActivity {
     EditText edtTradePwd;
     @InjectView(R.id.btn_confirm)
     Button btnConfirm;
+    @InjectView(R.id.txt_tip)
+    TextView txtTip;
 
     private Double balance;
 
@@ -59,6 +62,8 @@ public class TransferActivity extends MyBaseActivity {
 
         inits();
         initEditText();
+
+        getTip();
     }
 
     private void inits() {
@@ -179,6 +184,43 @@ public class TransferActivity extends MyBaseActivity {
 
     }
 
+    private void getTip() {
+
+        JSONObject object = new JSONObject();
+        try {
+            object.put("type", "TR");
+            object.put("token", userInfoSp.getString("token", null));
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post(CODE_802029, object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    edtAmount.setHint("转账金额为"+jsonObject.getString("TRANSAMOUNTBS")+"的倍数");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(TransferActivity.this, tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(TransferActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void transfer() {
 
         JSONObject object = new JSONObject();
@@ -191,7 +233,7 @@ public class TransferActivity extends MyBaseActivity {
             e.printStackTrace();
         }
 
-        new Xutil().post(CODE_802414, object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post(CODE_802418, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
 

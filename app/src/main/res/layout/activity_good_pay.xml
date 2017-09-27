@@ -115,6 +115,7 @@
         android:layout_height="0.5dp"/>
 
     <LinearLayout
+        android:id="@+id/layout_subsidy"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -128,26 +129,63 @@
             android:layout_height="25dp" />
 
         <TextView
-            android:id="@+id/txt_balace"
-            android:text="余额"
+            android:id="@+id/txt_subsidy"
             android:layout_marginLeft="10dp"
-            android:textSize="15sp"
+            android:text="补贴"
             android:textColor="@color/fontColor_gray"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <View
+            android:textSize="15sp"
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent" />
 
         <ImageView
-            android:id="@+id/img_balace"
+            android:id="@+id/img_subsidy"
             android:layout_marginRight="15dp"
             android:background="@mipmap/pay_choose"
             android:textColor="@color/fontColor_orange"
             android:layout_width="20dp"
             android:layout_height="20dp" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <LinearLayout
+        android:id="@+id/layout_balance"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/balance" />
+
+        <TextView
+            android:id="@+id/txt_balace"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="贡献值"
+            android:textColor="@color/fontColor_gray"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/img_balace"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@mipmap/pay_unchoose"
+            android:textColor="@color/fontColor_orange" />
 
     </LinearLayout>
 
@@ -176,13 +214,10 @@
             android:layout_marginLeft="10dp"
             android:textSize="15sp"
             android:textColor="@color/fontColor_gray"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <View
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent" />
 
         <ImageView
             android:id="@+id/img_lmq"
@@ -200,7 +235,7 @@
         android:layout_height="0.5dp"/>
 
     <LinearLayout
-        android:id="@+id/layout_wx"
+        android:id="@+id/layout_weixin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white"
@@ -214,17 +249,15 @@
             android:background="@mipmap/wexin" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/txt_weixin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
             android:text="微信"
             android:textColor="@color/fontColor_gray"
             android:textSize="15sp" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <ImageView
             android:id="@+id/img_weixin"
@@ -255,18 +288,15 @@
             android:layout_height="25dp" />
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/txt_zhifubao"
             android:layout_marginLeft="10dp"
             android:text="支付宝"
             android:textColor="@color/fontColor_gray"
-            android:textSize="15sp" />
-
-        <View
+            android:textSize="15sp"
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent" />
 
         <ImageView
             android:id="@+id/img_zhifubao"

@@ -83,7 +83,7 @@ public class ShopListActivity extends MyBaseActivity implements AdapterView.OnIt
         initRefreshLayout();
         initListView();
 
-//        getDatas();
+        getDatas();
     }
 
     @Override

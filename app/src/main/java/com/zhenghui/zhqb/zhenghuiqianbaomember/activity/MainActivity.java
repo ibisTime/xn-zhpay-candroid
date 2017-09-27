@@ -95,6 +95,10 @@ public class MainActivity extends MyBaseActivity {
 
         inits();
         setSelect(0);
+
+        if (userInfoSp.getString("userId", null) !=null){
+            getData();
+        }
         getVersion();
     }
 
@@ -352,6 +356,7 @@ public class MainActivity extends MyBaseActivity {
                     editor.putString("mobile", model.getMobile());
                     editor.putString("realName", model.getRealName());
                     editor.putString("nickName", model.getNickname());
+                    editor.putString("isGxz", model.getIsGxz());
                     editor.putString("identityFlag", model.getIdentityFlag());
                     editor.putString("tradepwdFlag", model.getTradepwdFlag());
                     editor.putString("userRefereeName", model.getUserRefereeName());

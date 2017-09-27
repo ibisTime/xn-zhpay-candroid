@@ -85,8 +85,8 @@ public class MyShopAdapter extends BaseAdapter {
 
         }
         switch (list.get(position).getPayType()){
-            case "1":
-                holder.txtPrice.setText("¥ " + MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount3() + list.get(position).getPayAmount2()));
+            case "23":
+                holder.txtPrice.setText("贡献值 " + MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount3() + list.get(position).getPayAmount2()));
                 break;
 
             case "20":
@@ -95,6 +95,10 @@ public class MyShopAdapter extends BaseAdapter {
 
             case "21":
                 holder.txtPrice.setText("联盟券 " + MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount1()));
+                break;
+
+            case "22":
+                holder.txtPrice.setText("补贴 " + MoneyUtil.moneyFormatDouble(list.get(position).getPayAmount3() + list.get(position).getPayAmount2()));
                 break;
 
             default:

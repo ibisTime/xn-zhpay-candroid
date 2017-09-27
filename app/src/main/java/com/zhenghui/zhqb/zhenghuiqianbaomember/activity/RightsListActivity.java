@@ -32,6 +32,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808425;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808465;
 
 public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener, AdapterView.OnItemClickListener {
 
@@ -48,6 +49,7 @@ public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLa
     RightsListAdapter adapter;
 
     private String code;
+    private String type;
     private String date;
     private String received;
     private String unclaimed;
@@ -76,14 +78,14 @@ public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLa
     }
 
     private void inits() {
-        list = new ArrayList<>();
-        adapter = new RightsListAdapter(this, list);
-
+        type = getIntent().getStringExtra("type");
         code = getIntent().getStringExtra("code");
         date = getIntent().getStringExtra("date");
         received = getIntent().getStringExtra("received");
         unclaimed = getIntent().getStringExtra("unclaimed");
 
+        list = new ArrayList<>();
+        adapter = new RightsListAdapter(this, list, type);
     }
 
     private void initHeadView() {
@@ -93,7 +95,7 @@ public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLa
         txtUnclaimed = (TextView) headView.findViewById(R.id.txt_unclaimed);
         txtDate = (TextView) headView.findViewById(R.id.txt_date);
 
-        txtCode.setText("FHQID" + code.substring(code.length() - 6, code.length()));
+        txtCode.setText("ID" + code.substring(code.length() - 9, code.length()));
         SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         if (date != null) {
             Date d5 = new Date(date);
@@ -128,12 +130,21 @@ public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLa
                 break;
 
             case R.id.txt_history:
-                startActivity(new Intent(RightsListActivity.this,RightsHistoryActivity.class).putExtra("code",code));
+                startActivity(new Intent(RightsListActivity.this,RightsHistoryActivity.class)
+                        .putExtra("type",type)
+                        .putExtra("code",code));
                 break;
         }
     }
 
     private void getData() {
+
+        String httpCode;
+        if (type.equals("FHQ")){
+            httpCode = CODE_808425;
+        }else {
+            httpCode = CODE_808465;
+        }
 
         JSONObject object = new JSONObject();
         try {
@@ -152,7 +163,7 @@ public class RightsListActivity extends MyBaseActivity implements SwipeRefreshLa
             e.printStackTrace();
         }
 
-        new Xutil().post(CODE_808425, object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post(httpCode, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 try {

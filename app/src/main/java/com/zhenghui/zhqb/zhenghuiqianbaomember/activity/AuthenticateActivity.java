@@ -170,8 +170,9 @@ public class AuthenticateActivity extends MyBaseActivity {
                     JSONObject jsonObject = new JSONObject(result);
 
                     if(jsonObject.getBoolean("isSuccess")){
-                        Toast.makeText(AuthenticateActivity.this, "您已通过实名认证", Toast.LENGTH_SHORT).show();
-                        finish();
+//                        Toast.makeText(AuthenticateActivity.this, "您已通过实名认证", Toast.LENGTH_SHORT).show();
+//                        finish();
+                        getData();
                     }else{
                         doVerify(jsonObject.getString("url"));
                     }

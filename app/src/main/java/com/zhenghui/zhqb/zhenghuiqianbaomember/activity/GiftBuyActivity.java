@@ -43,21 +43,28 @@ import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808251
 
 public class GiftBuyActivity extends MyBaseActivity {
 
-
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;
+    @InjectView(R.id.txt_type)
+    TextView txtType;
     @InjectView(R.id.edt_price)
     EditText edtPrice;
     @InjectView(R.id.txt_discount)
     TextView txtDiscount;
     @InjectView(R.id.layout_discount)
     LinearLayout layoutDiscount;
-    @InjectView(R.id.txt_balace)
-    TextView txtBalace;
-    @InjectView(R.id.img_balace)
-    ImageView imgBalace;
+    @InjectView(R.id.txt_subsidy)
+    TextView txtSubsidy;
+    @InjectView(R.id.img_subsidy)
+    ImageView imgSubsidy;
+    @InjectView(R.id.layout_subsidy)
+    LinearLayout layoutSubsidy;
+    @InjectView(R.id.txt_weixin)
+    TextView txtWeixin;
     @InjectView(R.id.img_weixin)
     ImageView imgWeixin;
+    @InjectView(R.id.txt_zhifubao)
+    TextView txtZhifubao;
     @InjectView(R.id.img_zhifubao)
     ImageView imgZhifubao;
     @InjectView(R.id.txt_finallyPrice)
@@ -66,15 +73,13 @@ public class GiftBuyActivity extends MyBaseActivity {
     TextView txtDiscountMoney;
     @InjectView(R.id.txt_pay)
     TextView txtPay;
-    @InjectView(R.id.txt_type)
-    TextView txtType;
 
     private String code;
     private String type;
 
     private double rate = 1.0;
 
-    private String payWay = "1";
+    private String payWay = "22";
     private String currency = "";
 
     @Override
@@ -97,7 +102,7 @@ public class GiftBuyActivity extends MyBaseActivity {
             currency = "LPQ";
             txtType.setText("购买数量");
             edtPrice.setHint("请输入礼品券数量");
-        }else {
+        } else {
             currency = "LMQ";
             txtType.setText("购买数量");
             edtPrice.setHint("请输入联盟券数量");
@@ -138,41 +143,41 @@ public class GiftBuyActivity extends MyBaseActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if(editable.toString().equals("")){
+                if (editable.toString().equals("")) {
                     txtFinallyPrice.setText("0");
-                }else
-                    txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(editable.toString()) / rate * 1000)+"");
+                } else
+                    txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(editable.toString()) / rate * 1000) + "");
             }
         });
 
     }
 
     private void intImage() {
-        imgBalace.setBackgroundResource(R.mipmap.pay_unchoose);
+        imgSubsidy.setBackgroundResource(R.mipmap.pay_unchoose);
         imgWeixin.setBackgroundResource(R.mipmap.pay_unchoose);
         imgZhifubao.setBackgroundResource(R.mipmap.pay_unchoose);
     }
 
-    @OnClick({R.id.layout_back, R.id.img_balace, R.id.img_weixin, R.id.img_zhifubao, R.id.txt_pay})
+    @OnClick({R.id.layout_back, R.id.layout_subsidy, R.id.layout_weixin, R.id.layout_zhifubao, R.id.txt_pay})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
                 finish();
                 break;
 
-            case R.id.img_balace:
+            case R.id.layout_subsidy:
                 intImage();
-                payWay = "1";
-                imgBalace.setBackgroundResource(R.mipmap.pay_choose);
+                payWay = "22";
+                imgSubsidy.setBackgroundResource(R.mipmap.pay_choose);
                 break;
 
-            case R.id.img_weixin:
+            case R.id.layout_weixin:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
                 break;
 
-            case R.id.img_zhifubao:
+            case R.id.layout_zhifubao:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
@@ -185,14 +190,14 @@ public class GiftBuyActivity extends MyBaseActivity {
                         Toast.makeText(GiftBuyActivity.this, "金额必须大于等于0.01元", Toast.LENGTH_SHORT).show();
                     } else {
 
-                        if(payWay.equals("1")){
+                        if (payWay.equals("22")) {
                             if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
                                 Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(GiftBuyActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
                             } else {
                                 tip(view);
                             }
-                        }else {
+                        } else {
                             pay("");
                         }
 
@@ -201,7 +206,7 @@ public class GiftBuyActivity extends MyBaseActivity {
 
                     if (type.equals("gift")) {
                         Toast.makeText(GiftBuyActivity.this, "请输入礼品券数量", Toast.LENGTH_SHORT).show();
-                    }else {
+                    } else {
                         Toast.makeText(GiftBuyActivity.this, "请输入联盟券数量", Toast.LENGTH_SHORT).show();
                     }
 
@@ -258,9 +263,9 @@ public class GiftBuyActivity extends MyBaseActivity {
         }
 
         String code;
-        if (type.equals("gift")){
+        if (type.equals("gift")) {
             code = CODE_808250;
-        }else {
+        } else {
             code = CODE_808251;
         }
 
@@ -268,7 +273,7 @@ public class GiftBuyActivity extends MyBaseActivity {
             @Override
             public void onSuccess(String result) {
                 try {
-                    if (payWay.equals("1")) {
+                    if (payWay.equals("22")) {
                         Toast.makeText(GiftBuyActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         finish();
 

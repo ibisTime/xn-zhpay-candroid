@@ -482,6 +482,9 @@ public class GoodDetailsActivity extends MyBaseActivity {
 
         ImageUtil.glide(model.getAdvPic(),imgPhoto,GoodDetailsActivity.this);
 
+        // 初始化数据
+        number = 1;
+        index = 0;
         if(model.getProductSpecsList() != null){
             if(model.getProductSpecsList().size() > 0){
                 list.clear();

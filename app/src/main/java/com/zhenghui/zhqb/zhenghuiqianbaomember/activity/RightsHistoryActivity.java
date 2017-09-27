@@ -33,6 +33,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808428;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808468;
 
 public class RightsHistoryActivity extends MyBaseActivity implements SwipeRefreshLayout.OnRefreshListener, RefreshLayout.OnLoadListener {
 
@@ -52,6 +53,7 @@ public class RightsHistoryActivity extends MyBaseActivity implements SwipeRefres
     List<RightsListModel> list;
     RightsListAdapter adapter;
 
+    private String type;
     private String code;
 
     private int page = 1;
@@ -73,15 +75,15 @@ public class RightsHistoryActivity extends MyBaseActivity implements SwipeRefres
     }
 
     private void inits() {
-        list = new ArrayList<>();
-        adapter = new RightsListAdapter(this, list);
-
         calendar = Calendar.getInstance();
         calendar.roll(Calendar.DATE, -1);//日期回滚1天
         date = calendar.getTime();
 
         code = getIntent().getStringExtra("code");
+        type = getIntent().getStringExtra("type");
 
+        list = new ArrayList<>();
+        adapter = new RightsListAdapter(this, list, type);
     }
 
     private void initDate() {
@@ -231,6 +233,13 @@ public class RightsHistoryActivity extends MyBaseActivity implements SwipeRefres
     }
 
     private void getData() {
+        String httpCode;
+        if (type.equals("FHQ")){
+            httpCode = CODE_808428;
+        }else {
+            httpCode = CODE_808468;
+        }
+
         Calendar lastDate = Calendar.getInstance();
         lastDate.roll(Calendar.DATE, -7);//日期回滚7天
 
@@ -253,7 +262,7 @@ public class RightsHistoryActivity extends MyBaseActivity implements SwipeRefres
             e.printStackTrace();
         }
 
-        new Xutil().post(CODE_808428, object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post(httpCode, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
                 try {

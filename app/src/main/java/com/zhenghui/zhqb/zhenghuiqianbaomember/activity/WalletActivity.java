@@ -63,18 +63,21 @@ public class WalletActivity extends MyBaseActivity {
     LinearLayout activityWallet;
 
     private double frb;
-    private double frozenAmount;
+    private double frFrozen;
+    private double btFrozen;
     private double gxb;
     private double lpq;
     private double qbb;
     private double lmq;
     private double szjf;
+    private double btb;
 
     private String frbCode;
     private String gxbCode;
     private String qbbCode;
     private String lmqCode;
     private String lpqCode;
+    private String btbCode;
     private String szjfCode;
 
     private List<WalletModel> list;
@@ -86,8 +89,14 @@ public class WalletActivity extends MyBaseActivity {
         ButterKnife.inject(this);
 
         inits();
-        getMoney();
+
 //        getBalance();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getMoney();
     }
 
     private void inits() {
@@ -145,7 +154,7 @@ public class WalletActivity extends MyBaseActivity {
                 case "FRB": // 分润
                     txtFenrun.setText(MoneyUtil.moneyFormatDouble(model.getAmount()));
                     frb = model.getAmount();
-                    frozenAmount = model.getFrozenAmount();
+                    frFrozen = model.getFrozenAmount();
 
                     frbCode = model.getAccountNumber();
                     break;
@@ -184,15 +193,23 @@ public class WalletActivity extends MyBaseActivity {
 
                     lmqCode = model.getAccountNumber();
                     break;
+
+                case "BTB": // 补贴
+                    txtBalance.setText(MoneyUtil.moneyFormatDouble(model.getAmount()));
+                    btb = model.getAmount();
+                    btFrozen = model.getFrozenAmount();
+
+                    btbCode = model.getAccountNumber();
+                    break;
             }
         }
-        txtBalance.setText(MoneyUtil.moneyFormatDouble(frb + gxb));
-        txtFrozenAmount.setText("提现中金额(含手续费):" + MoneyUtil.moneyFormatDouble(frozenAmount));
+//        txtBalance.setText(MoneyUtil.moneyFormatDouble(frb + gxb));
+        txtFrozenAmount.setText("提现中金额(含手续费):" + MoneyUtil.moneyFormatDouble(btFrozen + frFrozen));
     }
 
 
     @OnClick({R.id.layout_back, R.id.layout_gxb, R.id.layout_frb, R.id.layout_lpq, R.id.layout_qbb,
-            R.id.layout_szjf, R.id.layout_lmq})
+            R.id.layout_szjf, R.id.layout_lmq,R.id.txt_balance})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -239,6 +256,13 @@ public class WalletActivity extends MyBaseActivity {
                         .putExtra("accountNumber", lmqCode)
                         .putExtra("accountAmount", lmq)
                         .putExtra("accountName", "lmq"));
+                break;
+
+            case R.id.txt_balance:
+                startActivity(new Intent(this, BillActivity.class)
+                        .putExtra("accountNumber", btbCode)
+                        .putExtra("accountAmount", btb)
+                        .putExtra("accountName", "btb"));
                 break;
         }
     }

@@ -11,6 +11,13 @@ public class MoneyUtil {
         return showMoney.substring(0,showMoney.length()-1);
     }
 
+    public static String doubleFormatSXF(double d){
+        DecimalFormat df = new DecimalFormat("#######0.000");
+        String showMoney = df.format(d);
+        return showMoney.substring(0,showMoney.length()-1);
+    }
+
+
     public static String moneyFormatPrice(double rmb, double gwb, double qbb){
 
         String s1,s2,s3;

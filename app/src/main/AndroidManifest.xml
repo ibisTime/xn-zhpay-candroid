@@ -316,6 +316,7 @@
         <activity android:name=".activity.GiftBuyActivity"></activity>
         <activity android:name=".activity.ShopGoodActivity"></activity>
         <activity android:name=".activity.RelationStoreActivity"></activity>
+        <activity android:name=".activity.SubsidyActivity"></activity>
     </application>
 
 </manifest>

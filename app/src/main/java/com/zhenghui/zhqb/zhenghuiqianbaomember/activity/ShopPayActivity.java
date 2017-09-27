@@ -60,32 +60,49 @@ public class ShopPayActivity extends MyBaseActivity {
     TextView txtDiscount;
     @InjectView(R.id.layout_discount)
     LinearLayout layoutDiscount;
+    @InjectView(R.id.txt_subsidy)
+    TextView txtSubsidy;
+    @InjectView(R.id.img_subsidy)
+    ImageView imgSubsidy;
+    @InjectView(R.id.layout_subsidy)
+    LinearLayout layoutSubsidy;
     @InjectView(R.id.txt_balace)
     TextView txtBalace;
     @InjectView(R.id.img_balace)
     ImageView imgBalace;
-    @InjectView(R.id.img_weixin)
-    ImageView imgWeixin;
-    @InjectView(R.id.img_zhifubao)
-    ImageView imgZhifubao;
-    @InjectView(R.id.txt_finallyPrice)
-    TextView txtFinallyPrice;
-    @InjectView(R.id.txt_pay)
-    TextView txtPay;
-    @InjectView(R.id.txt_discountMoney)
-    TextView txtDiscountMoney;
+    @InjectView(R.id.layout_balace)
+    LinearLayout layoutBalace;
     @InjectView(R.id.txt_lmq)
     TextView txtLmq;
     @InjectView(R.id.img_lmq)
     ImageView imgLmq;
-
+    @InjectView(R.id.layout_lmq)
+    LinearLayout layoutLmq;
+    @InjectView(R.id.txt_weixin)
+    TextView txtWeixin;
+    @InjectView(R.id.img_weixin)
+    ImageView imgWeixin;
+    @InjectView(R.id.layout_wx)
+    LinearLayout layoutWx;
+    @InjectView(R.id.txt_zhifubao)
+    TextView txtZhifubao;
+    @InjectView(R.id.img_zhifubao)
+    ImageView imgZhifubao;
+    @InjectView(R.id.layout_ali)
+    LinearLayout layoutAli;
+    @InjectView(R.id.txt_finallyPrice)
+    TextView txtFinallyPrice;
+    @InjectView(R.id.txt_discountMoney)
+    TextView txtDiscountMoney;
+    @InjectView(R.id.txt_pay)
+    TextView txtPay;
     private String ticketCode = "";
 
     private String code;
     private String currency;
     private SharedPreferences userInfoSp;
 
-    private String payWay = "1";
+    private String payWay = "22";
     private double key1 = 0;
     private double key2 = 0;
 
@@ -116,12 +133,9 @@ public class ShopPayActivity extends MyBaseActivity {
         currency = getIntent().getStringExtra("currency");
         userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
-//        if (currency.equals("1")) {
-//            txtBalace.setText("分润支付");
-//        } else {
-//            txtBalace.setText("贡献值分润支付");
-//        }
-
+        if (userInfoSp.getString("isGxz", "").equals("0")) {
+            txtBalace.setVisibility(View.GONE);
+        }
     }
 
     private void initEditText() {
@@ -157,12 +171,12 @@ public class ShopPayActivity extends MyBaseActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if(editable.toString().equals("")){
+                if (editable.toString().equals("")) {
                     txtFinallyPrice.setText("0");
-                }else{
-                    if(payWay.equals("21")){
-                        txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(editable.toString()) * rate * 1000)+"");
-                    }else{
+                } else {
+                    if (payWay.equals("21")) {
+                        txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(editable.toString()) * rate * 1000) + "");
+                    } else {
                         txtFinallyPrice.setText(editable.toString());
 
                     }
@@ -173,8 +187,8 @@ public class ShopPayActivity extends MyBaseActivity {
     }
 
 
-    @OnClick({R.id.layout_back, R.id.layout_discount, R.id.img_balace, R.id.img_lmq, R.id.img_weixin,
-            R.id.img_zhifubao, R.id.txt_pay})
+    @OnClick({R.id.layout_back, R.id.layout_discount, R.id.layout_subsidy, R.id.layout_balace, R.id.layout_lmq, R.id.layout_wx,
+            R.id.layout_ali, R.id.txt_pay})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -197,15 +211,23 @@ public class ShopPayActivity extends MyBaseActivity {
 
                 break;
 
-            case R.id.img_balace:
+            case R.id.layout_subsidy:
                 intImage();
-                payWay = "1";
+                payWay = "22";
+                imgSubsidy.setBackgroundResource(R.mipmap.pay_choose);
+
+                txtFinallyPrice.setText(edtPrice.getText().toString());
+                break;
+
+            case R.id.layout_balace:
+                intImage();
+                payWay = "23";
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);
 
                 txtFinallyPrice.setText(edtPrice.getText().toString());
                 break;
 
-            case R.id.img_weixin:
+            case R.id.layout_wx:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
@@ -213,7 +235,7 @@ public class ShopPayActivity extends MyBaseActivity {
                 txtFinallyPrice.setText(edtPrice.getText().toString());
                 break;
 
-            case R.id.img_zhifubao:
+            case R.id.layout_ali:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
@@ -221,14 +243,14 @@ public class ShopPayActivity extends MyBaseActivity {
                 txtFinallyPrice.setText(edtPrice.getText().toString());
                 break;
 
-            case R.id.img_lmq:
+            case R.id.layout_lmq:
                 intImage();
                 payWay = "21";
                 imgLmq.setBackgroundResource(R.mipmap.pay_choose);
 
                 if (edtPrice.getText() != null) {
                     if (!edtPrice.getText().toString().equals(""))
-                        txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(edtPrice.getText().toString()) * rate * 1000)+"");
+                        txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(edtPrice.getText().toString()) * rate * 1000) + "");
                 }
 
                 break;
@@ -240,7 +262,7 @@ public class ShopPayActivity extends MyBaseActivity {
                         Toast.makeText(ShopPayActivity.this, "金额必须大于等于0.01元", Toast.LENGTH_SHORT).show();
                     } else {
 
-                        if (payWay.equals("1")|| payWay.equals("21")) {
+                        if (payWay.equals("22") || payWay.equals("23") || payWay.equals("21")) {
                             if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
                                 Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(ShopPayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
@@ -260,6 +282,7 @@ public class ShopPayActivity extends MyBaseActivity {
     }
 
     private void intImage() {
+        imgSubsidy.setBackgroundResource(R.mipmap.pay_unchoose);
         imgBalace.setBackgroundResource(R.mipmap.pay_unchoose);
         imgLmq.setBackgroundResource(R.mipmap.pay_unchoose);
         imgWeixin.setBackgroundResource(R.mipmap.pay_unchoose);
@@ -384,7 +407,7 @@ public class ShopPayActivity extends MyBaseActivity {
             @Override
             public void onSuccess(String result) {
                 try {
-                    if (payWay.equals("1")|| payWay.equals("21")) {
+                    if (payWay.equals("22") || payWay.equals("21") || payWay.equals("23")) {
                         Toast.makeText(ShopPayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         finish();
                     } else if (payWay.equals("2")) {

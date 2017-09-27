@@ -14,6 +14,7 @@ public class PersonalModel implements Serializable {
     private String loginPwdStrength;
     private String kind;
     private String level;
+    private String isGxz;
     private String userReferee;
     private String userRefereeName;
     private String mobile;
@@ -32,6 +33,14 @@ public class PersonalModel implements Serializable {
     private String tradepwdFlag;
     private String totalFollowNum;
     private String totalFansNum;
+
+    public String getIsGxz() {
+        return isGxz;
+    }
+
+    public void setIsGxz(String isGxz) {
+        this.isGxz = isGxz;
+    }
 
     public String getCreateDatetime() {
         return createDatetime;

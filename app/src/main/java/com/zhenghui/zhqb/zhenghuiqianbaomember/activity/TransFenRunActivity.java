@@ -13,8 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.MoneyUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.Xutil;
 
@@ -25,8 +25,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_802027;
-import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_802410;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_802029;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_802418;
 
 public class TransFenRunActivity extends MyBaseActivity {
 
@@ -76,13 +76,8 @@ public class TransFenRunActivity extends MyBaseActivity {
         type = getIntent().getStringExtra("type");
         balance = getIntent().getDoubleExtra("balance", 0.00);
 
-        if (type.equals("HBB")) {
-            txtTitle.setText("红包转贡献值");
-            txtType.setText("转贡献值金额");
-        } else {
-            txtTitle.setText("红包业绩转贡献值");
-            txtType.setText("转贡献值金额");
-        }
+        txtTitle.setText("转账");
+        txtType.setText("转账金额");
 
         txtBalance.setText(MoneyUtil.moneyFormatDouble(balance));
 
@@ -141,13 +136,13 @@ public class TransFenRunActivity extends MyBaseActivity {
             object.put("userId", userInfoSp.getString("userId", null));
             object.put("fromAmount", Double.parseDouble(edtAmount.getText().toString().trim()) * 1000);
             object.put("fromCurrency", type);
-            object.put("toCurrency", "GXJL");
+//            object.put("toCurrency", "GXJL");
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post(CODE_802410, object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post(CODE_802418, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
 
@@ -168,27 +163,63 @@ public class TransFenRunActivity extends MyBaseActivity {
         });
     }
 
+//    private void getTip() {
+//        JSONObject object = new JSONObject();
+//        try {
+//            object.put("companyCode", appConfigSp.getString("systemCode", null));
+//            object.put("systemCode", appConfigSp.getString("systemCode", null));
+//            object.put("key", "EXCTIMES");
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        new Xutil().post(CODE_802027, object.toString(), new Xutil.XUtils3CallBackPost() {
+//            @Override
+//            public void onSuccess(String result) {
+//
+//                try {
+//                    JSONObject jsonObject = new JSONObject(result);
+//                    txtTip.setText("*每个用户每月可以操作"+jsonObject.getString("cvalue")+"次");
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onTip(String tip) {
+//                Toast.makeText(TransFenRunActivity.this, tip, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onError(String error, boolean isOnCallback) {
+//                Toast.makeText(TransFenRunActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+
     private void getTip() {
         JSONObject object = new JSONObject();
         try {
             object.put("companyCode", appConfigSp.getString("systemCode", null));
             object.put("systemCode", appConfigSp.getString("systemCode", null));
-            object.put("key", "EXCTIMES");
+            object.put("key", "TR");
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        new Xutil().post(CODE_802027, object.toString(), new Xutil.XUtils3CallBackPost() {
+        new Xutil().post(CODE_802029, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
 
-                try {
-                    JSONObject jsonObject = new JSONObject(result);
-                    txtTip.setText("*每个用户每月可以操作"+jsonObject.getString("cvalue")+"次");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    JSONObject jsonObject = new JSONObject(result);
+//                    txtTip.setText("*每个用户每月可以操作"+jsonObject.getString("cvalue")+"次");
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
 
             }
 

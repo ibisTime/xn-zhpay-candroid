@@ -23,8 +23,10 @@ public class RightsListAdapter extends BaseAdapter {
     private List<RightsListModel> list;
     private Context context;
     private ViewHolder holder;
+    private String type;
 
-    public RightsListAdapter(Context context, List<RightsListModel> list) {
+    public RightsListAdapter(Context context, List<RightsListModel> list, String type) {
+        this.type = type;
         this.list = list;
         this.context = context;
     }
@@ -60,36 +62,39 @@ public class RightsListAdapter extends BaseAdapter {
     }
 
     private void setView(int position) {
-        holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(position).getToAmount())+setAssets(position));
-
-        if(list.get(position).getCreateDatetime() != null){
-            SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            Date d5 = new Date(list.get(position).getCreateDatetime());
-            holder.txtTime.setText(s.format(d5));
+        if (type.equals("BTQ")){
+            holder.txtTimeTitle.setText("补贴时间:");
+            holder.txtPriceTitle.setText("补贴金额:");
         }
+
+        holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(position).getToAmount()) + setAssets(position));
+
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d5 = new Date(list.get(position).getCreateDatetime());
+        holder.txtTime.setText(s.format(d5));
     }
 
     private String setAssets(int position) {
-            switch (list.get(position).getToCurrency()){
-                case "FRB":
-                    return "分润";
+        switch (list.get(position).getToCurrency()) {
+            case "FRB":
+                return "分润";
 
-                case "QBB":
-                    return "钱包币";
+            case "QBB":
+                return "钱包币";
 
-                case "HBB":
-                    return "红包币";
+            case "HBB":
+                return "红包币";
 
-                case "GXJL":
-                    return "贡献奖励";
+            case "GXJL":
+                return "贡献奖励";
 
-                case "GWB":
-                    return "购物币";
+            case "GWB":
+                return "购物币";
 
-                case "HBYJ":
-                    return "红包业绩";
+            case "HBYJ":
+                return "红包业绩";
 
-            }
+        }
         return "";
     }
 
@@ -98,6 +103,10 @@ public class RightsListAdapter extends BaseAdapter {
         TextView txtPrice;
         @InjectView(R.id.txt_time)
         TextView txtTime;
+        @InjectView(R.id.txt_price_title)
+        TextView txtPriceTitle;
+        @InjectView(R.id.txt_time_title)
+        TextView txtTimeTitle;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

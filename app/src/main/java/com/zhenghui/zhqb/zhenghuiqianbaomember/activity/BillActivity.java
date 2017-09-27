@@ -117,8 +117,7 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
                 break;
 
             case "frb":
-                txtBeGx.setVisibility(View.VISIBLE);
-                txtBeGx.setText("转账");
+                txtBeGx.setVisibility(View.GONE);
                 txtBtn.setVisibility(View.VISIBLE);
                 txtBtn.setText("提现");
                 txtTitle.setText("分润流水");
@@ -147,6 +146,14 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
                 txtBeGx.setVisibility(View.GONE);
                 txtBtn.setVisibility(View.GONE);
                 txtTitle.setText("联盟币流水");
+                break;
+
+            case "btb":
+                txtBeGx.setVisibility(View.VISIBLE);
+                txtBeGx.setText("转账");
+                txtBtn.setVisibility(View.VISIBLE);
+                txtBtn.setText("提现");
+                txtTitle.setText("补贴流水");
                 break;
         }
     }
@@ -253,22 +260,11 @@ public class BillActivity extends MyBaseActivity implements SwipeRefreshLayout.O
             case R.id.txt_beGx:
 
                 switch (accountName){
-                    case "hbyj":
-                        startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
-                                .putExtra("type", "HBYJ")
-                                .putExtra("balance", accountAmount));
-                        break;
-
-                    case "hbb":
-                        startActivity(new Intent(BillActivity.this, TransFenRunActivity.class)
-                                .putExtra("type", "HBB")
-                                .putExtra("balance", accountAmount));
-                        break;
-
-                    case "frb":
+                    case "btb":
                         if(userInfoSp.getString("tradepwdFlag", null).equals("1")){ // tradepwdFlag 支付密码标示 1有 0 无
 
                             startActivity(new Intent(BillActivity.this, TransferActivity.class)
+                                    .putExtra("type", "BTB")
                                     .putExtra("balance", accountAmount));
 
                         } else {

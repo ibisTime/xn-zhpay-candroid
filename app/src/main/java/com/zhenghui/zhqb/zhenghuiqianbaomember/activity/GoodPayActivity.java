@@ -48,20 +48,32 @@ public class GoodPayActivity extends MyBaseActivity {
     TextView txtCurrency;
     @InjectView(R.id.txt_price)
     TextView txtPrice;
+    @InjectView(R.id.txt_subsidy)
+    TextView txtSubsidy;
+    @InjectView(R.id.img_subsidy)
+    ImageView imgSubsidy;
+    @InjectView(R.id.layout_subsidy)
+    LinearLayout layoutSubsidy;
     @InjectView(R.id.txt_balace)
     TextView txtBalace;
     @InjectView(R.id.img_balace)
     ImageView imgBalace;
+    @InjectView(R.id.layout_balance)
+    LinearLayout layoutBalance;
     @InjectView(R.id.txt_lmq)
     TextView txtLmq;
     @InjectView(R.id.img_lmq)
     ImageView imgLmq;
     @InjectView(R.id.layout_lmq)
     LinearLayout layoutLmq;
+    @InjectView(R.id.txt_weixin)
+    TextView txtWeixin;
     @InjectView(R.id.img_weixin)
     ImageView imgWeixin;
-    @InjectView(R.id.layout_wx)
-    LinearLayout layoutWx;
+    @InjectView(R.id.layout_weixin)
+    LinearLayout layoutWeixin;
+    @InjectView(R.id.txt_zhifubao)
+    TextView txtZhifubao;
     @InjectView(R.id.img_zhifubao)
     ImageView imgZhifubao;
     @InjectView(R.id.layout_ali)
@@ -72,8 +84,7 @@ public class GoodPayActivity extends MyBaseActivity {
     TextView txtFinallyPrice;
     @InjectView(R.id.txt_pay)
     TextView txtPay;
-
-    private String payWay = "1";
+    private String payWay = "22";
 
     private double rmb;
     private double gwb;
@@ -127,12 +138,13 @@ public class GoodPayActivity extends MyBaseActivity {
         appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
 
         if (type.equals("G01")) {
-            txtBalace.setText("礼品券");
+            txtSubsidy.setText("礼品券");
             payWay = "20";
 
             layoutLmq.setVisibility(View.GONE);
-            layoutWx.setVisibility(View.GONE);
+            layoutWeixin.setVisibility(View.GONE);
             layoutAli.setVisibility(View.GONE);
+            layoutBalance.setVisibility(View.GONE);
         } else {
 //            if (currency.equals("1")) {
 //                txtBalace.setText("分润支付");
@@ -141,39 +153,51 @@ public class GoodPayActivity extends MyBaseActivity {
 //            }
         }
 
+        if (userInfoSp.getString("isGxz", "").equals("0")) {
+            layoutBalance.setVisibility(View.GONE);
+        }
+
     }
 
-    @OnClick({R.id.layout_back, R.id.img_balace, R.id.img_lmq, R.id.img_weixin, R.id.img_zhifubao, R.id.txt_pay})
+    @OnClick({R.id.layout_back, R.id.layout_subsidy, R.id.txt_balace, R.id.layout_lmq, R.id.layout_weixin, R.id.layout_ali, R.id.txt_pay})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
                 finish();
                 break;
 
-            case R.id.img_balace:
+            case R.id.layout_subsidy:
+                intImage();
+                payWay = "22";
+                imgSubsidy.setBackgroundResource(R.mipmap.pay_choose);
+
+                txtFinallyPrice.setText(txtPrice.getText().toString());
+                break;
+
+            case R.id.txt_balace:
                 intImage();
                 if (type.equals("G01")) {
                     payWay = "20";
                 } else {
-                    payWay = "1";
+                    payWay = "23";
                 }
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);
 
                 txtFinallyPrice.setText(txtPrice.getText().toString());
                 break;
 
-            case R.id.img_lmq:
+            case R.id.layout_lmq:
                 intImage();
                 payWay = "21";
                 imgLmq.setBackgroundResource(R.mipmap.pay_choose);
 
                 if (txtPrice.getText() != null) {
                     if (!txtPrice.getText().toString().equals(""))
-                        txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(txtPrice.getText().toString()) * rate * 1000)+"");
+                        txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(Double.parseDouble(txtPrice.getText().toString()) * rate * 1000) + "");
                 }
                 break;
 
-            case R.id.img_weixin:
+            case R.id.layout_weixin:
                 intImage();
                 payWay = "2";
                 imgWeixin.setBackgroundResource(R.mipmap.pay_choose);
@@ -181,7 +205,7 @@ public class GoodPayActivity extends MyBaseActivity {
                 txtFinallyPrice.setText(txtPrice.getText().toString());
                 break;
 
-            case R.id.img_zhifubao:
+            case R.id.layout_ali:
                 intImage();
                 payWay = "3";
                 imgZhifubao.setBackgroundResource(R.mipmap.pay_choose);
@@ -190,7 +214,7 @@ public class GoodPayActivity extends MyBaseActivity {
                 break;
 
             case R.id.txt_pay:
-                if (payWay.equals("1") || payWay.equals("20") || payWay.equals("21")) {
+                if (payWay.equals("20") || payWay.equals("22") || payWay.equals("21") || payWay.equals("23")) {
                     if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
                         Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(GoodPayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
@@ -199,7 +223,7 @@ public class GoodPayActivity extends MyBaseActivity {
                     }
                 } else {
                     if (shopCart) {
-                        shoppingCartPay("");
+//                        shoppingCartPay("");
                     } else {
                         pay("");
                     }
@@ -209,6 +233,7 @@ public class GoodPayActivity extends MyBaseActivity {
     }
 
     private void intImage() {
+        imgSubsidy.setBackgroundResource(R.mipmap.pay_unchoose);
         imgBalace.setBackgroundResource(R.mipmap.pay_unchoose);
         imgLmq.setBackgroundResource(R.mipmap.pay_unchoose);
         imgWeixin.setBackgroundResource(R.mipmap.pay_unchoose);
@@ -272,7 +297,7 @@ public class GoodPayActivity extends MyBaseActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(result);
 
-                    if (payWay.equals("1") || payWay.equals("20") || payWay.equals("21")) {
+                    if (payWay.equals("20") || payWay.equals("22") || payWay.equals("21") || payWay.equals("23")) {
 
                         Toast.makeText(GoodPayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         finish();
@@ -313,63 +338,63 @@ public class GoodPayActivity extends MyBaseActivity {
         });
     }
 
-    private void shoppingCartPay(String tradePwd) {
-
-        JSONArray jsonArray = new JSONArray();
-        for (int i = 0; i < codeList.size(); i++) {
-            jsonArray.put(codeList.get(i));
-        }
-
-        JSONObject object = new JSONObject();
-        try {
-            object.put("codeList", jsonArray);
-            object.put("payType", payWay);
-            object.put("tradePwd", tradePwd);
-            object.put("token", userInfoSp.getString("token", null));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        new Xutil().post(CODE_808052, object.toString(), new Xutil.XUtils3CallBackPost() {
-            @Override
-            public void onSuccess(String result) {
-                try {
-                    JSONObject jsonObject = new JSONObject(result);
-
-                    if (payWay.equals("1")) {
-
-                        Toast.makeText(GoodPayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
-                        finish();
-
-                    } else if (payWay.equals("2")) {
-
-                        if (WxUtil.check(GoodPayActivity.this)) {
-                            WxUtil.pay(GoodPayActivity.this, jsonObject);
-                        }
-
-                    } else if (payWay.equals("3")) {
-                        AliPay(jsonObject.getString("signOrder"));
-
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-
-            @Override
-            public void onTip(String tip) {
-                Toast.makeText(GoodPayActivity.this, tip, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(String error, boolean isOnCallback) {
-                Toast.makeText(GoodPayActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private void shoppingCartPay(String tradePwd) {
+//
+//        JSONArray jsonArray = new JSONArray();
+//        for (int i = 0; i < codeList.size(); i++) {
+//            jsonArray.put(codeList.get(i));
+//        }
+//
+//        JSONObject object = new JSONObject();
+//        try {
+//            object.put("codeList", jsonArray);
+//            object.put("payType", payWay);
+//            object.put("tradePwd", tradePwd);
+//            object.put("token", userInfoSp.getString("token", null));
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        new Xutil().post(CODE_808052, object.toString(), new Xutil.XUtils3CallBackPost() {
+//            @Override
+//            public void onSuccess(String result) {
+//                try {
+//                    JSONObject jsonObject = new JSONObject(result);
+//
+//                    if (payWay.equals("1")) {
+//
+//                        Toast.makeText(GoodPayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
+//                        finish();
+//
+//                    } else if (payWay.equals("2")) {
+//
+//                        if (WxUtil.check(GoodPayActivity.this)) {
+//                            WxUtil.pay(GoodPayActivity.this, jsonObject);
+//                        }
+//
+//                    } else if (payWay.equals("3")) {
+//                        AliPay(jsonObject.getString("signOrder"));
+//
+//                    }
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onTip(String tip) {
+//                Toast.makeText(GoodPayActivity.this, tip, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onError(String error, boolean isOnCallback) {
+//                Toast.makeText(GoodPayActivity.this, "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
 
     private void setView() {
@@ -501,7 +526,7 @@ public class GoodPayActivity extends MyBaseActivity {
                     popupWindow.dismiss();
 
                     if (shopCart) {
-                        shoppingCartPay(edtTradePwd.getText().toString().toString());
+//                        shoppingCartPay(edtTradePwd.getText().toString().toString());
                     } else {
                         pay(edtTradePwd.getText().toString().toString());
                     }

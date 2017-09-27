@@ -40,6 +40,7 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.OrderListActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RelationActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RightsActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.SettingActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.SubsidyActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.WalletActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
@@ -63,6 +64,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.layout_subsidy;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_805056;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_805077;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil.RESULT_CAMARA_IMAGE;
@@ -79,6 +81,8 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
     TextView txtShare;
     @InjectView(R.id.layout_earnings)
     LinearLayout layoutEarnings;
+    @InjectView(layout_subsidy)
+    LinearLayout layoutSubsidy;
     @InjectView(R.id.layout_relation)
     LinearLayout layoutRelation;
     @InjectView(R.id.layout_wallet)
@@ -230,7 +234,7 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
     }
 
 
-    @OnClick({R.id.layout_target, R.id.layout_seting, R.id.txt_share,
+    @OnClick({R.id.layout_target, R.id.layout_seting, R.id.txt_share, R.id.layout_subsidy,
             R.id.img_photo, R.id.layout_earnings, R.id.layout_wallet, R.id.layout_shoppinglist,
             R.id.layout_shop, R.id.layout_relation})
     public void onClick(View view) {
@@ -246,6 +250,10 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
                 editor.commit();
 
                 showShare(view);
+                break;
+
+            case layout_subsidy:
+                startActivity(new Intent(getActivity(), SubsidyActivity.class));
                 break;
 
             case R.id.layout_earnings:

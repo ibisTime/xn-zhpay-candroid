@@ -258,14 +258,20 @@ public class ShopDetailsActivity extends MyBaseActivity {
                 break;
 
             case R.id.txt_buy:
-                if (model.getType().equals("G01")){
-                    startActivity(new Intent(ShopDetailsActivity.this, GiftBuyActivity.class)
-                            .putExtra("type", "gift")
-                            .putExtra("code", code));
-                }else {
-                    startActivity(new Intent(ShopDetailsActivity.this, GiftBuyActivity.class)
-                            .putExtra("type", "lm")
-                            .putExtra("code", code));
+                if (userInfoSp.getString("userId", null) == null) {
+                    Toast.makeText(ShopDetailsActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(ShopDetailsActivity.this, LoginActivity.class));
+                } else {
+                    if (model.getType().equals("G01")){
+                        startActivity(new Intent(ShopDetailsActivity.this, GiftBuyActivity.class)
+                                .putExtra("type", "gift")
+                                .putExtra("code", code));
+                    }else {
+                        startActivity(new Intent(ShopDetailsActivity.this, GiftBuyActivity.class)
+                                .putExtra("type", "lm")
+                                .putExtra("code", code));
+                    }
+
                 }
                 break;
         }

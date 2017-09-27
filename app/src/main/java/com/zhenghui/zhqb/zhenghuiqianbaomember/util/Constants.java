@@ -90,7 +90,7 @@ public class Constants {
     /**
      *  根据key列表获取value列表
      */
-    public static String CODE_802028 = "802028";
+    public static String CODE_802029 = "802029";
     /**
      *  列表查询渠道银行
      */
@@ -106,7 +106,7 @@ public class Constants {
     /**
      *  C2C转账
      */
-    public static String CODE_802414 = "802414";
+    public static String CODE_802418 = "802418";
     /**
      *  根据用户编号查询账户列表
      */
@@ -360,6 +360,28 @@ public class Constants {
      *
      */
     public static String CODE_808456 = "808456";
+    /**
+     *  我的补贴权分页查询
+     */
+    public static String CODE_808457 = "808457";
+    /**
+     *  我的下一个补贴权查询
+     */
+    public static String CODE_808458 = "808458";
+    /**
+     *  我今日补贴权个数及收益统计
+     */
+    public static String CODE_808459 = "808459";
+
+    /**
+     *  分页查询补贴权返利记录
+     */
+    public static String CODE_808465 = "808465";
+    /**
+     *  分页查询补贴权返利记录
+     */
+    public static String CODE_808468 = "808468";
+
     /**
      *
      */
