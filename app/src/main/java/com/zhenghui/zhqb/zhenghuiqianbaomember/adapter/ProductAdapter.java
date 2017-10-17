@@ -66,17 +66,14 @@ public class ProductAdapter extends BaseAdapter {
         holder.txtParameter.setText(list.get(position).getProductSpecsName());
         ImageUtil.glide(list.get(position).getProductImage(), holder.imgProduct, context);
 
-
-        switch (list.get(position).getType()){
-
-            case "G01":
-                holder.txtCurrency.setText("礼品券");
-                break;
-
-            default:
+        if (list.get(position).getType().equals("G01")){
+            holder.txtCurrency.setText("礼品券");
+        }else {
+            if (list.get(position).getPayCurrency().equals("4")){
+                holder.txtCurrency.setText("钱包币");
+            }else{
                 holder.txtCurrency.setText("¥");
-                break;
-
+            }
         }
         holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(position).getPrice1()));
 

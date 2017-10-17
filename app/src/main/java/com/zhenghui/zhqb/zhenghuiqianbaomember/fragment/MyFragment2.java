@@ -42,6 +42,7 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RightsActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.SettingActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.SubsidyActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.WalletActivity;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.WebActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.model.PersonalModel;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.util.QiNiuUtil;
@@ -64,9 +65,11 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.layout_h5;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.layout_subsidy;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_805056;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_805077;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_807718;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil.RESULT_CAMARA_IMAGE;
 
 public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
@@ -97,6 +100,8 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
     LinearLayout layoutSeting;
     @InjectView(R.id.swipe_container)
     RefreshLayout swipeContainer;
+    @InjectView(R.id.layout_h5)
+    LinearLayout layoutH5;
 
     // Fragment主视图
     private View view;
@@ -109,6 +114,8 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
 
 
     private String shareURL = "";
+    private String h5URL = "";
+    private String h5_is_open = "";
 
     @Nullable
     @Override
@@ -117,7 +124,6 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
         ButterKnife.inject(this, view);
 
         inis();
-        getData();
         initRefreshLayout();
 
         return view;
@@ -126,6 +132,7 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
     @Override
     public void onResume() {
         super.onResume();
+        getH5();
         getData();
     }
 
@@ -234,13 +241,17 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
     }
 
 
-    @OnClick({R.id.layout_target, R.id.layout_seting, R.id.txt_share, R.id.layout_subsidy,
+    @OnClick({R.id.layout_target, layout_h5, R.id.layout_seting, R.id.txt_share, R.id.layout_subsidy,
             R.id.img_photo, R.id.layout_earnings, R.id.layout_wallet, R.id.layout_shoppinglist,
             R.id.layout_shop, R.id.layout_relation})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.img_photo:
                 choosePhoto(view);
+                break;
+
+            case layout_h5:
+                startActivity(new Intent(getActivity(), WebActivity.class).putExtra("webURL", h5URL));
                 break;
 
             case R.id.txt_share:
@@ -568,6 +579,44 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
                 editor.putString("photo", url);
                 editor.commit();
                 getData();
+            }
+
+            @Override
+            public void onTip(String tip) {
+                Toast.makeText(getActivity(), tip, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String error, boolean isOnCallback) {
+                Toast.makeText(getActivity(), "无法连接服务器，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void getH5() {
+        JSONObject object = new JSONObject();
+        try {
+            object.put("type", "h5_site");
+            object.put("systemCode", appConfigSp.getString("systemCode", null));
+            object.put("companyCode", appConfigSp.getString("systemCode", null));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new Xutil().post(CODE_807718, object.toString(), new Xutil.XUtils3CallBackPost() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    h5URL = jsonObject.getString("web_url");
+
+                    if (jsonObject.getString("is_open").equals("0")){
+                        layoutH5.setVisibility(View.GONE);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override

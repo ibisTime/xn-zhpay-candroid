@@ -101,6 +101,11 @@ public class ShopDetailsActivity extends MyBaseActivity {
         initEvent();
         initListView();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         getDatas();
     }
 

@@ -19,7 +19,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal" >
 
-            <ImageButton
+            <ImageView
                 android:background="@mipmap/back_gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="H5"
             android:textSize="17sp" />
     </RelativeLayout>
 

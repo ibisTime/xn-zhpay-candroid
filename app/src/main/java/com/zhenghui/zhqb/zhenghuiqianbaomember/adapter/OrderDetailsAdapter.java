@@ -85,16 +85,14 @@ public class OrderDetailsAdapter extends BaseAdapter {
 
     private void setPrice(int position) {
 
-        switch (list.get(position).getStore().getType()){
-
-            case "G01":
-                holder.txtCurrency.setText("礼品券");
-                break;
-
-            default:
+        if (list.get(position).getStore().getType().equals("G01")){
+            holder.txtCurrency.setText("礼品券");
+        }else {
+            if (list.get(position).getProduct().getPayCurrency().equals("4")){
+                holder.txtCurrency.setText("钱包币");
+            }else{
                 holder.txtCurrency.setText("¥");
-                break;
-
+            }
         }
         holder.txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(position).getPrice1()));
 

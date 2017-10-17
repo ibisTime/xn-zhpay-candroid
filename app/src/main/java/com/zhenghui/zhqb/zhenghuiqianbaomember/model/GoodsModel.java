@@ -190,6 +190,8 @@ public class GoodsModel implements Serializable {
         private String createDatetime;
         private String approveUser;
         private String approveDatetime;
+        private String payCurrency;
+        private String productCurrency;
         private String onUser;
         private String onDatetime;
         private String offUser;
@@ -197,6 +199,22 @@ public class GoodsModel implements Serializable {
         private String owner;
         private String companyCode;
         private String systemCode;
+
+        public String getPayCurrency() {
+            return payCurrency;
+        }
+
+        public void setPayCurrency(String payCurrency) {
+            this.payCurrency = payCurrency;
+        }
+
+        public String getProductCurrency() {
+            return productCurrency;
+        }
+
+        public void setProductCurrency(String productCurrency) {
+            this.productCurrency = productCurrency;
+        }
 
         public String getCode() {
             return code;

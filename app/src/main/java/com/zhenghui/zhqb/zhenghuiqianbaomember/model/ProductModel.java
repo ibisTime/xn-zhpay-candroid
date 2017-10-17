@@ -6,6 +6,7 @@ public class ProductModel implements Serializable {
 
     private String startPoin;
     private String productCode;
+    private String payCurrency;
     private String productSpecsCode;
     private String productSpecsName;
     private String productName;
@@ -15,6 +16,14 @@ public class ProductModel implements Serializable {
     private double price3;
     private String productImage;
     private int productNumber;
+
+    public String getPayCurrency() {
+        return payCurrency;
+    }
+
+    public void setPayCurrency(String payCurrency) {
+        this.payCurrency = payCurrency;
+    }
 
     public String getType() {
         return type;

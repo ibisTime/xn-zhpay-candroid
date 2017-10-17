@@ -91,7 +91,6 @@
 
                         <TextView
                             android:id="@+id/txt_address"
-                            android:text="收货地址：收货地址收货地址收货地址收货地址收货地址收货地址收货地址收货地址收货地址收货地址收货地址"
                             android:textSize="12sp"
                             android:maxLines="2"
                             android:ellipsize="end"

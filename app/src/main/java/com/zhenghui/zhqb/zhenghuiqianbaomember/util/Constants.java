@@ -4,9 +4,9 @@ public class Constants {
 
     // 橙袋科技
 //    public static final String APP_ID_WX = "wx7202b6a02f0270b4";
-    // 正汇老
+    // 花米宝老
 //    public static final String APP_ID_WX = "wx9324d86fb16e8af0";
-    // 正汇新
+    // 花米宝新
     public static final String APP_ID_WX = "wx1c40c1c60500a270";
 
     /**
@@ -39,7 +39,7 @@ public class Constants {
      */
     public static String CODE_615105 = "615105";
     /**
-     *  汇赚宝购买（正汇钱包）
+     *  汇赚宝购买
      */
     public static String CODE_615110 = "615110";
     /**

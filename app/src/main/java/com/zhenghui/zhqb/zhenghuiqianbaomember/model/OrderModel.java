@@ -22,7 +22,8 @@ public class OrderModel {
     private double amount3;
     private double yunfei;
     private String status;
-    private String payType;
+    private String payType = "";
+    private String payCurrency;
     private String payDatetime;
     private int payAmount1;
     private int payAmount11;
@@ -35,6 +36,14 @@ public class OrderModel {
     private String systemCode;
     private StoreBean store;
     private ProductBean product;
+
+    public String getPayCurrency() {
+        return payCurrency;
+    }
+
+    public void setPayCurrency(String payCurrency) {
+        this.payCurrency = payCurrency;
+    }
 
     public String getLogisticsCode() {
         return logisticsCode;

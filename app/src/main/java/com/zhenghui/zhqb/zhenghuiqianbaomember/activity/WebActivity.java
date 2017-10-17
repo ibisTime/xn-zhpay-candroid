@@ -11,22 +11,25 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 
-import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.R;
+import com.zhenghui.zhqb.zhenghuiqianbaomember.application.MyApplication;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.webview;
+
 public class WebActivity extends MyBaseActivity {
 
     @InjectView(R.id.layout_back)
     LinearLayout layoutBack;
-    @InjectView(R.id.webview)
+    @InjectView(webview)
     WebView webView;
 
     String webURL = "www.baidu.com";
     private WebViewClient mWebViewClient;
+    private WebSettings mWebSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,12 @@ public class WebActivity extends MyBaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         MyApplication.getInstance().removeActivity(this);
+
+        deleteDatabase("WebView.db");
+        deleteDatabase("WebViewCache.db");
+        webView.clearHistory();
+        webView.clearFormData();
+        getCacheDir().delete();
     }
 
     private void inits() {
@@ -72,7 +81,7 @@ public class WebActivity extends MyBaseActivity {
         webView.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
         webView.loadUrl(webURL);
 
-        WebSettings mWebSettings = webView.getSettings();
+        mWebSettings = webView.getSettings();
         mWebSettings.setSupportZoom(true);
         mWebSettings.setLoadWithOverviewMode(true);
         mWebSettings.setUseWideViewPort(true);
@@ -83,12 +92,15 @@ public class WebActivity extends MyBaseActivity {
         mWebSettings.setJavaScriptEnabled(true);
         mWebSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 
+        mWebSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+
         mWebSettings.setAllowFileAccess(true);
         mWebSettings.setUseWideViewPort(true);
         mWebSettings.setDatabaseEnabled(true);
         mWebSettings.setLoadWithOverviewMode(true);
         mWebSettings.setDomStorageEnabled(true);
         setupWebViewClient();
+
 
     }
 
@@ -117,7 +129,11 @@ public class WebActivity extends MyBaseActivity {
                 super.onReceivedError(view, request, error);
             }
         };
-            webView.setWebViewClient(mWebViewClient);
+        webView.setWebViewClient(mWebViewClient);
+
+//        MyWebChromeClient myWebChromeClient = new MyWebChromeClient();
+//        webView.setWebChromeClient(myWebChromeClient);
+
     }
 
     @OnClick(R.id.layout_back)

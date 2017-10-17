@@ -1,6 +1,7 @@
 package com.zhenghui.zhqb.zhenghuiqianbaomember.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -106,13 +107,14 @@ public class GoodDetailsActivity extends MyBaseActivity {
         inits();
         initViewPager();
         initFragment();
-        getDatas();
+
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        getDatas();
     }
 
     @Override
@@ -335,6 +337,10 @@ public class GoodDetailsActivity extends MyBaseActivity {
                     model = gson.fromJson(jsonObject.toString(), new TypeToken<GoodsModel>() {
                     }.getType());
 
+                    SharedPreferences.Editor editor = userInfoSp.edit();
+                    editor.putString("shopPayCurrency",model.getStore().getPayCurrency());
+                    editor.commit();
+
                     commodityFragment = CommodityFragment.newInstance(model);
                     detailFragment = DetailFragment.newInstance(model);
                     evaluateFragment = EvaluateFragment.newInstance(model);
@@ -497,15 +503,16 @@ public class GoodDetailsActivity extends MyBaseActivity {
                 txtName.setText(list.get(0).getName());
                 txtQuantity.setText("库存"+list.get(0).getQuantity()+"件");
 
-                switch (model.getStore().getType()) {
-                    case "G01":
-                        txtCurrency.setText("礼品券");
-                        break;
-
-                    default:
+                if (model.getStore().getType().equals("G01")){
+                    txtCurrency.setText("礼品券");
+                }else {
+                    if (model.getPayCurrency().equals("4")){
+                        txtCurrency.setText("钱包币");
+                    }else{
                         txtCurrency.setText("¥");
-                        break;
+                    }
                 }
+
                 txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(0).getPrice1()));
             }
         }
@@ -519,14 +526,14 @@ public class GoodDetailsActivity extends MyBaseActivity {
                 txtName.setText(list.get(i).getName());
                 txtQuantity.setText("库存"+list.get(i).getQuantity()+"件");
 
-                switch (model.getStore().getType()) {
-                    case "G01":
-                        txtCurrency.setText("礼品券");
-                        break;
-
-                    default:
+                if (model.getStore().getType().equals("G01")){
+                    txtCurrency.setText("礼品券");
+                }else {
+                    if (model.getPayCurrency().equals("4")){
+                        txtCurrency.setText("钱包币");
+                    }else{
                         txtCurrency.setText("¥");
-                        break;
+                    }
                 }
                 txtPrice.setText(MoneyUtil.moneyFormatDouble(list.get(i).getPrice1()));
 
@@ -574,6 +581,7 @@ public class GoodDetailsActivity extends MyBaseActivity {
                 productModel.setProductName(model.getName());
                 productModel.setProductImage(model.getAdvPic());
                 productModel.setType(model.getStore().getType());
+                productModel.setPayCurrency(model.getPayCurrency());
                 productModel.setStartPoin(list.get(index).getProvince());
                 productModel.setPrice1(model.getProductSpecsList().get(index).getPrice1());
                 productModel.setPrice2(model.getProductSpecsList().get(index).getPrice2());

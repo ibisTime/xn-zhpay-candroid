@@ -254,7 +254,7 @@ public class ShakeDetailActivity extends MyBaseActivity {
             @Override
             public void onClick(View arg0) {
                 WxUtil.shareToWX(ShakeDetailActivity.this, shareURL,
-                        "正汇钱包邀您玩转红包",
+                        "花米宝邀您玩转红包",
                         "小目标，发一发，摇一摇，聊一聊各种红包玩法");
                 popupWindow.dismiss();
             }
@@ -265,7 +265,7 @@ public class ShakeDetailActivity extends MyBaseActivity {
             @Override
             public void onClick(View arg0) {
                 WxUtil.shareToPYQ(ShakeDetailActivity.this, shareURL,
-                        "正汇钱包邀您玩转红包",
+                        "花米宝邀您玩转红包",
                         "小目标，发一发，摇一摇，聊一聊各种红包玩法");
                 popupWindow.dismiss();
 

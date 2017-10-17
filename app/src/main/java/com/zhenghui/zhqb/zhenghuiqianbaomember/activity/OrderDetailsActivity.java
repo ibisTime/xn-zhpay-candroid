@@ -251,14 +251,15 @@ public class OrderDetailsActivity extends MyBaseActivity {
         }
 
         layoutPrice.setVisibility(View.VISIBLE);
-        switch (model.getStore().getType()){
-            case "G01":
-                txtPrice.setText("礼品券 " +MoneyUtil.moneyFormatDouble(model.getAmount1()));
-                break;
 
-            default:
-                txtPrice.setText("¥ " + MoneyUtil.moneyFormatDouble(model.getAmount1()));
-                break;
+        if (model.getStore().getType().equals("G01")){
+            txtPrice.setText("礼品券"+MoneyUtil.moneyFormatDouble(model.getAmount1()));
+        }else {
+            if (model.getProduct().getPayCurrency().equals("4")){
+                txtPrice.setText("钱包币"+MoneyUtil.moneyFormatDouble(model.getAmount1()));
+            }else{
+                txtPrice.setText("¥"+MoneyUtil.moneyFormatDouble(model.getAmount1()));
+            }
         }
 
     }
@@ -276,8 +277,9 @@ public class OrderDetailsActivity extends MyBaseActivity {
                             .putExtra("rmb",model.getAmount1())
                             .putExtra("gwb",model.getAmount2())
                             .putExtra("qbb",model.getAmount3())
-                            .putExtra("type",model.getStore().getType())
                             .putExtra("currency",model.getProduct().getPayCurrency())
+                            .putExtra("type",model.getStore().getType())
+                            .putExtra("payCurrency", model.getProduct().getPayCurrency())
                             .putExtra("yunfei",Double.parseDouble(yunfei)*1000)
                             .putExtra("code",model.getCode()));
                 }else{

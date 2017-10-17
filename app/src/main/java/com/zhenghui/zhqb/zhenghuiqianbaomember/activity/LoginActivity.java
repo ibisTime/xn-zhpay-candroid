@@ -145,7 +145,6 @@ public class LoginActivity extends MyBaseActivity {
                     editor.putString("userId", jsonObject.getString("userId"));
                     editor.putString("token", jsonObject.getString("token"));
 
-                    System.out.println("isRemenberPwd="+isRemenberPwd);
                     if(isRemenberPwd){
                         editor.putString("loginName", edtPhone.getText().toString().trim());
                         editor.putString("loginPwd", edtPassword.getText().toString().trim());

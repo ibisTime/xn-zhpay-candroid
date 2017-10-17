@@ -127,16 +127,14 @@ public class CommodityFragment extends Fragment {
         txtName.setText(model.getName());
         txtInfo.setText(model.getSlogan());
 
-        switch (model.getStore().getType()) {
-
-            case "G01":
-                txtCurrency.setText("礼品券");
-                break;
-
-            default:
+        if (model.getStore().getType().equals("G01")){
+            txtCurrency.setText("礼品券");
+        }else {
+            if (model.getPayCurrency().equals("4")){
+                txtCurrency.setText("钱包币");
+            }else{
                 txtCurrency.setText("¥");
-                break;
-
+            }
         }
         txtPrice.setText(MoneyUtil.moneyFormatDouble(model.getProductSpecsList().get(0).getPrice1()));
 

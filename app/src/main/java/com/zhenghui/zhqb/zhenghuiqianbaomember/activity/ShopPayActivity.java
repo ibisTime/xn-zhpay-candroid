@@ -45,6 +45,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.layout_balace;
+import static com.zhenghui.zhqb.zhenghuiqianbaomember.R.id.layout_subsidy;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_002051;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_802503;
 import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.Constants.CODE_808241;
@@ -64,13 +66,13 @@ public class ShopPayActivity extends MyBaseActivity {
     TextView txtSubsidy;
     @InjectView(R.id.img_subsidy)
     ImageView imgSubsidy;
-    @InjectView(R.id.layout_subsidy)
+    @InjectView(layout_subsidy)
     LinearLayout layoutSubsidy;
     @InjectView(R.id.txt_balace)
     TextView txtBalace;
     @InjectView(R.id.img_balace)
     ImageView imgBalace;
-    @InjectView(R.id.layout_balace)
+    @InjectView(layout_balace)
     LinearLayout layoutBalace;
     @InjectView(R.id.txt_lmq)
     TextView txtLmq;
@@ -136,6 +138,10 @@ public class ShopPayActivity extends MyBaseActivity {
         if (userInfoSp.getString("isGxz", "").equals("0")) {
             txtBalace.setVisibility(View.GONE);
         }
+
+        if(currency.equals("1")){ // 补贴支付
+            layoutBalace.setVisibility(View.GONE);
+        }
     }
 
     private void initEditText() {
@@ -187,7 +193,7 @@ public class ShopPayActivity extends MyBaseActivity {
     }
 
 
-    @OnClick({R.id.layout_back, R.id.layout_discount, R.id.layout_subsidy, R.id.layout_balace, R.id.layout_lmq, R.id.layout_wx,
+    @OnClick({R.id.layout_back, R.id.layout_discount, layout_subsidy, layout_balace, R.id.layout_lmq, R.id.layout_wx,
             R.id.layout_ali, R.id.txt_pay})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -211,7 +217,7 @@ public class ShopPayActivity extends MyBaseActivity {
 
                 break;
 
-            case R.id.layout_subsidy:
+            case layout_subsidy:
                 intImage();
                 payWay = "22";
                 imgSubsidy.setBackgroundResource(R.mipmap.pay_choose);
@@ -219,7 +225,7 @@ public class ShopPayActivity extends MyBaseActivity {
                 txtFinallyPrice.setText(edtPrice.getText().toString());
                 break;
 
-            case R.id.layout_balace:
+            case layout_balace:
                 intImage();
                 payWay = "23";
                 imgBalace.setBackgroundResource(R.mipmap.pay_choose);

@@ -306,7 +306,7 @@ public class JewelActivity extends MyBaseActivity implements SwipeRefreshLayout.
             @Override
             public void onClick(View arg0) {
 
-                WxUtil.shareToWX(JewelActivity.this,shareURL,"小目标大玩法","正汇钱包邀您来玩小目标");
+                WxUtil.shareToWX(JewelActivity.this,shareURL,"小目标大玩法","花米宝邀您来玩小目标");
                 popupWindow.dismiss();
             }
         });
@@ -315,7 +315,7 @@ public class JewelActivity extends MyBaseActivity implements SwipeRefreshLayout.
 
             @Override
             public void onClick(View arg0) {
-                WxUtil.shareToPYQ(JewelActivity.this,shareURL,"小目标大玩法","正汇钱包邀您来玩小目标");
+                WxUtil.shareToPYQ(JewelActivity.this,shareURL,"小目标大玩法","花米宝邀您来玩小目标");
                 popupWindow.dismiss();
 
             }

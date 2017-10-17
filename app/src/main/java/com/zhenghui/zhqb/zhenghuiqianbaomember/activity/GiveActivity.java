@@ -275,7 +275,7 @@ public class GiveActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
                 if (WxUtil.check(GiveActivity.this)) {
                     WxUtil.shareToWX(GiveActivity.this, shareURL,
-                            "正汇钱包邀您领红包",
+                            "花米宝邀您领红包",
                             "千万红包免费领，快来快来快快来");
 
                     SharedPreferences.Editor editor = wxShareSp.edit();
@@ -297,7 +297,7 @@ public class GiveActivity extends MyBaseActivity implements SwipeRefreshLayout.O
 
                 if (WxUtil.check(GiveActivity.this)) {
                     WxUtil.shareToPYQ(GiveActivity.this, shareURL,
-                            "正汇钱包邀您领红包",
+                            "花米宝邀您领红包",
                             "千万红包免费领，快来快来快快来");
 
                     SharedPreferences.Editor editor = wxShareSp.edit();

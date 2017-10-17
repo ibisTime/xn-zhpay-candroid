@@ -172,16 +172,14 @@ public class CommitOrderActivity extends MyBaseActivity {
             rmb = sums(rmb, (productList.get(i).getPrice1() * productList.get(i).getProductNumber()));
         }
 
-        switch (productList.get(0).getType()){
-
-            case "G01":
-                txtTotalCurrency.setText("礼品券");
-                break;
-
-            default:
+        if (productList.get(0).getType().equals("G01")){
+            txtTotalCurrency.setText("礼品券");
+        }else {
+            if (productList.get(0).getPayCurrency().equals("4")){
+                txtTotalCurrency.setText("钱包币");
+            }else{
                 txtTotalCurrency.setText("¥");
-                break;
-
+            }
         }
         txtTotalPrice.setText(MoneyUtil.moneyFormatDouble(rmb));
 
@@ -343,6 +341,7 @@ public class CommitOrderActivity extends MyBaseActivity {
                             .putExtra("qbb", qbb)
                             .putExtra("currency", currency)
                             .putExtra("type", productList.get(0).getType())
+                            .putExtra("payCurrency", productList.get(0).getPayCurrency())
                             .putExtra("yunfei", Double.parseDouble(yunfei) * 1000)
                             .putExtra("code", jsonObject.getString("code")));
                     finish();

@@ -73,7 +73,7 @@ public class WxUtil {
         msg.description = description;
 
         try {
-            Bitmap bmp1 = BitmapFactory.decodeResource(context.getResources(), R.mipmap.icon);
+            Bitmap bmp1 = BitmapFactory.decodeResource(context.getResources(), R.mipmap.logo_hmb);
             Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp1, 100, 100, true);
             msg.thumbData = Bitmap2Bytes(thumbBmp);
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class WxUtil {
         msg.description = description;
 
         try {
-            Bitmap bmp1 = BitmapFactory.decodeResource(context.getResources(), R.mipmap.icon);
+            Bitmap bmp1 = BitmapFactory.decodeResource(context.getResources(), R.mipmap.logo_hmb);
             Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp1, 100, 100, true);
             msg.thumbData = Bitmap2Bytes(thumbBmp);
         } catch (Exception e) {

@@ -299,7 +299,7 @@ public class GiveFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
                 if (WxUtil.check(getActivity())) {
                     WxUtil.shareToWX(getActivity(), shareURL,
-                            "正汇钱包邀您领红包",
+                            "花米宝邀您领红包",
                             "千万红包免费领，快来快来快快来");
 
                     SharedPreferences.Editor editor = wxShareSp.edit();
@@ -321,7 +321,7 @@ public class GiveFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
                 if (WxUtil.check(getActivity())) {
                     WxUtil.shareToPYQ(getActivity(), shareURL,
-                            "正汇钱包邀您领红包",
+                            "花米宝邀您领红包",
                             "千万红包免费领，快来快来快快来");
 
                     SharedPreferences.Editor editor = wxShareSp.edit();

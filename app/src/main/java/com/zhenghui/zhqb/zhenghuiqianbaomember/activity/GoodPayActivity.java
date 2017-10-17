@@ -84,6 +84,15 @@ public class GoodPayActivity extends MyBaseActivity {
     TextView txtFinallyPrice;
     @InjectView(R.id.txt_pay)
     TextView txtPay;
+    @InjectView(R.id.txt_qbb)
+    TextView txtQbb;
+    @InjectView(R.id.img_qbb)
+    ImageView imgQbb;
+    @InjectView(R.id.line_qbb)
+    View lineQbb;
+    @InjectView(R.id.layout_qbb)
+    LinearLayout layoutQbb;
+
     private String payWay = "22";
 
     private double rmb;
@@ -94,6 +103,7 @@ public class GoodPayActivity extends MyBaseActivity {
     private String code;
     private String type;
     private String currency;
+    private String payCurrency;
 
     private double rate = 1.0;
 
@@ -127,6 +137,8 @@ public class GoodPayActivity extends MyBaseActivity {
         code = getIntent().getStringExtra("code");
         type = getIntent().getStringExtra("type");
         currency = getIntent().getStringExtra("currency");
+        payCurrency = getIntent().getStringExtra("payCurrency");
+
         rmb = getIntent().getDoubleExtra("rmb", 0.00);
         gwb = getIntent().getDoubleExtra("gwb", 0.00);
         qbb = getIntent().getDoubleExtra("qbb", 0.00);
@@ -137,20 +149,38 @@ public class GoodPayActivity extends MyBaseActivity {
         userInfoSp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         appConfigSp = getSharedPreferences("appConfig", Context.MODE_PRIVATE);
 
+
+
         if (type.equals("G01")) {
             txtSubsidy.setText("礼品券");
             payWay = "20";
 
             layoutLmq.setVisibility(View.GONE);
+            layoutQbb.setVisibility(View.GONE);
             layoutWeixin.setVisibility(View.GONE);
             layoutAli.setVisibility(View.GONE);
             layoutBalance.setVisibility(View.GONE);
         } else {
-//            if (currency.equals("1")) {
-//                txtBalace.setText("分润支付");
-//            } else {
-//                txtBalace.setText("贡献值分润支付");
-//            }
+            if (payCurrency.equals("4")){ // 钱包币
+                payWay = "24";
+                imgQbb.setBackgroundResource(R.mipmap.pay_choose);
+
+                layoutLmq.setVisibility(View.GONE);
+                layoutAli.setVisibility(View.GONE);
+                layoutWeixin.setVisibility(View.GONE);
+                layoutSubsidy.setVisibility(View.GONE);
+                layoutBalance.setVisibility(View.GONE);
+            }else {
+                lineQbb.setVisibility(View.GONE);
+                layoutQbb.setVisibility(View.GONE);
+
+                if(payCurrency.equals("1")){
+                    layoutBalance.setVisibility(View.GONE);
+
+                    payWay = "22";
+                    imgSubsidy.setBackgroundResource(R.mipmap.pay_choose);
+                }
+            }
         }
 
         if (userInfoSp.getString("isGxz", "").equals("0")) {
@@ -159,7 +189,8 @@ public class GoodPayActivity extends MyBaseActivity {
 
     }
 
-    @OnClick({R.id.layout_back, R.id.layout_subsidy, R.id.txt_balace, R.id.layout_lmq, R.id.layout_weixin, R.id.layout_ali, R.id.txt_pay})
+    @OnClick({R.id.layout_back, R.id.layout_subsidy, R.id.txt_balace, R.id.layout_lmq, R.id.layout_qbb,
+            R.id.layout_weixin, R.id.layout_ali, R.id.txt_pay})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_back:
@@ -197,6 +228,14 @@ public class GoodPayActivity extends MyBaseActivity {
                 }
                 break;
 
+            case R.id.layout_qbb:
+                intImage();
+                payWay = "24";
+                imgQbb.setBackgroundResource(R.mipmap.pay_choose);
+
+                txtFinallyPrice.setText(txtPrice.getText().toString());
+                break;
+
             case R.id.layout_weixin:
                 intImage();
                 payWay = "2";
@@ -214,7 +253,7 @@ public class GoodPayActivity extends MyBaseActivity {
                 break;
 
             case R.id.txt_pay:
-                if (payWay.equals("20") || payWay.equals("22") || payWay.equals("21") || payWay.equals("23")) {
+                if (payWay.equals("20") || payWay.equals("22") || payWay.equals("21") || payWay.equals("23")|| payWay.equals("24") ) {
                     if (userInfoSp.getString("tradepwdFlag", "").equals("0")) {
                         Toast.makeText(this, "请先设置支付密码", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(GoodPayActivity.this, ModifyTradeActivity.class).putExtra("isModify", false));
@@ -238,6 +277,7 @@ public class GoodPayActivity extends MyBaseActivity {
         imgLmq.setBackgroundResource(R.mipmap.pay_unchoose);
         imgWeixin.setBackgroundResource(R.mipmap.pay_unchoose);
         imgZhifubao.setBackgroundResource(R.mipmap.pay_unchoose);
+        imgQbb.setBackgroundResource(R.mipmap.pay_unchoose);
     }
 
 
@@ -297,7 +337,7 @@ public class GoodPayActivity extends MyBaseActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(result);
 
-                    if (payWay.equals("20") || payWay.equals("22") || payWay.equals("21") || payWay.equals("23")) {
+                    if (payWay.equals("20") || payWay.equals("22") || payWay.equals("21") || payWay.equals("23") || payWay.equals("24")) {
 
                         Toast.makeText(GoodPayActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                         finish();
@@ -398,18 +438,7 @@ public class GoodPayActivity extends MyBaseActivity {
 
 
     private void setView() {
-//
-//        switch (type){
-//
-//            case "G01":
-//                txtCurrency.setText("礼品券");
-//                break;
-//
-//            default:
-//                txtCurrency.setText("¥");
-//                break;
-//
-//        }
+
         txtPrice.setText(MoneyUtil.moneyFormatDouble(rmb + yunfei));
         txtFinallyPrice.setText(MoneyUtil.moneyFormatDouble(rmb + yunfei));
 

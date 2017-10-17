@@ -365,7 +365,7 @@
                     <TextView
                         android:textSize="12sp"
                         android:textColor="@color/white"
-                        android:text="《钱包用户协议》"
+                        android:text="《花米宝用户协议》"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
