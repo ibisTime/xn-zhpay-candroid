@@ -28,22 +28,22 @@ public class Xutil {
 //    public static String SHARE_PORT = ":5503";
 
     // 测试环境
-    public static String URL = "http://106.15.49.68";
-    public static String PORT = ":5601";
-    public static String API = "/forward-service/api";
-    public static String LOGOUT = ":5601/forward-service/user/logOut";
-
-    public static String SHARE_URL = "http://m.zhqb.hichengdai.com";
-    public static String SHARE_PORT = "";
-
-    // 正式环境
-//    public static String URL = "http://139.224.200.54";
+//    public static String URL = "http://106.15.49.68";
 //    public static String PORT = ":5601";
 //    public static String API = "/forward-service/api";
 //    public static String LOGOUT = ":5601/forward-service/user/logOut";
 //
-//    public static String SHARE_URL = "http://m.zhenghuijituan.com";
+//    public static String SHARE_URL = "http://m.zhqb.hichengdai.com";
 //    public static String SHARE_PORT = "";
+
+    // 正式环境
+    public static String URL = "http://139.224.200.54";
+    public static String PORT = ":5601";
+    public static String API = "/forward-service/api";
+    public static String LOGOUT = ":5601/forward-service/user/logOut";
+
+    public static String SHARE_URL = "http://m.zhenghuijituan.com";
+    public static String SHARE_PORT = "";
 
 
     SharedPreferences userInfoSp;
@@ -74,7 +74,7 @@ public class Xutil {
 
                         if(result.indexOf("xn0000")!= -1){
                             backPost.onSuccess("indexOutOf");
-                        }else{
+                        } else {
                             backPost.onSuccess(object.getString("data"));
                             System.out.println("code="+code+",onSuccess="+result);
                         }
@@ -85,7 +85,7 @@ public class Xutil {
                         if (object.getString("errorBizCode") != null) {
                             if(object.getString("errorBizCode").equals("M000001")){
                                 backPost.onTip(object.getString("errorInfo")+"_"+object.getString("errorBizCode"));
-                            }else {
+                            } else {
                                 backPost.onTip( object.getString("errorInfo"));
                             }
                         }else {

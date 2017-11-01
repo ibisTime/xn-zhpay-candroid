@@ -196,6 +196,7 @@
 
     <LinearLayout
         android:id="@+id/layout_lmq"
+        android:visibility="gone"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -230,6 +231,7 @@
     </LinearLayout>
 
     <View
+        android:visibility="gone"
         android:background="@color/lineColor"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"/>

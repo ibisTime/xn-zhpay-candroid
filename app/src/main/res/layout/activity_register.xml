@@ -46,91 +46,91 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_marginTop="20dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:background="@drawable/corners_lucency_half"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:background="@drawable/corners_lucency_half"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:background="@mipmap/phone"
-                        android:layout_margin="15dp"
                         android:layout_width="20dp"
-                        android:layout_height="20dp" />
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:background="@mipmap/phone" />
 
                     <View
-                        android:background="@color/white"
                         android:layout_width="0.5dp"
-                        android:layout_height="20dp"/>
+                        android:layout_height="20dp"
+                        android:background="@color/white" />
 
                     <!--android:inputType="number"-->
                     <EditText
                         android:id="@+id/edt_phone"
-                        android:textSize="14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_marginLeft="15dp"
-                        android:hint="请输入手机号码"
                         android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入手机号码"
                         android:inputType="phone"
                         android:maxLength="11"
                         android:textColor="@color/white"
-                        android:textCursorDrawable="@null"
                         android:textColorHint="@color/white"
-                        android:layout_width="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_height="match_parent" />
+                        android:textCursorDrawable="@null"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
 
                 <LinearLayout
-                    android:background="@drawable/corners_lucency_half"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/corners_lucency_half"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:background="@mipmap/code"
-                        android:layout_margin="15dp"
                         android:layout_width="20dp"
-                        android:layout_height="20dp" />
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:background="@mipmap/code" />
 
                     <View
-                        android:background="@color/white"
                         android:layout_width="0.5dp"
-                        android:layout_height="20dp"/>
+                        android:layout_height="20dp"
+                        android:background="@color/white" />
 
                     <EditText
                         android:id="@+id/edt_code"
-                        android:inputType="number"
-                        android:textSize="14sp"
-                        android:maxLength="4"
-                        android:layout_marginLeft="15dp"
-                        android:hint="手机验证码"
-                        android:background="@null"
-                        android:textColor="@color/white"
-                        android:textCursorDrawable="@null"
-                        android:textColorHint="@color/white"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:background="@null"
                         android:gravity="center_vertical"
-                        android:layout_height="match_parent" />
+                        android:hint="手机验证码"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textCursorDrawable="@null"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/btn_send"
@@ -138,150 +138,150 @@
                         android:layout_height="34dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:text="获取验证码"
                         android:background="@drawable/corners_lucency"
+                        android:gravity="center"
+                        android:text="获取验证码"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:background="@drawable/corners_lucency_half"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:background="@drawable/corners_lucency_half"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <ImageView
-                            android:background="@mipmap/password"
-                            android:layout_margin="15dp"
                             android:layout_width="20dp"
-                            android:layout_height="20dp" />
+                            android:layout_height="20dp"
+                            android:layout_margin="15dp"
+                            android:background="@mipmap/password" />
 
                         <View
-                            android:background="@color/white"
                             android:layout_width="0.5dp"
-                            android:layout_height="20dp"/>
+                            android:layout_height="20dp"
+                            android:background="@color/white" />
 
                         <EditText
                             android:id="@+id/edt_password"
-                            android:inputType="textPassword"
-                            android:textSize="14sp"
-                            android:layout_marginLeft="15dp"
-                            android:hint="请输入密码"
-                            android:background="@null"
-                            android:textColor="@color/white"
-                            android:textCursorDrawable="@null"
-                            android:textColorHint="@color/white"
                             android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:background="@null"
                             android:gravity="center_vertical"
-                            android:layout_height="match_parent" />
+                            android:hint="请输入密码"
+                            android:inputType="textPassword"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:background="@drawable/corners_lucency_half"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:background="@drawable/corners_lucency_half"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <ImageView
-                            android:background="@mipmap/phone"
-                            android:layout_margin="15dp"
                             android:layout_width="20dp"
-                            android:layout_height="20dp" />
+                            android:layout_height="20dp"
+                            android:layout_margin="15dp"
+                            android:background="@mipmap/phone" />
 
                         <View
-                            android:background="@color/white"
                             android:layout_width="0.5dp"
-                            android:layout_height="20dp"/>
+                            android:layout_height="20dp"
+                            android:background="@color/white" />
 
                         <EditText
                             android:id="@+id/edt_userReferee"
-                            android:inputType="number"
-                            android:textSize="14sp"
-                            android:layout_marginLeft="15dp"
-                            android:hint="请输入推荐人手机号"
-                            android:background="@null"
-                            android:textColor="@color/white"
-                            android:textCursorDrawable="@null"
-                            android:textColorHint="@color/white"
-                            android:layout_weight="1"
-                            android:maxLength="11"
                             android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_weight="1"
+                            android:background="@null"
                             android:gravity="center_vertical"
-                            android:layout_height="match_parent" />
+                            android:hint="请输入推荐人手机号"
+                            android:inputType="number"
+                            android:maxLength="11"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
 
                         <ImageView
                             android:id="@+id/img_scan"
-                            android:background="@mipmap/scan"
-                            android:layout_margin="15dp"
                             android:layout_width="20dp"
-                            android:layout_height="20dp" />
+                            android:layout_height="20dp"
+                            android:layout_margin="15dp"
+                            android:background="@mipmap/scan" />
 
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layout_address"
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:background="@drawable/corners_lucency_half"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:background="@drawable/corners_lucency_half"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <ImageView
-                            android:background="@mipmap/address_white"
-                            android:layout_margin="15dp"
                             android:layout_width="20dp"
-                            android:layout_height="20dp" />
+                            android:layout_height="20dp"
+                            android:layout_margin="15dp"
+                            android:background="@mipmap/address_white" />
 
                         <View
-                            android:background="@color/white"
                             android:layout_width="0.5dp"
-                            android:layout_height="20dp"/>
+                            android:layout_height="20dp"
+                            android:background="@color/white" />
 
                         <TextView
                             android:id="@+id/txt_address"
-                            android:inputType="number"
-                            android:textSize="14sp"
-                            android:layout_marginLeft="15dp"
-                            android:hint="请选择省市区"
-                            android:background="@null"
-                            android:textColor="@color/white"
-                            android:textCursorDrawable="@null"
-                            android:textColorHint="@color/white"
                             android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:background="@null"
                             android:gravity="center_vertical"
-                            android:layout_height="match_parent" />
+                            android:hint="请选择省市区"
+                            android:inputType="number"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -333,41 +333,41 @@
 
 
             <LinearLayout
-                android:layout_marginTop="20dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/btn_register"
-                    android:text="确定"
-                    android:layout_margin="20dp"
-                    android:textColor="@color/white"
-                    android:background="@drawable/corners_orange"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/corners_orange"
+                    android:text="确定"
+                    android:textColor="@color/white" />
 
                 <LinearLayout
                     android:id="@+id/layout_treaty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="注册即代表同意"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
                     <TextView
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        android:text="《花米宝用户协议》"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="《花米宝用户协议》"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -376,8 +376,6 @@
         </LinearLayout>
 
     </ScrollView>
-
-
 
 
 </LinearLayout>

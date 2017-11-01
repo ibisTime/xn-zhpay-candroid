@@ -38,7 +38,6 @@ import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.MyJewelHistoryActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.MyShopActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.OrderListActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RelationActivity;
-import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.RightsActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.SettingActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.SubsidyActivity;
 import com.zhenghui.zhqb.zhenghuiqianbaomember.activity.WalletActivity;
@@ -74,34 +73,33 @@ import static com.zhenghui.zhqb.zhenghuiqianbaomember.util.ImageUtil.RESULT_CAMA
 
 public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
+
     @InjectView(R.id.img_photo)
     CircleImageView imgPhoto;
     @InjectView(R.id.txt_name)
     TextView txtName;
     @InjectView(R.id.txt_account)
     TextView txtAccount;
+    @InjectView(R.id.layout_h5)
+    LinearLayout layoutH5;
     @InjectView(R.id.txt_share)
     TextView txtShare;
-    @InjectView(R.id.layout_earnings)
-    LinearLayout layoutEarnings;
-    @InjectView(layout_subsidy)
+    @InjectView(R.id.layout_subsidy)
     LinearLayout layoutSubsidy;
-    @InjectView(R.id.layout_relation)
-    LinearLayout layoutRelation;
     @InjectView(R.id.layout_wallet)
     LinearLayout layoutWallet;
     @InjectView(R.id.layout_target)
     LinearLayout layoutTarget;
-    @InjectView(R.id.layout_shoppinglist)
-    LinearLayout layoutShoppinglist;
     @InjectView(R.id.layout_shop)
     LinearLayout layoutShop;
+    @InjectView(R.id.layout_shoppinglist)
+    LinearLayout layoutShoppinglist;
+    @InjectView(R.id.layout_relation)
+    LinearLayout layoutRelation;
     @InjectView(R.id.layout_seting)
     LinearLayout layoutSeting;
     @InjectView(R.id.swipe_container)
     RefreshLayout swipeContainer;
-    @InjectView(R.id.layout_h5)
-    LinearLayout layoutH5;
 
     // Fragment主视图
     private View view;
@@ -231,8 +229,8 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
     private void setView() {
         shareURL = Xutil.SHARE_URL + Xutil.SHARE_PORT + "/user/register.html?userReferee=" + userInfoSp.getString("mobile", null);
 
-        txtName.setText("昵称: "+model.getNickname());
-        txtAccount.setText("账号: "+model.getMobile().substring(0, 3) + "****" + model.getMobile().substring(7, model.getMobile().length()));
+        txtName.setText("昵称: " + model.getNickname());
+        txtAccount.setText("账号: " + model.getMobile().substring(0, 3) + "****" + model.getMobile().substring(7, model.getMobile().length()));
         if (null == model.getUserExt().getPhoto()) {
             Picasso.with(getActivity()).load(R.mipmap.photo_default).into(imgPhoto);
         } else {
@@ -242,7 +240,7 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
 
 
     @OnClick({R.id.layout_target, layout_h5, R.id.layout_seting, R.id.txt_share, R.id.layout_subsidy,
-            R.id.img_photo, R.id.layout_earnings, R.id.layout_wallet, R.id.layout_shoppinglist,
+            R.id.img_photo,  R.id.layout_wallet, R.id.layout_shoppinglist,
             R.id.layout_shop, R.id.layout_relation})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -265,10 +263,6 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
 
             case layout_subsidy:
                 startActivity(new Intent(getActivity(), SubsidyActivity.class));
-                break;
-
-            case R.id.layout_earnings:
-                startActivity(new Intent(getActivity(), RightsActivity.class));
                 break;
 
             case R.id.layout_target:
@@ -610,7 +604,7 @@ public class MyFragment2 extends Fragment implements SwipeRefreshLayout.OnRefres
                     JSONObject jsonObject = new JSONObject(result);
                     h5URL = jsonObject.getString("web_url");
 
-                    if (jsonObject.getString("is_open").equals("0")){
+                    if (jsonObject.getString("is_open").equals("0")) {
                         layoutH5.setVisibility(View.GONE);
                     }
 

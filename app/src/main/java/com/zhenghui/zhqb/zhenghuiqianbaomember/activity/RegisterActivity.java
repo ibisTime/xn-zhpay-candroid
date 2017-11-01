@@ -264,6 +264,7 @@ public class RegisterActivity extends MyBaseActivity {
             e.printStackTrace();
         }
 
+
         new Xutil().post(CODE_805041, object.toString(), new Xutil.XUtils3CallBackPost() {
             @Override
             public void onSuccess(String result) {
