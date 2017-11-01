@@ -35,6 +35,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_wx_entry);
+
         api = WXAPIFactory.createWXAPI(this, Constants.APP_ID_WX);
         api.handleIntent(getIntent(), this);
 
@@ -59,8 +60,6 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
      */
     @Override
     public void onResp(BaseResp resp) {
-        System.out.println("resp.errCode="+resp.errCode);
-        System.out.println("resp.errStr="+resp.errStr);
 
         if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
             if(resp.errCode == 0){
