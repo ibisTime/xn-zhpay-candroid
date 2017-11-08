@@ -82,6 +82,7 @@
 
                         <LinearLayout
                             android:id="@+id/layout_h5"
+                            android:visibility="gone"
                             android:layout_marginLeft="10dp"
                             android:gravity="center"
                             android:orientation="vertical"
@@ -110,6 +111,7 @@
 
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/txt_share"
                         android:textSize="13sp"
                         android:layout_marginTop="10dp"

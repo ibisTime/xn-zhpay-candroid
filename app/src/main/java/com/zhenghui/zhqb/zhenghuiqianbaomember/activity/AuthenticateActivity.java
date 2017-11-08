@@ -91,7 +91,6 @@ public class AuthenticateActivity extends MyBaseActivity {
                     e.printStackTrace();
                 }
 
-
             }
 
         }

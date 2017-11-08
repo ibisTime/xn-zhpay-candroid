@@ -37,7 +37,16 @@ public class Xutil {
 //    public static String SHARE_PORT = "";
 
     // 正式环境
-    public static String URL = "http://139.224.200.54";
+//    public static String URL = "http://139.224.200.54";
+//    public static String PORT = ":5601";
+//    public static String API = "/forward-service/api";
+//    public static String LOGOUT = ":5601/forward-service/user/logOut";
+//
+//    public static String SHARE_URL = "http://m.zhenghuijituan.com";
+//    public static String SHARE_PORT = "";
+
+    // 分支环境
+    public static String URL = "http://118.31.11.80";
     public static String PORT = ":5601";
     public static String API = "/forward-service/api";
     public static String LOGOUT = ":5601/forward-service/user/logOut";

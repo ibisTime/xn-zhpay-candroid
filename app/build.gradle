@@ -2,14 +2,16 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "com.zhenghui.zhqb.zhenghuiqianbaomember"
+        applicationId "com.zhenghui.zhqb.zhenghuiqianbaomember2"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 20
         versionName "4.4.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
 
         // Enabling multidex support.
         multiDexEnabled true
